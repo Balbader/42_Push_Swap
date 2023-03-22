@@ -10,4 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 
+void	ft_push_node(t_list **src, t_list **dest)
+{
+	t_list	*temp;
+
+	temp = NULL;
+	if (!*src)
+		return ;
+	temp = (*src)->next;
+	(*src)->next = *dest;
+	*dest = *src;
+	*src = temp;
+}
