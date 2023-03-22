@@ -14,4 +14,4 @@ Calculate for each node of 'a', starting at the 1st, the cost of pushing it to '
 3. The cost of each a_node will be stored in a cost array in order to be able find the cheapest one which will then allow us to select the a_node the is the cheapest and proceed to push it to 'b'.
 4. We will proceed with finding the cheapest move until there are only  3 nodes left in 'a'.
 5. We will apply ft_sort_3 on 'a' to sort it
-6. 
+6. Once 'a' is sorted, we can start pushing b_nodes back to 'a'<br>

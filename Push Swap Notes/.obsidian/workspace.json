@@ -55,7 +55,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -121,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1. GENERAL/Steps.md",
+                "file": "1. GENERAL/Find Cheapest Move.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -138,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1. GENERAL/Steps.md",
+                "file": "1. GENERAL/Find Cheapest Move.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -161,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1. GENERAL/Steps.md"
+                "file": "1. GENERAL/Find Cheapest Move.md"
               }
             }
           }
@@ -182,10 +183,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "60643913fa583051",
+  "active": "432703913224b5b7",
   "lastOpenFiles": [
-    "1. GENERAL/Find Cheapest Move.md",
     "1. GENERAL/Steps.md",
+    "1. GENERAL/Find Cheapest Move.md",
     "1. GENERAL/What I need.md",
     "2. TO DO/ft_sort_3.md",
     "2. TO DO/ft_sort_4.md",
