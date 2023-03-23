@@ -65,7 +65,8 @@ SORT_UTILS_FILES	:=	\
 						ft_get_last_node.c \
 						ft_get_before_last_node.c \
 						ft_get_stack_size.c \
-						ft_init_stack.c
+						ft_init_stack.c \
+						ft_re_init_index.c
 SORT_UTILS			:=	$(addprefix $(SORT_UTILS_DIR), $(SORT_UTILS_FILES))
 
 ###################
