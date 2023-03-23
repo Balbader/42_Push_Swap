@@ -63,6 +63,7 @@ t_list		*ft_create_node(int data, int index);
 t_list		*ft_get_before_last_node(t_list *stack);
 t_list		*ft_get_last_node(t_list *stack);
 t_list		*ft_init_stack(t_list *stack_a, int *entries, int ac);
+t_list		*ft_re_init_index(t_list *stack);
 
 /* UTILS */
 int			ft_isdigit(char c);
