@@ -54,13 +54,16 @@ UTILS				:=	$(addprefix $(UTILS_DIR), $(UTILS_FILES))
 SORT_DIR			:=	sorting/
 SORT_FILES			:=	\
 						ft_sort_3.c
-SORT			:=	$(addprefix $(SORT_DIR), $(SORT_FILES))
+SORT				:=	$(addprefix $(SORT_DIR), $(SORT_FILES))
 
 # Sorting Utils
 SORT_UTILS_DIR		:=	sorting_utils/
 SORT_UTILS_FILES	:=	\
+						ft_add_new_tail.c \
+						ft_free_stack.c \
+						ft_get_last_node.c \
 						ft_get_before_last_node.c \
-						ft_get_last_node.c
+						ft_get_stack_size.c
 SORT_UTILS			:=	$(addprefix $(SORT_UTILS_DIR), $(SORT_UTILS_FILES))
 
 ###################
