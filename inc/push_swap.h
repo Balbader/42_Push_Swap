@@ -56,6 +56,7 @@ long int	ft_convert_entry(const char *av);
 void		ft_sort_3(t_list **a);
 
 /* SORTING UTILS*/
+void		ft_add_new_tail(t_list **lst, t_list *node);
 t_list		*ft_get_before_last_node(t_list *stack);
 t_list		*ft_get_last_node(t_list *stack);
 
