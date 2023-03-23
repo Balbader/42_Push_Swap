@@ -48,7 +48,7 @@ void	ft_sort_3(t_list **a)
 
 	arr = (int *)malloc(sizeof(int) * 3);
 	if (!arr)
-		return (NULL);
+		return ;
 	arr = ft_init_arr_3(*a, arr);
 	if (ft_find_case_3(arr) == 1)
 		ft_sa(a);
