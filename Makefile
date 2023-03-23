@@ -24,7 +24,7 @@ ENTRY_FILES			:=	\
 						ft_check_entry.c \
 						ft_convert_entry.c \
 						ft_get_entry.c \
-						ft_look_for_doubles.c
+						ft_find_doubles.c
 ENTRY				:=	$(addprefix $(ENTRY_DIR), $(ENTRY_FILES))
 
 # Actions
@@ -45,6 +45,11 @@ OPER_FILES			:=	\
 						ft_sa.c ft_sb.c ft_ss.c
 OPER				:=	$(addprefix $(OPER_DIR), $(OPER_FILES))
 
+# Utils
+UTILS_DIR			:=	utils/
+UTILS_FILES			:=	ft_utils.c
+UTILS				:=	$(addprefix $(UTILS_DIR), $(UTILS_FILES))
+
 ###################
 #   INGREDIENTS	  #
 ###################
@@ -55,6 +60,7 @@ SRCS				:=	\
 						$(ENTRY) \
 						$(ACTIONS) \
 						$(OPER) \
+						$(UTILS) \
 						$(SORTING) \
 						$(STACK) \
 						$(UTILS) \
@@ -65,7 +71,6 @@ BUILD_DIR			:=	.build
 OBJS        		:=	$(SRCS:$(SRCS_DIR)/%.c=$(BUILD_DIR)/%.o)
 DEPS        		:=	$(OBJS:.o=.d)
 
-# CC					:=	cc -fsanitize=address
 CC					:=	cc
 CFLAGS				:=	-Wall -Wextra -Werror -g3
 IFLAGS				:=	$(addprefix -I, $(INCS))
