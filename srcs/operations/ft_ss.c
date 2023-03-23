@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-void	ft_ss(t_list *stack_a, t_list *stack_b)
+void	ft_ss(t_list **a, t_list **b)
 {
-	ft_swap_stack(stack_a);
-	ft_swap_stack(stack_b);
+	ft_swap(a);
+	ft_swap(b);
 	ft_putstr_fd("ss\n", 1);
 }

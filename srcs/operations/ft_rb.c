@@ -10,11 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "push_swap.h"
 
-void	ft_rb(t_list **stack_b)
+void	ft_rb(t_list **b)
 {
-	ft_rotate_stack(stack_b);
+	ft_rotate(b);
 	ft_putstr_fd("rb\n", 1);
 }
