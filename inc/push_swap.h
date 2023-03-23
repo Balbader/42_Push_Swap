@@ -59,8 +59,10 @@ void		ft_sort_3(t_list **a);
 int			ft_get_stack_size(t_list *stack);
 void		ft_add_new_tail(t_list **lst, t_list *node);
 void		ft_free_stack(t_list **stack);
+t_list		*ft_create_node(int data, int index);
 t_list		*ft_get_before_last_node(t_list *stack);
 t_list		*ft_get_last_node(t_list *stack);
+t_list		*ft_init_stack(t_list *stack_a, int *entries, int ac);
 
 /* UTILS */
 int			ft_isdigit(char c);
