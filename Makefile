@@ -30,7 +30,7 @@ ENTRY				:=	$(addprefix $(ENTRY_DIR), $(ENTRY_FILES))
 # Actions
 ACTIONS_DIR			:=	actions/
 ACTIONS_FILES		:=	\
-						ft_push.c \
+						ft_push_node.c \
 						ft_reverse_rotate.c \
 						ft_rotate.c \
 						ft_swap.c
