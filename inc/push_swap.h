@@ -55,6 +55,10 @@ long int	ft_convert_entry(const char *av);
 /* SORTING */
 void		ft_sort_3(t_list **a);
 
+/* SORTING UTILS*/
+t_list		*ft_get_before_last_node(t_list *stack);
+t_list		*ft_get_last_node(t_list *stack);
+
 /* UTILS */
 int			ft_isdigit(char c);
 int			ft_strlen(const char *str);
