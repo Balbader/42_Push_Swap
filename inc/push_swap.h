@@ -44,4 +44,22 @@ void		ft_rrr(t_list **a, t_list **b);
 void		ft_sa(t_list **a);
 void		ft_sb(t_list **b);
 void		ft_ss(t_list **a, t_list **b);
+
+
+/* ENTRY */
+int			ft_check_entry(char *av);
+int			ft_get_entry(char *av);
+void		ft_find_doubles(int *arr, int arr_size);
+long int	ft_convert_entry(const char *av);
+
+/* SORTING */
+void		ft_sort_3(t_list **a);
+
+/* UTILS */
+int			ft_isdigit(char c);
+int			ft_strlen(const char *str);
+void		ft_putstr_fd(char *str, int fd);
+void		ft_print_stack(t_list **stack, char *name);
+void		ft_print_err(t_list **stack_a, t_list **stack_b);
+
 #endif
