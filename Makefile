@@ -53,6 +53,7 @@ UTILS				:=	$(addprefix $(UTILS_DIR), $(UTILS_FILES))
 # Sorting
 SORT_DIR			:=	sorting/
 SORT_FILES			:=	\
+						ft_push_first_2.c \
 						ft_sort_3.c
 SORT				:=	$(addprefix $(SORT_DIR), $(SORT_FILES))
 
