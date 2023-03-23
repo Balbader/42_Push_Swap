@@ -10,4 +10,38 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
+# include <stdio.h>
+# include <stdlib.h>
+# include <limits.h>
+# include <unistd.h>
+# include <time.h>
+
+typedef struct s_list
+{
+	int				data;
+	int				index;
+	struct s_list	*next;
+}				t_list;
+
+/* ACTIONS */
+void		ft_push_node(t_list **src, t_list **dest);
+void		ft_reverse_rotate(t_list **stack);
+void		ft_rotate(t_list **stack);
+void		ft_swap(t_list **stack);
+
+/* OPERATIONS */
+void		ft_pa(t_list **b, t_list **a);
+void		ft_pb(t_list **a, t_list **b);
+void		ft_ra(t_list **a);
+void		ft_rb(t_list **b);
+void		ft_rr(t_list **a, t_list **b);
+void		ft_rra(t_list **a);
+void		ft_rrb(t_list **b);
+void		ft_rrr(t_list **a, t_list **b);
+void		ft_sa(t_list **a);
+void		ft_sb(t_list **b);
+void		ft_ss(t_list **a, t_list **b);
+#endif
