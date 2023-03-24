@@ -46,6 +46,7 @@ void	ft_sort_3(t_list **a)
 {
 	int	*arr;
 
+	arr = NULL;
 	arr = (int *)malloc(sizeof(int) * 3);
 	if (!arr)
 		return ;
