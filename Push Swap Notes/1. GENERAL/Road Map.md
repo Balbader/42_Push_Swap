@@ -38,9 +38,9 @@ In order to find the cheapest move, I need to emulate the entire proces of pushi
 
 ### What I need
 1. Check if incoming will be the biggest(b): *ft_check_if_biggest_b.c*
-2. Find idx of current biggest(b): *ft_find_biggest_node_pos.c*
+2. Find idx of current biggest(b): *ft_find_biggest_node_idx.c*
 3. Check if incoming will be the smallest(b): *ft_check_if_smallest_b.c*
-4. Find idx of current smallest(b): *ft_find_smallest_node_pos.c*
+4. Find idx of current smallest(b): *ft_find_smallest_node_idx.c*
 5. Find middle node index: *ft_find_middle_idx.c*
 6. Define the number of rotate || reverse_rotate needed to bring
    the node to the top: *ft_define_roatate_counts.c*
