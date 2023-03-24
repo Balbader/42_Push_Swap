@@ -1,4 +1,7 @@
 {
   "accentColor": "",
-  "cssTheme": "Spectrum"
+  "cssTheme": "Spectrum",
+  "interfaceFontFamily": "CodeNewRoman Nerd Font",
+  "textFontFamily": "CodeNewRoman Nerd Font",
+  "monospaceFontFamily": "CodeNewRoman Nerd Font"
 }

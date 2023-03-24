@@ -10,4 +10,7 @@ Calculate for each node of 'a', starting at the 1st, the cost of pushing it to '
 
 ### Steps
 1. Push the 1st 2 a_nodes to 'b' regardless of their value
-2. 
+2. if (a_node == biggest(a) || a_node == smallest(a))
+		b_node == biggest(b);
+		  ft_pb(a, b);
+	. fct: *ft_check_incoming(a, b, incoming);*
