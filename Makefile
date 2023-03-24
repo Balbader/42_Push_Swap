@@ -53,6 +53,7 @@ UTILS				:=	$(addprefix $(UTILS_DIR), $(UTILS_FILES))
 # Sorting
 SORT_DIR			:=	sorting/
 SORT_FILES			:=	\
+						ft_calculate_cost.c \
 						ft_init_cost_arr.c \
 						ft_push_first_2.c \
 						ft_push_from_a_to_b.c \
@@ -63,7 +64,6 @@ SORT				:=	$(addprefix $(SORT_DIR), $(SORT_FILES))
 SORT_UTILS_DIR		:=	sorting_utils/
 SORT_UTILS_FILES	:=	\
 						ft_add_new_tail.c \
-						ft_define_rotate_count.c \
 						ft_create_node.c \
 						ft_find_smallest_node_data.c \
 						ft_find_smallest_node_idx.c \
