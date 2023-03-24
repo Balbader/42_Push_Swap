@@ -17,6 +17,7 @@ t_list	*ft_re_init_index(t_list *stack)
 	int		i;
 	t_list	*head;
 
+	head = NULL;
 	head = stack;
 	i = 1;
 	while (stack)
