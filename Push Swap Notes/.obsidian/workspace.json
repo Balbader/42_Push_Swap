@@ -42,9 +42,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "5617ec6d2604344e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Calculate Cost.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -111,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1. GENERAL/Road Map.md",
+                "file": "Calculate Cost.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +140,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1. GENERAL/Road Map.md",
+                "file": "Calculate Cost.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,7 +163,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1. GENERAL/Road Map.md"
+                "file": "Calculate Cost.md"
               }
             }
           }
@@ -172,10 +184,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "432703913224b5b7",
+  "active": "5617ec6d2604344e",
   "lastOpenFiles": [
-    "1. GENERAL/Steps.md",
+    "Calculate Cost.md",
     "1. GENERAL/Road Map.md",
+    "1. GENERAL/Steps.md",
     "1. GENERAL/Find Cheapest Move.md",
     "1. GENERAL/What I need.md",
     "2. TO DO/ft_sort_3.md",
