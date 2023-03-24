@@ -7,9 +7,9 @@ The goal is to find the node of stack 'a' that will cost the least amount of mov
 Calculate for each node of 'a', starting at the 1st, the cost of pushing it to 'b'.
 
 ### Rules
-1. If the a_node to be pushed to 'b' is the *Biggest* or the *Smallest* node of 'a', 'b' must have its *Biggest* node at its top in order to receive a_node.<br>
+1. If the a_node to be pushed to 'b' is going to be the *Biggest* or the *Smallest* node of 'b', 'b' must have its *Biggest* node at its top in order to receive a_node.<br>
 2. **IMPORTANT**: <br>
-3. For any other a_node with a value in between the *Biggest* and the *Smallest* a_node of 'a', the a_node will have to be positionned somewhere in 'b'.<br>
+3. For any other a_node with a value in between the *Biggest* and the *Smallest* a_node of 'b', the a_node will have to be positionned somewhere in 'b'.<br>
 4. **IMPORTANT**: If the in coming a_node is going to be the *Biggest* node in 'b', it should always be placed above the *Biggest* b_node if its consecutibe lesser is not in 'b'. If the consicutive lesser is available, a_node should then be placed above it. <br>
 5. In this case, we will have to calculate the number of ra or rra necessery to bring the a_node to the top of 'a' and the number of rb or rrb to reposition 'b' in the right order to receive the a_node.<br>
 6. The cost of each a_node will be stored in a cost array in order to be able find the cheapest one which will then allow us to select the a_node the is the cheapest and proceed to push it to 'b'.<br>
