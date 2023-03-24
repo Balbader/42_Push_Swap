@@ -12,11 +12,13 @@
 
 #include "push_swap.h"
 
-void	ft_calculate_cost(t_list **a)
+
+void	ft_calculate_cost(t_list **a, t_list **b)
 {
-	int	cheapest;
+	// int	cheapest; -> this will be returned value
 	int	*data_arr;
 	int	*idx_arr;
+	int	big_or_sml;
 	int	a_size;
 	int	mid;
 	int	i;
@@ -25,13 +27,15 @@ void	ft_calculate_cost(t_list **a)
 	idx_arr = ft_init_idx_array(a);
 	a_size = ft_get_stack_size(*a);
 	mid = a_size / 2;
-	printf("a_size: %d\n", a_size);
-	printf("mid: %d\n", mid);
-	printf("mid_idx[%d]: %d\n", idx_arr[mid], data_arr[mid]);
+	// printf("a_size: %d\n", a_size);
+	// printf("mid: %d\n", mid);
+	// printf("mid_idx[%d]: %d\n", idx_arr[mid], data_arr[mid]);
 	i = 0;
 	while (i < a_size)
 	{
-		printf("[%d] : idx[%d] -> data[%d]\n", i, idx_arr[i], data_arr[i]);
+		big_or_sml = ft_check_incoming(b, data_arr[i]);
+		printf("big_or_sml: %d - a: %d\n\n", big_or_sml, data_arr[i]);
+		// printf("[%d] : idx[%d] -> data[%d]\n", i, idx_arr[i], data_arr[i]);
 		++i;
 	}
 }
