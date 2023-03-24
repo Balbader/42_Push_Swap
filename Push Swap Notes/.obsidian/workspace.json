@@ -20,6 +20,18 @@
             }
           },
           {
+            "id": "dce8763f500d098e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "1. GENERAL/Road Map.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "432703913224b5b7",
             "type": "leaf",
             "state": {
@@ -31,7 +43,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -81,7 +94,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "b8c5f558387bfe7c",
@@ -97,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1. GENERAL/Steps.md",
+                "file": "1. GENERAL/Road Map.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1. GENERAL/Steps.md",
+                "file": "1. GENERAL/Road Map.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1. GENERAL/Steps.md"
+                "file": "1. GENERAL/Road Map.md"
               }
             }
           }
@@ -158,12 +172,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "60643913fa583051",
+  "active": "dce8763f500d098e",
   "lastOpenFiles": [
+    "1. GENERAL/Steps.md",
+    "1. GENERAL/Road Map.md",
     "1. GENERAL/Find Cheapest Move.md",
     "1. GENERAL/What I need.md",
     "2. TO DO/ft_sort_3.md",
-    "1. GENERAL/Steps.md",
     "2. TO DO/ft_sort_4.md",
     "4. DONE",
     "3. DOING",
