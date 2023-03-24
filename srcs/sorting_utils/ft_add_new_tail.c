@@ -16,6 +16,7 @@ void	ft_add_new_tail(t_list **lst, t_list *node)
 {
 	t_list	*current;
 
+	current = NULL;
 	current = *lst;
 	while (current->next)
 		current = current->next;
