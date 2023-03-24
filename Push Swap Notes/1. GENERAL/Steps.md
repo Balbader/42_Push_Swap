@@ -8,11 +8,13 @@ Calculate for each node of 'a', starting at the 1st, the cost of pushing it to '
 
 ### Rules
 1. If the a_node to be pushed to 'b' is the *Biggest* or the *Smallest* node of 'a', 'b' must have its *Biggest* node at its top in order to receive a_node.<br>
-2. For any other a_node with a value in between the *Biggest* and the *Smallest* a_node of 'a', the a_node will have to be positionned somewhere in 'b'. In this case, we will have to calculate the number of ra or rra necessery to bring the a_node to the top of 'a' and the number of rb or rrb to reposition 'b' in the right order to receive the a_node.<br>
-3. The cost of each a_node will be stored in a cost array in order to be able find the cheapest one which will then allow us to select the a_node the is the cheapest and proceed to push it to 'b'.<br>
-4. We will proceed with finding the cheapest move until there are only  3 nodes left in 'a'.<br>
-5. We will apply ft_sort_3 on 'a' to sort it<br>
-6. Once 'a' is sorted, we can start pushing b_nodes back to 'a'<br>
+2. For any other a_node with a value in between the *Biggest* and the *Smallest* a_node of 'a', the a_node will have to be positionned somewhere in 'b'.<br>
+3. IMPORTANT: If the in coming a_node is going to be the *Biggest* node in 'b', it should always be placed above the *Biggest* b_node.<br>
+4. In this case, we will have to calculate the number of ra or rra necessery to bring the a_node to the top of 'a' and the number of rb or rrb to reposition 'b' in the right order to receive the a_node.<br>
+5. The cost of each a_node will be stored in a cost array in order to be able find the cheapest one which will then allow us to select the a_node the is the cheapest and proceed to push it to 'b'.<br>
+6. We will proceed with finding the cheapest move until there are only  3 nodes left in 'a'.<br>
+7. We will apply ft_sort_3 on 'a' to sort it<br>
+8. Once 'a' is sorted, we can start pushing b_nodes back to 'a'<br>
 
 # Steps to pushing from 'b' to 'a'
 1. At this point, 'a' is sorted.

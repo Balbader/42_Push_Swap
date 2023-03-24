@@ -10,3 +10,4 @@ Calculate for each node of 'a', starting at the 1st, the cost of pushing it to '
 
 ### Steps
 1. Push the 1st 2 a_nodes to 'b' regardless of their value
+2. 
