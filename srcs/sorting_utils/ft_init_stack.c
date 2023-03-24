@@ -20,6 +20,7 @@ static t_list	*ft_create_list(t_list *stack_a, int *entries, int ac)
 
 	i = 1;
 	j = 0;
+	head = NULL;
 	stack_a = ft_create_node(entries[j], i);
 	head = stack_a;
 	while (i < ac)
