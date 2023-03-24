@@ -23,6 +23,7 @@ typedef struct s_list
 {
 	int				data;
 	int				index;
+	int				cost;
 	struct s_list	*next;
 }				t_list;
 
