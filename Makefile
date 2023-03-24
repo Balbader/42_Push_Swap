@@ -63,6 +63,7 @@ SORT_UTILS_FILES	:=	\
 						ft_add_new_tail.c \
 						ft_create_node.c \
 						ft_find_middle_node_idx.c \
+						ft_find_biggest_node_idx.c \
 						ft_free_stack.c \
 						ft_get_last_node.c \
 						ft_get_before_last_node.c \
