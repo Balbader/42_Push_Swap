@@ -15,27 +15,13 @@
 void	ft_push_from_a_to_b(t_list **a, t_list **b)
 {
 	int	*cost_arr;
+	int cost;
 	int	a_size;
-	int	i;
-	int	j;
+	int	rot;
 
 	(void)b;
 	cost_arr = ft_init_cost_arr(a);
+	cost = 0;
 	a_size = ft_get_stack_size(*a);
-	j = 1;
-	i = 0;
-	while (i < a_size)
-	{
-		cost_arr[i] = j;
-		++j;
-		++i;
-	}
-	j = 1;
-	i = 0;
-	while (i < a_size)
-	{
-		printf("cost_arr[%d]: %d\n", j, cost_arr[i]);
-		++j;
-		++i;
-	}
 }
+
