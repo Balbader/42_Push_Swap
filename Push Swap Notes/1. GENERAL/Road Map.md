@@ -47,3 +47,14 @@ In order to find the cheapest move, I need to emulate the entire proces of pushi
 5. Store moves for each node in 'a':
    + Initiate an arr : int *costs
    + *costs* = malloc(a_size - 2) as we already pushed the 1st two a_nodes to 'b'
+
+### Calculate cost
+1. Need to store *rotate_count* for each node in *costs arr*
+2. The *cost* of moving a node from 'a' to 'b' is:
+   + *rotate_count* to bring a_node to top of 'a'
+   + *rotate_count* to bring b_node to top of 'b'
+   + *ft_pb* 
+3. 
+
+### ft_push_from_a_to_b.c
+1. 
