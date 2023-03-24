@@ -54,6 +54,7 @@ void		ft_find_doubles(int *arr, int arr_size);
 long int	ft_convert_entry(const char *av);
 
 /* SORTING */
+int			ft_check_incoming(t_list **a, int data);
 int			*ft_init_cost_arr(t_list **a);
 int			*ft_init_data_array(t_list **a);
 int			*ft_init_idx_array(t_list **a);
