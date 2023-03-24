@@ -43,7 +43,7 @@ In order to find the cheapest move, I need to emulate the entire proces of pushi
 4. Find idx of current smallest(b): *ft_find_smallest_node_idx.c* **Done**
 5. Find middle node index: *ft_find_middle_idx.c* **Done**
 6. Define the number of rotate || reverse_rotate needed to bring
-   the node to the top: *ft_define_roatate_counts.c*
+   the node to the top: *ft_define_roatate_counts.c* **Done**
 5. Store moves for each node in 'a':
    + Initiate an arr : int *costs
    + *costs* = malloc(a_size - 2) as we already pushed the 1st two a_nodes to 'b'
