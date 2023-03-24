@@ -61,6 +61,7 @@ SORT				:=	$(addprefix $(SORT_DIR), $(SORT_FILES))
 SORT_UTILS_DIR		:=	sorting_utils/
 SORT_UTILS_FILES	:=	\
 						ft_add_new_tail.c \
+						ft_define_rotate_count.c \
 						ft_create_node.c \
 						ft_find_smallest_node_idx.c \
 						ft_find_middle_node_idx.c \
