@@ -14,15 +14,16 @@
 
 void	ft_free_stack(t_list **stack)
 {
-	t_list	*temp;
+	t_list	*tmp;
 
 	if (!stack || !(*stack))
 		return ;
+	tmp = NULL;
 	while (*stack)
 	{
-		temp = (*stack)->next;
+		tmp = (*stack)->next;
 		free(*stack);
-		*stack = temp;
+		*stack = tmp;
 	}
 	*stack = NULL;
 }
