@@ -54,13 +54,13 @@ void		ft_find_doubles(int *arr, int arr_size);
 long int	ft_convert_entry(const char *av);
 
 /* SORTING */
+int			ft_calculate_cost(t_list *node, int node_idx);
 int			*ft_init_cost_arr(t_list **a);
 void		ft_push_first_2(t_list **a, t_list **b);
 void		ft_push_from_a_to_b(t_list **a, t_list **b);
 void		ft_sort_3(t_list **a);
 
 /* SORTING UTILS*/
-int			ft_define_rotate_count(t_list *stack, int node_to_move_idx);
 int			ft_get_stack_size(t_list *stack);
 int			ft_find_middle_node_idx(t_list **stack);
 int			ft_find_smallest_node_idx(t_list **stack);
