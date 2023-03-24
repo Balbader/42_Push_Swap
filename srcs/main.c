@@ -43,7 +43,7 @@ int	main(int ac, char **av)
 	entries_arr = NULL;
 	entries_arr = ft_init_entries_arr(ac, av, entries_arr);
 	a = ft_init_stack(a, entries_arr, ac - 1);
-	ft_print_stack(&a, "a");
+	// ft_print_stack(&a, "a");
 	ft_push_first_2(&a, &b);
 	ft_re_init_index(a);
 	ft_print_stack(&a, "a");
