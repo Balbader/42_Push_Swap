@@ -4,9 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "35b92f9ccbbd850a",
+        "id": "72e98d53983288c7",
         "type": "tabs",
         "children": [
+          {
+            "id": "6ce3e2980ec35227",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
           {
             "id": "4d834b7bfa9345b3",
             "type": "leaf",
@@ -18,8 +26,57 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "60643913fa583051",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Calculate Cost.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "2abe0fc04ff956fd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Calculate Cost a_nodes.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d6efd2bc9fab9a1f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Calculate Cost b_nodes.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a95669eb529bdb3b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Optimizing Rotations.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -69,7 +126,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "b8c5f558387bfe7c",
@@ -146,86 +204,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "floating": {
-    "id": "82b793cc3ffcde57",
-    "type": "floating",
-    "children": [
-      {
-        "id": "1d38473e7cc9f957",
-        "type": "window",
-        "children": [
-          {
-            "id": "fcbfd0745adf335d",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "60643913fa583051",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "Calculate Cost.md",
-                    "mode": "source",
-                    "source": false
-                  }
-                }
-              },
-              {
-                "id": "2abe0fc04ff956fd",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "Calculate Cost a_nodes.md",
-                    "mode": "source",
-                    "source": false
-                  }
-                }
-              },
-              {
-                "id": "d6efd2bc9fab9a1f",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "Calculate Cost b_nodes.md",
-                    "mode": "source",
-                    "source": false
-                  }
-                }
-              },
-              {
-                "id": "a95669eb529bdb3b",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "Optimizing Rotations.md",
-                    "mode": "source",
-                    "source": false
-                  }
-                }
-              }
-            ],
-            "currentTab": 2
-          }
-        ],
-        "direction": "vertical",
-        "x": 981,
-        "y": 32,
-        "width": 939,
-        "height": 1048,
-        "maximize": false,
-        "zoom": -1.5
-      }
-    ]
-  },
   "active": "d6efd2bc9fab9a1f",
   "lastOpenFiles": [
-    "Calculate Cost a_nodes.md",
-    "Calculate Cost b_nodes.md",
-    "Calculate Cost.md",
     "Optimizing Rotations.md",
+    "Calculate Cost b_nodes.md",
+    "Calculate Cost a_nodes.md",
+    "Calculate Cost.md",
     "Sudo Code.md",
     "1. GENERAL/Steps.md",
     "1. GENERAL/Road Map.md",

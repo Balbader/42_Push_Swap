@@ -11,10 +11,12 @@
 ### Store the cost of b_node
 + Initiate 'b_cost_arr':
   1. b_cost_arr.size = a_size
-  2. int moves = 0;
-  3. int i = 0;
-  4. int mid = a_size / 2;
-  5. while (i < a_size)
+  2. ft_check_incoming(a_node);
+  3. ft_which_b_node_to_look_for.c;
+  4. int moves = 0;
+  5. int i = 0;
+  6. int mid = a_size / 2;
+  7. while (i < a_size)
 	{
 		if (i <= mid)
 			moves = i;
