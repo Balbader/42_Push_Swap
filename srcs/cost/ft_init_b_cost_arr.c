@@ -31,30 +31,6 @@ static int	ft_cost_biggest_b(t_list **b)
 	return (0);
 }
 
-static int	ft_find_closest_node_idx(t_list **b, int data)
-{
-	t_list	*tmp;
-	int		closest_data;
-	int		closest_idx;
-
-	tmp = NULL;
-	tmp = (*b);
-	closest_data = tmp->data;
-	closest_idx = 0;
-	while (tmp)
-	{
-		if (tmp->data == data - 1)
-		{
-			closest_data = tmp->data;
-			closest_idx = tmp->index;
-		}
-		tmp = tmp->next;
-	}
-	// printf("closest_data: %d\n", closest_data);
-	// printf("closest_idx: %d\n", closest_idx);
-	return (free(tmp), closest_idx);
-}
-
 static int	ft_cost_closest_b(t_list **b, int closest_idx)
 {
 	int	b_size;
