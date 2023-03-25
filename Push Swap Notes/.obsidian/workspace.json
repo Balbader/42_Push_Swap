@@ -69,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "b8c5f558387bfe7c",
@@ -86,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Sudo Code.md",
+                "file": "Calculate Cost v.2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Sudo Code.md",
+                "file": "Calculate Cost v.2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Sudo Code.md"
+                "file": "Calculate Cost v.2.md"
               }
             }
           }
@@ -170,8 +169,33 @@
                     "source": false
                   }
                 }
+              },
+              {
+                "id": "2abe0fc04ff956fd",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Calculate Cost v.2.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              },
+              {
+                "id": "a95669eb529bdb3b",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Optimizing Rotations.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
               }
-            ]
+            ],
+            "currentTab": 1
           }
         ],
         "direction": "vertical",
@@ -184,17 +208,19 @@
       }
     ]
   },
-  "active": "4d834b7bfa9345b3",
+  "active": "2abe0fc04ff956fd",
   "lastOpenFiles": [
+    "Optimizing Rotations.md",
     "Calculate Cost.md",
+    "Calculate Cost v.2.md",
     "Sudo Code.md",
+    "1. GENERAL/Steps.md",
     "1. GENERAL/Road Map.md",
     "1. GENERAL/Find Cheapest Move.md",
-    "1. GENERAL/Steps.md",
+    "1. GENERAL/What I need.md",
     "1. GENERAL/Functions.md",
     "2. TO DO/Pick Up.md",
     "themes.md",
-    "1. GENERAL/What I need.md",
     "4. DONE/ft_sort_3.md",
     "2. TO DO/ft_sort_4.md",
     "4. DONE",
