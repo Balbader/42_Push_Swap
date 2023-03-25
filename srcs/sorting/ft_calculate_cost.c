@@ -12,7 +12,6 @@
 
 #include "push_swap.h"
 
-
 void	ft_calculate_cost(t_list **a, t_list **b)
 {
 	// int	cheapest; -> this will be returned value
