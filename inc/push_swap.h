@@ -48,6 +48,8 @@ void		ft_ss(t_list **a, t_list **b);
 
 /* COST */
 int			*ft_init_a_cost_arr(t_list **a);
+// int			*ft_init_b_cost_arr(t_list **a, t_list **b);
+int			ft_init_b_cost_arr(t_list **a, t_list **b);
 int			*ft_init_cost_arr(t_list **stack);
 int			*ft_init_data_array(t_list **stack);
 int			*ft_init_idx_array(t_list **stack);
