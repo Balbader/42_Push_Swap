@@ -32,6 +32,7 @@ COST_DIR			:=	cost/
 COST_FILES			:=	\
 						ft_calculate_cost.c \
 						ft_init_a_cost_arr.c \
+						ft_init_b_cost_arr.c \
 						ft_init_arrays.c
 COST				:=	$(addprefix $(COST_DIR), $(COST_FILES))
 
