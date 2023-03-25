@@ -1,16 +1,16 @@
-# Calculate Cost a_nodes
+
+# Calculate Cost b_nodes
 
 ## Goal
-+ Calculate the total cost of sending each a_node to b
++ Calculate the total cost of finding the rignt b_node and sending it to the top of 'b'
 + The cost should include:
-  1. The total amount of ra || rra to bring a_node to top of 'a'
-  2. The push from a to b: *ft_pb*
+  1. The total amount of rb || rrb to bring b_node to top of 'b'
 
 ## Steps
 
-### Store the cost of each a_node
-+ Initiate 'a_cost_arr':
-  1. a_cost_arr.size = a_size
+### Store the cost of b_node
++ Initiate 'b_cost_arr':
+  1. b_cost_arr.size = a_size
   2. int moves = 0;
   3. int i = 0;
   4. int mid = a_size / 2;
@@ -18,7 +18,7 @@
 	{
 		if (i <= mid)
 			moves = i;
-			cost_a[i] = moves + 1  // ('+1' is for the ft_pb)
+			cost_a[i] = moves
 		if (i > mid)
 			moves--;
 			cost_a[i] = moves + 1  // ('+1' is for the ft_pb)

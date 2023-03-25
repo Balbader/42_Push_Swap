@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Calculate Cost a_nodes.md",
+                "file": "Calculate Cost b_nodes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Calculate Cost a_nodes.md",
+                "file": "Calculate Cost b_nodes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Calculate Cost a_nodes.md"
+                "file": "Calculate Cost b_nodes.md"
               }
             }
           }
@@ -183,6 +183,18 @@
                 }
               },
               {
+                "id": "d6efd2bc9fab9a1f",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Calculate Cost b_nodes.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              },
+              {
                 "id": "a95669eb529bdb3b",
                 "type": "leaf",
                 "state": {
@@ -195,7 +207,7 @@
                 }
               }
             ],
-            "currentTab": 1
+            "currentTab": 2
           }
         ],
         "direction": "vertical",
@@ -208,10 +220,11 @@
       }
     ]
   },
-  "active": "2abe0fc04ff956fd",
+  "active": "d6efd2bc9fab9a1f",
   "lastOpenFiles": [
-    "Calculate Cost.md",
     "Calculate Cost a_nodes.md",
+    "Calculate Cost b_nodes.md",
+    "Calculate Cost.md",
     "Optimizing Rotations.md",
     "Sudo Code.md",
     "1. GENERAL/Steps.md",
