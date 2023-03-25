@@ -14,13 +14,5 @@
 
 void	ft_push_from_a_to_b(t_list **a, t_list **b)
 {
-	int	*cost_arr;
-	int cost;
-	int	a_size;
-	// int	rot;
-
-	cost_arr = ft_init_cost_arr(a);
-	cost = 0;
-	a_size = ft_get_stack_size(*a);
 	ft_calculate_cost(a, b);
 }
