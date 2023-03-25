@@ -12,4 +12,11 @@
 
 #include "push_swap.h"
 
+int	*ft_init_b_cost_arr(t_list **a, t_list **b)
+{
+	int	*b_cost_arr;
 
+	(void)b;
+	b_cost_arr = ft_init_cost_arr(a);
+	return (b_cost_arr);
+}
