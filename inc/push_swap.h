@@ -46,6 +46,12 @@ void		ft_sa(t_list **a);
 void		ft_sb(t_list **b);
 void		ft_ss(t_list **a, t_list **b);
 
+/* COST */
+int			*ft_init_a_cost_arr(t_list **a);
+int			*ft_init_cost_arr(t_list **a);
+int			*ft_init_data_array(t_list **a);
+int			*ft_init_idx_array(t_list **a);
+void		ft_calculate_cost(t_list **a, t_list **b);
 
 /* ENTRY */
 int			ft_check_entry(char *av);
@@ -55,10 +61,6 @@ long int	ft_convert_entry(const char *av);
 
 /* SORTING */
 int			ft_check_incoming(t_list **b, int data);
-int			*ft_init_cost_arr(t_list **a);
-int			*ft_init_data_array(t_list **a);
-int			*ft_init_idx_array(t_list **a);
-void		ft_calculate_cost(t_list **a, t_list **b);
 void		ft_push_first_2(t_list **a, t_list **b);
 void		ft_push_from_a_to_b(t_list **a, t_list **b);
 void		ft_sort_3(t_list **a);
