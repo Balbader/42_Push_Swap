@@ -47,7 +47,7 @@ int	main(int ac, char **av)
 	ft_push_first_2(&a, &b);
 	ft_re_init_index(a);
 	ft_push_from_a_to_b(&a, &b);
-	// ft_print_stack(&a, "a");
+	ft_print_stack(&a, "a");
 	// ft_print_stack(&b, "b");
 	ft_free_stack(&a);
 	free(entries_arr);
