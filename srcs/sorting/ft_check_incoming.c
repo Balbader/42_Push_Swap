@@ -39,7 +39,6 @@ int	ft_check_incoming(t_list **b, int data)
 
 	sml_data = ft_find_smallest_node_data(b);
 	big_data = ft_find_biggest_node_data(b);
-
 	if (ft_check_if_biggest(b, data) == 1)
 	{
 		printf("big_b: %d\n", big_data);
