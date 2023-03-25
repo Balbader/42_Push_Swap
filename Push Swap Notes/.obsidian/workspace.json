@@ -32,6 +32,18 @@
             }
           },
           {
+            "id": "4f6a6e26c8c2d951",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "1. GENERAL/Functions.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "5617ec6d2604344e",
             "type": "leaf",
             "state": {
@@ -56,7 +68,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -122,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2. TO DO/Pick Up.md",
+                "file": "1. GENERAL/Functions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2. TO DO/Pick Up.md",
+                "file": "1. GENERAL/Functions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2. TO DO/Pick Up.md"
+                "file": "1. GENERAL/Functions.md"
               }
             }
           }
@@ -183,15 +195,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ffdea96f64dcf1f2",
+  "active": "4f6a6e26c8c2d951",
   "lastOpenFiles": [
+    "1. GENERAL/Road Map.md",
+    "1. GENERAL/Functions.md",
     "Calculate Cost.md",
     "2. TO DO/Pick Up.md",
-    "1. GENERAL/Road Map.md",
-    "1. GENERAL/Find Cheapest Move.md",
     "1. GENERAL/Steps.md",
+    "1. GENERAL/Find Cheapest Move.md",
     "1. GENERAL/What I need.md",
-    "2. TO DO/ft_sort_3.md",
+    "4. DONE/ft_sort_3.md",
     "2. TO DO/ft_sort_4.md",
     "4. DONE",
     "3. DOING",
