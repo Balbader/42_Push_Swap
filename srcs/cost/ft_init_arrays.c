@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "push_swap.h"
 
-static int *ft_init_array(t_list **stack)
+static int	*ft_init_array(t_list **stack)
 {
 	int	*arr;
 	int	stack_size;
