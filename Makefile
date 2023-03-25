@@ -27,6 +27,14 @@ ENTRY_FILES			:=	\
 						ft_find_doubles.c
 ENTRY				:=	$(addprefix $(ENTRY_DIR), $(ENTRY_FILES))
 
+# Cost
+COST_DIR			:=	cost/
+COST_FILES			:=	\
+						ft_calculate_cost.c \
+						ft_init_a_cost_arr.c \
+						ft_init_arrays.c
+COST				:=	$(addprefix $(COST_DIR), $(COST_FILES))
+
 # Actions
 ACTIONS_DIR			:=	actions/
 ACTIONS_FILES		:=	\
@@ -53,9 +61,7 @@ UTILS				:=	$(addprefix $(UTILS_DIR), $(UTILS_FILES))
 # Sorting
 SORT_DIR			:=	sorting/
 SORT_FILES			:=	\
-						ft_calculate_cost.c \
 						ft_check_incoming.c \
-						ft_init_arrays.c \
 						ft_push_first_2.c \
 						ft_push_from_a_to_b.c \
 						ft_sort_3.c
@@ -86,6 +92,7 @@ INCS				:=	./inc/
 
 SRCS_DIR			:=	./srcs/
 SRCS				:=	\
+						$(COST) \
 						$(ENTRY) \
 						$(ACTIONS) \
 						$(OPER) \
