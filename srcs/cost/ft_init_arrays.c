@@ -13,28 +13,28 @@
 
 #include "push_swap.h"
 
-static int *ft_init_array(t_list **a)
+static int *ft_init_array(t_list **stack)
 {
 	int	*arr;
-	int	a_size;
+	int	stack_size;
 
-	a_size = ft_get_stack_size(*a);
+	stack_size = ft_get_stack_size(*stack);
 	arr = NULL;
-	arr = (int *)malloc(sizeof(int) * a_size);
+	arr = (int *)malloc(sizeof(int) * stack_size);
 	if (!arr)
 		return (0);
 	return (arr);
 }
 
-int	*ft_init_idx_array(t_list **a)
+int	*ft_init_idx_array(t_list **stack)
 {
 	t_list	*tmp;
 	int		*idx_arr;
 	int		i;
 
-	idx_arr = ft_init_array(a);
+	idx_arr = ft_init_array(stack);
 	tmp = NULL;
-	tmp = *a;
+	tmp = *stack;
 	i = 0;
 	while (tmp)
 	{
@@ -45,15 +45,15 @@ int	*ft_init_idx_array(t_list **a)
 	return (idx_arr);
 }
 
-int	*ft_init_data_array(t_list **a)
+int	*ft_init_data_array(t_list **stack)
 {
 	t_list	*tmp;
 	int		*data_arr;
 	int		i;
 
-	data_arr = ft_init_array(a);
+	data_arr = ft_init_array(stack);
 	tmp = NULL;
-	tmp = *a;
+	tmp = *stack;
 	i = 0;
 	while (tmp)
 	{
@@ -64,14 +64,14 @@ int	*ft_init_data_array(t_list **a)
 	return (data_arr);
 }
 
-int	*ft_init_cost_arr(t_list **a)
+int	*ft_init_cost_arr(t_list **stack)
 {
 	int	*cost_arr;
-	int	a_size;
+	int	stack_size;
 
-	a_size = ft_get_stack_size(*a);
+	stack_size = ft_get_stack_size(*stack);
 	cost_arr = NULL;
-	cost_arr = (int *)malloc(sizeof(int) * a_size);
+	cost_arr = (int *)malloc(sizeof(int) * stack_size);
 	if (!cost_arr)
 		return (0);
 	return (cost_arr);
