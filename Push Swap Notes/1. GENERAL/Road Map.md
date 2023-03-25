@@ -56,5 +56,11 @@ In order to find the cheapest move, I need to emulate the entire proces of pushi
    + *ft_pb* 
 3. 
 
-### ft_push_from_a_to_b.c
-1. 
+### ft_push_from_a_to_b.c: Steps
++ The following steps are applied for each a_node until there is no more than 3 nodes left in 'a'.
+1. Check for each a_node if (a_node > biggest(b) || a_node < smallest(b)): *ft_check_incoming.c*
+2. if : yes
+   + Find biggest(b) idx
+   + is biggest(b) at top of 'b'
+   + yes: cool
+   + no: calculate cost to bring biggest(b) to top of 'b'
