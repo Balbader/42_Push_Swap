@@ -32,3 +32,6 @@
 ## What I need
 
 1. ft_init_a_cost_arr.c
+2. ft_biggest.c : fct to calculate cost to bring biggest node to top of 'b'
+3. ft_closest.c : fct to calculate cost to bring the closest && < incoming to top of 'b'
+4. 
