@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Calculate Cost v.2.md",
+                "file": "Calculate Cost a_nodes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Calculate Cost v.2.md",
+                "file": "Calculate Cost a_nodes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Calculate Cost v.2.md"
+                "file": "Calculate Cost a_nodes.md"
               }
             }
           }
@@ -176,7 +176,7 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "Calculate Cost v.2.md",
+                    "file": "Calculate Cost a_nodes.md",
                     "mode": "source",
                     "source": false
                   }
@@ -210,9 +210,9 @@
   },
   "active": "2abe0fc04ff956fd",
   "lastOpenFiles": [
-    "Optimizing Rotations.md",
     "Calculate Cost.md",
-    "Calculate Cost v.2.md",
+    "Calculate Cost a_nodes.md",
+    "Optimizing Rotations.md",
     "Sudo Code.md",
     "1. GENERAL/Steps.md",
     "1. GENERAL/Road Map.md",
