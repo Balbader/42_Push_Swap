@@ -10,9 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.c"
+#include "push_swap.h"
 
-static int	*ft_get_lesser_arr(t_list **b, int a_node_data)
+/*
+	returns an arr with the result of the equation:
+	(a_node_data - (*b)->data) for each b_node
+*/
+static int	*ft_get_lesser_arr(t_list **b, int incoming)
 {
 	t_list	*tmp;
 	int		*res;
@@ -24,24 +28,29 @@ static int	*ft_get_lesser_arr(t_list **b, int a_node_data)
 	i = 0;
 	while (tmp)
 	{
-		res[i] = a_node_data - tmp->data;
+		res[i] = incoming - tmp->data;
 		++i;
 		tmp = tmp->next;
 	}
 	return (free(tmp), res);
 }
 
-
-static int	ft_get_lesser_node_idx(t_list **b, int *res)
+/*
+	returns the idx where the "lesser_closest" to incoming is located in 'b'
+*/
+int	ft_find_closest_node_idx(t_list **b, int incoming)
 {
 	int	*b_idx_arr;
+	int	*res;
 	int	closest_res;
 	int	closest_idx;
 	int	i;
 
 	closest_idx = 0;
 	closest_res = INT_MAX;
-	b_idx_arr = ft_init_idx_arrayy(b);
+	res = ft_get_lesser_arr(b, incoming);
+	b_idx_arr = ft_init_idx_array(b);
+	i = 0;
 	while (res[i])
 	{
 		if (res[i] > 0 && res[i] < closest_res)
@@ -52,10 +61,4 @@ static int	ft_get_lesser_node_idx(t_list **b, int *res)
 		++i;
 	}
 	return (free(res), b_idx_arr[closest_idx]);
-}
-
-
-static int	ft_find_closest_node_idx(int b_idx_arr, t_list **b)
-{
-	
 }
