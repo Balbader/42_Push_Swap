@@ -19,20 +19,29 @@
 static int	*ft_get_lesser_arr(t_list **b, int incoming)
 {
 	t_list	*tmp;
-	int		*res;
+	int		*res_arr;
+	int		res;
 	int		i;
 
-	res = ft_init_cost_arr(b);
+	res_arr = ft_init_cost_arr(b);
+	res = 0;
 	tmp = NULL;
 	tmp = *b;
 	i = 0;
 	while (tmp)
 	{
-		res[i] = incoming - tmp->data;
+		if (incoming < 0)
+		{
+			res = incoming - tmp->data;
+			res *= -1;
+		}
+		else
+			res = incoming - tmp->data;
+		res_arr[i] = res;
 		++i;
 		tmp = tmp->next;
 	}
-	return (free(tmp), res);
+	return (free(tmp), res_arr);
 }
 
 /*

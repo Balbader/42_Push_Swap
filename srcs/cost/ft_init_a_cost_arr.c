@@ -12,6 +12,11 @@
 
 #include "push_swap.h"
 
+/*
+ * This function calculates the tot count of ra || rra to bring each a_node to
+ * the top of 'a'
+*/
+
 int	*ft_init_a_cost_arr(t_list **a)
 {
 	int	*a_cost_arr;
@@ -29,12 +34,12 @@ int	*ft_init_a_cost_arr(t_list **a)
 		if (i <= mid)
 		{
 			moves = i;
-			a_cost_arr[i] = moves + 1;
+			a_cost_arr[i] = moves;
 		}
 		if (i > mid)
 		{
 			moves--;
-			a_cost_arr[i] = moves + 1;
+			a_cost_arr[i] = (moves) * -1;
 		}
 		++i;
 	}

@@ -21,14 +21,16 @@ static int	ft_cost_biggest_b(t_list **b)
 
 	cost = 0;
 	biggest_idx = ft_find_biggest_node_idx(b);
+	printf("biggest_idx: %d\n", biggest_idx);
 	b_size = ft_get_stack_size(*b);
 	if (b_size > 2)
 	{
 		mid = b_size / 2;
+		printf("mid_idx: %d\n", mid);
 		if (biggest_idx <= mid)
 			cost = biggest_idx - 1;
-		else if (biggest_idx > mid)
-			cost = (b_size - (biggest_idx) + 1) * -1;
+		if (biggest_idx > mid)
+			cost = ((b_size - biggest_idx) + 1) * -1;
 	}
 	return (cost);
 }
@@ -70,13 +72,21 @@ int	*ft_init_b_cost_arr(t_list **a, t_list **b)
 	i = 0;
 	while (i < a_size)
 	{
+		printf("------------------------> %d\n", i);
 		if (ft_check_incoming(b, a_data_arr[i]) == 1)
+		{
+			printf("ft_check_incoming: %d\n",
+				ft_check_incoming(b, a_data_arr[i]));
 			b_cost_arr[i] = ft_cost_biggest_b(b);
+		}
 		if (ft_check_incoming(b, a_data_arr[i]) == 0)
 		{
+			printf("ft_check_incoming: %d\n",
+				ft_check_incoming(b, a_data_arr[i]));
 			closest_idx = ft_find_closest_node_idx(b, a_data_arr[i]);
 			b_cost_arr[i] = ft_cost_closest_b(b, closest_idx);
 		}
+		printf("\n");
 		++i;
 	}
 	return (b_cost_arr);
