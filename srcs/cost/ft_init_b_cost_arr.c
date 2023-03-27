@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+// This is wrong: should return the number of ra || rra
 static int	ft_cost_biggest_b(t_list **b)
 {
 	int	biggest_idx;
@@ -31,6 +32,7 @@ static int	ft_cost_biggest_b(t_list **b)
 	return (0);
 }
 
+// This is wrong: should return the number of ra || rra
 static int	ft_cost_closest_b(t_list **b, int closest_idx)
 {
 	int	b_size;
@@ -54,7 +56,7 @@ int	ft_init_b_cost_arr(t_list **a, t_list **b)
 	(void)a;
 	ft_re_init_index(*b);
 	biggest_b_cost = ft_cost_biggest_b(b);
-	closest_idx = ft_find_closest_node_idx(b, 18);
+	closest_idx = ft_find_closest_node_idx(b, -18);
 	closest_idx_cost = ft_cost_closest_b(b, closest_idx);
 	printf("biggest_b_cost: %d\n", biggest_b_cost);
 	printf("closest_idx: %d\n", closest_idx);
