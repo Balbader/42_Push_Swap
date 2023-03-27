@@ -53,7 +53,7 @@ int			ft_find_closest_node_idx(t_list **b, int incoming);
 int			*ft_init_cost_arr(t_list **stack);
 int			*ft_init_data_array(t_list **stack);
 int			*ft_init_idx_array(t_list **stack);
-void		ft_calculate_cost(t_list **a, t_list **b);
+int			*ft_calculate_cost_arr(t_list **a, t_list **b);
 
 /* ENTRY */
 int			ft_check_entry(char *av);
