@@ -8,14 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "6ce3e2980ec35227",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
             "id": "4d834b7bfa9345b3",
             "type": "leaf",
             "state": {
@@ -76,7 +68,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -207,10 +199,10 @@
   "active": "d6efd2bc9fab9a1f",
   "lastOpenFiles": [
     "Optimizing Rotations.md",
-    "Calculate Cost b_nodes.md",
-    "Calculate Cost a_nodes.md",
     "Calculate Cost.md",
     "Sudo Code.md",
+    "Calculate Cost a_nodes.md",
+    "Calculate Cost b_nodes.md",
     "1. GENERAL/Steps.md",
     "1. GENERAL/Road Map.md",
     "1. GENERAL/Find Cheapest Move.md",

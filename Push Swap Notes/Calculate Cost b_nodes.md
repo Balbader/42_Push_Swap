@@ -41,4 +41,8 @@
    + if (b_node < mid.idx) : ra
    + if (b_node > mid.idx) : rra
 2. verify the calculation of cost calculation for b_node
-3. 
+   + **ft_cost_biggest_b.c**
+   + **ft_cost_closest_b.c**
+
+## Leaks
+1. *ft_find_closest_node_idx.c* : need to free 'b_idx_arr'
