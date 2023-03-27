@@ -35,3 +35,10 @@
 2. ft_biggest.c : fct to calculate cost to bring biggest node to top of 'b'
 3. ft_closest.c : fct to calculate cost to bring the closest && < incoming to top of 'b'
 4. 
+
+## To Check
+1. The cost of moving b_node to top: 
+   + if (b_node < mid.idx) : ra
+   + if (b_node > mid.idx) : rra
+2. verify the calculation of cost calculation for b_node
+3. 
