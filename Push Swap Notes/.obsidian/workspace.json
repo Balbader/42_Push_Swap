@@ -68,7 +68,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -118,8 +118,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "b8c5f558387bfe7c",
@@ -135,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Calculate Cost b_nodes.md",
+                "file": "Calculate Cost.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -152,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Calculate Cost b_nodes.md",
+                "file": "Calculate Cost.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -175,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Calculate Cost b_nodes.md"
+                "file": "Calculate Cost.md"
               }
             }
           }
@@ -196,13 +195,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d6efd2bc9fab9a1f",
+  "active": "60643913fa583051",
   "lastOpenFiles": [
+    "Calculate Cost a_nodes.md",
+    "Calculate Cost b_nodes.md",
     "Optimizing Rotations.md",
     "Calculate Cost.md",
     "Sudo Code.md",
-    "Calculate Cost a_nodes.md",
-    "Calculate Cost b_nodes.md",
     "1. GENERAL/Steps.md",
     "1. GENERAL/Road Map.md",
     "1. GENERAL/Find Cheapest Move.md",
