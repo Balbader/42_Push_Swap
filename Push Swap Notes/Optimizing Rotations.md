@@ -7,10 +7,23 @@
   2. (rra - rrb) -> rrr
 
 ## What I know
-+ a_node.idx
-  1. if <= mid.idx -> ra : ra.count = a_node.idx - 1  /*This does not count the ft_pb*/
-  2. if > mid.idx -> rra : rra.count = a_node.idx + 1 /*This does not count the ft_pb*/
++ a_cost: **(a_cost = a_cost - 1)** // to not include the ft_pb
+  1. if (a_cost > 0) -> ra
+  2. if (a_cost < 0) -> rra
++ b_cost:
+  1. if (a_cost > 0) -> ra
+  2. if (a_cost < 0) -> rra
 
-+ b_node.idx
-  1. if <= mid.idx -> rb : rb.count = b_node.idx - 1  /*This does not count the ft_pb*/
-  2. if > mid.idx -> rrb : rrb.count = b_node.idx + 1 /*This does not count the ft_pb*/
+### How to caluculate rr || rrr
+  
+## What I need
+1. tot_rr_count
+2. tot_rrr_count
+3. ra_count || rra_count
+4. rb_count || rrb_count
+
+## Optimized Recipe to push a_node to 'b'
+1. ft_rr  x  tot_rr_count
+2. ft_ra  x  ra_count || ft_rra  x  rra_count
+3. ft_rb  x  rb_count || ft_rrb  x  rrb_count
+4. ft_pb
