@@ -30,7 +30,7 @@ ENTRY				:=	$(addprefix $(ENTRY_DIR), $(ENTRY_FILES))
 # Cost
 COST_DIR			:=	cost/
 COST_FILES			:=	\
-						ft_calculate_cost.c \
+						ft_calculate_cost_arr.c \
 						ft_init_a_cost_arr.c \
 						ft_init_b_cost_arr.c \
 						ft_init_b_cost_arr_utils.c \
