@@ -51,7 +51,6 @@ int	*ft_calculate_cost_arr(t_list **a, t_list **b)
 	int	*b_cost_arr;
 	int	*cost_arr;
 	int	i;
-	int j;
 
 	ft_re_init_index(*b);
 	a_size = ft_get_stack_size(*a);
@@ -61,7 +60,6 @@ int	*ft_calculate_cost_arr(t_list **a, t_list **b)
 	if (!cost_arr)
 		return (0);
 	i = 0;
-	j = 1;
 	while (i < a_size)
 	{
 		if ((ft_check_costs(a_cost_arr[i], b_cost_arr[i]) == 1))
@@ -70,7 +68,6 @@ int	*ft_calculate_cost_arr(t_list **a, t_list **b)
 			cost_arr[i] = ((ft_check_cost(a_cost_arr[i])) + ft_check_cost(b_cost_arr[i]));
 		(*a) = (*a)->next;
 		++i;
-		++j;
 	}
 	return (free(a_cost_arr), free(b_cost_arr), cost_arr);
 }
