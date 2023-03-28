@@ -65,7 +65,8 @@ int	*ft_calculate_cost_arr(t_list **a, t_list **b)
 		if ((ft_check_costs(a_cost_arr[i], b_cost_arr[i]) == 1))
 			cost_arr[i] = ft_calculate_cost(a_cost_arr[i], b_cost_arr[i]);
 		else
-			cost_arr[i] = ((ft_check_cost(a_cost_arr[i])) + ft_check_cost(b_cost_arr[i]));
+			cost_arr[i] = ((ft_check_cost(a_cost_arr[i]))
+					+ ft_check_cost(b_cost_arr[i]));
 		(*a) = (*a)->next;
 		++i;
 	}
