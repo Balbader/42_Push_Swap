@@ -50,7 +50,7 @@ static int	ft_cost_closest_b(t_list **b, int closest_idx)
 }
 
 /*
- * Return an array containg the cost of bringing b_node to the top of 'b' for
+ * Returns an array containg the cost of bringing b_node to the top of 'b' for
  * each b_node based on the a_node coming in
 */
 int	*ft_init_b_cost_arr(t_list **a, t_list **b)
