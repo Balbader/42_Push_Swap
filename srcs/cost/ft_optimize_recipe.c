@@ -12,7 +12,10 @@
 
 #include "push_swap.h"
 
+/*
+ *  1.
+*/
 char	*ft_optimize_recipe(char *opt_recipe)
 {
-
+	return (opt_recipe);
 }
