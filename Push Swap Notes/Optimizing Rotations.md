@@ -15,12 +15,23 @@
   2. if (b_cost < 0) -> rra
 
 ### How to caluculate rr || rrr
+## Recipe
+1. rr :
++ if (a_cost > 0 && b_cost > 0)
+	if (a_cost > b_cost)
+		 rr = b_cost;
+	if (b_cost > a_cost)
+		  rr = a_cost
++ if (a_cost < 0 && b_cost < 0)
+	if (a_cost < b_cost)
+		 rrr = b_cost;
+	if (b_cost < a_cost)
+		  rrr = a_cost
   
 ## What I need
-1. tot_rr_count
-2. tot_rrr_count
-3. ra_count || rra_count
-4. rb_count || rrb_count
+1. fct to check:
+	+ if (a_cost > 0 && b_cost > 0)
+	+ if (a_cost < 0 && b_cost < 0)
 
 ## Optimized Recipe to push a_node to 'b'
 1. ft_rr  x  tot_rr_count
@@ -30,9 +41,6 @@
 
 ## Need to verify: cost calculated without ft_pb
 1. incoming < 0 + incming **NOT** smallest(b) : find closest lesser b_node: PASS
-
 2. incoming < 0 + incming **IS** smallest(b) : find biggest b_node : PASS
-
 3. incoming > 0 + incming **NOT** biggest(b) : find closest lesser b_node : PASS
-
 4. incoming > 0 + incming **IS** biggest(b) : find biggest b_node : PASS
