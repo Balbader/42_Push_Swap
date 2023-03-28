@@ -27,3 +27,12 @@
 2. ft_ra  x  ra_count || ft_rra  x  rra_count
 3. ft_rb  x  rb_count || ft_rrb  x  rrb_count
 4. ft_pb
+
+## Need to verify
+1. incoming < 0 + incming **NOT** (biggest(b) or smallest(b)) : find closest lesser b_node
+
+2. incoming < 0 + incming **IS** (biggest(b) or smallest(b)) : find biggest b_node
+
+3. incoming > 0 + incming **NOT** (biggest(b) or smallest(b)) : find closest lesser b_node
+
+4. incoming > 0 + incming **IS** (biggest(b) or smallest(b)) : find biggest b_node
