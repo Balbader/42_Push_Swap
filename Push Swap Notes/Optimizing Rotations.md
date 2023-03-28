@@ -11,8 +11,8 @@
   1. if (a_cost > 0) -> ra
   2. if (a_cost < 0) -> rra
 + b_cost:
-  1. if (a_cost > 0) -> ra
-  2. if (a_cost < 0) -> rra
+  1. if (b_cost > 0) -> ra
+  2. if (b_cost < 0) -> rra
 
 ### How to caluculate rr || rrr
   
@@ -28,11 +28,11 @@
 3. ft_rb  x  rb_count || ft_rrb  x  rrb_count
 4. ft_pb
 
-## Need to verify
-1. incoming < 0 + incming **NOT** (biggest(b) or smallest(b)) : find closest lesser b_node
+## Need to verify: cost calculated without ft_pb
+1. incoming < 0 + incming **NOT** smallest(b) : find closest lesser b_node: PASS
 
-2. incoming < 0 + incming **IS** (biggest(b) or smallest(b)) : find biggest b_node
+2. incoming < 0 + incming **IS** smallest(b) : find biggest b_node : PASS
 
-3. incoming > 0 + incming **NOT** (biggest(b) or smallest(b)) : find closest lesser b_node
+3. incoming > 0 + incming **NOT** biggest(b) : find closest lesser b_node : PASS
 
-4. incoming > 0 + incming **IS** (biggest(b) or smallest(b)) : find biggest b_node
+4. incoming > 0 + incming **IS** biggest(b) : find biggest b_node : PASS
