@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-static int *ft_init_entries_arr(int ac, char **av, int *arr)
+static int	*ft_init_entries_arr(int ac, char **av, int *arr)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	arr = NULL;
 	arr = (int *)malloc(sizeof(int) * (ac - 1));
@@ -32,12 +32,11 @@ static int *ft_init_entries_arr(int ac, char **av, int *arr)
 	return (arr);
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-	t_list *a;
-	t_list *b;
-	// int nb;
-	int *entries_arr;
+	t_list	*a;
+	t_list	*b;
+	int		*entries_arr;
 
 	a = NULL;
 	b = NULL;
@@ -47,10 +46,8 @@ int main(int ac, char **av)
 	ft_push_first_2(&a, &b);
 	ft_re_init_index(a);
 	ft_push_from_a_to_b(&a, &b);
-
 	ft_re_init_index(b);
 	ft_print_stack(&b, "b");
-
 	ft_free_stack(&a);
 	free(entries_arr);
 	ft_free_stack(&b);
