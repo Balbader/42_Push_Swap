@@ -31,10 +31,13 @@ ENTRY				:=	$(addprefix $(ENTRY_DIR), $(ENTRY_FILES))
 COST_DIR			:=	cost/
 COST_FILES			:=	\
 						ft_calculate_cost_arr.c \
+						ft_find_rr_or_rrr_count.c \
 						ft_init_a_cost_arr.c \
+						ft_init_arrays.c \
 						ft_init_b_cost_arr.c \
 						ft_init_b_cost_arr_utils.c \
-						ft_init_arrays.c
+						ft_optimize_cost_utils.c \
+						ft_optimized_instructions.c
 COST				:=	$(addprefix $(COST_DIR), $(COST_FILES))
 
 # Actions
