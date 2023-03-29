@@ -54,6 +54,11 @@ int			*ft_init_cost_arr(t_list **stack);
 int			*ft_init_data_array(t_list **stack);
 int			*ft_init_idx_array(t_list **stack);
 int			*ft_calculate_cost_arr(t_list **a, t_list **b);
+int			ft_optimize_cost(int a_cost, int b_cost);
+int			ft_is_pos(int a_cost, int b_cost);
+int			ft_is_neg(int a_cost, int b_cost);
+int			ft_find_rr_or_rrr_count(int	a_cost, int b_cost);
+int			ft_optimized_instructions(int a_cost, int b_cost);
 
 /* ENTRY */
 int			ft_check_entry(char *av);
