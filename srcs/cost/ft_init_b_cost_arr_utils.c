@@ -34,6 +34,7 @@ static int	*ft_get_lesser_arr(t_list **b, int incoming)
 		{
 			res = incoming - tmp->data;
 			res *= -1;
+			printf("res: %d\n", res);
 		}
 		else
 			res = incoming - tmp->data;
@@ -69,5 +70,6 @@ int	ft_find_closest_node_idx(t_list **b, int incoming)
 		}
 		++i;
 	}
+	// printf("b_idx_arr[%d]: %d\n", closest_idx, b_idx_arr[closest_idx]);
 	return (free(res), b_idx_arr[closest_idx]);
 }

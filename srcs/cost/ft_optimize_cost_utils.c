@@ -1,18 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_optimize_cost.c                                 :+:      :+:    :+:   */
+/*   ft_optimize_cost_utils.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baalbade <baalbade@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 18:10:16 by baalbade          #+#    #+#             */
-/*   Updated: 2023/03/29 18:10:18 by baalbade         ###   ########.fr       */
+/*   Created: 2023/03/29 20:29:09 by baalbade          #+#    #+#             */
+/*   Updated: 2023/03/29 20:29:12 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-char	*ft_optimize_cost(char *opt_recipe)
-{
-	return (opt_recipe);
-}
