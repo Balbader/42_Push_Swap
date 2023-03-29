@@ -11,3 +11,13 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	ft_is_pos(int a_cost, int b_cost)
+{
+	return (a_cost > 0 && b_cost > 0);
+}
+
+int	ft_is_neg(int a_cost, int b_cost)
+{
+	return (a_cost < 0 && b_cost < 0);
+}
