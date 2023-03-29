@@ -26,22 +26,21 @@ static int	ft_check_cost(int cost)
 
 /*
  * I. Calculates the total cost of puttng 'a' and 'b' in the right order for each
- *    a_node in 'a'.
- * II. '+1' added to 'opt_cost' is for ft_pb
+ *    a_node in 'a'. This does not include the '+1' for ft_pb.
 */
 static int	ft_calculate_cost(int a_cost, int b_cost)
 {
 	int	opt_cost;
 
-	if (ft_check_costs(a_cost, b_cost) == 1 && a_cost > b_cost)
+	if (a_cost > b_cost && ft_check_costs(a_cost, b_cost) == 1)
 		opt_cost = a_cost - b_cost;
-	if (ft_check_costs(a_cost, b_cost) == 1 && a_cost < b_cost)
+	if (a_cost < b_cost && ft_check_costs(a_cost, b_cost) == 1)
 		opt_cost = b_cost - a_cost;
-	if (ft_check_costs(a_cost, b_cost) == 0 && a_cost < b_cost)
+	if (a_cost < b_cost && ft_check_costs(a_cost, b_cost) == 0)
 		opt_cost = ((b_cost - a_cost) * -1);
-	if (ft_check_costs(a_cost, b_cost) == 0 && a_cost > b_cost)
+	if (a_cost > b_cost && ft_check_costs(a_cost, b_cost) == 0)
 		opt_cost = ((a_cost - b_cost) * -1);
-	return (opt_cost + 1);
+	return (opt_cost);
 }
 
 int	*ft_calculate_cost_arr(t_list **a, t_list **b)
@@ -51,6 +50,11 @@ int	*ft_calculate_cost_arr(t_list **a, t_list **b)
 	int	*b_cost_arr;
 	int	*cost_arr;
 	int	i;
+
+	//==========================================
+	int *a_data = ft_init_data_array(a);
+	int *a_idx = ft_init_idx_array(a);
+	//==========================================
 
 	ft_re_init_index(*b);
 	a_size = ft_get_stack_size(*a);
@@ -62,11 +66,30 @@ int	*ft_calculate_cost_arr(t_list **a, t_list **b)
 	i = 0;
 	while (i < a_size)
 	{
+		// printf("-------------------------------> %d\n", a_data[i]);
 		if ((ft_check_costs(a_cost_arr[i], b_cost_arr[i]) == 1))
-			cost_arr[i] = ft_calculate_cost(a_cost_arr[i], b_cost_arr[i]);
+		{
+			cost_arr[i] = ft_optimized_instructions(a_cost_arr[i], b_cost_arr[i]);
+			printf("-------------------------------> %d\n", a_data[i]);
+			printf("idx: %d\n", a_idx[i]);
+			printf("a_cost: %d\n", a_cost_arr[i]);
+			printf("b_cost: %d\n", b_cost_arr[i]);
+			// printf("cost_arr[%d]: %d\n", i, cost_arr[i]);
+			printf("opti_count: %d\n", cost_arr[i]);
+			printf("\n");
+		}
 		else
+		{
 			cost_arr[i] = ((ft_check_cost(a_cost_arr[i]))
 					+ ft_check_cost(b_cost_arr[i]));
+			printf("-------------------------------> %d\n", a_data[i]);
+			printf("idx: %d\n", a_idx[i]);
+			printf("a_cost: %d\n", a_cost_arr[i]);
+			printf("b_cost: %d\n", b_cost_arr[i]);
+			printf("cost_arr[%d]: %d\n", i, cost_arr[i]);
+			// printf("opti_count: %d\n", cost_arr[i]);
+			printf("\n");
+		}
 		(*a) = (*a)->next;
 		++i;
 	}
