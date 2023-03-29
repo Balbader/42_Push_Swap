@@ -20,13 +20,17 @@
 + if (a_cost > 0 && b_cost > 0)
 	if (a_cost > b_cost)
 		 rr = b_cost;
+		 ra = a_cost - b_cost;
 	if (b_cost > a_cost)
 		  rr = a_cost
+		  rb = b_cost - a_cost;
 + if (a_cost < 0 && b_cost < 0)
 	if (a_cost < b_cost)
 		 rrr = b_cost;
+		 rra = a_cost - b_cost;
 	if (b_cost < a_cost)
 		  rrr = a_cost
+		  rrb = b_cost - a_cost;
   
 ## What I need
 1. fct to check:
