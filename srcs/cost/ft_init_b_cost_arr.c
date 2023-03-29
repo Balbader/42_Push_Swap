@@ -42,13 +42,8 @@ static int	ft_cost_closest_b(t_list **b, int closest_idx)
 	cost = 0;
 	b_size = ft_get_stack_size(*b);
 	mid = b_size / 2;
-	// printf("mid_idx: %d\n", mid);
 	if (closest_idx <= mid)
-	{
 		cost = closest_idx - 1;
-		// printf("closest_idx: %d\n", closest_idx);
-		// printf("\n");
-	}
 	else if (closest_idx > mid)
 		cost = ((b_size - closest_idx) + 1) * -1;
 	return (cost);
@@ -81,13 +76,6 @@ int	*ft_init_b_cost_arr(t_list **a, t_list **b)
 		{
 			closest_idx = ft_find_closest_node_idx(b, a_data_arr[i]);
 			b_cost_arr[i] = ft_cost_closest_b(b, closest_idx);
-			printf("a_data_arr[%d]: %d\n", i, a_data_arr[i]);
-			printf("closest_idx: %d\n", closest_idx);
-			if (b_cost_arr[i] < 0)
-				printf("b_rrr_cost: %d\n", b_cost_arr[i]);
-			if (b_cost_arr[i] > 0)
-				printf("b_rr_cost: %d\n", b_cost_arr[i]);
-			printf("\n");
 		}
 		++i;
 	}
