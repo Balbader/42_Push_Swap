@@ -32,8 +32,15 @@
 void	ft_do_cheapest_a(t_list **a, t_list **b)
 {
 	int	*cost_arr;
+	int	a_size;
 	// (void)a;
 	// (void)b;
 	cost_arr = NULL;
 	cost_arr = ft_calculate_cost_arr(a, b);
+	a_size = ft_get_stack_size(*a);
+	printf("a_size: %d\n", a_size);
+	for (int i = 0; i < a_size; ++i) {
+		printf("cost_arr[%d]: %d\n", i, cost_arr[i]);
+	}
+	printf("ft_do_cheapest_a!\n");
 }
