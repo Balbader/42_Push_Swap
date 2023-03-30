@@ -43,3 +43,32 @@ int	ft_find_cheapest_a(t_list **a, t_list **b)
 	printf("cheapest a_node idx: %d\n", cheapest_idx);
 	return (free(cost_arr), cheapest_idx);
 }
+
+//==========================================
+// int *a_data = ft_init_data_array(a);
+// int *a_idx = ft_init_idx_array(a);
+//==========================================
+
+//==========================================
+// int *instructions = NULL;
+// int *reg = NULL;
+//==========================================
+
+// instructions = ft_optimized_instructions(a_cost_arr[i], b_cost_arr[i]);
+// printf("-------------------------------> %d\n", a_data[i]);
+// printf("idx: %d\n", a_idx[i]);
+// printf("a_cost: %d\n", a_cost_arr[i]);
+// printf("b_cost: %d\n", b_cost_arr[i]);
+// printf("cost_arr[%d]: %d\n", i, cost_arr[i]);
+// printf("opt_instructions = [%d, %d, %d]\n", instructions[0],
+// 		instructions[1], instructions[2]);
+// printf("\n");
+
+// reg = ft_reg_instructions(a_cost_arr[i], b_cost_arr[i]);
+// printf("-------------------------------> %d\n", a_data[i]);
+// printf("idx: %d\n", a_idx[i]);
+// printf("a_cost: %d\n", a_cost_arr[i]);
+// printf("b_cost: %d\n", b_cost_arr[i]);
+// printf("cost_arr[%d]: %d\n", i, cost_arr[i]);
+// printf("reg_instructions = [%d, %d, %d]\n", reg[0], reg[1], reg[2]);
+// printf("\n");
