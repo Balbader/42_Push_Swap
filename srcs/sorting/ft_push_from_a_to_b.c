@@ -14,5 +14,5 @@
 
 void	ft_push_from_a_to_b(t_list **a, t_list **b)
 {
-	ft_find_cheapest_a(a, b);
+	ft_find_cheapest_a(a, b); // returns the idx of the cheapest a_node
 }
