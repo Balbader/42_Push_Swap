@@ -39,7 +39,6 @@ int	ft_find_cheapest_a(t_list **a, t_list **b)
 		}
 		++i;
 	}
-	printf("cheapest a_node val: %d\n", cheapest);
 	printf("cheapest a_node idx: %d\n", cheapest_idx);
 	return (free(cost_arr), cheapest_idx);
 }

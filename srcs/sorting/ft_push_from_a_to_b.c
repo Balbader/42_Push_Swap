@@ -14,6 +14,21 @@
 
 void	ft_push_from_a_to_b(t_list **a, t_list **b)
 {
-	ft_find_cheapest_a(a, b); // returns the idx of the cheapest a_node
-	ft_do_cheapest_a(a, b);
+	int	*a_cost_arr;
+	int	*b_cost_arr;
+	int	a_size;
+	int	i;
+
+	a_size = ft_get_stack_size(*a);
+	i = 0;
+	while (i < a_size)
+	{
+		a_cost_arr = ft_init_a_cost_arr(a);
+		b_cost_arr = ft_init_b_cost_arr(a, b);
+		printf("a_cost_arr[%d]: %d\n", i, a_cost_arr[0]);
+		printf("b_cost_arr[%d]: %d\n", i, b_cost_arr[0]);
+		ft_do_cheapest_a(a, b, a_cost_arr[i], b_cost_arr[i]);
+		printf("\n");
+		++i;
+	}
 }
