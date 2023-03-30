@@ -19,6 +19,8 @@ static int	ft_find_rr_or_rrr_count(int a_cost, int b_cost)
 	opti_count = 0;
 	if (ft_is_pos(a_cost, b_cost) == 1)
 	{
+		if (a_cost == b_cost)
+			opti_count = a_cost;
 		if (a_cost > b_cost)
 			opti_count = b_cost;
 		if (b_cost > a_cost)
@@ -26,18 +28,14 @@ static int	ft_find_rr_or_rrr_count(int a_cost, int b_cost)
 	}
 	if (ft_is_neg(a_cost, b_cost) == 1)
 	{
-		if (a_cost < b_cost)
-		{
-			opti_count = b_cost;
-			if (opti_count > 0)
-				opti_count *= -1;
-		}
-		if (b_cost < a_cost)
-		{
+		if (a_cost == b_cost)
 			opti_count = a_cost;
-			if (opti_count > 0)
-				opti_count *= -1;
-		}
+		if (a_cost < b_cost)
+			opti_count = b_cost;
+		if (b_cost < a_cost)
+			opti_count = a_cost;
+		if (opti_count > 0)
+			opti_count *= -1;
 	}
 	return (opti_count);
 }
@@ -58,12 +56,10 @@ static int	ft_get_next_digit(int a_cost, int b_cost)
 	{
 		if (a_cost < b_cost)
 			next = a_cost - b_cost;
-			if (next < 0)
-				next *= -1;
 		if (b_cost < a_cost)
 			next = b_cost - a_cost;
-			if (next < 0)
-				next *= -1;
+		if (next < 0)
+			next *= -1;
 	}
 	return (next);
 }
