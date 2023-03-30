@@ -24,31 +24,43 @@ static int	ft_check_cost(int cost)
 	return (cost);
 }
 
-int	*ft_calculate_cost_arr(t_list **a, t_list **b)
+static int	*ft_calculate_cost(int *cost_arr, t_list **a, t_list **b)
 {
-	int	a_size;
-	int	*a_cost_arr;
-	int	*b_cost_arr;
-	int	*cost_arr;
-	int	i;
+	t_list	*tmp;
+	int		*a_cost_arr;
+	int		*b_cost_arr;
+	int		tmp_size;
+	int		i;
 
+	tmp = NULL;
+	tmp = (*a);
 	ft_re_init_index(*b);
-	a_size = ft_get_stack_size(*a);
+	tmp_size = ft_get_stack_size(tmp);
 	a_cost_arr = ft_init_a_cost_arr(a);
 	b_cost_arr = ft_init_b_cost_arr(a, b);
-	cost_arr = (int *)malloc(sizeof(int) * a_size);
-	if (!cost_arr)
-		return (0);
 	i = 0;
-	while (i < a_size)
+	while (i < tmp_size)
 	{
 		if ((ft_check_costs(a_cost_arr[i], b_cost_arr[i]) == 1))
 			cost_arr[i] = ft_optimize_cost(a_cost_arr[i], b_cost_arr[i]);
 		else
 			cost_arr[i] = ((ft_check_cost(a_cost_arr[i]))
 					+ ft_check_cost(b_cost_arr[i]) + 1);
-		(*a) = (*a)->next;
+		tmp = tmp->next;
 		++i;
 	}
-	return (free(a_cost_arr), free(b_cost_arr), cost_arr);
+	return (free(tmp), free(a_cost_arr), free(b_cost_arr), cost_arr);
+}
+
+int	*ft_calculate_cost_arr(t_list **a, t_list **b)
+{
+	int	*cost_arr;
+	int	a_size;
+
+	a_size = ft_get_stack_size(*a);
+	cost_arr = (int *)malloc(sizeof(int) * a_size);
+	if (!cost_arr)
+		return (0);
+	cost_arr = ft_calculate_cost(cost_arr, a, b);
+	return (cost_arr);
 }
