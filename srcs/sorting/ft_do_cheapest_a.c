@@ -12,24 +12,28 @@
 
 #include "push_swap.h"
 
-static int	*ft_get_instructions(int a_cost, int b_cost)
-{
-	int	*instructions;
+// static int	*ft_get_instructions(int a_cost, int b_cost)
+// {
+// 	int	*instructions;
 
-	instructions = NULL;
-	if (ft_check_costs(a_cost, b_cost) == 1)
-		instructions = ft_optimized_instructions(a_cost, b_cost);
-	if (ft_check_costs(a_cost, b_cost) == 0)
-		instructions = ft_reg_instructions(a_cost, b_cost);
-	return (instructions);
-}
+// 	instructions = NULL;
+// 	if (ft_check_costs(a_cost, b_cost) == 1)
+// 		instructions = ft_optimized_instructions(a_cost, b_cost);
+// 	if (ft_check_costs(a_cost, b_cost) == 0)
+// 		instructions = ft_reg_instructions(a_cost, b_cost);
+// 	return (instructions);
+// }
 
 /*
  * 1. check if cheapest_a_node is optimized or not
  * 2. if yes : optimized instructions
  * 3. if no : do a_cost && b_cost
 */
-void	ft_do_cheapest_a(int a_cost, int b_cost)
+void	ft_do_cheapest_a(t_list **a, t_list **b)
 {
-	
+	int	*cost_arr;
+	// (void)a;
+	// (void)b;
+	cost_arr = NULL;
+	cost_arr = ft_calculate_cost_arr(a, b);
 }
