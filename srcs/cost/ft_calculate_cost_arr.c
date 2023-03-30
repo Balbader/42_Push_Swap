@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static int	ft_check_costs(int a_cost, int b_cost)
+int	ft_check_costs(int a_cost, int b_cost)
 {
 	return ((a_cost < 0 && b_cost < 0) || (a_cost > 0 && b_cost > 0));
 }
@@ -77,7 +77,6 @@ int	*ft_calculate_cost_arr(t_list **a, t_list **b)
 			printf("a_cost: %d\n", a_cost_arr[i]);
 			printf("b_cost: %d\n", b_cost_arr[i]);
 			printf("cost_arr[%d]: %d\n", i, cost_arr[i]);
-			printf("opti_count: %d\n", cost_arr[i]);
 			printf("\n");
 		}
 		(*a) = (*a)->next;
