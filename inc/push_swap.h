@@ -55,9 +55,11 @@ int			*ft_init_data_array(t_list **stack);
 int			*ft_init_idx_array(t_list **stack);
 int			*ft_calculate_cost_arr(t_list **a, t_list **b);
 int			ft_optimize_cost(int a_cost, int b_cost);
+int			ft_check_costs(int a_cost, int b_cost);
 int			ft_is_pos(int a_cost, int b_cost);
 int			ft_is_neg(int a_cost, int b_cost);
 int			*ft_optimized_instructions(int a_cost, int b_cost);
+int			*ft_reg_instructions(int a_cost, int b_cost);
 
 /* ENTRY */
 int			ft_check_entry(char *av);
@@ -67,8 +69,10 @@ long int	ft_convert_entry(const char *av);
 
 /* SORTING */
 int			ft_check_incoming(t_list **b, int data);
+int			ft_find_cheapest_a(t_list **a, t_list **b);
 void		ft_push_first_2(t_list **a, t_list **b);
 void		ft_push_from_a_to_b(t_list **a, t_list **b);
+void		ft_do_cheapest_a(t_list **a, t_list **b);
 void		ft_sort_3(t_list **a);
 
 /* SORTING UTILS*/
