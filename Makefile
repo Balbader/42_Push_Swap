@@ -35,8 +35,9 @@ COST_FILES			:=	\
 						ft_init_arrays.c \
 						ft_init_b_cost_arr.c \
 						ft_init_b_cost_arr_utils.c \
+						ft_optimize_cost.c \
 						ft_optimize_cost_utils.c \
-						ft_optimize_cost.c
+						ft_reg_instructions.c
 COST				:=	$(addprefix $(COST_DIR), $(COST_FILES))
 
 # Actions
@@ -66,6 +67,8 @@ UTILS				:=	$(addprefix $(UTILS_DIR), $(UTILS_FILES))
 SORT_DIR			:=	sorting/
 SORT_FILES			:=	\
 						ft_check_incoming.c \
+						ft_do_cheapest_a.c \
+						ft_find_cheapest_a_node.c \
 						ft_push_first_2.c \
 						ft_push_from_a_to_b.c \
 						ft_sort_3.c
