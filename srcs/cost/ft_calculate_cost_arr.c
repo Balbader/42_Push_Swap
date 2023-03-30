@@ -58,6 +58,7 @@ int	*ft_calculate_cost_arr(t_list **a, t_list **b)
 	int	a_size;
 
 	a_size = ft_get_stack_size(*a);
+	cost_arr = NULL;
 	cost_arr = (int *)malloc(sizeof(int) * a_size);
 	if (!cost_arr)
 		return (0);
