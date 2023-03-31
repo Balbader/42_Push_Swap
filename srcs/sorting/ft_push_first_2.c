@@ -16,14 +16,4 @@ void	ft_push_first_2(t_list **a, t_list **b)
 {
 	ft_pb(a, b);
 	ft_pb(a, b);
-	ft_pb(a, b);
-	ft_pb(a, b);
-	ft_pb(a, b);
-	ft_pb(a, b);
 }
-
-// void	ft_push_first_2(t_list **a, t_list **b)
-// {
-// 	ft_pb(a, b);
-// 	ft_pb(a, b);
-// }

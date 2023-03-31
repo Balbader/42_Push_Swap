@@ -24,22 +24,28 @@ int	ft_find_cheapest_a(t_list **a, t_list **b)
 	int	cheapest_idx;
 	int	i;
 
+	//==========================================
+	// int *a_data = ft_init_data_array(a);
+	//==========================================
+
 	a_size = ft_get_stack_size(*a);
+	printf("ft_find_cheapest_a: a_size: %d\n", a_size);
 	cost_arr = NULL;
 	cost_arr = ft_calculate_cost_arr(a, b);
 	cheapest = INT_MAX;
 	cheapest_idx = 0;
 	i = 0;
-	while (i < (a_size))
+	while (i < a_size)
 	{
 		if (cost_arr[i] < cheapest)
 		{
 			cheapest = cost_arr[i];
-			cheapest_idx = i + 1;
+			cheapest_idx = i;
 		}
 		++i;
 	}
-	printf("cheapest a_node idx: %d\n", cheapest_idx);
+	// printf("cheapest a_node idx: %d\n", cheapest_idx);
+	// printf("cheapest a_node data: %d\n", a_data[cheapest_idx]);
 	return (free(cost_arr), cheapest_idx);
 }
 

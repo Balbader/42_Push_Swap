@@ -15,5 +15,5 @@
 void	ft_rb(t_list **b)
 {
 	ft_rotate(b);
-	ft_putstr_fd("rb\n", 1);
+	// ft_putstr_fd("rb\n", 1);
 }
