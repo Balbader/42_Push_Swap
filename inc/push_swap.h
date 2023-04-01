@@ -76,6 +76,7 @@ void		ft_do_cheapest_a(t_list **a, t_list **b, int a_cost, int b_cost);
 void		ft_sort_3(t_list **a);
 
 /* SORTING UTILS*/
+int			ft_a_is_sorted(t_list *a);
 int			ft_get_stack_size(t_list *stack);
 int			ft_find_middle_node_idx(t_list **stack);
 int			ft_find_smallest_node_idx(t_list **stack);
