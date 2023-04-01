@@ -77,6 +77,7 @@ SORT				:=	$(addprefix $(SORT_DIR), $(SORT_FILES))
 # Sorting Utils
 SORT_UTILS_DIR		:=	sorting_utils/
 SORT_UTILS_FILES	:=	\
+						ft_a_is_sorted.c \
 						ft_add_new_tail.c \
 						ft_create_node.c \
 						ft_find_smallest_node_data.c \
