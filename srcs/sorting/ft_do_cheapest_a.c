@@ -52,12 +52,18 @@ static void	ft_run_opt_instructions(t_list **a, t_list **b, int a_cost, int b_co
 		ft_run_on_both(b_cost, a, b, &ft_rr);
 		ft_run_on_single((a_cost - b_cost), a, &ft_ra);
 		ft_run_on_both(1, a, b, &ft_pb);
+		// --------------------------------------------------------------------
+		printf("opt instructions: [%d, %d, %d]\n", instructions[0], instructions[1], instructions[2]);
+		// --------------------------------------------------------------------
 	}
 	if (b_cost > a_cost)
 	{
 		ft_run_on_both(a_cost, a, b, &ft_rr);
 		ft_run_on_single((b_cost - a_cost), a, &ft_rb);
 		ft_run_on_both(1, a, b, &ft_pb);
+		// --------------------------------------------------------------------
+		printf("opt instructions: [%d, %d, %d]\n", instructions[0], instructions[1], instructions[2]);
+		// --------------------------------------------------------------------
 	}
 }
 
@@ -72,12 +78,18 @@ static void	ft_run_reg_instructions(t_list **a, t_list **b, int a_cost, int b_co
 		ft_run_on_both(a_cost, a, b, &ft_rrr);
 		ft_run_on_single((b_cost - a_cost), a, &ft_rrb);
 		ft_run_on_both(1, a, b, &ft_pb);
+		// --------------------------------------------------------------------
+		printf("reg instructions: [%d, %d, %d]\n", instructions[0], instructions[1], instructions[2]);
+		// --------------------------------------------------------------------
 	}
 	if (b_cost < a_cost)
 	{
 		ft_run_on_both(b_cost, a, b, &ft_rrr);
 		ft_run_on_single((a_cost - b_cost), a, &ft_rra);
 		ft_run_on_both(1, a, b, &ft_pb);
+		// --------------------------------------------------------------------
+		printf("reg instructions: [%d, %d, %d]\n", instructions[0], instructions[1], instructions[2]);
+		// --------------------------------------------------------------------
 	}
 }
 
@@ -88,10 +100,10 @@ static void	ft_run_reg_instructions(t_list **a, t_list **b, int a_cost, int b_co
 */
 void	ft_do_cheapest_a(t_list **a, t_list **b, int a_cost, int b_cost)
 {
-	int	*instructions;
+	// int	*instructions;
 
-	instructions = NULL;
-	instructions = ft_optimized_instructions(a_cost, b_cost);
+	// instructions = NULL;
+	// instructions = ft_optimized_instructions(a_cost, b_cost);
 
 	// --------------------------------------------------------------------
 	printf("a_cost: %d\nb_cost: %d\n", a_cost, b_cost);
@@ -101,19 +113,19 @@ void	ft_do_cheapest_a(t_list **a, t_list **b, int a_cost, int b_cost)
 	if (ft_check_costs(a_cost, b_cost) == 1)
 	{
 		ft_run_opt_instructions(a, b, a_cost, b_cost);
-		instructions = ft_optimized_instructions(a_cost, b_cost);
+		// instructions = ft_optimized_instructions(a_cost, b_cost);
 
-		// --------------------------------------------------------------------
-		printf("optimized instructions: [%d, %d, %d]\n", instructions[0], instructions[1], instructions[2]);
-		// --------------------------------------------------------------------
+		// // --------------------------------------------------------------------
+		// printf("optimized instructions: [%d, %d, %d]\n", instructions[0], instructions[1], instructions[2]);
+		// // --------------------------------------------------------------------
 	}
 	if (ft_check_costs(a_cost, b_cost) == 0)
 	{
 		ft_run_reg_instructions(a, b, a_cost, b_cost);
-		instructions = ft_reg_instructions(a_cost, b_cost);
+		// instructions = ft_reg_instructions(a_cost, b_cost);
 
-		// --------------------------------------------------------------------
-		printf("reg instructions: [%d, %d, %d]\n", instructions[0], instructions[1], instructions[2]);
-		// --------------------------------------------------------------------
+		// // --------------------------------------------------------------------
+		// printf("reg instructions: [%d, %d, %d]\n", instructions[0], instructions[1], instructions[2]);
+		// // --------------------------------------------------------------------
 	}
 }
