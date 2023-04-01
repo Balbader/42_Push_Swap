@@ -36,9 +36,11 @@ static int	*ft_calculate_cost(int *cost_arr, t_list **a, t_list **b)
 	tmp = (*a);
 	ft_re_init_index(*b);
 	tmp_size = ft_get_stack_size(tmp);
+
 	// -----------------------------------------
 	printf("ft_calculate_cost: tmp(*a) size: %d\n", tmp_size);
 	// -----------------------------------------
+
 	a_cost_arr = ft_init_a_cost_arr(a);
 	b_cost_arr = ft_init_b_cost_arr(a, b);
 	i = 0;
@@ -61,9 +63,11 @@ int	*ft_calculate_cost_arr(t_list **a, t_list **b)
 	int	a_size;
 
 	a_size = ft_get_stack_size(*a);
+
 	// -----------------------------------------
 	printf("ft_calculate_cost_arr: a size: %d\n", a_size);
 	// -----------------------------------------
+
 	cost_arr = NULL;
 	cost_arr = (int *)malloc(sizeof(int) * a_size);
 	if (!cost_arr)
