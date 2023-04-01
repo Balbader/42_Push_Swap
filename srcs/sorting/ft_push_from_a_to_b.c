@@ -25,7 +25,6 @@ void	ft_push_from_a_to_b(t_list **a, t_list **b)
 	cheapest_idx = ft_find_cheapest_a(a, b);
 	a_cost_arr = ft_init_a_cost_arr(a);
 	b_cost_arr = ft_init_b_cost_arr(a, b);
-	for (int j = 0; j < a_size)
 	i = 0;
 	while (i < a_size)
 	{
