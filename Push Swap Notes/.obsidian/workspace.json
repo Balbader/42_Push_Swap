@@ -30,9 +30,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "883d2f95379017ab",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TO DO LIST.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -82,8 +94,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "b8c5f558387bfe7c",
@@ -99,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Working.md",
+                "file": "TO DO LIST.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Working.md",
+                "file": "TO DO LIST.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Working.md"
+                "file": "TO DO LIST.md"
               }
             }
           }
@@ -160,10 +171,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "27735fcdb4ae18d6",
+  "active": "883d2f95379017ab",
   "lastOpenFiles": [
-    "2. TO DO/SORTING.md",
     "Working.md",
+    "TO DO LIST.md",
+    "2. TO DO/SORTING.md",
     "4. DONE/Calculate Cost b_nodes.md",
     "Sudo Code.md",
     "4. DONE/Calculate Cost a_nodes.md",
