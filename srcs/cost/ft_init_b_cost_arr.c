@@ -22,11 +22,19 @@ static int	ft_cost_biggest_b(t_list **b)
 	cost = 0;
 	biggest_b_node_idx = ft_find_biggest_node_idx(b);
 	b_size = ft_get_stack_size(*b);
-	mid = b_size / 2;
-	if (biggest_b_node_idx <= mid)
-		cost = biggest_b_node_idx - 1;
-	if (biggest_b_node_idx > mid)
-		cost = ((b_size - biggest_b_node_idx) + 1) * -1;
+	if (b_size == 2)
+	{
+		if (biggest_b_node_idx == b_size)
+			cost = 1;
+	}
+	else
+	{
+		mid = b_size / 2;
+		if (biggest_b_node_idx <= mid)
+			cost = biggest_b_node_idx - 1;
+		if (biggest_b_node_idx > mid)
+			cost = ((b_size - biggest_b_node_idx) + 1) * -1;
+	}
 	return (cost);
 }
 
@@ -38,11 +46,19 @@ static int	ft_cost_closest_b(t_list **b, int closest_idx)
 
 	cost = 0;
 	b_size = ft_get_stack_size(*b);
-	mid = b_size / 2;
-	if (closest_idx <= mid)
-		cost = closest_idx - 1;
-	else if (closest_idx > mid)
-		cost = ((b_size - closest_idx) + 1) * -1;
+	if (b_size == 2)
+	{
+		if (closest_idx == b_size)
+			cost = 1;
+	}
+	else
+	{
+		mid = b_size / 2;
+		if (closest_idx <= mid)
+			cost = closest_idx - 1;
+		else if (closest_idx > mid)
+			cost = ((b_size - closest_idx) + 1) * -1;
+	}
 	return (cost);
 }
 
@@ -65,8 +81,6 @@ int	*ft_init_b_cost_arr(t_list **a, t_list **b)
 	a_data = ft_init_data_array(a);
 	b_cost = NULL;
 	b_cost = (int *)malloc(sizeof(int) * a_size);
-	if (!b_cost)
-		return (0);
 	i = 0;
 	while (i < a_size)
 	{
