@@ -45,7 +45,9 @@ static int	*ft_calculate_cost(int *cost_arr, t_list **a, t_list **b)
 			cost_arr[i] = ft_optimize_cost(a_cost_arr[i], b_cost_arr[i]);
 		else
 			cost_arr[i] = ((ft_check_cost(a_cost_arr[i]))
-					+ ft_check_cost(b_cost_arr[i]) + 1);
+					+ ft_check_cost(b_cost_arr[i]));
+			// cost_arr[i] = ((ft_check_cost(a_cost_arr[i]))
+			// 		+ ft_check_cost(b_cost_arr[i]) + 1);
 		tmp = tmp->next;
 		++i;
 	}
