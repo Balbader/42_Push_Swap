@@ -14,21 +14,21 @@
 
 void	ft_push_from_a_to_b(t_list **a, t_list **b)
 {
-	int	*a_cost_arr;
-	int	*b_cost_arr;
-	int	a_size;
-	int	cheapest_idx;
-	int	i;
+	int	cheapest_a_node_idx;
+	int	*a_data;
+	// int	check_incoming;
 
-	a_size = 0;
-	a_size = ft_get_stack_size(*a);
-	i = 0;
-	while (i < a_size)
-	{
-		cheapest_idx = ft_find_cheapest_a(a, b);
-		a_cost_arr = ft_init_a_cost_arr(a);
-		b_cost_arr = ft_init_b_cost_arr(a, b);
-		ft_do_cheapest_a(a, b, a_cost_arr[cheapest_idx], b_cost_arr[cheapest_idx]);
-		++i;
-	}
+	a_data = NULL;
+	a_data = ft_init_data_array(a);
+	cheapest_a_node_idx = ft_find_cheapest_a_node_idx(a, b);
+	// check_incoming = ft_check_incoming(b, a_data[cheapest_a_node_idx]);
+
+	// DEBUG ------------------------------------------------------------------
+	printf("\n\n--------------------------------> FROM: ft_push_from_a_to_b.c");
+	ft_print_stack(b, "b");
+	printf("\n");
+	printf("cheapest_a_node_idx: %d\n", cheapest_a_node_idx);
+	printf("incoming a_node data: %d\n", a_data[cheapest_a_node_idx]);
+	// printf("check_incoming: %d\n", check_incoming);
+	//-------------------------------------------------------------------------
 }
