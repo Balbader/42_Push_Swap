@@ -41,7 +41,7 @@ static int	*ft_get_lesser_arr(t_list **b, int incoming)
 /*
 	returns the idx where the "lesser_closest" to incoming is located in 'b'
 */
-int	ft_find_closest_node_idx(t_list **b, int incoming)
+int	ft_find_closest_b_node_idx(t_list **b, int incoming)
 {
 	int	*b_idx_arr;
 	int	*res;
