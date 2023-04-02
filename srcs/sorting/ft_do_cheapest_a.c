@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static void	ft_run_on_both(int loops, t_list **a, t_list **b,
+void	ft_run_on_both(int loops, t_list **a, t_list **b,
 						void (*f)(t_list **, t_list **))
 {
 	int	i;
@@ -27,7 +27,7 @@ static void	ft_run_on_both(int loops, t_list **a, t_list **b,
 	}
 }
 
-static void	ft_run_on_single(int loops, t_list **stack, void (*f)(t_list **))
+void	ft_run_on_single(int loops, t_list **stack, void (*f)(t_list **))
 {
 	int	i;
 
@@ -41,36 +41,27 @@ static void	ft_run_on_single(int loops, t_list **stack, void (*f)(t_list **))
 	}
 }
 
-static void	ft_run_opt_instructions(t_list **a, t_list **b, int a_cost, int b_cost)
+void	ft_run_opt_instructions(t_list **a, t_list **b, int a_cost, int b_cost)
 {
 	if (a_cost > b_cost)
 	{
 		ft_run_on_both(b_cost, a, b, &ft_rr);
 		ft_run_on_single((a_cost - b_cost), a, &ft_ra);
-		ft_run_on_both(1, a, b, &ft_pb);
+		ft_pb(a, b);
 	}
 	if (b_cost > a_cost)
 	{
 		ft_run_on_both(a_cost, a, b, &ft_rr);
 		ft_run_on_single((b_cost - a_cost), a, &ft_rb);
-		ft_run_on_both(1, a, b, &ft_pb);
+		ft_pb(a, b);
 	}
 }
 
-static void	ft_run_reg_instructions(t_list **a, t_list **b, int a_cost, int b_cost)
+void	ft_run_reg_instructions(t_list **a, t_list **b, int a_cost, int b_cost)
 {
-	if (a_cost < b_cost)
-	{
-		ft_run_on_both(a_cost, a, b, &ft_rrr);
-		ft_run_on_single((b_cost - a_cost), a, &ft_rrb);
-		ft_run_on_both(1, a, b, &ft_pb);
-	}
-	if (b_cost < a_cost)
-	{
-		ft_run_on_both(b_cost, a, b, &ft_rrr);
-		ft_run_on_single((a_cost - b_cost), a, &ft_rra);
-		ft_run_on_both(1, a, b, &ft_pb);
-	}
+	ft_do_a_cost(a_cost, a);
+	ft_do_b_cost(b_cost, b);
+	ft_pb(a, b);
 }
 
 /*
