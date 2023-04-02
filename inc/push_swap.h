@@ -49,7 +49,7 @@ void		ft_ss(t_list **a, t_list **b);
 /* COST */
 int			*ft_init_a_cost_arr(t_list **a);
 int			*ft_init_b_cost_arr(t_list **a, t_list **b);
-int			ft_find_closest_node_idx(t_list **b, int incoming);
+int			ft_find_closest_b_node_idx(t_list **b, int incoming);
 int			*ft_init_cost_arr(t_list **stack);
 int			*ft_init_data_array(t_list **stack);
 int			*ft_init_idx_array(t_list **stack);
@@ -69,7 +69,7 @@ long int	ft_convert_entry(const char *av);
 
 /* SORTING */
 int			ft_check_incoming(t_list **b, int data);
-int			ft_find_cheapest_a(t_list **a, t_list **b);
+int			ft_find_cheapest_a_node_idx(t_list **a, t_list **b);
 void		ft_push_first_2(t_list **a, t_list **b);
 void		ft_push_from_a_to_b(t_list **a, t_list **b);
 void		ft_do_cheapest_a(t_list **a, t_list **b, int a_cost, int b_cost);
