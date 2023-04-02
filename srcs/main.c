@@ -49,7 +49,6 @@ int	main(int ac, char **av)
 	ft_re_init_index(a);
 	ft_re_init_index(b);
 	ft_print_stack(&b, "b");
-	printf("\n");
 	ft_print_stack(&a, "a");
 	printf("\n");
 
