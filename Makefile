@@ -68,7 +68,7 @@ SORT_DIR			:=	sorting/
 SORT_FILES			:=	\
 						ft_check_incoming.c \
 						ft_do_cheapest_a.c \
-						ft_find_cheapest_a_node.c \
+						ft_find_cheapest_a_node_idx.c \
 						ft_push_first_2.c \
 						ft_push_from_a_to_b.c \
 						ft_sort_3.c
