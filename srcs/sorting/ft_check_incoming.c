@@ -32,6 +32,10 @@ static int	ft_check_if_biggest(t_list **b, int data)
 	return (0);
 }
 
+/*
+ * return (1) if incoming a_node is going to become either
+ * the new smallest b_node or the new biggest b_node
+*/
 int	ft_check_incoming(t_list **b, int data)
 {
 	if (ft_check_if_smallest(b, data) == 1 || ft_check_if_biggest(b, data) == 1)
