@@ -17,12 +17,12 @@ static void	ft_run_job(t_list **a, t_list **b)
 	int	*a_cost;
 	int	*b_cost;
 	// int	*a_data;
-	int	*cost;
+	// int	*cost;
 	int	cheapest_a_node_idx;
 
 	ft_re_init_index(*a);
 	ft_re_init_index(*b);
-	cost = ft_calculate_cost_arr(a, b);
+	// cost = ft_calculate_cost_arr(a, b);
 	// a_data = ft_init_data_array(a);
 	a_cost = ft_init_a_cost_arr(a);
 	b_cost = ft_init_b_cost_arr(a, b);
