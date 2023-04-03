@@ -43,18 +43,10 @@ void	ft_run_on_single(int loops, t_list **stack, void (*f)(t_list **))
 
 void	ft_run_opt_instructions(t_list **a, t_list **b, int a_cost, int b_cost)
 {
-	if (a_cost > b_cost)
-	{
-		ft_run_on_both(b_cost, a, b, &ft_rr);
-		ft_run_on_single((a_cost - b_cost), a, &ft_ra);
-		ft_pb(a, b);
-	}
-	if (b_cost > a_cost)
-	{
-		ft_run_on_both(a_cost, a, b, &ft_rr);
-		ft_run_on_single((b_cost - a_cost), a, &ft_rb);
-		ft_pb(a, b);
-	}
+	if (ft_is_pos(a_cost, b_cost))
+		ft_opt_pos(a, b, a_cost, b_cost);
+	if (ft_is_neg(a_cost, b_cost))
+		ft_opt_neg(a, b, a_cost, b_cost);
 }
 
 void	ft_run_reg_instructions(t_list **a, t_list **b, int a_cost, int b_cost)
