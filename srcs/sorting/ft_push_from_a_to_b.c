@@ -49,7 +49,7 @@ void	ft_push_from_a_to_b(t_list **a, t_list **b, int a_size)
 		// ft_run_job(a, b, i);
 		ft_run_job(a, b);
 		++i;
+	}
 		ft_print_stack(a, "a");
 		ft_print_stack(b, "b");
-	}
 }
