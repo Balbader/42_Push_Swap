@@ -12,9 +12,25 @@
 
 #include "push_swap.h"
 
+static void	ft_re_order_a(t_list **a, int pivot_idx)
+{
+	int	mid;
+	int	a_size;
+
+	a_size = ft_get_stack_size(*a);
+	mid = a_size / 2;
+	if (pivot_idx <= mid)
+		ft_run_on_single(pivot_idx - 1, a, ft_ra);
+	if (pivot_idx > mid)
+		ft_run_on_single((a_size - pivot_idx) + 1, a, ft_rra);
+}
+
 /*
+	if incoming is greater than just_pushed, we need to find the a_node that is
+	greater && closest to incoming and bring it to the top of 'a'
+
 	returns an arr with the result of the equation:
-	(a_node_data - (*b)->data) for each b_node
+	(b_node_data - (*a)->data) for each a_node
 */
 static int	*ft_get_greater_arr(t_list **a, int incoming)
 {
@@ -56,7 +72,7 @@ int	ft_find_closest_a_node_idx(t_list **a, int incoming)
 	i = 0;
 	while (res[i])
 	{
-		if (res[i] > 0 && res[i] > closest_res)
+		if (res[i] < 0 && res[i] > closest_res)
 		{
 			closest_res = res[i];
 			closest_idx = i;
@@ -69,23 +85,29 @@ int	ft_find_closest_a_node_idx(t_list **a, int incoming)
 void	ft_push_from_b_to_a(t_list **a, t_list **b)
 {
 	int	i;
+	int	b_size;
 	int	just_pushed;
 	int incoming;
 	int	closest_a_node_idx;
 
 	ft_pa(a, b);
-	just_pushed = (*a)->data;
+	b_size = ft_get_stack_size(*b);
+	incoming = (*b)->data;
 	i = 0;
-	// while ((*b))
-	while (i < 11)
+	// while (i < b_size)
+	// while (*b)
+	while (i < b_size - 1)
 	{
-		incoming = (*b)->data;
-		if (incoming > just_pushed)
+		ft_re_init_index(*a);
+		ft_re_init_index(*b);
+		just_pushed = (*a)->data;
+		if (incoming < just_pushed || incoming > just_pushed)
 		{
-			closest_a_node_idx = ft_find_closest_a_node_idx(a, (*b)->data);
-			printf("closest_a_node_idx: %d\n", closest_a_node_idx);
+			closest_a_node_idx = ft_find_closest_a_node_idx(a, incoming);
+			ft_re_order_a(a, closest_a_node_idx);
 		}
 		ft_pa(a, b);
+		incoming = (*b)->data;
 		++i;
 	}
 }
