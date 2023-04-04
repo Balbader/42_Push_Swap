@@ -36,14 +36,17 @@ void	ft_print_stack(t_list **stack, char *name)
 {
 	t_list	*temp;
 	int		stack_size;
+	int		i;
 
 	stack_size = ft_get_stack_size(*stack);
 	printf("\nStack from %s - size: %d\n", name, stack_size);
 	temp = *stack;
+	i = 0;
 	while (temp)
 	{
-		printf("[%d] : %d\n", temp->index, temp->data);
+		printf("[%d] : [%d] : %d\n", i, temp->index, temp->data);
 		temp = temp->next;
+		++i;
 	}
 }
 
