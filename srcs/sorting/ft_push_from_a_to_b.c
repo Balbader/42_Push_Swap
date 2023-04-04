@@ -47,27 +47,18 @@ void	ft_push_from_a_to_b(t_list **a, t_list **b)
 	int	*b_cost;
 	int	*cost;
 
+	a_size = ft_get_stack_size(*a);
 	i = 0;
-	while (i < 6)
+	while (i < a_size)
 	{
-		a_size = ft_get_stack_size(*a);
-		printf("----------------------------->a_size: %d\n", a_size);
 		ft_re_init_index(*a);
 		ft_re_init_index(*b);
-		ft_print_stack(b, "b");
-		ft_print_stack(a, "a");
 		a_cost = ft_init_a_cost_arr(a);
 		b_cost = ft_init_b_cost_arr(a, b);
 		cost = ft_calculate_cost_arr(a, b);
 		cheapest_a_node_idx = ft_find_cheapest_a_node_idx(a, b);
-		printf("cheapest_a_node_idx:%d\n", cheapest_a_node_idx);
-		printf("a_cost[%d]: %d\n", cheapest_a_node_idx, a_cost[cheapest_a_node_idx]);
-		printf("b_cost[%d]: %d\n", cheapest_a_node_idx, b_cost[cheapest_a_node_idx]);
-		printf("cost[%d]: %d\n", cheapest_a_node_idx, cost[cheapest_a_node_idx]);
-		printf("cheapest_a_node_idx:%d\n", cheapest_a_node_idx);
 		ft_do_cheapest_a(a, b,
 				a_cost[cheapest_a_node_idx], b_cost[cheapest_a_node_idx]);
-		printf("\n");
 		++i;
 	}
 }

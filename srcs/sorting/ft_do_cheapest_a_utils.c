@@ -65,7 +65,7 @@ void	ft_opt_neg(t_list **a, t_list **b, int a_cost, int b_cost)
 		if (b_cost < a_cost)
 		{
 			ft_run_on_both((a_cost * -1), a, b, &ft_rrr);
-			ft_run_on_single((b_cost * -1), b, &ft_rrb);
+			ft_run_on_single((a_cost - b_cost), b, &ft_rrb);
 			ft_pb(a, b);
 		}
 }
