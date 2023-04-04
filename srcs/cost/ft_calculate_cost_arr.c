@@ -31,6 +31,8 @@ static int	ft_optimize(int	a_cost, int b_cost)
 	cheapest = 0;
 	if (ft_is_pos(a_cost, b_cost))
 	{
+		if (a_cost == b_cost)
+			cheapest = a_cost;
 		if (a_cost > b_cost)
 			cheapest = a_cost - b_cost;
 		if (b_cost > a_cost)
@@ -38,6 +40,8 @@ static int	ft_optimize(int	a_cost, int b_cost)
 	}
 	if (ft_is_neg(a_cost, b_cost))
 	{
+		if (a_cost == b_cost)
+			cheapest = a_cost * -1;
 		if (a_cost < b_cost)
 			cheapest = b_cost - a_cost;
 		if (b_cost < a_cost)
