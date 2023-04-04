@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+/*
 static int	ft_cost_biggest_b(t_list **b)
 {
 	int	biggest_b_node_idx;
@@ -37,6 +38,7 @@ static int	ft_cost_biggest_b(t_list **b)
 	}
 	return (cost);
 }
+*/
 
 static int	ft_cost_closest_b(t_list **b, int closest_idx)
 {
@@ -84,13 +86,13 @@ int	*ft_init_b_cost_arr(t_list **a, t_list **b)
 	i = 0;
 	while (i < a_size)
 	{
-		if (ft_check_incoming(b, a_data[i]) == 1)
-			b_cost[i] = ft_cost_biggest_b(b);
-		if (ft_check_incoming(b, a_data[i]) == 0)
-		{
+		// if (ft_check_incoming(b, a_data[i]) == 1)
+		// 	b_cost[i] = ft_cost_biggest_b(b);
+		// if (ft_check_incoming(b, a_data[i]) == 0)
+		// {
 			closest_b_node_idx = ft_find_closest_b_node_idx(b, a_data[i]);
 			b_cost[i] = ft_cost_closest_b(b, closest_b_node_idx);
-		}
+		// }
 		++i;
 	}
 	return (b_cost);
