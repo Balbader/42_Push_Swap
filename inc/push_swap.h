@@ -71,7 +71,7 @@ long int	ft_convert_entry(const char *av);
 int			ft_check_incoming(t_list **b, int data);
 int			ft_find_cheapest_a_node_idx(t_list **a, t_list **b);
 void		ft_push_first_2(t_list **a, t_list **b);
-void		ft_push_from_a_to_b(t_list **a, t_list **b, int a_size);
+void		ft_push_from_a_to_b(t_list **a, t_list **b);
 void		ft_do_cheapest_a(t_list **a, t_list **b, int a_cost, int b_cost);
 void		ft_sort_3(t_list **a);
 void		ft_run_opt_instructions(t_list **a, t_list **b,
