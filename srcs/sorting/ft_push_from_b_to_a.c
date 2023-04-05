@@ -48,7 +48,6 @@ static int	*ft_get_greater_arr(t_list **a, int incoming)
 		++i;
 		tmp = tmp->next;
 	}
-	printf("\n");
 	return (free(tmp), res_arr);
 }
 

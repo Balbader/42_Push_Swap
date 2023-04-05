@@ -32,25 +32,23 @@ void	ft_putstr_fd(char *str, int fd)
 	write(fd, str, ft_strlen(str));
 }
 
-void	ft_print_stack(t_list **stack, char *name)
-{
-	t_list	*temp;
-	int		stack_size;
-	int		i;
+// void	ft_print_stack(t_list **stack, char *name)
+// {
+// 	t_list	*temp;
+// 	int		stack_size;
+// 	int		i;
 
-	stack_size = ft_get_stack_size(*stack);
-	printf("\nStack from %s - size: %d\n", name, stack_size);
-	temp = *stack;
-	i = 0;
-	while (temp)
-	{
-		printf("[%d] : %d\n", temp->index, temp->data);
-		temp = temp->next;
-		++i;
-	}
-	printf("\n");
-	printf("\n");
-}
+// 	stack_size = ft_get_stack_size(*stack);
+// 	printf("\nStack from %s - size: %d\n", name, stack_size);
+// 	temp = *stack;
+// 	i = 0;
+// 	while (temp)
+// 	{
+// 		printf("[%d] : %d\n", temp->index, temp->data);
+// 		temp = temp->next;
+// 		++i;
+// 	}
+// }
 
 void	ft_print_err(t_list **stack_a, t_list **stack_b)
 {
