@@ -112,10 +112,5 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 		ft_re_order_a(a, closest_a_node_idx);
 		++i;
 	}
-	ft_re_init_index(*a);
-	ft_re_init_index(*b);
-	incoming = (*b)->data;
-	closest_a_node_idx = ft_find_closest_a_node_idx(a, incoming);
-	ft_re_order_a(a, closest_a_node_idx);
-	ft_pa(a, b);
+	ft_finalize_a(a, b, incoming, closest_a_node_idx);
 }

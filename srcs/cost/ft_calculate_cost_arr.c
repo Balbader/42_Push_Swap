@@ -27,7 +27,7 @@ static int	ft_check_cost(int cost)
 /*
  * includes the ft_pb
 */
-static int	ft_optimize(int	a_cost, int b_cost)
+static int	ft_optimize(int a_cost, int b_cost)
 {
 	int	cheapest;
 

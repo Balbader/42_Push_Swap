@@ -47,27 +47,11 @@ int	main(int ac, char **av)
 
 	ft_push_first_2(&a, &b);
 	a_size = ft_get_stack_size(a);
-	//-------------------------------------------------------------------------
 	ft_re_init_index(b);
-	// ft_print_stack(&b, "b");
-	// printf("\n");
 	ft_re_init_index(a);
-	// ft_print_stack(&a, "a");
-	// printf("\n");
-	//-------------------------------------------------------------------------
-
 	ft_push_from_a_to_b(&a, &b, a_size);
 	ft_push_from_b_to_a(&a, &b);
-
-	//-------------------------------------------------------------------------
-	// ft_re_init_index(b);
-	// ft_print_stack(&b, "b");
-	// printf("\n");
-	// ft_print_stack(&a, "a");
-	//-------------------------------------------------------------------------
 	ft_re_init_index(a);
-	// ft_re_init_index(b);
-	// ft_print_stack(&b, "b");
 	printf("\n");
 	ft_print_stack(&a, "a");
 	ft_free_stack(&a);

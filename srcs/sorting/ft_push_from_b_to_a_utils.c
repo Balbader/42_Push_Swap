@@ -16,10 +16,16 @@
 	find smallest node in 'a' and bring it to the top
 */
 
-void	ft_finalize_a(t_list **a)
+void	ft_finalize_a(t_list **a, t_list **b, int incoming, int closest)
 {
 	int	smallest_idx;
 
+	ft_re_init_index(*a);
+	ft_re_init_index(*b);
+	incoming = (*b)->data;
+	closest = ft_find_closest_a_node_idx(a, incoming);
+	ft_re_order_a(a, closest);
+	ft_pa(a, b);
 	ft_re_init_index(*a);
 	smallest_idx = ft_find_smallest_node_idx(a);
 	ft_re_order_a(a, smallest_idx);

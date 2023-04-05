@@ -12,34 +12,6 @@
 
 #include "push_swap.h"
 
-/*
-static int	ft_cost_biggest_b(t_list **b)
-{
-	int	biggest_b_node_idx;
-	int	b_size;
-	int	mid;
-	int	cost;
-
-	cost = 0;
-	biggest_b_node_idx = ft_find_biggest_node_idx(b);
-	b_size = ft_get_stack_size(*b);
-	if (b_size == 2)
-	{
-		if (biggest_b_node_idx == b_size)
-			cost = 1;
-	}
-	else
-	{
-		mid = b_size / 2;
-		if (biggest_b_node_idx <= mid)
-			cost = biggest_b_node_idx - 1;
-		if (biggest_b_node_idx > mid)
-			cost = ((b_size - biggest_b_node_idx) + 1) * -1;
-	}
-	return (cost);
-}
-*/
-
 static int	ft_cost_closest_b(t_list **b, int closest_idx)
 {
 	int	b_size;
@@ -86,13 +58,8 @@ int	*ft_init_b_cost_arr(t_list **a, t_list **b)
 	i = 0;
 	while (i < a_size)
 	{
-		// if (ft_check_incoming(b, a_data[i]) == 1)
-		// 	b_cost[i] = ft_cost_biggest_b(b);
-		// if (ft_check_incoming(b, a_data[i]) == 0)
-		// {
-			closest_b_node_idx = ft_find_closest_b_node_idx(b, a_data[i]);
-			b_cost[i] = ft_cost_closest_b(b, closest_b_node_idx);
-		// }
+		closest_b_node_idx = ft_find_closest_b_node_idx(b, a_data[i]);
+		b_cost[i] = ft_cost_closest_b(b, closest_b_node_idx);
 		++i;
 	}
 	return (b_cost);

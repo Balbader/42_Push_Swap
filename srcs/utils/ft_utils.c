@@ -44,8 +44,6 @@ void	ft_print_stack(t_list **stack, char *name)
 	i = 0;
 	while (temp)
 	{
-		// printf("[%d] : %d - ", temp->index, temp->data);
-		// printf("[%d] : [%d] : %d\n", i, temp->index, temp->data);
 		printf("[%d] : %d\n", temp->index, temp->data);
 		temp = temp->next;
 		++i;

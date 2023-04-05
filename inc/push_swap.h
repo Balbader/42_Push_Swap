@@ -50,6 +50,7 @@ void		ft_ss(t_list **a, t_list **b);
 int			*ft_init_a_cost_arr(t_list **a);
 int			*ft_init_b_cost_arr(t_list **a, t_list **b);
 int			ft_find_closest_b_node_idx(t_list **b, int incoming);
+int			ft_find_closest_a_node_idx(t_list **a, int incoming);
 int			*ft_init_cost_arr(t_list **stack);
 int			*ft_init_data_array(t_list **stack);
 int			*ft_init_idx_array(t_list **stack);
@@ -89,7 +90,7 @@ void		ft_do_b_cost(int b_cost, t_list **b);
 void		ft_opt_pos(t_list **a, t_list **b, int a_cost, int b_cost);
 void		ft_opt_neg(t_list **a, t_list **b, int a_cost, int b_cost);
 void		ft_re_order_a(t_list **a, int pivot_idx);
-void		ft_finalize_a(t_list **a);
+void		ft_finalize_a(t_list **a, t_list **b, int incoming, int closest);
 
 /* SORTING UTILS*/
 int			ft_a_is_sorted(t_list *a);
