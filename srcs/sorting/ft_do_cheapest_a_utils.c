@@ -30,42 +30,42 @@ void	ft_do_b_cost(int b_cost, t_list **b)
 
 void	ft_opt_pos(t_list **a, t_list **b, int a_cost, int b_cost)
 {
-		if (a_cost == b_cost)
-		{
-			ft_run_on_both(b_cost, a, b, &ft_rr);
-			ft_pb(a, b);
-		}
-		if (a_cost > b_cost)
-		{
-			ft_run_on_both(b_cost, a, b, &ft_rr);
-			ft_run_on_single((a_cost - b_cost), a, &ft_ra);
-			ft_pb(a, b);
-		}
-		if (b_cost > a_cost)
-		{
-			ft_run_on_both(a_cost, a, b, &ft_rr);
-			ft_run_on_single((b_cost - a_cost), b, &ft_rb);
-			ft_pb(a, b);
-		}
+	if (a_cost == b_cost)
+	{
+		ft_run_on_both(b_cost, a, b, &ft_rr);
+		ft_pb(a, b);
+	}
+	if (a_cost > b_cost)
+	{
+		ft_run_on_both(b_cost, a, b, &ft_rr);
+		ft_run_on_single((a_cost - b_cost), a, &ft_ra);
+		ft_pb(a, b);
+	}
+	if (b_cost > a_cost)
+	{
+		ft_run_on_both(a_cost, a, b, &ft_rr);
+		ft_run_on_single((b_cost - a_cost), b, &ft_rb);
+		ft_pb(a, b);
+	}
 }
 
 void	ft_opt_neg(t_list **a, t_list **b, int a_cost, int b_cost)
 {
-		if (a_cost == b_cost)
-		{
-			ft_run_on_both((b_cost * -1), a, b, &ft_rrr);
-			ft_pb(a, b);
-		}
-		if (a_cost < b_cost)
-		{
-			ft_run_on_both((b_cost * -1), a, b, &ft_rrr);
-			ft_run_on_single((a_cost * -1), a, &ft_rra);
-			ft_pb(a, b);
-		}
-		if (b_cost < a_cost)
-		{
-			ft_run_on_both((a_cost * -1), a, b, &ft_rrr);
-			ft_run_on_single((a_cost - b_cost), b, &ft_rrb);
-			ft_pb(a, b);
-		}
+	if (a_cost == b_cost)
+	{
+		ft_run_on_both((b_cost * -1), a, b, &ft_rrr);
+		ft_pb(a, b);
+	}
+	if (a_cost < b_cost)
+	{
+		ft_run_on_both((b_cost * -1), a, b, &ft_rrr);
+		ft_run_on_single((a_cost * -1), a, &ft_rra);
+		ft_pb(a, b);
+	}
+	if (b_cost < a_cost)
+	{
+		ft_run_on_both((a_cost * -1), a, b, &ft_rrr);
+		ft_run_on_single((a_cost - b_cost), b, &ft_rrb);
+		ft_pb(a, b);
+	}
 }

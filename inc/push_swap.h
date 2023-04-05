@@ -71,7 +71,7 @@ long int	ft_convert_entry(const char *av);
 int			ft_check_incoming(t_list **b, int data);
 int			ft_find_cheapest_a_node_idx(t_list **a, t_list **b);
 int			ft_no_neg(int *res, int a_size);
-int			ft_get_smallest_pos_res_idx(int *res, t_list **a);
+int			ft_get_biggest_pos_res_idx(int *res, t_list **a);
 void		ft_push_first_2(t_list **a, t_list **b);
 void		ft_push_from_a_to_b(t_list **a, t_list **b, int a_size);
 void		ft_push_from_b_to_a(t_list **a, t_list **b);

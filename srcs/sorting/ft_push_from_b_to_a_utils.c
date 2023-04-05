@@ -48,40 +48,27 @@ int	ft_no_neg(int *res, int a_size)
 	return (0);
 }
 
-int	ft_get_smallest_pos_res_idx(int *res, t_list **a, int a_size)
+int	ft_get_biggest_pos_res_idx(int *res, t_list **a)
 {
 	int	*a_idx_arr;
-	int	smallest;
-	int	smallest_idx;
+	int	biggest;
+	int	biggest_idx;
+	int	a_size;
 	int	i;
 
+	a_size = ft_get_stack_size(*a);
 	a_idx_arr = ft_init_idx_array(a);
-	smallest = INT_MAX;
-	smallest_idx = 0;
+	biggest = INT_MIN;
+	biggest_idx = 0;
 	i = 0;
 	while (i < a_size)
 	{
-		if (res[i] < smallest)
+		if (res[i] > biggest)
 		{
-			smallest = res[i];
-			smallest_idx = i;
-			printf("\n");
-			printf("smallest_res: %d\n", smallest);
-			printf("smallest_idx: %d\n", smallest_idx);
-			printf("a_idx_arr[%d]: %d\n", smallest_idx, a_idx_arr[smallest_idx]);
+			biggest = res[i];
+			biggest_idx = i;
 		}
 		++i;
 	}
-	return (smallest_idx);
-}
-
-void	ft_check_res(int *res, t_list **a)
-{
-	int	a_size;
-
-	a_size = ft_get_stack_size(*a);
-	if (ft_no_neg(res, a_size) == 0)
-	{
-		ft_get_smallest_pos_res_idx(res, a, a_size);
-	}
+	return (biggest_idx);
 }

@@ -12,32 +12,6 @@
 
 #include "push_swap.h"
 
-/*
-static void	ft_run_job(t_list **a, t_list **b)
-{
-	int	*a_cost;
-	int	*b_cost;
-	// int	closest_b_node_idx;
-	int	cheapest_a_node_idx;
-	int	*cost;
-
-	ft_re_init_index(*a);
-	ft_re_init_index(*b);
-	cost = ft_calculate_cost_arr(a, b);
-	a_cost = ft_init_a_cost_arr(a);
-	b_cost = ft_init_b_cost_arr(a, b);
-	cheapest_a_node_idx = ft_find_cheapest_a_node_idx(a, b);
-	// closest_b_node_idx = ft_find_closest_b_node_idx(b, a_data[cheapest_a_node_idx]);
-	// printf("ft_run_job: cost[%d]: %d\n", i, cost[i]);
-	// printf("cheapest_a_node_idx:%d\n", cheapest_a_node_idx);
-	// printf("closest_b_node_idx:%d\n", closest_b_node_idx);
-	// printf("\n");
-
-	ft_do_cheapest_a(a, b,
-			a_cost[cheapest_a_node_idx], b_cost[cheapest_a_node_idx]);
-}
-*/
-
 void	ft_push_from_a_to_b(t_list **a, t_list **b, int a_size)
 {
 	int	i;
@@ -56,7 +30,7 @@ void	ft_push_from_a_to_b(t_list **a, t_list **b, int a_size)
 		cost = ft_calculate_cost_arr(a, b);
 		cheapest_a_node_idx = ft_find_cheapest_a_node_idx(a, b);
 		ft_do_cheapest_a(a, b,
-				a_cost[cheapest_a_node_idx], b_cost[cheapest_a_node_idx]);
+			a_cost[cheapest_a_node_idx], b_cost[cheapest_a_node_idx]);
 		++i;
 	}
 }
