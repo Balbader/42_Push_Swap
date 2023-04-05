@@ -118,18 +118,13 @@ int	ft_find_closest_a_node_idx(t_list **a, int incoming)
 		{
 			closest_res = res[i];
 			closest_idx = i;
-			// printf("\n");
-			// printf("closest_res: %d\n", closest_res);
-			// printf("closest_idx: %d\n", closest_idx);
-			// printf("a_idx_arr[%d]: %d\n", closest_idx, a_idx_arr[closest_idx]);
+			printf("\n");
+			printf("closest_res: %d\n", closest_res);
+			printf("closest_idx: %d\n", closest_idx);
+			printf("a_idx_arr[%d]: %d\n", closest_idx, a_idx_arr[closest_idx]);
 		}
 		++i;
 	}
-	printf("\n");
-	printf("closest_res: %d\n", closest_res);
-	printf("closest_idx: %d\n", closest_idx);
-	printf("a_idx_arr[%d]: %d\n", closest_idx, a_idx_arr[closest_idx]);
-	printf("\n");
 	return (free(res), a_idx_arr[closest_idx]);
 }
 
