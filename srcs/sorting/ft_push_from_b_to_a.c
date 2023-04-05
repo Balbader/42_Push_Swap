@@ -12,6 +12,26 @@
 
 #include "push_swap.h"
 
+static void	ft_print_a(t_list **a, char *name)
+{
+	t_list	*temp;
+	int		stack_size;
+	int		i;
+
+	stack_size = ft_get_stack_size(*a);
+	printf("\nStack from %s - size: %d\n", name, stack_size);
+	temp = *a;
+	i = 0;
+	while (temp)
+	{
+		printf("%d - ", temp->data);
+		temp = temp->next;
+		++i;
+	}
+	printf("\n");
+	printf("\n");
+}
+
 static void	ft_re_order_a(t_list **a, int pivot_idx)
 {
 	int	mid;
@@ -79,6 +99,9 @@ int	ft_find_closest_a_node_idx(t_list **a, int incoming)
 		}
 		++i;
 	}
+	printf("closest_b_idx: %d\n", closest_idx + 1);
+	ft_print_a(a, "a");
+	// printf("closest_res: %d\n", closest_res);
 	return (free(res), a_idx_arr[closest_idx]);
 }
 
@@ -90,6 +113,7 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	int incoming;
 	int	closest_a_node_idx;
 
+	ft_print_stack(b, "b");
 	ft_pa(a, b);
 	b_size = ft_get_stack_size(*b);
 	incoming = (*b)->data;
@@ -98,8 +122,10 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	// while (*b)
 	while (i < b_size - 1)
 	{
+		printf("===================================> %d\n", i);
 		ft_re_init_index(*a);
 		ft_re_init_index(*b);
+		ft_print_stack(b, "b");
 		just_pushed = (*a)->data;
 		if (incoming < just_pushed || incoming > just_pushed)
 		{
