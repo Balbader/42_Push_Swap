@@ -36,7 +36,7 @@ int	ft_find_cheapest_a_node_idx(t_list **a, t_list **b)
 		if (cost_arr[i] < cheapest)
 		{
 			cheapest = cost_arr[i];
-			cheapest_idx = i;
+			cheapest_idx = i + 1;
 		}
 		++i;
 	}

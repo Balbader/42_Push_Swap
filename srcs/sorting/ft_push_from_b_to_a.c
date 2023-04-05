@@ -24,12 +24,31 @@ static void	ft_print_a(t_list **a, char *name)
 	i = 0;
 	while (temp)
 	{
-		// printf("%d, ", temp->data);
 		printf("[%d] : %d, ", temp->index, temp->data);
 		temp = temp->next;
 		++i;
 	}
 	printf("\n");
+	printf("\n");
+}
+
+static void	ft_print_b(t_list **b, char *name)
+{
+	t_list	*temp;
+	int		stack_size;
+	int		i;
+
+	stack_size = ft_get_stack_size(*b);
+	printf("Stack from %s - size: %d\n", name, stack_size);
+	temp = *b;
+	i = 0;
+	while (temp)
+	{
+		// printf("%d, ", temp->data);
+		printf("%d, ", temp->data);
+		temp = temp->next;
+		++i;
+	}
 	printf("\n");
 }
 
@@ -43,7 +62,7 @@ void	ft_re_order_a(t_list **a, int pivot_idx)
 	if (pivot_idx <= mid)
 		ft_run_on_single(pivot_idx - 1, a, ft_ra);
 	if (pivot_idx > mid)
-		ft_run_on_single((a_size - pivot_idx) + 1, a, ft_rra);
+		ft_run_on_single(((a_size - pivot_idx) + 1), a, ft_rra);
 }
 
 /*
@@ -57,27 +76,26 @@ static int	*ft_get_greater_arr(t_list **a, int incoming)
 {
 	t_list	*tmp;
 	int		*res_arr;
-	int		res;
 	int		i;
 
 	res_arr = ft_init_cost_arr(a);
-	res = 0;
 	tmp = NULL;
 	tmp = *a;
 	i = 0;
+	printf("res_arr: incoming - (a->data)\n");
 	while (tmp)
 	{
-		res = incoming - tmp->data;
-		res_arr[i] = res;
-		// printf("[%d] : %d, ", i, res_arr[i]);
+		res_arr[i] = incoming - tmp->data;
+		printf("[%d] : %d | ", i, res_arr[i]);
 		++i;
 		tmp = tmp->next;
 	}
+	printf("\n");
 	return (free(tmp), res_arr);
 }
 
 /*
-	returns the idx where the "lesser_closest" to incoming is located in 'b'
+	returns the idx where the "greater_closest" to incoming is located in 'a;
 */
 int	ft_find_closest_a_node_idx(t_list **a, int incoming)
 {
@@ -100,13 +118,18 @@ int	ft_find_closest_a_node_idx(t_list **a, int incoming)
 		{
 			closest_res = res[i];
 			closest_idx = i;
+			// printf("\n");
+			// printf("closest_res: %d\n", closest_res);
+			// printf("closest_idx: %d\n", closest_idx);
+			// printf("a_idx_arr[%d]: %d\n", closest_idx, a_idx_arr[closest_idx]);
 		}
 		++i;
 	}
 	printf("\n");
-	// ft_print_a(a, "a");
 	printf("closest_res: %d\n", closest_res);
+	printf("closest_idx: %d\n", closest_idx);
 	printf("a_idx_arr[%d]: %d\n", closest_idx, a_idx_arr[closest_idx]);
+	printf("\n");
 	return (free(res), a_idx_arr[closest_idx]);
 }
 
@@ -114,33 +137,41 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 {
 	int	i;
 	int	b_size;
-	int	just_pushed;
 	int incoming;
+	int	just_pushed;
 	int	closest_a_node_idx;
 
+	ft_print_b(b, "b");
+	printf("\n");
 	b_size = ft_get_stack_size(*b);
 	i = 0;
-	while (i < b_size)
+	while (i < b_size - 1)
 	{
-		printf("===================================> %d\n", i + 1);
-		ft_print_a(b, "b");
-		if (i + 1 < b_size)
-		{
-			printf("incoming: %d\n", incoming);
-			printf("closest_a_idx: %d\n", closest_a_node_idx);
-			printf("just_pushed: %d\n", just_pushed);
-			printf("\n");
-		}
-		// ft_print_stack(a, "a");
-		ft_print_a(a, "a");
-		incoming = (*b)->data;
+		just_pushed = (*b)->data;
 		ft_pa(a, b);
+		printf("----------------------------------------------> %d\n", i + 1);
 		ft_re_init_index(*a);
 		ft_re_init_index(*b);
-		just_pushed = (*a)->data;
-		// closest_a_node_idx = ft_find_closest_a_node_idx(a, incoming);
-		ft_re_order_a(a, closest_a_node_idx);
+		ft_print_b(b, "b");
+		printf("\n");
+		ft_print_b(a, "a");
+		printf("\n");
+		incoming = (*b)->data;
+		printf("just_pushed: %d\n", just_pushed);
+		printf("incoming: %d\n", incoming);
+		ft_print_a(a, "a");
 		closest_a_node_idx = ft_find_closest_a_node_idx(a, incoming);
+		ft_re_order_a(a, closest_a_node_idx);
 		++i;
 	}
+	// ft_print_a(a, "a");
+	// printf("----------------------------------------------> %d\n", i + 1);
+	// ft_re_init_index(*a);
+	// ft_re_init_index(*b);
+	// incoming = (*b)->data;
+	// printf("incoming: %d\n", incoming);
+	// closest_a_node_idx = ft_find_closest_a_node_idx(a, incoming);
+	// printf("closest_a_node_idx: %d\n", closest_a_node_idx);
+	// ft_re_order_a(a, closest_a_node_idx);
+	// ft_pa(a, b);
 }

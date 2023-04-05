@@ -37,7 +37,7 @@ int	main(int ac, char **av)
 	t_list	*a;
 	t_list	*b;
 	int		*entries_arr;
-	// int		a_size;
+	int		a_size;
 
 	a = NULL;
 	b = NULL;
@@ -46,7 +46,7 @@ int	main(int ac, char **av)
 	a = ft_init_stack(a, entries_arr, ac - 1);
 
 	ft_push_first_2(&a, &b);
-
+	a_size = ft_get_stack_size(a);
 	//-------------------------------------------------------------------------
 	ft_re_init_index(b);
 	// ft_print_stack(&b, "b");
@@ -56,20 +56,20 @@ int	main(int ac, char **av)
 	// printf("\n");
 	//-------------------------------------------------------------------------
 
-	ft_push_from_a_to_b(&a, &b);
+	ft_push_from_a_to_b(&a, &b, a_size);
 	ft_push_from_b_to_a(&a, &b);
 
 	//-------------------------------------------------------------------------
-	ft_re_init_index(b);
-	ft_print_stack(&b, "b");
-	printf("\n");
-	// ft_print_stack(&a, "a");
-	//-------------------------------------------------------------------------
-	ft_re_init_index(a);
-	ft_re_init_index(b);
+	// ft_re_init_index(b);
 	// ft_print_stack(&b, "b");
 	// printf("\n");
 	// ft_print_stack(&a, "a");
+	//-------------------------------------------------------------------------
+	ft_re_init_index(a);
+	// ft_re_init_index(b);
+	// ft_print_stack(&b, "b");
+	printf("\n");
+	ft_print_stack(&a, "a");
 	ft_free_stack(&a);
 	free(entries_arr);
 	ft_free_stack(&b);

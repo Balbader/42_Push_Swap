@@ -25,3 +25,4 @@ void	ft_finalize_a(t_list **a)
 	ft_re_order_a(a, smallest_idx);
 	ft_re_init_index(*a);
 }
+

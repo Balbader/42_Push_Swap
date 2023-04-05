@@ -38,16 +38,14 @@ static void	ft_run_job(t_list **a, t_list **b)
 }
 */
 
-void	ft_push_from_a_to_b(t_list **a, t_list **b)
+void	ft_push_from_a_to_b(t_list **a, t_list **b, int a_size)
 {
 	int	i;
-	int	a_size;
 	int	cheapest_a_node_idx;
 	int	*a_cost;
 	int	*b_cost;
 	int	*cost;
 
-	a_size = ft_get_stack_size(*a);
 	i = 0;
 	while (i < a_size)
 	{
