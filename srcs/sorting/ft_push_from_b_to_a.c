@@ -134,6 +134,7 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 		printf("closest_a_idx: %d\n", closest_a_node_idx);
 		ft_re_order_a(a, closest_a_node_idx);
 		printf("just_pushed: %d\n", just_pushed);
+		ft_print_a(a, "a");
 		// ft_pa(a, b);
 		// incoming = (*b)->data;
 		++i;
