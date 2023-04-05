@@ -24,7 +24,8 @@ static void	ft_print_a(t_list **a, char *name)
 	i = 0;
 	while (temp)
 	{
-		printf("%d, ", temp->data);
+		// printf("%d, ", temp->data);
+		printf("[%d] : %d, ", temp->index, temp->data);
 		temp = temp->next;
 		++i;
 	}
@@ -67,8 +68,8 @@ static int	*ft_get_greater_arr(t_list **a, int incoming)
 	while (tmp)
 	{
 		res = incoming - tmp->data;
-		printf("res: %d\n", res);
 		res_arr[i] = res;
+		// printf("[%d] : %d, ", i, res_arr[i]);
 		++i;
 		tmp = tmp->next;
 	}
@@ -84,14 +85,16 @@ int	ft_find_closest_a_node_idx(t_list **a, int incoming)
 	int	*res;
 	int	closest_res;
 	int	closest_idx;
+	int	a_size;
 	int	i;
 
 	closest_idx = 0;
 	closest_res = INT_MIN;
 	res = ft_get_greater_arr(a, incoming);
 	a_idx_arr = ft_init_idx_array(a);
+	a_size = ft_get_stack_size(*a);
 	i = 0;
-	while (res[i])
+	while (i < a_size)
 	{
 		if (res[i] < 0 && res[i] > closest_res)
 		{
@@ -100,8 +103,10 @@ int	ft_find_closest_a_node_idx(t_list **a, int incoming)
 		}
 		++i;
 	}
+	printf("\n");
 	// ft_print_a(a, "a");
-	// printf("closest_res: %d\n", closest_res);
+	printf("closest_res: %d\n", closest_res);
+	printf("a_idx_arr[%d]: %d\n", closest_idx, a_idx_arr[closest_idx]);
 	return (free(res), a_idx_arr[closest_idx]);
 }
 
@@ -113,41 +118,29 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	int incoming;
 	int	closest_a_node_idx;
 
-	ft_print_stack(b, "b");
-	// ft_pa(a, b);
 	b_size = ft_get_stack_size(*b);
-	incoming = (*b)->data;
 	i = 0;
-	// while (i < b_size)
-	while (i < 10)
-	// while (i < b_size - 1)
+	while (i < b_size)
 	{
+		printf("===================================> %d\n", i + 1);
+		ft_print_a(b, "b");
+		if (i + 1 < b_size)
+		{
+			printf("incoming: %d\n", incoming);
+			printf("closest_a_idx: %d\n", closest_a_node_idx);
+			printf("just_pushed: %d\n", just_pushed);
+			printf("\n");
+		}
+		// ft_print_stack(a, "a");
+		ft_print_a(a, "a");
 		incoming = (*b)->data;
 		ft_pa(a, b);
-		printf("===================================> %d\n", i);
 		ft_re_init_index(*a);
 		ft_re_init_index(*b);
-		ft_print_stack(b, "b");
 		just_pushed = (*a)->data;
-		printf("incoming: %d\n", incoming);
-		closest_a_node_idx = ft_find_closest_a_node_idx(a, incoming);
-		printf("closest_a_idx: %d\n", closest_a_node_idx);
+		// closest_a_node_idx = ft_find_closest_a_node_idx(a, incoming);
 		ft_re_order_a(a, closest_a_node_idx);
-		printf("just_pushed: %d\n", just_pushed);
-		ft_print_a(a, "a");
-		// ft_pa(a, b);
-		// incoming = (*b)->data;
+		closest_a_node_idx = ft_find_closest_a_node_idx(a, incoming);
 		++i;
 	}
-	// printf("===================================> %d\n", i);
-	// ft_re_init_index(*a);
-	// ft_re_init_index(*b);
-	// // ft_print_stack(b, "b");
-	// incoming = (*b)->data;
-	// just_pushed = (*a)->data;
-	// printf("incoming: %d\n", incoming);
-	// printf("just_pushed: %d\n", just_pushed);
-	// closest_a_node_idx = ft_find_closest_a_node_idx(a, incoming);
-	// ft_re_order_a(a, closest_a_node_idx);
-	// ft_pa(a, b);
 }
