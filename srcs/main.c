@@ -44,16 +44,12 @@ int	main(int ac, char **av)
 	entries_arr = NULL;
 	entries_arr = ft_init_entries_arr(ac, av, entries_arr);
 	a = ft_init_stack(a, entries_arr, ac - 1);
-
 	ft_push_first_2(&a, &b);
 	a_size = ft_get_stack_size(a);
 	ft_re_init_index(b);
 	ft_re_init_index(a);
 	ft_push_from_a_to_b(&a, &b, a_size);
 	ft_push_from_b_to_a(&a, &b);
-	ft_re_init_index(a);
-	printf("\n");
-	ft_print_stack(&a, "a");
 	ft_free_stack(&a);
 	free(entries_arr);
 	ft_free_stack(&b);
