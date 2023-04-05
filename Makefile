@@ -73,6 +73,7 @@ SORT_FILES			:=	\
 						ft_push_first_2.c \
 						ft_push_from_a_to_b.c \
 						ft_push_from_b_to_a.c \
+						ft_push_from_b_to_a_utils.c \
 						ft_sort_3.c
 SORT				:=	$(addprefix $(SORT_DIR), $(SORT_FILES))
 

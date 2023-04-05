@@ -86,6 +86,8 @@ void		ft_do_a_cost(int a_cost, t_list **a);
 void		ft_do_b_cost(int b_cost, t_list **b);
 void		ft_opt_pos(t_list **a, t_list **b, int a_cost, int b_cost);
 void		ft_opt_neg(t_list **a, t_list **b, int a_cost, int b_cost);
+void		ft_re_order_a(t_list **a, int pivot_idx);
+void		ft_finalize_a(t_list **a);
 
 /* SORTING UTILS*/
 int			ft_a_is_sorted(t_list *a);
