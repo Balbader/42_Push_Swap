@@ -46,10 +46,11 @@ int	main(int ac, char **av)
 	if (ac - 1 <= 5)
 		ft_small_sort(a, b, ac - 1);
 	else if (ac - 1 == 100 || ac - 1 == 500)
-		ft_sort_b_and_pa(&a, &b);
+		ft_pb_chunks(&a, &b);
+		// ft_sort_b_and_pa(&a, &b);
 	else
 		ft_sort_stack(&a, &b);
-	// ft_print_stack(&a, "a");
+	ft_print_stack(&b, "b");
 	ft_free_stack(&a);
 	free(entries_arr);
 	ft_free_stack(&b);

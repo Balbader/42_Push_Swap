@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+/*
 static int	ft_middle_idx(t_list *stack)
 {
 	int	*stack_cpy;
@@ -72,26 +73,27 @@ static void	ft_rb_or_rrb(t_list **b, t_list **a, int rotate)
 		ft_pa(a, b);
 	}
 }
+*/
 
 void	ft_sort_b_and_pa(t_list **a, t_list **b)
 {
-	int	big_idx;
-	int	mid_idx;
-	int	rotate;
-	int	stack_size;
-	int	i;
+	// int	big_idx;
+	// int	mid_idx;
+	// int	rotate;
+	// int	stack_size;
+	// int	i;
 
 	ft_pb_chunks(a, b);
-	stack_size = ft_get_stack_size(*b);
-	i = 0;
-	while (i < stack_size)
-	{
-		big_idx = ft_find_biggest_node_pos(*b);
-		mid_idx = ft_middle_idx(*b);
-		rotate = ft_nb_rotate(b, a, big_idx, mid_idx);
-		ft_rb_or_rrb(b, a, rotate);
-		*a = ft_re_init_index(*a);
-		*b = ft_re_init_index(*b);
-		++i;
-	}
+	// stack_size = ft_get_stack_size(*b);
+	// i = 0;
+	// while (i < stack_size)
+	// {
+	// 	big_idx = ft_find_biggest_node_pos(*b);
+	// 	mid_idx = ft_middle_idx(*b);
+	// 	rotate = ft_nb_rotate(b, a, big_idx, mid_idx);
+	// 	ft_rb_or_rrb(b, a, rotate);
+	// 	*a = ft_re_init_index(*a);
+	// 	*b = ft_re_init_index(*b);
+	// 	++i;
+	// }
 }
