@@ -49,7 +49,7 @@ int	main(int ac, char **av)
 		ft_sort_b_and_pa(&a, &b);
 	else
 		ft_sort_stack(&a, &b);
-	ft_print_stack(&a, "a");
+	// ft_print_stack(&a, "a");
 	ft_free_stack(&a);
 	free(entries_arr);
 	ft_free_stack(&b);
