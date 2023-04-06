@@ -17,13 +17,11 @@ static void	ft_push_chunks_to_b(t_list **a, t_list **b,
 {
 	int	stack_size;
 	int	count;
-	int	i;
 	int	j;
 
 	stack_size = ft_get_stack_size(*a);
 	count = 0;
 	j = 0;
-	i = 0;
 	while (*a)
 	{
 		if ((*a)->data <= pivots_arr[j])
@@ -40,7 +38,6 @@ static void	ft_push_chunks_to_b(t_list **a, t_list **b,
 		}
 		if (j > pivots_count)
 			break ;
-		++i;
 	}
 }
 

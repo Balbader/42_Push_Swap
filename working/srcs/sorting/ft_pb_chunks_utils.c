@@ -27,8 +27,8 @@ static int	*ft_fill_in_pivots_idx(int *pivots_idx,
 	int	count;
 
 	count = (stack_size / pivots_count);
+	pivots_idx = NULL;
 	pivots_idx = (int *)malloc(sizeof(int) * pivots_count);
-	// pivots_idx = NULL;
 	if (!pivots_idx)
 		return (0);
 	idx = 0;

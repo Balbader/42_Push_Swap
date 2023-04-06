@@ -37,24 +37,30 @@ static int	*ft_sort_arr(int *arr, int arr_size)
 	return (arr);
 }
 
+static int	*ft_create_a_cpy(int *a_cpy, t_list **a, int a_size)
+{
+	a_cpy = ft_copy_stack_to_arr(*a, a_size, a_cpy);
+	a_cpy = ft_sort_arr(a_cpy, a_size);
+	return (a_cpy);
+}
+
 static int	*ft_define_pivot_arr(t_list **a, int *pivots_idx, int pivots_count)
 {
 	int		*a_cpy;
 	int		*pivots_arr;
-	int		stack_size;
+	int		a_size;
 	int		i;
 	int		j;
 
-	stack_size = ft_get_stack_size(*a);
+	a_size = ft_get_stack_size(*a);
 	a_cpy = NULL;
-	a_cpy = ft_copy_stack_to_arr(*a, stack_size, a_cpy);
-	a_cpy = ft_sort_arr(a_cpy, stack_size);
+	a_cpy = ft_create_a_cpy(a_cpy, a, a_size);
 	pivots_arr = (int *)malloc(sizeof(int) * pivots_count);
 	if (!pivots_arr)
 		return (0);
 	j = 0;
 	i = 0;
-	while (i < stack_size)
+	while (i < a_size)
 	{
 		if (i == pivots_idx[j])
 		{
