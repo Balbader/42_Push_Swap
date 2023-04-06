@@ -79,12 +79,12 @@ void		ft_push_from_b_to_a(t_list **a, t_list **b);
 void		ft_do_cheapest_a(t_list **a, t_list **b, int a_cost, int b_cost);
 void		ft_sort_3(t_list **a);
 void		ft_run_opt_instructions(t_list **a, t_list **b,
-							int a_cost, int b_cost);
+					int a_cost, int b_cost);
 void		ft_run_reg_instructions(t_list **a, t_list **b,
 							int a_cost, int b_cost);
 void		ft_run_on_single(int loops, t_list **stack, void (*f)(t_list **));
 void		ft_run_on_both(int loops, t_list **a, t_list **b,
-						void (*f)(t_list **, t_list **));
+					void (*f)(t_list **, t_list **));
 void		ft_do_a_cost(int a_cost, t_list **a);
 void		ft_do_b_cost(int b_cost, t_list **b);
 void		ft_opt_pos(t_list **a, t_list **b, int a_cost, int b_cost);
