@@ -18,7 +18,7 @@ static int	*ft_init_entries_arr(int ac, char **av, int *arr)
 	int	j;
 
 	arr = NULL;
-	arr = (int *)malloc(sizeof(int) * (ac - 1));
+	arr = (int *)malloc(sizeof(int) * (ac));
 	if (!arr)
 		return (0);
 	j = 1;

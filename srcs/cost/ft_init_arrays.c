@@ -70,8 +70,11 @@ int	*ft_init_cost_arr(t_list **stack)
 
 	stack_size = ft_get_stack_size(*stack);
 	cost_arr = NULL;
-	cost_arr = (int *)malloc(sizeof(int) * stack_size);
-	if (!cost_arr)
-		return (0);
+	if (stack_size > 0)
+	{
+		cost_arr = (int *)malloc(sizeof(int) * stack_size);
+		if (!cost_arr)
+			return (0);
+	}
 	return (cost_arr);
 }

@@ -25,6 +25,7 @@ int	*ft_init_a_cost_arr(t_list **a)
 	int	mid;
 	int	i;
 
+	a_cost_arr = NULL;
 	a_cost_arr = ft_init_cost_arr(a);
 	a_size = ft_get_stack_size(*a);
 	mid = a_size / 2;

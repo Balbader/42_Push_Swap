@@ -48,13 +48,15 @@ int	ft_find_closest_b_node_idx(t_list **b, int incoming)
 	int	closest_res;
 	int	closest_idx;
 	int	i;
+	int	b_size;
 
 	closest_idx = 0;
 	closest_res = INT_MAX;
 	res = ft_get_lesser_arr(b, incoming);
 	b_idx_arr = ft_init_idx_array(b);
+	b_size = ft_get_stack_size(*b);
 	i = 0;
-	while (res[i])
+	while (i < b_size)
 	{
 		if (res[i] > 0 && res[i] < closest_res)
 		{

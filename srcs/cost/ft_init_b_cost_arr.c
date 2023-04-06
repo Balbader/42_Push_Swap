@@ -55,6 +55,8 @@ int	*ft_init_b_cost_arr(t_list **a, t_list **b)
 	a_data = ft_init_data_array(a);
 	b_cost = NULL;
 	b_cost = (int *)malloc(sizeof(int) * a_size);
+	if (!b_cost)
+		return (0);
 	i = 0;
 	while (i < a_size)
 	{
@@ -62,5 +64,5 @@ int	*ft_init_b_cost_arr(t_list **a, t_list **b)
 		b_cost[i] = ft_cost_closest_b(b, closest_b_node_idx);
 		++i;
 	}
-	return (b_cost);
+	return (free(a_data), b_cost);
 }

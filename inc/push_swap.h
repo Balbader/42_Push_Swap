@@ -112,7 +112,7 @@ t_list		*ft_re_init_index(t_list *stack);
 int			ft_isdigit(char c);
 int			ft_strlen(const char *str);
 void		ft_putstr_fd(char *str, int fd);
-// void		ft_print_stack(t_list **stack, char *name);
+void		ft_print_stack(t_list **stack, char *name);
 void		ft_print_err(t_list **stack_a, t_list **stack_b);
 
 #endif
