@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "c2e8a525aecafa63",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "1. to keep.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1. TO DO/Needs to be checked.md",
+                "file": "1. to keep.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1. TO DO/Needs to be checked.md",
+                "file": "1. to keep.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1. TO DO/Needs to be checked.md"
+                "file": "1. to keep.md"
               }
             }
           }
@@ -146,9 +159,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "de684aec622637dd",
+  "active": "c2e8a525aecafa63",
   "lastOpenFiles": [
     "1. TO DO/Needs to be checked.md",
+    "1. to keep.md",
     "2. DONE",
     "1. TO DO"
   ]
