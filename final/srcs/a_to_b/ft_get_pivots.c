@@ -52,7 +52,7 @@ static int	*ft_define_pivot_arr(t_list **a, int *pivots_idx, int pivots_count)
 	int		i;
 	int		j;
 
-	a_size = ft_get_stack_size(*a);
+	a_size = ft_get_stack_size(a);
 	a_cpy = NULL;
 	a_cpy = ft_create_a_cpy(a_cpy, a, a_size);
 	pivots_arr = (int *)malloc(sizeof(int) * pivots_count);
@@ -78,9 +78,9 @@ int	*ft_get_pivots(t_list **a)
 	int	*pivots_idx;
 	int	pivots_count;
 	int	*pivots_arr;
-	int	stack_size;
+	// int	stack_size;
 
-	stack_size = ft_get_stack_size(a);
+	// stack_size = ft_get_stack_size(a);
 	pivots_count = 10;
 	// pivots_count = ft_define_pivots_count(pivots_count, stack_size);
 	pivots_idx = NULL;
