@@ -12,38 +12,38 @@
 
 #include "push_swap.h"
 
-void	ft_push_smallest_node_4(t_list **stack_a,
-				t_list **stack_b, int smallest_node_index)
+void	ft_push_smallest_node_4(t_list **a,
+				t_list **b, int smallest_node_index)
 {
 	if (smallest_node_index == 1)
-		ft_pb(stack_a, stack_b);
+		ft_pb(a, b);
 	if (smallest_node_index == 2)
 	{
-		ft_ra(stack_a);
-		ft_pb(stack_a, stack_b);
+		ft_ra(a);
+		ft_pb(a, b);
 	}
 	if (smallest_node_index == 3)
 	{
-		ft_ra(stack_a);
-		ft_ra(stack_a);
-		ft_pb(stack_a, stack_b);
+		ft_ra(a);
+		ft_ra(a);
+		ft_pb(a, b);
 	}
 	if (smallest_node_index == 4)
 	{
-		ft_rra(stack_a);
-		ft_pb(stack_a, stack_b);
+		ft_rra(a);
+		ft_pb(a, b);
 	}
-	*stack_a = ft_re_init_index(*stack_a);
+	ft_re_init_index(*a);
 }
 
-void	ft_sort_4(t_list *stack_a, t_list *stack_b)
+void	ft_sort_4(t_list **a, t_list **b)
 {
 	int		smallest_node_index;
 
-	stack_a = ft_re_init_index(stack_a);
-	smallest_node_index = ft_find_smallest_node_pos(stack_a);
-	ft_push_smallest_node_4(&stack_a, &stack_b, smallest_node_index);
-	stack_a = ft_sort_3(stack_a);
-	ft_pa(&stack_a, &stack_b);
-	stack_a = ft_re_init_index(stack_a);
+	ft_re_init_index(*a);
+	smallest_node_index = ft_find_smallest_node_idx(*a);
+	ft_push_smallest_node_4(a, b, smallest_node_index);
+	ft_sort_3(a);
+	ft_pa(a, b);
+	ft_re_init_index(*a);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_3.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: baalbade <baalbade@student.42.fr>          +#+  +:+       +#+        */
+/*   By: baalbade <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/17 11:10:57 by baalbade          #+#    #+#             */
-/*   Updated: 2023/02/17 11:10:58 by baalbade         ###   ########.fr       */
+/*   Created: 2023/03/23 01:23:50 by baalbade          #+#    #+#             */
+/*   Updated: 2023/03/23 01:23:52 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,29 +42,30 @@ static int	ft_find_case_3(int arr[3])
 		return (0);
 }
 
-t_list	*ft_sort_3(t_list *stack_a)
+void	ft_sort_3(t_list **a)
 {
 	int	*arr;
 
+	arr = NULL;
 	arr = (int *)malloc(sizeof(int) * 3);
 	if (!arr)
-		return (NULL);
-	arr = ft_init_arr_3(stack_a, arr);
+		return ;
+	arr = ft_init_arr_3(*a, arr);
 	if (ft_find_case_3(arr) == 1)
-		ft_sa(stack_a);
+		ft_sa(a);
 	if (ft_find_case_3(arr) == 2)
 	{
-		ft_sa(stack_a);
-		ft_rra(&stack_a);
+		ft_sa(a);
+		ft_rra(a);
 	}
 	if (ft_find_case_3(arr) == 3)
-		ft_ra(&stack_a);
+		ft_ra(a);
 	if (ft_find_case_3(arr) == 4)
 	{
-		ft_sa(stack_a);
-		ft_ra(&stack_a);
+		ft_sa(a);
+		ft_ra(a);
 	}
 	if (ft_find_case_3(arr) == 5)
-		ft_rra(&stack_a);
-	return (free(arr), stack_a);
+		ft_rra(a);
+	free(arr);
 }

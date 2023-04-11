@@ -53,5 +53,5 @@ void	ft_pb_chunks(t_list **a, t_list **b)
 	// pivots_count = ft_define_pivots_count(pivots_count, stack_size);
 	ft_push_chunks_to_b(a, b, pivots_arr, pivots_count);
 	free(pivots_arr);
-	*b = ft_re_init_index(*b);
+	ft_re_init_index(*b);
 }
