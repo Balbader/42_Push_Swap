@@ -54,8 +54,13 @@ long int	ft_convert_entry(const char *av);
 
 /* SORTING */
 void		ft_sort_3(t_list **stack);
+void		ft_sort_4(t_list **a, t_list **b);
 
 /* STACK */
+int			ft_find_biggest_node_data(t_list *stack);
+int			ft_find_biggest_node_idx(t_list *stack);
+int			ft_find_smallest_node_data(t_list *stack);
+int			ft_find_smallest_node_idx(t_list *stack);
 int			ft_get_stack_size(t_list *stack);
 void		ft_add_new_tail(t_list **lst, t_list *node);
 void		ft_free_stack(t_list **stack);

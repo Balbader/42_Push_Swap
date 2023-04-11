@@ -43,7 +43,8 @@ int	main(int ac, char **av)
 	entries_arr = NULL;
 	entries_arr = ft_init_entries_arr(ac, av, entries_arr);
 	a = ft_init_stack(a, entries_arr, ac - 1);
-	ft_sort_3(&a);
+	// ft_sort_3(&a);
+	ft_sort_4(&a, &b);
 	// if (ac - 1 <= 5)
 		// ft_small_sort(a, b, ac - 1);
 	// else

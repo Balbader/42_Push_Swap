@@ -1,14 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: baalbade <marvin@42.fr>                    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/04/11 09:37:50 by baalbade          #+#    #+#              #
-#    Updated: 2023/04/11 09:37:52 by baalbade         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
 
 ############
 #   NAME   #
@@ -43,13 +32,19 @@ OPER_FILES			:=	\
 OPER				:=	$(addprefix $(OPER_DIR), $(OPER_FILES))
 
 SORTING_DIR			:=	sorting/
-SORTING_FILES		:=	ft_sort_3.c
+SORTING_FILES		:=	\
+						ft_sort_3.c \
+						ft_sort_4.c
 SORTING				:=	$(addprefix $(SORTING_DIR), $(SORTING_FILES))
 
 STACK_DIR			:=	stack/
 STACK_FILES			:=	\
 						ft_add_new_tail.c \
 						ft_create_node.c \
+						ft_find_biggest_node_data.c \
+						ft_find_biggest_node_idx.c \
+						ft_find_smallest_node_data.c \
+						ft_find_smallest_node_idx.c \
 						ft_free_stack.c \
 						ft_get_before_last_node.c \
 						ft_get_last_node.c \
