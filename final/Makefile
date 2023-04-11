@@ -7,6 +7,14 @@ NAME				:=	push_swap
 ##################
 #   SRCS FILES	 #
 ##################
+A_TO_B_DIR			:=	a_to_b/
+A_TO_B_FILES		:=	\
+						ft_get_pivots.c \
+						ft_pb_chunks.c \
+						ft_pb_chunks_utils.c \
+						ft_pre_sort_stack.c
+A_TO_B				:=	$(addprefix $(A_TO_B_DIR), $(A_TO_B_FILES))
+
 ACTIONS_DIR			:=	actions/
 ACTIONS_FILES		:=	\
 						ft_push_node.c \
@@ -72,6 +80,7 @@ INCS				:=	./inc/
 
 SRCS_DIR			:=	./srcs/
 SRCS				:=	\
+						$(A_TO_B) \
 						$(ACTIONS) \
 						$(ENTRY) \
 						$(OPER) \

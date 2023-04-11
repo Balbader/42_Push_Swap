@@ -27,6 +27,12 @@ typedef struct s_list
 	struct s_list	*next;
 }				t_list;
 
+/* A_TO_B */
+int			*ft_get_pivots(t_list **a);
+int			*ft_find_pivots_idx(t_list **a, int *pivots_idx);
+void		ft_pb_chunks(t_list **a, t_list **b);
+t_list		*ft_pre_sort_stack(t_list *rand_stack);
+
 /* ACTIONS */
 void		ft_push_node(t_list **src, t_list **dest);
 void		ft_reverse_rotate(t_list **stack);
