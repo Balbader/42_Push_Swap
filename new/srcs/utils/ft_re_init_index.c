@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-t_list	*ft_re_init_index(t_list *stack)
+void	ft_re_init_index(t_list *stack)
 {
 	int		i;
 	t_list	*head;
@@ -26,5 +26,4 @@ t_list	*ft_re_init_index(t_list *stack)
 		stack = stack->next;
 		++i;
 	}
-	return (head);
 }
