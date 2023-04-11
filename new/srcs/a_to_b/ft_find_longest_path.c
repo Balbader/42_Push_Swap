@@ -27,13 +27,13 @@ void	ft_find_longest_path(t_list *stack, int *arr)
 	while (i < stack_size)
 	{
 		j = 0;
-		printf(" %d  ", tab[i][j]);
+		// printf(" %d  ", tab[i][j]);
 		++i;
 	}
 	i = 0;
 	while (i < stack_size)
 	{
-		printf("[%d] ", head->index);
+		// printf("[%d] ", head->index);
 		head = head->next;
 		++i;
 	}
