@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_entry.c                                   :+:      :+:    :+:   */
+/*   ft_copy_stack_index.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: baalbade <baalbade@student.42.fr>          +#+  +:+       +#+        */
+/*   By: baalbade <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/17 09:35:25 by baalbade          #+#    #+#             */
-/*   Updated: 2023/02/17 09:35:30 by baalbade         ###   ########.fr       */
+/*   Created: 2023/02/22 08:52:47 by baalbade          #+#    #+#             */
+/*   Updated: 2023/02/22 08:52:50 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_check_entry(char *av)
+int	*ft_copy_stack_index(t_list *stack)
 {
+	int	*arr;
+	int	stack_size;
 	int	i;
 
-	if (!av)
+	stack_size = ft_get_stack_size(stack);
+	arr = (int *)malloc(sizeof(int) * stack_size);
+	if (!arr)
 		return (0);
 	i = 0;
-	while (av[i])
+	while (i < stack_size)
 	{
-		if (av[i] == '-')
-			++i;
-		else if (av[i] == '-' && (!ft_isdigit(av[i + 1])))
-		{
-			ft_putstr_fd("Error\n", 2);
-			exit(1);
-		}
-		else if (!ft_isdigit(av[i]))
-		{
-			ft_putstr_fd("Error\n", 2);
-			exit(1);
-		}
+		arr[i] = stack->index;
+		stack = stack->next;
 		++i;
 	}
-	return (0);
+	return (arr);
 }

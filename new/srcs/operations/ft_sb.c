@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sb.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: baalbade <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: baalbade <baalbade@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/22 23:29:06 by baalbade          #+#    #+#             */
-/*   Updated: 2023/03/22 23:29:10 by baalbade         ###   ########.fr       */
+/*   Created: 2023/02/17 09:11:58 by baalbade          #+#    #+#             */
+/*   Updated: 2023/02/17 09:12:02 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_sb(t_list **b)
+void	ft_sb(t_list *stack_b)
 {
-	ft_swap(b);
+	ft_swap_stack(stack_b);
 	ft_putstr_fd("sb\n", 1);
 }

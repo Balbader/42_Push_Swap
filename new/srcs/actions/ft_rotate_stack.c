@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rr.c                                            :+:      :+:    :+:   */
+/*   ft_rotate_stack.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baalbade <baalbade@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/17 09:04:36 by baalbade          #+#    #+#             */
-/*   Updated: 2023/02/17 09:04:38 by baalbade         ###   ########.fr       */
+/*   Created: 2023/02/17 08:43:32 by baalbade          #+#    #+#             */
+/*   Updated: 2023/02/17 08:43:36 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_rr(t_list **stack_a, t_list **stack_b)
+void	ft_rotate_stack(t_list **stack)
 {
-	ft_rotate_stack(stack_a);
-	ft_rotate_stack(stack_b);
-	ft_putstr_fd("rr\n", 1);
+	t_list	*temp;
+
+	temp = NULL;
+	if (!(*stack))
+		return ;
+	temp = *stack;
+	temp = temp->next;
+	(*stack)->next = NULL;
+	ft_add_new_tail(&temp, *stack);
+	(*stack) = temp;
 }

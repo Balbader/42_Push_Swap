@@ -1,20 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rr.c                                            :+:      :+:    :+:   */
+/*   ft_look_for_doubles.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baalbade <baalbade@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/17 09:04:36 by baalbade          #+#    #+#             */
-/*   Updated: 2023/02/17 09:04:38 by baalbade         ###   ########.fr       */
+/*   Created: 2023/02/17 09:36:22 by baalbade          #+#    #+#             */
+/*   Updated: 2023/02/17 09:36:23 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_rr(t_list **stack_a, t_list **stack_b)
+void	ft_look_for_doubles(int *arr, int arr_size)
 {
-	ft_rotate_stack(stack_a);
-	ft_rotate_stack(stack_b);
-	ft_putstr_fd("rr\n", 1);
+	int	i;
+	int	j;
+
+	if (!arr)
+		return ;
+	i = 0;
+	while (i < arr_size)
+	{
+		j = i + 1;
+		while (j < arr_size)
+		{
+			if (arr[i] == arr[j])
+			{
+				ft_putstr_fd("Error\n", 2);
+				exit(1);
+			}
+			++j;
+		}
+		++i;
+	}
 }

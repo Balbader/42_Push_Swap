@@ -18,38 +18,23 @@ NAME				:=	push_swap
 ##################
 #   SRCS FILES	 #
 ##################
-# Actions
-ACTIONS_DIR			:=	actions/
-ACTIONS_FILES		:=	\
-						ft_push_node.c \
-						ft_reverse_rotate.c \
-						ft_rotate.c \
-						ft_swap.c
-ACTIONS				:=	$(addprefix $(ACTIONS_DIR), $(ACTIONS_FILES))
-
-# a_to_b
-A_TO_B_DIR				:=	a_to_b/
-A_TO_B_FILES			:=	\
-						ft_find_longest_path.c \
-						ft_find_longest_path_utils.c \
-						ft_pb_chunks.c \
-						ft_pb_chunks_utils.c \
-						ft_pre_sort_stack.c \
-						ft_small_sort.c \
-						ft_sort_3.c \
-						ft_sort_4.c \
-						ft_sort_5.c
-A_TO_B					:=	$(addprefix $(A_TO_B_DIR), $(A_TO_B_FILES))
-
 # Entry
 ENTRY_DIR			:=	entry/
 ENTRY_FILES			:=	\
 						ft_check_entry.c \
 						ft_convert_entry.c \
-						ft_find_doubles.c \
-						ft_get_entry.c
+						ft_get_entry.c \
+						ft_look_for_doubles.c
 ENTRY				:=	$(addprefix $(ENTRY_DIR), $(ENTRY_FILES))
 
+# Actions
+ACTIONS_DIR			:=	actions/
+ACTIONS_FILES		:=	\
+						ft_push_node.c \
+						ft_reverse_rotate_stack.c \
+						ft_rotate_stack.c \
+						ft_swap_stack.c
+ACTIONS				:=	$(addprefix $(ACTIONS_DIR), $(ACTIONS_FILES))
 
 # Operations
 OPER_DIR			:=	operations/
@@ -60,24 +45,54 @@ OPER_FILES			:=	\
 						ft_sa.c ft_sb.c ft_ss.c
 OPER				:=	$(addprefix $(OPER_DIR), $(OPER_FILES))
 
+# Sorting
+SORTING_DIR			:=	sorting/
+SORTING_FILES		:=	\
+						ft_find_longest_path.c \
+						ft_find_longest_path_utils.c \
+						ft_pre_sort_stack.c \
+						ft_pb_chunks.c \
+						ft_pb_chunks_utils.c \
+						ft_small_sort.c \
+						ft_sort_3.c \
+						ft_sort_4.c \
+						ft_sort_5.c \
+						ft_sort_stack.c \
+						ft_sort_b_and_pa.c
+SORTING				:=	$(addprefix $(SORTING_DIR), $(SORTING_FILES))
+
+# Stack
+STACK_DIR			:=	stack/
+STACK_FILES			:=	\
+						ft_add_new_head.c \
+						ft_add_new_tail.c \
+						ft_copy_stack_index.c \
+						ft_copy_stack_to_arr.c \
+						ft_create_node.c \
+						ft_find_smallest_node_pos.c \
+						ft_find_biggest_node_pos.c \
+						ft_get_before_last_node.c \
+						ft_find_mid_node.c \
+						ft_get_last_node.c \
+						ft_get_pivots.c \
+						ft_is_biggest_node.c \
+						ft_free_stack.c \
+						ft_get_stack_size.c \
+						ft_init_rand_stack.c \
+						ft_init_stack.c \
+						ft_re_init_index.c \
+						ft_split_stack.c \
+						ft_stack_is_sorted.c
+STACK				:=	$(addprefix $(STACK_DIR), $(STACK_FILES))
+
 # Utils
 UTILS_DIR			:=	utils/
 UTILS_FILES			:=	\
-						ft_utils.c \
-						ft_add_new_tail.c \
-						ft_a_is_sorted.c \
-						ft_create_node.c \
-						ft_find_biggest_node_data.c \
-						ft_find_biggest_node_idx.c \
-						ft_find_mid_node_idx.c \
-						ft_find_smallest_node_data.c \
-						ft_find_smallest_node_idx.c \
-						ft_free_stack.c \
-						ft_get_before_last_node.c \
-						ft_get_last_node.c \
-						ft_get_stack_size.c \
-						ft_init_stack.c \
-						ft_re_init_index.c \
+						ft_isdigit.c \
+						ft_print_err.c \
+						ft_print_stack.c \
+						ft_putstr_fd.c \
+						ft_strlen.c
 UTILS				:=	$(addprefix $(UTILS_DIR), $(UTILS_FILES))
 
 ###################
@@ -87,10 +102,11 @@ INCS				:=	./inc/
 
 SRCS_DIR			:=	./srcs/
 SRCS				:=	\
-						$(ACTIONS) \
-						$(A_TO_B) \
 						$(ENTRY) \
+						$(ACTIONS) \
 						$(OPER) \
+						$(SORTING) \
+						$(STACK) \
 						$(UTILS) \
 						main.c
 SRCS        		:=	$(SRCS:%=$(SRCS_DIR)/%)

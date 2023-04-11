@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rr.c                                            :+:      :+:    :+:   */
+/*   ft_get_before_last_node.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baalbade <baalbade@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/17 09:04:36 by baalbade          #+#    #+#             */
-/*   Updated: 2023/02/17 09:04:38 by baalbade         ###   ########.fr       */
+/*   Created: 2023/01/30 17:16:34 by baalbade          #+#    #+#             */
+/*   Updated: 2023/01/30 17:16:36 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_rr(t_list **stack_a, t_list **stack_b)
+t_list	*ft_get_before_last_node(t_list *stack)
 {
-	ft_rotate_stack(stack_a);
-	ft_rotate_stack(stack_b);
-	ft_putstr_fd("rr\n", 1);
+	while (stack && stack->next && stack->next->next != NULL)
+		stack = stack->next;
+	return (stack);
 }

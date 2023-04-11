@@ -3,12 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_get_entry.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: baalbade <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: baalbade <baalbade@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/22 23:24:47 by baalbade          #+#    #+#             */
-/*   Updated: 2023/03/22 23:24:50 by baalbade         ###   ########.fr       */
+/*   Created: 2023/02/17 09:36:10 by baalbade          #+#    #+#             */
+/*   Updated: 2023/02/17 09:36:11 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+*	checks every argument, convert it and returns the converted argument
+*/
 
 #include "push_swap.h"
 

@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rr.c                                            :+:      :+:    :+:   */
+/*   ft_copy_stack_to_arr.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: baalbade <baalbade@student.42.fr>          +#+  +:+       +#+        */
+/*   By: baalbade <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/17 09:04:36 by baalbade          #+#    #+#             */
-/*   Updated: 2023/02/17 09:04:38 by baalbade         ###   ########.fr       */
+/*   Created: 2023/03/01 09:00:54 by baalbade          #+#    #+#             */
+/*   Updated: 2023/03/01 09:00:57 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_rr(t_list **stack_a, t_list **stack_b)
+int	*ft_copy_stack_to_arr(t_list *stack, int stack_size, int *arr)
 {
-	ft_rotate_stack(stack_a);
-	ft_rotate_stack(stack_b);
-	ft_putstr_fd("rr\n", 1);
+	int	i;
+
+	arr = (int *)malloc(sizeof(int) * stack_size);
+	if (!arr)
+		return (0);
+	i = 0;
+	while (stack)
+	{
+		arr[i] = stack->data;
+		++i;
+		stack = stack->next;
+	}
+	return (arr);
 }

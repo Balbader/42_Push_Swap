@@ -47,6 +47,8 @@ int	main(int ac, char **av)
 		ft_small_sort(a, b, ac - 1);
 	else
 		ft_pb_chunks(&a, &b);
+		// ft_sort_b_and_pa(&a, &b);
+		// ft_sort_stack(&a, &b);
 	ft_print_stack(&b, "b");
 	ft_free_stack(&a);
 	free(entries_arr);
