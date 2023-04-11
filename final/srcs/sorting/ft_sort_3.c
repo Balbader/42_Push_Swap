@@ -66,4 +66,5 @@ void	ft_sort_3(t_list **stack)
 	}
 	if (ft_find_case_3(arr) == 5)
 		ft_rra(stack);
+	free(arr);
 }

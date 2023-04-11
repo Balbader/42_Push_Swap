@@ -40,7 +40,6 @@ static void	ft_run_sort_3(t_list **stack)
 
 static void	ft_run_sort_4(t_list **a, t_list **b)
 {
-	b = NULL;
 	if (ft_stack_is_sorted(*a))
 	{
 		free(a);
@@ -58,7 +57,6 @@ static void	ft_run_sort_4(t_list **a, t_list **b)
 
 static void	ft_run_sort_5(t_list **a, t_list **b)
 {
-	b = NULL;
 	if (ft_stack_is_sorted(*a))
 	{
 		free(a);
