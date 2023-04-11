@@ -60,12 +60,10 @@ OPER_FILES			:=	\
 						ft_sa.c ft_sb.c ft_ss.c
 OPER				:=	$(addprefix $(OPER_DIR), $(OPER_FILES))
 
-
-
 # Utils
 UTILS_DIR			:=	utils/
 UTILS_FILES			:=	\
-						ft_utils.c
+						ft_utils.c \
 						ft_add_new_tail.c \
 						ft_a_is_sorted.c \
 						ft_create_node.c \
@@ -89,11 +87,10 @@ INCS				:=	./inc/
 
 SRCS_DIR			:=	./srcs/
 SRCS				:=	\
-						$(ENTRY) \
 						$(ACTIONS) \
+						$(A_TO_B) \
+						$(ENTRY) \
 						$(OPER) \
-						$(SORTING) \
-						$(STACK) \
 						$(UTILS) \
 						main.c
 SRCS        		:=	$(SRCS:%=$(SRCS_DIR)/%)
