@@ -15,6 +15,7 @@
 void	ft_re_init_index(t_list *stack)
 {
 	int		i;
+
 	i = 1;
 	while (stack)
 	{

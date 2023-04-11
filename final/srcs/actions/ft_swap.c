@@ -26,4 +26,3 @@ void	ft_swap(t_list **stack)
 	(*stack)->index = (*stack)->next->index;
 	(*stack)->next->index = tmp_index;
 }
-

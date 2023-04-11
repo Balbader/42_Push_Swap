@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "push_swap.h"
 
 static void	ft_run_sort_2(t_list **a)
@@ -26,7 +25,7 @@ static void	ft_run_sort_2(t_list **a)
 
 static void	ft_run_sort_3(t_list **stack)
 {
-	if (ft_stack_is_sorted(stack))
+	if (ft_stack_is_sorted(*stack))
 	{
 		free(stack);
 		exit(1);
@@ -34,7 +33,7 @@ static void	ft_run_sort_3(t_list **stack)
 	else
 	{
 		ft_sort_3(stack);
-		free(a);
+		free(stack);
 		exit(1);
 	}
 }
@@ -70,20 +69,20 @@ static void	ft_run_sort_5(t_list **a, t_list **b)
 		ft_sort_5(a, b);
 }
 
-void	ft_small_sort(t_list **a, t_list **b, int arr_size)
+void	ft_small_sort(t_list **a, t_list **b, int a_size)
 {
-	if (arr_size == 2)
+	if (a_size == 2)
 	{
 		(void)b;
 		ft_run_sort_2(a);
 	}
-	else if (arr_size == 3)
+	else if (a_size == 3)
 	{
 		(void)b;
 		ft_run_sort_3(a);
 	}
-	else if (arr_size == 4)
+	else if (a_size == 4)
 		ft_run_sort_4(a, b);
-	else if (arr_size == 5)
+	else if (a_size == 5)
 		ft_run_sort_5(a, b);
 }

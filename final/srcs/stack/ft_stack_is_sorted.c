@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_biggest_node_data.c                        :+:      :+:    :+:   */
+/*   ft_stack_is_sorted.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baalbade <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/11 11:25:17 by baalbade          #+#    #+#             */
-/*   Updated: 2023/04/11 11:25:24 by baalbade         ###   ########.fr       */
+/*   Created: 2023/04/11 12:32:00 by baalbade          #+#    #+#             */
+/*   Updated: 2023/04/11 12:32:11 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_find_biggest_node_data(t_list **stack)
+int	ft_stack_is_sorted(t_list *stack)
 {
-	t_list	*tmp;
-	int		data;
+	int	data;
 
-	if (!stack)
-		return (0);
-	tmp = (*stack);
-	data = tmp->data;
-	while (tmp)
+	data = stack->data;
+	while (stack)
 	{
-		if (tmp->data > data)
-			data = tmp->data;
-		tmp = tmp->next;
+		if (data > stack->data)
+			return (0);
+		data = stack->data;
+		stack = stack->next;
 	}
-	return (data);
+	return (1);
 }

@@ -14,13 +14,13 @@
 
 void	ft_push_node(t_list **src, t_list **dest)
 {
-	t_list	*temp;
+	t_list	*tmp;
 
-	temp = NULL;
+	tmp = NULL;
 	if (!*src)
 		return ;
-	temp = (*src)->next;
-	(*src)->next = *dest;
-	*dest = *src;
-	*src = temp;
+	tmp = (*src)->next;
+	(*src)->next = (*dest);
+	(*dest) = (*src);
+	(*src) = tmp;
 }

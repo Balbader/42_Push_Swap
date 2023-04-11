@@ -37,16 +37,21 @@ int	main(int ac, char **av)
 	t_list	*a;
 	t_list	*b;
 	int		*entries_arr;
+	int		a_size;
 
 	a = NULL;
 	b = NULL;
 	entries_arr = NULL;
 	entries_arr = ft_init_entries_arr(ac, av, entries_arr);
 	a = ft_init_stack(a, entries_arr, ac - 1);
+	a_size = ft_get_stack_size(&a);
+	ft_print_stack(&a, "a");
+	printf("a_size: %d\n", a_size);
 	// ft_sort_3(&a);
-	ft_sort_4(&a, &b);
-	// if (ac - 1 <= 5)
-		// ft_small_sort(a, b, ac - 1);
+	// ft_sort_4(&a, &b);
+	// ft_sort_5(&a, &b);
+	if (ac - 1 <= 5)
+		ft_small_sort(&a, &b, a_size);
 	// else
 		// ft_pb_chunks(&a, &b);
 		// ft_sort_b_and_pa(&a, &b);

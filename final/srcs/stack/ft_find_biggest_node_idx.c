@@ -12,21 +12,25 @@
 
 #include "push_swap.h"
 
-int	ft_find_biggest_node_idx(t_list *stack)
+int	ft_find_biggest_node_idx(t_list **stack)
 {
+	t_list	*tmp;
 	int		data;
 	int		index;
 
-	data = stack->data;
-	index = stack->index;
-	while (stack)
+	if (!stack)
+		return (0);
+	tmp = (*stack);
+	data = tmp->data;
+	index = tmp->index;
+	while (tmp)
 	{
-		if (stack->data > data)
+		if (tmp->data > data)
 		{
-			data = stack->data;
-			index = stack->index;
+			data = tmp->data;
+			index = tmp->index;
 		}
-		stack = stack->next;
+		tmp = tmp->next;
 	}
 	return (index);
 }

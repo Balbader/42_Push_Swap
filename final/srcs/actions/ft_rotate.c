@@ -14,14 +14,14 @@
 
 void	ft_rotate(t_list **stack)
 {
-	t_list	*temp;
+	t_list	*tmp;
 
-	temp = NULL;
 	if (!(*stack))
 		return ;
-	temp = *stack;
-	temp = temp->next;
+	tmp = NULL;
+	tmp = *stack;
+	tmp = tmp->next;
 	(*stack)->next = NULL;
-	ft_add_new_tail(&temp, *stack);
-	(*stack) = temp;
+	ft_add_new_tail(&tmp, *stack);
+	(*stack) = tmp;
 }

@@ -53,15 +53,20 @@ void		ft_find_doubles(int *arr, int arr_size);
 long int	ft_convert_entry(const char *av);
 
 /* SORTING */
+void		ft_small_sort(t_list **a, t_list **b, int a_size);
 void		ft_sort_3(t_list **stack);
 void		ft_sort_4(t_list **a, t_list **b);
+void		ft_sort_5(t_list **a, t_list **b);
+void		ft_push_smallest_node_4(t_list **a,
+				t_list **b, int smallest_node_index);
 
 /* STACK */
-int			ft_find_biggest_node_data(t_list *stack);
-int			ft_find_biggest_node_idx(t_list *stack);
-int			ft_find_smallest_node_data(t_list *stack);
-int			ft_find_smallest_node_idx(t_list *stack);
-int			ft_get_stack_size(t_list *stack);
+int			ft_find_biggest_node_data(t_list **stack);
+int			ft_find_biggest_node_idx(t_list **stack);
+int			ft_find_smallest_node_data(t_list **stack);
+int			ft_find_smallest_node_idx(t_list **stack);
+int			ft_get_stack_size(t_list **stack);
+int			ft_stack_is_sorted(t_list *stack);
 void		ft_add_new_tail(t_list **lst, t_list *node);
 void		ft_free_stack(t_list **stack);
 void		ft_re_init_index(t_list *stack);

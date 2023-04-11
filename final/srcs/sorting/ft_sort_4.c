@@ -41,7 +41,7 @@ void	ft_sort_4(t_list **a, t_list **b)
 	int		smallest_node_index;
 
 	ft_re_init_index(*a);
-	smallest_node_index = ft_find_smallest_node_idx(*a);
+	smallest_node_index = ft_find_smallest_node_idx(a);
 	ft_push_smallest_node_4(a, b, smallest_node_index);
 	ft_sort_3(a);
 	ft_pa(a, b);

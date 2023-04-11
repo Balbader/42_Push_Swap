@@ -12,15 +12,19 @@
 
 #include "push_swap.h"
 
-int	ft_get_stack_size(t_list *stack)
+int	ft_get_stack_size(t_list **stack)
 {
+	t_list	*tmp;
 	int	size;
 
+	if (!stack)
+		return (0);
+	tmp = (*stack);
 	size = 0;
-	while (stack != NULL)
+	while (tmp)
 	{
 		++size;
-		stack = stack->next;
+		tmp = tmp->next;
 	}
 	return (size);
 }
