@@ -33,8 +33,10 @@ OPER				:=	$(addprefix $(OPER_DIR), $(OPER_FILES))
 
 SORTING_DIR			:=	sorting/
 SORTING_FILES		:=	\
+						ft_small_sort.c \
 						ft_sort_3.c \
-						ft_sort_4.c
+						ft_sort_4.c \
+						ft_sort_5.c
 SORTING				:=	$(addprefix $(SORTING_DIR), $(SORTING_FILES))
 
 STACK_DIR			:=	stack/
@@ -50,7 +52,8 @@ STACK_FILES			:=	\
 						ft_get_last_node.c \
 						ft_get_stack_size.c \
 						ft_init_stack.c \
-						ft_re_init_index.c
+						ft_re_init_index.c \
+						ft_stack_is_sorted.c
 STACK				:=	$(addprefix $(STACK_DIR), $(STACK_FILES))
 
 UTILS_DIR			:=	utils/
