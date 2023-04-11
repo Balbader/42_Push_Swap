@@ -39,7 +39,7 @@ static int	*ft_sort_arr(int *arr, int arr_size)
 
 static int	*ft_create_a_cpy(int *a_cpy, t_list **a, int a_size)
 {
-	a_cpy = ft_copy_stack_to_arr(*a, a_size, a_cpy);
+	a_cpy = ft_copy_stack_to_arr(a, a_size, a_cpy);
 	a_cpy = ft_sort_arr(a_cpy, a_size);
 	return (a_cpy);
 }
@@ -80,9 +80,9 @@ int	*ft_get_pivots(t_list **a)
 	int	*pivots_arr;
 	int	stack_size;
 
-	stack_size = ft_get_stack_size(*a);
-	pivots_count = 0;
-	pivots_count = ft_define_pivots_count(pivots_count, stack_size);
+	stack_size = ft_get_stack_size(a);
+	pivots_count = 10;
+	// pivots_count = ft_define_pivots_count(pivots_count, stack_size);
 	pivots_idx = NULL;
 	pivots_idx = ft_find_pivots_idx(a, pivots_idx);
 	pivots_arr = NULL;

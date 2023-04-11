@@ -50,6 +50,7 @@ SORTING				:=	$(addprefix $(SORTING_DIR), $(SORTING_FILES))
 STACK_DIR			:=	stack/
 STACK_FILES			:=	\
 						ft_add_new_tail.c \
+						ft_copy_stack_to_arr.c \
 						ft_create_node.c \
 						ft_find_biggest_node_data.c \
 						ft_find_biggest_node_idx.c \
