@@ -12,15 +12,6 @@
 
 #include "push_swap.h"
 
-/*
-int	ft_define_pivots_count(int pivots_count, int stack_size)
-{
-	if (stack_size == 100 || stack_size == 500)
-		pivots_count = 10;
-	return (pivots_count);
-}
-*/
-
 static int	*ft_fill_in_pivots_idx(int *pivots_idx,
 								int pivots_count, int stack_size)
 {
