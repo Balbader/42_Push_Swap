@@ -54,6 +54,7 @@ STACK_FILES			:=	\
 						ft_create_node.c \
 						ft_find_biggest_node_data.c \
 						ft_find_biggest_node_idx.c \
+						ft_find_next_biggest_node_idx.c \
 						ft_find_smallest_node_data.c \
 						ft_find_smallest_node_idx.c \
 						ft_free_stack.c \

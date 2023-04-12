@@ -70,6 +70,7 @@ void		ft_push_smallest_node_4(t_list **a,
 int			*ft_copy_stack_to_arr(t_list **stack, int stack_size, int *arr);
 int			ft_find_biggest_node_data(t_list **stack);
 int			ft_find_biggest_node_idx(t_list **stack);
+int			ft_find_next_biggest_node_idx(t_list **stack);
 int			ft_find_smallest_node_data(t_list **stack);
 int			ft_find_smallest_node_idx(t_list **stack);
 int			ft_get_stack_size(t_list **stack);

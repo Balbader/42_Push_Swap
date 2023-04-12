@@ -16,5 +16,5 @@ void	ft_rrr(t_list **a, t_list **b)
 {
 	ft_reverse_rotate(a);
 	ft_reverse_rotate(b);
-	ft_putstr_fd("rrr\n", 1);
+	// ft_putstr_fd("rrr\n", 1);
 }
