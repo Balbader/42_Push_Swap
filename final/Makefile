@@ -107,6 +107,15 @@ RMFLAGS				:=	-r -f
 MAKEFLAGS   		+=	--no-print-directory
 DIR_DUP     		= 	mkdir -p $(@D)
 
+######################
+#   COLORS DISPLAY   #
+######################
+RED					:=	'\033[0;31m'
+GREEN				:=	'\033[1;32m'
+ORANGE				:=	'\033[0;33m'
+YELLOW				:=	'\033[1;33m'
+NC					:=	'\033[0m'
+
 ###############
 #   RECIPES   #
 ###############
@@ -114,7 +123,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(OBJS) -o $(NAME)
-	# @echo $(GREEN) "--> $(NAME) COMPILED !" $(NC)" \n"
+	@echo $(GREEN) "--> $(NAME) COMPILED !" $(NC)" \n"
 
 $(BUILD_DIR)/%.o: $(SRCS_DIR)/%.c
 	# @echo $(YELLOW) "COMPILING:" $(NC) $<
@@ -130,7 +139,7 @@ clean:
 fclean:
 	$(MAKE) clean
 	$(RM) $(RMFLAGS) $(NAME)
-	# @echo $(GREEN) "Successfully removed:" $(NC) $(NAME) $(NC) "\n"
+	@echo $(GREEN) "Successfully removed:" $(NC) $(NAME) $(NC) "\n"
 
 re:
 	$(MAKE) fclean
