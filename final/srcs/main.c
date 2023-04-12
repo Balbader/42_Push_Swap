@@ -45,12 +45,11 @@ int	main(int ac, char **av)
 	a = ft_init_stack(a, entries_arr, ac - 1);
 	if ((ac - 1) <= 5)
 		ft_small_sort(&a, &b, ac - 1);
-	// else
-		// ft_pb_chunks(&a, &b);
-		// ft_sort_b_and_pa(&a, &b);
-		// ft_sort_stack(&a, &b);
+	else
+		ft_pb_chunks(&a, &b);
 	ft_re_init_index(a);
 	ft_print_stack(&a, "a");
+	ft_print_stack(&b, "b");
 	free(entries_arr);
 	ft_free_stack(&a);
 	ft_free_stack(&b);
