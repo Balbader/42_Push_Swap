@@ -15,5 +15,5 @@
 void	ft_sb(t_list *stack_b)
 {
 	ft_swap_stack(stack_b);
-	ft_putstr_fd("sb\n", 1);
+	// ft_putstr_fd("sb\n", 1);
 }
