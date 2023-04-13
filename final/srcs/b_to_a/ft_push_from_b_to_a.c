@@ -27,17 +27,18 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	i = 0;
 	while (i < 3)
 	{
+		printf("----------------------------------------------> %d\n", i + 1);
 		ft_re_init_index(*b);
 
 		big_data = ft_find_biggest_node_data(b);
 		big_idx= ft_find_biggest_node_idx(b);
-		printf("big data: %d\n", big_data);
-		printf("big idx: %d\n", big_idx);
+		// printf("big data: %d\n", big_data);
+		// printf("big idx: %d\n", big_idx);
 
 		next_data = ft_find_next_biggest_node_data(b);
 		next_idx = ft_find_next_biggest_node_idx(b);
-		printf("next big data: %d\n", next_data);
-		printf("next big idx: %d\n", next_idx);
+		// printf("next big data: %d\n", next_data);
+		// printf("next big idx: %d\n", next_idx);
 
 		cost = ft_big_or_next(big_idx, next_idx, b);
 		printf("cost: %d\n", cost);
