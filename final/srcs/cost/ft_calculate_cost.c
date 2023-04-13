@@ -18,6 +18,8 @@ int	ft_calculate_cost(t_list **stack, int node_idx)
 	int	cost;
 	int	mid;
 
+	if (!stack)
+		return (0);
 	size = ft_get_stack_size(stack);
 	mid = size / 2;
 	cost = 0;

@@ -21,6 +21,8 @@ int	ft_big_or_next(int big_idx, int next_idx, t_list **stack)
 	int	big_cost;
 	int	next_cost;
 
+	if (!stack)
+		return (0);
 	big_cost = ft_calculate_cost(stack, big_idx);
 	next_cost = ft_calculate_cost(stack, next_idx);
 	if (big_cost > 0 && next_cost > 0)
