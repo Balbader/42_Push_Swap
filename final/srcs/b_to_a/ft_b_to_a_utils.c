@@ -46,7 +46,6 @@ void	ft_push_cheapest(t_list **a, t_list **b, int cheapest_idx)
 	ft_pa(a, b);
 }
 
-/*
 void	ft_push_biggest(t_list **a, t_list **b, int big_idx, int next_idx)
 {
 	ft_push_cheapest(a, b, big_idx);
@@ -59,4 +58,3 @@ void	ft_push_next_biggest(t_list **a, t_list **b, int next_idx, int big_idx)
 	ft_push_cheapest(a, b, big_idx);
 	ft_sa(a);
 }
-*/
