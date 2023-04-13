@@ -23,6 +23,12 @@ ACTIONS_FILES		:=	\
 						ft_swap.c
 ACTIONS				:=	$(addprefix $(ACTIONS_DIR), $(ACTIONS_FILES))
 
+COST_DIR			:=	cost/
+COST_FILES			:=	\
+						ft_big_or_next.c \
+						ft_calculate_cost.c
+COST				:=	$(addprefix $(COST_DIR), $(COST_FILES))
+
 ENTRY_DIR			:=	entry/
 ENTRY_FILES			:=	\
 						ft_check_entry.c \
@@ -84,6 +90,7 @@ SRCS_DIR			:=	./srcs/
 SRCS				:=	\
 						$(A_TO_B) \
 						$(ACTIONS) \
+						$(COST) \
 						$(ENTRY) \
 						$(OPER) \
 						$(SORTING) \
