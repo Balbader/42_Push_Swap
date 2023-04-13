@@ -14,16 +14,22 @@
 
 void	ft_push_from_b_to_a(t_list **a, t_list **b)
 {
-
-	int	big;
-	int	next_big;
+	int	big_idx;
+	int	next_idx;
 	int	cost;
+	int	b_size;
+	int	i;
 
-	big = ft_find_biggest_node_idx(b);
-	next_big = ft_find_next_biggest_node_idx(b);
-	cost = ft_big_or_next(big, next_big, b);
-	if (cost == 1)
-		ft_push_biggest(a, b. big);
-	if (cost == 2)
-		ft_push_next_biggest(a, b. next_big);
+	b_size = ft_get_stack_size(b);
+	i = 0;
+	while (i < b_size)
+	{
+		big_idx= ft_find_biggest_node_idx(b);
+		next_idx = ft_find_next_biggest_node_idx(b);
+		cost = ft_big_or_next(big_idx, next_idx, b);
+		if (cost == 1)
+			ft_push_biggest(a, b, big_idx, next_idx);
+		if (cost == 2)
+			ft_push_next_biggest(a, b, next_idx, big_idx);
+	}
 }

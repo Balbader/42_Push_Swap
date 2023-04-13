@@ -12,7 +12,8 @@
 
 #include "push_swap.h"
 
-void	ft_push_biggest(t_list **a, t_list **b, int big_idx)
+void	ft_push_biggest(t_list **a, t_list **b, int big_idx, int next_idx)
 {
-
+	ft_push_cheapest(a, b, big_idx);
+	ft_push_cheapest(a, b, next_idx);
 }
