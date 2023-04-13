@@ -26,9 +26,7 @@ ACTIONS				:=	$(addprefix $(ACTIONS_DIR), $(ACTIONS_FILES))
 B_TO_A_DIR			:=	b_to_a/
 B_TO_A_FILES		:=	\
 						ft_b_to_a_utils.c \
-						ft_push_biggest.c \
-						ft_push_from_b_to_a.c \
-						ft_push_next_biggest.c
+						ft_push_from_b_to_a.c
 B_TO_A				:=	$(addprefix $(B_TO_A_DIR), $(B_TO_A_FILES))
 
 COST_DIR			:=	cost/
@@ -89,6 +87,10 @@ UTILS_FILES			:=	\
 						ft_strlen.c
 UTILS				:=	$(addprefix $(UTILS_DIR), $(UTILS_FILES))
 
+DELETE_DIR			:=	delete/
+DELETE_FILES		:=	ft_find_next_biggest_node_data.c
+DELETE				:=	$(addprefix $(DELETE_DIR), $(DELETE_FILES))
+
 ###################
 #   INGREDIENTS	  #
 ###################
@@ -105,6 +107,7 @@ SRCS				:=	\
 						$(SORTING) \
 						$(STACK) \
 						$(UTILS) \
+						$(DELETE) \
 						main.c
 SRCS        		:=	$(SRCS:%=$(SRCS_DIR)/%)
 
