@@ -100,7 +100,10 @@ t_list		*ft_get_last_node(t_list *stack);
 int			ft_isdigit(char c);
 int			ft_strlen(const char *str);
 void		ft_putstr_fd(char *str, int fd);
-void		ft_print_stack(t_list **stack, char *name);
 void		ft_print_err(t_list **stack_a, t_list **stack_b);
+
+/* DELETE */
+int			ft_find_next_biggest_node_data(t_list **stack);
+void		ft_print_stack(t_list **stack, char *name);
 
 #endif
