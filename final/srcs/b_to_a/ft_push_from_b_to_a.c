@@ -22,4 +22,8 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	big = ft_find_biggest_node_idx(b);
 	next_big = ft_find_next_biggest_node_idx(b);
 	cost = ft_big_or_next(big, next_big, b);
+	if (cost == 1)
+		ft_push_biggest(a, b. big);
+	if (cost == 2)
+		ft_push_next_biggest(a, b. next_big);
 }

@@ -5,10 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: baalbade <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 12:31:30 by baalbade          #+#    #+#             */
-/*   Updated: 2023/04/13 12:31:31 by baalbade         ###   ########.fr       */
+/*   Created: 2023/04/13 13:04:02 by baalbade          #+#    #+#             */
+/*   Updated: 2023/04/13 13:04:04 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	ft_push_biggest(t_list **a, t_list **b, int big_idx)
+{
+
+}
