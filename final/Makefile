@@ -23,6 +23,14 @@ ACTIONS_FILES		:=	\
 						ft_swap.c
 ACTIONS				:=	$(addprefix $(ACTIONS_DIR), $(ACTIONS_FILES))
 
+B_TO_A_DIR			:=	b_to_a/
+B_TO_A_FILES		:=	\
+						ft_get_pivots.c \
+						ft_pb_chunks.c \
+						ft_pb_chunks_utils.c \
+						ft_pre_sort_stack.c
+B_TO_A				:=	$(addprefix $(B_TO_A_DIR), $(B_TO_A_FILES))
+
 COST_DIR			:=	cost/
 COST_FILES			:=	\
 						ft_big_or_next.c \
@@ -90,6 +98,7 @@ SRCS_DIR			:=	./srcs/
 SRCS				:=	\
 						$(A_TO_B) \
 						$(ACTIONS) \
+						$(B_TO_A) \
 						$(COST) \
 						$(ENTRY) \
 						$(OPER) \
