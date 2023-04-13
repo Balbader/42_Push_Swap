@@ -61,11 +61,11 @@ void	ft_push_cheapest(t_list **a, t_list **b, int cheapest_idx)
  * 2. bring that node to the top of b
  * 3. push the node to a
 */
-void	ft_push_node_to_a(t_list **a, t_list **b, int node_value)
-{
-	int	cost;
+// void	ft_push_node_to_a(t_list **a, t_list **b, int node_value)
+// {
+// 	int	cost;
 
-}
+// }
 
 void	ft_push_biggest(t_list **a, t_list **b, int big_idx, int next_idx)
 {
@@ -74,7 +74,7 @@ void	ft_push_biggest(t_list **a, t_list **b, int big_idx, int next_idx)
 	printf("next idx: %d\n", next_idx);
 	ft_push_cheapest(a, b, big_idx);
 	ft_re_init_index(*b);
-	ft_push_node_to_a(a, b, next_idx);
+	// ft_push_node_to_a(a, b, next_idx);
 	ft_re_init_index(*b);
 	ft_re_init_index(*a);
 	ft_print_stack(a, "a");
