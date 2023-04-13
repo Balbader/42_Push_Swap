@@ -45,13 +45,16 @@ void	ft_pb_chunks(t_list **a, t_list **b)
 {
 	int	*pivots_arr;
 	int	pivots_count;
-	int	stack_size;
+	int	big;
+	int	next_big;
 
-	stack_size = ft_get_stack_size(a);
 	pivots_arr = ft_get_pivots(a);
 	pivots_count = 10;
-	// pivots_count = ft_define_pivots_count(pivots_count, stack_size);
 	ft_push_chunks_to_b(a, b, pivots_arr, pivots_count);
-	free(pivots_arr);
 	ft_re_init_index(*b);
+	big = ft_find_biggest_node_idx(b);
+	next_big = ft_find_next_biggest_node_idx(b);
+	printf("big idx: %d\n", big);
+	printf("next big idx: %d\n", next_big);
+	free(pivots_arr);
 }

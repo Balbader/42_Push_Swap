@@ -1,20 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ss.c                                            :+:      :+:    :+:   */
+/*   ft_copy_stack_to_arr.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baalbade <baalbade@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/17 09:12:24 by baalbade          #+#    #+#             */
-/*   Updated: 2023/02/17 09:12:25 by baalbade         ###   ########.fr       */
+/*   Created: 2023/04/11 17:31:52 by baalbade          #+#    #+#             */
+/*   Updated: 2023/04/11 17:31:58 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_ss(t_list *stack_a, t_list *stack_b)
+int	*ft_copy_stack_to_arr(t_list **stack, int stack_size, int *arr)
 {
-	ft_swap_stack(stack_a);
-	ft_swap_stack(stack_b);
-	// ft_putstr_fd("ss\n", 1);
+	t_list	*tmp;
+	int		i;
+
+	if (!stack)
+		return(0);
+	tmp = (*stack);
+	arr = (int *)malloc(sizeof(int) * stack_size);
+	if (!arr)
+		return (0);
+	i = 0;
+	while (tmp)
+	{
+		arr[i] = tmp->data;
+		++i;
+		tmp = tmp->next;
+	}
+	return (arr);
 }

@@ -20,6 +20,18 @@
             }
           },
           {
+            "id": "d44b51fb397112fc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Steps.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "c2e8a525aecafa63",
             "type": "leaf",
             "state": {
@@ -31,7 +43,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -98,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1. TO DO/Needs to be checked.md",
+                "file": "Steps.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1. TO DO/Needs to be checked.md",
+                "file": "Steps.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1. TO DO/Needs to be checked.md"
+                "file": "Steps.md"
               }
             }
           }
@@ -159,10 +172,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "de684aec622637dd",
+  "active": "d44b51fb397112fc",
   "lastOpenFiles": [
-    "1. to keep.md",
     "1. TO DO/Needs to be checked.md",
+    "Steps.md",
+    "1. to keep.md",
     "2. DONE",
     "1. TO DO"
   ]
