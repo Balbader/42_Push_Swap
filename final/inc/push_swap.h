@@ -39,6 +39,13 @@ void		ft_reverse_rotate(t_list **stack);
 void		ft_rotate(t_list **stack);
 void		ft_swap(t_list **stack);
 
+/* B_TO_A */
+
+/* COST */
+int			ft_calculate_cost(t_list **stack, int node_idx);
+int			ft_big_or_next(int big_idx, int next_idx, t_list **stack);
+
+
 /* OPERATIONS */
 void		ft_pa(t_list **b, t_list **a);
 void		ft_pb(t_list **a, t_list **b);
