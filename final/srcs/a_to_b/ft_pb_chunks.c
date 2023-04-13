@@ -52,9 +52,9 @@ void	ft_pb_chunks(t_list **a, t_list **b)
 	pivots_count = 10;
 	ft_push_chunks_to_b(a, b, pivots_arr, pivots_count);
 	ft_re_init_index(*b);
+	ft_print_stack(b, "b");
 	big = ft_find_biggest_node_idx(b);
 	next_big = ft_find_next_biggest_node_idx(b);
-	printf("big idx: %d\n", big);
-	printf("next big idx: %d\n", next_big);
+	cost = ft_big_or_next(big, next_big, b);
 	free(pivots_arr);
 }
