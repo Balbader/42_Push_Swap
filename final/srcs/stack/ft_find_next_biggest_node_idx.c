@@ -37,6 +37,5 @@ int	ft_find_next_biggest_node_idx(t_list **stack)
 		++i;
 		tmp = tmp->next;
 	}
-	printf("biggest_node_data: %d\n", biggest_node_data);
 	return (next_biggest_idx);
 }
