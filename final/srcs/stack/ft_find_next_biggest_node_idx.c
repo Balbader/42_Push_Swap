@@ -32,7 +32,7 @@ int	ft_find_next_biggest_node_idx(t_list **stack)
 		if (tmp->data > next_biggest_data && tmp->data < biggest_node_data)
 		{
 			next_biggest_data = tmp->data;
-			next_biggest_idx = i;
+			next_biggest_idx = tmp->index;
 		}
 		++i;
 		tmp = tmp->next;

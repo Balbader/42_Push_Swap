@@ -18,7 +18,7 @@ int	*ft_copy_stack_to_arr(t_list **stack, int stack_size, int *arr)
 	int		i;
 
 	if (!stack)
-		return(0);
+		return (0);
 	tmp = (*stack);
 	arr = (int *)malloc(sizeof(int) * stack_size);
 	if (!arr)

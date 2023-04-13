@@ -15,7 +15,7 @@
 int	ft_get_stack_size(t_list **stack)
 {
 	t_list	*tmp;
-	int	size;
+	int		size;
 
 	if (!stack)
 		return (0);

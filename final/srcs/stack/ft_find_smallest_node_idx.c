@@ -14,7 +14,6 @@
 
 int	ft_find_smallest_node_idx(t_list **stack)
 {
-
 	t_list	*tmp;
 	int		data;
 	int		index;
