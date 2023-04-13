@@ -7,6 +7,8 @@
 ## Push form b to a
 1. find biggest node
 2. find 2nd biggest node
+3. check which is cheapest
+4. push cheapest to 'a'
 
 + if biggest = cheapest
 	+ ra || rra biggest
