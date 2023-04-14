@@ -21,6 +21,7 @@ int	ft_calculate_cost(t_list **stack, int node_idx)
 	if (!stack)
 		return (0);
 	size = ft_get_stack_size(stack);
+	// printf("stack size: %d\n", size);
 	mid = size / 2;
 	cost = 0;
 	if (node_idx == 1)
