@@ -24,7 +24,7 @@ int	ft_find_next_biggest_node_idx(t_list **stack)
 		return (0);
 	tmp = NULL;
 	tmp = *stack;
-	next_biggest_data = 0;
+	next_biggest_data = INT_MIN;
 	i = 0;
 	biggest_node_data = ft_find_biggest_node_data(stack);
 	while (tmp)

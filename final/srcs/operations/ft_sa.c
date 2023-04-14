@@ -15,5 +15,5 @@
 void	ft_sa(t_list **a)
 {
 	ft_swap(a);
-	// ft_putstr_fd("sa\n", 1);
+	ft_putstr_fd("sa\n", 1);
 }

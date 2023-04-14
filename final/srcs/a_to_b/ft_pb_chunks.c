@@ -45,9 +45,13 @@ void	ft_pb_chunks(t_list **a, t_list **b)
 {
 	int	*pivots_arr;
 	int	pivots_count;
+	int	a_size;
 
+	a_size = ft_get_stack_size(a);
 	pivots_arr = ft_get_pivots(a);
 	pivots_count = 10;
+	// if (a_size < pivots_count)
+	// 	pivots_count = a_size;
 	ft_push_chunks_to_b(a, b, pivots_arr, pivots_count);
 	free(pivots_arr);
 }
