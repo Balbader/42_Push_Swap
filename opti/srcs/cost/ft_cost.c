@@ -44,5 +44,4 @@ int	*ft_calculate_costs(int first_idx, int second_idx, int third_idx)
 	costs = (int *)malloc(sizeof(int) * 3);
 	if (!costs)
 		return (0);
-	
 }
