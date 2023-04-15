@@ -91,6 +91,7 @@ UTILS_FILES			:=	\
 						ft_print_err.c \
 						ft_print_stack.c \
 						ft_putstr_fd.c \
+						ft_swap_values.c \
 						ft_strlen.c
 UTILS				:=	$(addprefix $(UTILS_DIR), $(UTILS_FILES))
 
