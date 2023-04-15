@@ -49,8 +49,6 @@ void		ft_push_next_node_next(t_list **a, t_list **b);
 
 /* COST */
 int			ft_calculate_cost(t_list **stack, int node_idx);
-int			ft_big_or_next(int big_idx, int next_idx, t_list **stack);
-
 
 /* OPERATIONS */
 void		ft_pa(t_list **b, t_list **a);

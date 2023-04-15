@@ -49,23 +49,23 @@ void	ft_push_cheapest(t_list **a, t_list **b, int cheapest_idx)
 	ft_check_cost_and_rotate(cost, a, b);
 }
 
-void	ft_push_biggest(t_list **a, t_list **b, int big_idx)
+void	ft_push_first(t_list **a, t_list **b, int first_idx)
 {
-	ft_push_cheapest(a, b, big_idx);
-	ft_re_init_index(*a);
-	ft_re_init_index(*b);
-	ft_push_next_node_next(a, b);
+	ft_push_cheapest(a, b, first_idx);
 	ft_re_init_index(*a);
 	ft_re_init_index(*b);
 }
 
-void	ft_push_next_biggest(t_list **a, t_list **b, int next_idx)
+void	ft_push_second(t_list **a, t_list **b, int second_idx)
 {
-	ft_push_cheapest(a, b, next_idx);
+	ft_push_cheapest(a, b, second_idx);
 	ft_re_init_index(*a);
 	ft_re_init_index(*b);
-	ft_push_big_node_next(a, b);
-	ft_sa(a);
+}
+
+void	ft_push_third(t_list **a, t_list **b, int third_idx)
+{
+	ft_push_cheapest(a, b, third_idx);
 	ft_re_init_index(*a);
 	ft_re_init_index(*b);
 }
