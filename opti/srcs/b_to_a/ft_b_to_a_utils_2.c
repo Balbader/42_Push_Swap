@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+/*
 void	ft_push_big_node_next(t_list **a, t_list **b)
 {
 	int	big_idx;
@@ -31,3 +32,4 @@ void	ft_push_next_node_next(t_list **a, t_list **b)
 	cost = ft_calculate_cost(b, next_idx);
 	ft_check_cost_and_rotate(cost, a, b);
 }
+*/

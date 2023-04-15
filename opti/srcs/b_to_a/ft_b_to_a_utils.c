@@ -46,7 +46,7 @@ void	ft_push_first(t_list **a, t_list **b, int first_idx)
 	int	cost;
 
 	cost = ft_calculate_cost(b, first_idx);
-	ft_push_cheapest(a, b, first_idx);
+	ft_check_cost_and_rotate(cost, a, b);
 	ft_re_init_index(*a);
 	ft_re_init_index(*b);
 }
@@ -56,7 +56,7 @@ void	ft_push_second(t_list **a, t_list **b, int second_idx)
 	int	cost;
 
 	cost = ft_calculate_cost(b, second_idx);
-	ft_push_cheapest(a, b, second_idx);
+	ft_check_cost_and_rotate(cost, a, b);
 	ft_re_init_index(*a);
 	ft_re_init_index(*b);
 }
@@ -66,7 +66,7 @@ void	ft_push_third(t_list **a, t_list **b, int third_idx)
 	int	cost;
 
 	cost = ft_calculate_cost(b, third_idx);
-	ft_push_cheapest(a, b, third_idx);
+	ft_check_cost_and_rotate(cost, a, b);
 	ft_re_init_index(*a);
 	ft_re_init_index(*b);
 }
