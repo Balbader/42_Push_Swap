@@ -41,5 +41,5 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	(void)a;
 	(void)b;
 	printf("\n\n");
-	ft_compare_costs(b);
+	ft_compare_costs_and_sort_indexes(b);
 }
