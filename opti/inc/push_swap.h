@@ -47,10 +47,12 @@ void		ft_push_third(t_list **a, t_list **b, int third_idx);
 
 /* COST */
 int			ft_calculate_cost(t_list **stack, int node_idx);
+int			ft_costs_are_different(int a, int b, int c);
+int			ft_costs_are_same(int a, int b);
 int			ft_first_cost(t_list **b);
 int			ft_second_cost(t_list **b);
 int			ft_third_cost(t_list **b);
-void		ft_compare_costs(t_list **b);
+void		ft_compare_costs_and_sort_indexes(t_list **b);
 
 /* OPERATIONS */
 void		ft_pa(t_list **b, t_list **a);
@@ -103,6 +105,7 @@ int			ft_isdigit(char c);
 int			ft_strlen(const char *str);
 void		ft_putstr_fd(char *str, int fd);
 void		ft_print_err(t_list **stack_a, t_list **stack_b);
+void		ft_swap_values(int *a, int *b);
 
 /* DELETE */
 int			ft_find_next_biggest_node_data(t_list **stack);
