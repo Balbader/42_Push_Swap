@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_calculate_cost.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baalbade <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/11 09:17:49 by baalbade          #+#    #+#             */
-/*   Updated: 2023/04/11 09:17:50 by baalbade         ###   ########.fr       */
+/*   Created: 2023/04/13 10:49:52 by baalbade          #+#    #+#             */
+/*   Updated: 2023/04/13 10:49:54 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_swap(t_list **stack)
+int	ft_calculate_cost(t_list **stack, int node_idx)
 {
-	int	tmp_data;
-	int	tmp_index;
+	int	size;
+	int	cost;
+	int	mid;
 
-	if ((*stack) == NULL || (*stack)->next == NULL)
-		return ;
-	tmp_data = (*stack)->data;
-	(*stack)->data = (*stack)->next->data;
-	(*stack)->next->data = tmp_data;
-	tmp_index = (*stack)->index;
-	(*stack)->index = (*stack)->next->index;
-	(*stack)->next->index = tmp_index;
+	if (!stack)
+		return (0);
+	size = ft_get_stack_size(stack);
+	mid = size / 2;
+	cost = 0;
+	if (node_idx == 1)
+		cost = 1;
+	if (node_idx == size)
+		cost = 1;
+	if (node_idx <= mid)
+		cost = (size - (size - node_idx)) - 1;
+	if (node_idx > mid)
+		cost = ((size - node_idx) + 1) * -1 ;
+	return (cost);
 }

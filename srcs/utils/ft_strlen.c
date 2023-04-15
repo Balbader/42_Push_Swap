@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rotate.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: baalbade <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: baalbade <baalbade@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/11 09:17:18 by baalbade          #+#    #+#             */
-/*   Updated: 2023/04/11 09:17:20 by baalbade         ###   ########.fr       */
+/*   Created: 2023/02/17 09:48:26 by baalbade          #+#    #+#             */
+/*   Updated: 2023/02/17 09:48:42 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_rotate(t_list **stack)
+int	ft_strlen(const char *str)
 {
-	t_list	*tmp;
+	int	i;
 
-	if (!(*stack))
-		return ;
-	tmp = NULL;
-	tmp = *stack;
-	tmp = tmp->next;
-	(*stack)->next = NULL;
-	ft_add_new_tail(&tmp, *stack);
-	(*stack) = tmp;
+	i = 0;
+	while (str[i])
+		++i;
+	return (i);
 }

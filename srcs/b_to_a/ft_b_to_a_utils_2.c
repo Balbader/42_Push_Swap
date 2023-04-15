@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_b_to_a_utils_2.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baalbade <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/11 09:17:49 by baalbade          #+#    #+#             */
-/*   Updated: 2023/04/11 09:17:50 by baalbade         ###   ########.fr       */
+/*   Created: 2023/04/14 07:28:53 by baalbade          #+#    #+#             */
+/*   Updated: 2023/04/14 07:28:57 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_swap(t_list **stack)
+void	ft_push_big_node_next(t_list **a, t_list **b)
 {
-	int	tmp_data;
-	int	tmp_index;
+	int	big_idx;
+	int	cost;
 
-	if ((*stack) == NULL || (*stack)->next == NULL)
-		return ;
-	tmp_data = (*stack)->data;
-	(*stack)->data = (*stack)->next->data;
-	(*stack)->next->data = tmp_data;
-	tmp_index = (*stack)->index;
-	(*stack)->index = (*stack)->next->index;
-	(*stack)->next->index = tmp_index;
+	big_idx = ft_find_biggest_node_idx(b);
+	cost = ft_calculate_cost(b, big_idx);
+	ft_check_cost_and_rotate(cost, a, b);
+}
+
+void	ft_push_next_node_next(t_list **a, t_list **b)
+{
+	int	next_idx;
+	int	cost;
+
+	next_idx = ft_find_biggest_node_idx(b);
+	cost = ft_calculate_cost(b, next_idx);
+	ft_check_cost_and_rotate(cost, a, b);
 }

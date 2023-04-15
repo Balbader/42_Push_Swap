@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_create_node.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baalbade <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/11 09:17:49 by baalbade          #+#    #+#             */
-/*   Updated: 2023/04/11 09:17:50 by baalbade         ###   ########.fr       */
+/*   Created: 2023/04/11 10:47:40 by baalbade          #+#    #+#             */
+/*   Updated: 2023/04/11 10:47:42 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_swap(t_list **stack)
+t_list	*ft_create_node(int data, int index)
 {
-	int	tmp_data;
-	int	tmp_index;
+	t_list	*new_node;
 
-	if ((*stack) == NULL || (*stack)->next == NULL)
-		return ;
-	tmp_data = (*stack)->data;
-	(*stack)->data = (*stack)->next->data;
-	(*stack)->next->data = tmp_data;
-	tmp_index = (*stack)->index;
-	(*stack)->index = (*stack)->next->index;
-	(*stack)->next->index = tmp_index;
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (!new_node)
+		return (NULL);
+	new_node->data = data;
+	new_node->index = index;
+	new_node->next = NULL;
+	return (new_node);
 }

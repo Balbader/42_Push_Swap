@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_add_new_tail.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baalbade <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/11 09:17:49 by baalbade          #+#    #+#             */
-/*   Updated: 2023/04/11 09:17:50 by baalbade         ###   ########.fr       */
+/*   Created: 2023/04/11 09:56:40 by baalbade          #+#    #+#             */
+/*   Updated: 2023/04/11 09:56:43 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_swap(t_list **stack)
+void	ft_add_new_tail(t_list **lst, t_list *node)
 {
-	int	tmp_data;
-	int	tmp_index;
+	t_list	*current;
 
-	if ((*stack) == NULL || (*stack)->next == NULL)
-		return ;
-	tmp_data = (*stack)->data;
-	(*stack)->data = (*stack)->next->data;
-	(*stack)->next->data = tmp_data;
-	tmp_index = (*stack)->index;
-	(*stack)->index = (*stack)->next->index;
-	(*stack)->next->index = tmp_index;
+	current = *lst;
+	while (current->next)
+		current = current->next;
+	current->next = node;
 }

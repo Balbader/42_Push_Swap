@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: baalbade <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/22 23:35:25 by baalbade          #+#    #+#             */
-/*   Updated: 2023/03/22 23:35:27 by baalbade         ###   ########.fr       */
+/*   Created: 2023/04/11 09:44:43 by baalbade          #+#    #+#             */
+/*   Updated: 2023/04/11 09:44:52 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	*ft_init_entries_arr(int ac, char **av, int *arr)
 	int	j;
 
 	arr = NULL;
-	arr = (int *)malloc(sizeof(int) * (ac));
+	arr = (int *)malloc(sizeof(int) * (ac - 1));
 	if (!arr)
 		return (0);
 	j = 1;
@@ -37,23 +37,24 @@ int	main(int ac, char **av)
 	t_list	*a;
 	t_list	*b;
 	int		*entries_arr;
-	int		a_size;
 
 	a = NULL;
 	b = NULL;
 	entries_arr = NULL;
 	entries_arr = ft_init_entries_arr(ac, av, entries_arr);
 	a = ft_init_stack(a, entries_arr, ac - 1);
-	ft_push_first_2(&a, &b);
-	a_size = ft_get_stack_size(a);
-	ft_re_init_index(b);
-	ft_re_init_index(a);
-	ft_push_from_a_to_b(&a, &b, a_size);
-	ft_push_from_b_to_a(&a, &b);
-	// printf("\n");
+	if ((ac - 1) <= 5)
+		ft_small_sort(&a, &b, ac - 1);
+	else
+	{
+		ft_pb_chunks(&a, &b);
+		ft_re_init_index(b);
+		ft_push_from_b_to_a(&a, &b);
+	}
+	// ft_re_init_index(a);
 	// ft_print_stack(&a, "a");
-	ft_free_stack(&a);
 	free(entries_arr);
+	ft_free_stack(&a);
 	ft_free_stack(&b);
 	return (0);
 }

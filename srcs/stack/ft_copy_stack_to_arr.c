@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_reverse_rotate.c                                :+:      :+:    :+:   */
+/*   ft_copy_stack_to_arr.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: baalbade <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: baalbade <baalbade@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/11 09:16:27 by baalbade          #+#    #+#             */
-/*   Updated: 2023/04/11 09:16:29 by baalbade         ###   ########.fr       */
+/*   Created: 2023/04/11 17:31:52 by baalbade          #+#    #+#             */
+/*   Updated: 2023/04/11 17:31:58 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_reverse_rotate(t_list **stack)
+int	*ft_copy_stack_to_arr(t_list **stack, int stack_size, int *arr)
 {
 	t_list	*tmp;
-	t_list	*last;
-	t_list	*before_last;
+	int		i;
 
-	tmp = NULL;
-	last = NULL;
-	before_last = NULL;
-	last = ft_get_last_node(*stack);
-	before_last = ft_get_before_last_node(*stack);
-	tmp = *stack;
-	*stack = last;
-	(*stack)->next = tmp;
-	before_last->next = NULL;
+	if (!stack)
+		return (0);
+	tmp = (*stack);
+	arr = (int *)malloc(sizeof(int) * stack_size);
+	if (!arr)
+		return (0);
+	i = 0;
+	while (tmp)
+	{
+		arr[i] = tmp->data;
+		++i;
+		tmp = tmp->next;
+	}
+	return (arr);
 }

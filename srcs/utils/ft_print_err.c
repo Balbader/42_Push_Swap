@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rotate.c                                        :+:      :+:    :+:   */
+/*   ft_print_err.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: baalbade <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: baalbade <baalbade@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/11 09:17:18 by baalbade          #+#    #+#             */
-/*   Updated: 2023/04/11 09:17:20 by baalbade         ###   ########.fr       */
+/*   Created: 2023/02/17 09:46:48 by baalbade          #+#    #+#             */
+/*   Updated: 2023/02/17 09:47:04 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_rotate(t_list **stack)
+void	ft_print_err(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*tmp;
-
-	if (!(*stack))
-		return ;
-	tmp = NULL;
-	tmp = *stack;
-	tmp = tmp->next;
-	(*stack)->next = NULL;
-	ft_add_new_tail(&tmp, *stack);
-	(*stack) = tmp;
+	if (*stack_a == NULL)
+		ft_free_stack(stack_a);
+	if (*stack_b == NULL)
+		ft_free_stack(stack_b);
+	ft_putstr_fd("Error\n", 2);
+	exit (1);
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: baalbade <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/23 00:49:55 by baalbade          #+#    #+#             */
-/*   Updated: 2023/03/23 00:49:59 by baalbade         ###   ########.fr       */
+/*   Created: 2023/04/11 09:08:25 by baalbade          #+#    #+#             */
+/*   Updated: 2023/04/11 09:08:31 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	ft_push_node(t_list **src, t_list **dest)
 {
-	t_list	*temp;
+	t_list	*tmp;
 
-	temp = NULL;
+	tmp = NULL;
 	if (!*src)
 		return ;
-	temp = (*src)->next;
-	(*src)->next = *dest;
-	*dest = *src;
-	*src = temp;
+	tmp = (*src)->next;
+	(*src)->next = (*dest);
+	(*dest) = (*src);
+	(*src) = tmp;
 }
