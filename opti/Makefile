@@ -71,7 +71,7 @@ STACK_FILES			:=	\
 						ft_find_smallest_node_idx.c
 STACK				:=	$(addprefix $(STACK_DIR), $(STACK_FILES))
 
-STACK_UTILS_DIR			:=	stack/
+STACK_UTILS_DIR			:=	stack_utils/
 STACK_UTILS_FILES		:=	\
 						ft_add_new_tail.c \
 						ft_copy_stack_to_arr.c \
