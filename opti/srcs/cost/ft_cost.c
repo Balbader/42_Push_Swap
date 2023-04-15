@@ -34,29 +34,53 @@ int	ft_calculate_cost(t_list **stack, int node_idx)
 	return (cost);
 }
 
-static int	ft_costs_are_different(int a, int b, int c)
+static int	*ft_init_indexes_array(t_list **b, int *indexes)
 {
-	return ((a != b) && (a != c) && (b != c));
+	indexes[0] = ft_find_biggest_node_idx(b);
+	indexes[1] = ft_find_second_biggest_node_idx(b);
+	indexes[2] = ft_find_third_biggest_node_idx(b);
+	return (indexes);
 }
 
-void	ft_compare_costs(t_list **b)
+static int	*ft_sort_indexes(t_list **b, int *indexes)
 {
-	int	first;
-	int	second;
-	int	third;
+	int	cost_1st;
+	int	cost_2nd;
+	int	cost_3rd;
 
-	(void)b;
-	first = -2;
-	second = 9;
-	third = 9;
-	if (ft_costs_are_different(first, second, third) == 1)
-		ft_sort_costs(first, second, third);
+	cost_1st = ft_first_cost(b);
+	cost_2nd = ft_second_cost(b);
+	cost_3rd = ft_third_cost(b);
+	if (cost_1st > cost_3rd)
+		ft_swap_values(&indexes[0], &indexes[2]);
+	else if (cost_1st > cost_2nd)
+		ft_swap_values(&indexes[0], &indexes[1]);
+	else if (cost_2nd > cost_3rd)
+		ft_swap_values(&indexes[1], &indexes[2]);
+	return (indexes);
+}
+
+void	ft_compare_costs_and_sort_indexes(t_list **b)
+{
+	int	cost_1st;
+	int	cost_2nd;
+	int	cost_3rd;
+	int	*indexes;
+
+	indexes = (int *)malloc(sizeof(int) * 3);
+	if (!indexes)
+		return ;
+	indexes = ft_init_indexes_array(b, indexes);
+	cost_1st = ft_first_cost(b);
+	cost_2nd = ft_second_cost(b);
+	cost_3rd = ft_third_cost(b);
+	if (ft_costs_are_different(cost_1st, cost_2nd, cost_3rd) == 1)
+	{
+		indexes = ft_sort_indexes(b, indexes);
+		for (int i = 0; i < 3; ++i) {
+			printf("indexes[%d]: [%d]\n", i, indexes[i]);
+		}
+	}
 	else
 		ft_re_order_costs(first, second, third);
 }
-// first = ft_first_cost(b);
-// second = ft_second_cost(b);
-// third = ft_third_cost(b);
-// printf("first_cost: %d\n", first);
-// printf("second_cost: %d\n", second);
-// printf("third_cost: %d\n", third);
