@@ -32,8 +32,8 @@ B_TO_A				:=	$(addprefix $(B_TO_A_DIR), $(B_TO_A_FILES))
 
 COST_DIR			:=	cost/
 COST_FILES			:=	\
-						ft_big_or_next.c \
-						ft_calculate_cost.c
+						ft_cost.c \
+						ft_cost_utils.c
 COST				:=	$(addprefix $(COST_DIR), $(COST_FILES))
 
 ENTRY_DIR			:=	entry/
@@ -62,14 +62,20 @@ SORTING				:=	$(addprefix $(SORTING_DIR), $(SORTING_FILES))
 
 STACK_DIR			:=	stack/
 STACK_FILES			:=	\
+						ft_find_biggest_node_data.c \
+						ft_find_biggest_node_idx.c \
+						ft_find_second_biggest_node_data.c \
+						ft_find_second_biggest_node_idx.c \
+						ft_find_third_biggest_node_idx.c \
+						ft_find_smallest_node_data.c \
+						ft_find_smallest_node_idx.c
+STACK				:=	$(addprefix $(STACK_DIR), $(STACK_FILES))
+
+STACK_UTILS_DIR			:=	stack/
+STACK_UTILS_FILES		:=	\
 						ft_add_new_tail.c \
 						ft_copy_stack_to_arr.c \
 						ft_create_node.c \
-						ft_find_biggest_node_data.c \
-						ft_find_biggest_node_idx.c \
-						ft_find_next_biggest_node_idx.c \
-						ft_find_smallest_node_data.c \
-						ft_find_smallest_node_idx.c \
 						ft_free_stack.c \
 						ft_get_before_last_node.c \
 						ft_get_last_node.c \
@@ -77,7 +83,7 @@ STACK_FILES			:=	\
 						ft_init_stack.c \
 						ft_re_init_index.c \
 						ft_stack_is_sorted.c
-STACK				:=	$(addprefix $(STACK_DIR), $(STACK_FILES))
+STACK_UTILS				:=	$(addprefix $(STACK_UTILS_DIR), $(STACK_UTILS_FILES))
 
 UTILS_DIR			:=	utils/
 UTILS_FILES			:=	\
@@ -107,6 +113,7 @@ SRCS				:=	\
 						$(OPER) \
 						$(SORTING) \
 						$(STACK) \
+						$(STACK_UTILS) \
 						$(UTILS) \
 						$(DELETE) \
 						main.c
