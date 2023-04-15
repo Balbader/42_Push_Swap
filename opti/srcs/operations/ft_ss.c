@@ -16,5 +16,5 @@ void	ft_ss(t_list **a, t_list **b)
 {
 	ft_swap(a);
 	ft_swap(b);
-	ft_putstr_fd("ss\n", 1);
+	// ft_putstr_fd("ss\n", 1);
 }
