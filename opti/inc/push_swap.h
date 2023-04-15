@@ -40,12 +40,10 @@ void		ft_swap(t_list **stack);
 
 /* B_TO_A */
 void		ft_check_cost_and_rotate(int cost, t_list **a, t_list **b);
-void		ft_push_biggest(t_list **a, t_list **b, int big_idx);
-void		ft_push_big_node_next(t_list **a, t_list **b);
-void		ft_push_cheapest(t_list **a, t_list **b, int cheapest_idx);
 void		ft_push_from_b_to_a(t_list **a, t_list **b);
-void		ft_push_next_biggest(t_list **a, t_list **b, int next_idx);
-void		ft_push_next_node_next(t_list **a, t_list **b);
+void		ft_push_first(t_list **a, t_list **b, int first_idx);
+void		ft_push_second(t_list **a, t_list **b, int second_idx);
+void		ft_push_third(t_list **a, t_list **b, int third_idx);
 
 /* COST */
 int			ft_calculate_cost(t_list **stack, int node_idx);
@@ -81,7 +79,9 @@ void		ft_push_smallest_node_4(t_list **a,
 int			*ft_copy_stack_to_arr(t_list **stack, int stack_size, int *arr);
 int			ft_find_biggest_node_data(t_list **stack);
 int			ft_find_biggest_node_idx(t_list **stack);
-int			ft_find_next_biggest_node_idx(t_list **stack);
+int			ft_find_second_biggest_node_idx(t_list **stack);
+int			ft_find_second_biggest_node_data(t_list **stack);
+int			ft_find_third_biggest_node_idx(t_list **stack);
 int			ft_find_smallest_node_data(t_list **stack);
 int			ft_find_smallest_node_idx(t_list **stack);
 int			ft_get_stack_size(t_list **stack);
