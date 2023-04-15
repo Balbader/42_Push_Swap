@@ -46,8 +46,11 @@ void		ft_push_second(t_list **a, t_list **b, int second_idx);
 void		ft_push_third(t_list **a, t_list **b, int third_idx);
 
 /* COST */
+int			*ft_init_indexes_array(t_list **b, int *indexes);
+int			*ft_sort_indexes(t_list **b, int *indexes);
 int			ft_calculate_cost(t_list **stack, int node_idx);
 int			ft_costs_are_different(int a, int b, int c);
+int			ft_costs_are_same(int a, int b);
 int			ft_costs_are_same(int a, int b);
 int			ft_first_cost(t_list **b);
 int			ft_second_cost(t_list **b);
