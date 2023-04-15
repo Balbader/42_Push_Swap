@@ -56,6 +56,7 @@ int			ft_first_cost(t_list **b);
 int			ft_second_cost(t_list **b);
 int			ft_third_cost(t_list **b);
 void		ft_compare_costs_and_sort_indexes(t_list **b);
+void		ft_reorder_costs(int cost_1st, int cost_2nd, int cost_3rd);
 
 /* OPERATIONS */
 void		ft_pa(t_list **b, t_list **a);
