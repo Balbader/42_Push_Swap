@@ -76,9 +76,12 @@ void	ft_compare_costs_and_sort_indexes(t_list **b)
 	if (!indexes)
 		return ;
 	indexes = ft_init_indexes_array(b, indexes);
-	cost_1st = ft_first_cost(b);
-	cost_2nd = ft_second_cost(b);
-	cost_3rd = ft_third_cost(b);
+	// cost_1st = ft_first_cost(b);
+	// cost_2nd = ft_second_cost(b);
+	// cost_3rd = ft_third_cost(b);
+	cost_1st = 33;
+	cost_2nd = 8;
+	cost_3rd = 8;
 	if (ft_costs_are_different(cost_1st, cost_2nd, cost_3rd) == 1)
 	{
 		indexes = ft_sort_indexes(b, indexes);
@@ -87,5 +90,5 @@ void	ft_compare_costs_and_sort_indexes(t_list **b)
 		}
 	}
 	else if (ft_costs_are_different(cost_1st, cost_2nd, cost_3rd) == 0)
-		ft_re_order_costs(first, second, third);
+		ft_reorder_costs(cost_1st, cost_2nd, cost_3rd);
 }
