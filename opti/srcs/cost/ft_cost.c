@@ -34,7 +34,7 @@ int	ft_calculate_cost(t_list **stack, int node_idx)
 	return (cost);
 }
 
-static int	*ft_init_indexes_array(t_list **b, int *indexes)
+int	*ft_init_indexes_array(t_list **b, int *indexes)
 {
 	indexes[0] = ft_find_biggest_node_idx(b);
 	indexes[1] = ft_find_second_biggest_node_idx(b);
@@ -42,8 +42,8 @@ static int	*ft_init_indexes_array(t_list **b, int *indexes)
 	return (indexes);
 }
 
-static int	*ft_sort_indexes(t_list **b, int *indexes)
-{
+int	*ft_sort_indexes(t_list **b, int *indexes)
+ {
 	int	cost_1st;
 	int	cost_2nd;
 	int	cost_3rd;
@@ -60,6 +60,11 @@ static int	*ft_sort_indexes(t_list **b, int *indexes)
 	return (indexes);
 }
 
+/*
+ * This function should return an array of the indexes of the 3 biggest nodes
+ * in 'b' that nees to be pushed to 'a' in the order in which they need to
+ * be pushed.
+*/
 void	ft_compare_costs_and_sort_indexes(t_list **b)
 {
 	int	cost_1st;
@@ -81,6 +86,6 @@ void	ft_compare_costs_and_sort_indexes(t_list **b)
 			printf("indexes[%d]: [%d]\n", i, indexes[i]);
 		}
 	}
-	else
+	else if (ft_costs_are_different(cost_1st, cost_2nd, cost_3rd) == 0)
 		ft_re_order_costs(first, second, third);
 }
