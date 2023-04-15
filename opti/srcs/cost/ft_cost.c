@@ -34,14 +34,16 @@ int	ft_calculate_cost(t_list **stack, int node_idx)
 	return (cost);
 }
 
-int	*ft_calculate_costs(int first_idx, int second_idx, int third_idx)
+void	ft_calculate_costs(t_list **b)
 {
-	int	*costs;
 	int	first;
 	int	second;
 	int	third;
 
-	costs = (int *)malloc(sizeof(int) * 3);
-	if (!costs)
-		return (0);
+	first = ft_first_cost(b);
+	second = ft_second_cost(b);
+	third = ft_third_cost(b);
+	printf("first_cost: %d\n", first);
+	printf("second_cost: %d\n", second);
+	printf("third_cost: %d\n", third);
 }
