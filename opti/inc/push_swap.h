@@ -50,7 +50,7 @@ int			ft_calculate_cost(t_list **stack, int node_idx);
 int			ft_first_cost(t_list **b);
 int			ft_second_cost(t_list **b);
 int			ft_third_cost(t_list **b);
-void		ft_calculate_costs(t_list **b);
+void		ft_compare_costs(t_list **b);
 
 /* OPERATIONS */
 void		ft_pa(t_list **b, t_list **a);
