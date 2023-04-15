@@ -34,16 +34,29 @@ int	ft_calculate_cost(t_list **stack, int node_idx)
 	return (cost);
 }
 
-void	ft_calculate_costs(t_list **b)
+static int	ft_costs_are_different(int a, int b, int c)
+{
+	return ((a != b) && (a != c) && (b != c));
+}
+
+void	ft_compare_costs(t_list **b)
 {
 	int	first;
 	int	second;
 	int	third;
 
-	first = ft_first_cost(b);
-	second = ft_second_cost(b);
-	third = ft_third_cost(b);
-	printf("first_cost: %d\n", first);
-	printf("second_cost: %d\n", second);
-	printf("third_cost: %d\n", third);
+	(void)b;
+	first = -2;
+	second = 9;
+	third = 9;
+	if (ft_costs_are_different(first, second, third) == 1)
+		ft_sort_costs(first, second, third);
+	else
+		ft_re_order_costs(first, second, third);
 }
+// first = ft_first_cost(b);
+// second = ft_second_cost(b);
+// third = ft_third_cost(b);
+// printf("first_cost: %d\n", first);
+// printf("second_cost: %d\n", second);
+// printf("third_cost: %d\n", third);
