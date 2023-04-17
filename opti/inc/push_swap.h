@@ -41,24 +41,23 @@ void		ft_swap(t_list **stack);
 /* B_TO_A */
 void		ft_check_cost_and_rotate(int cost, t_list **a, t_list **b);
 void		ft_push_from_b_to_a(t_list **a, t_list **b);
-void		ft_push_first(t_list **a, t_list **b, int first_idx);
-void		ft_push_second(t_list **a, t_list **b, int second_idx);
-void		ft_push_third(t_list **a, t_list **b, int third_idx);
+// void		ft_push_first(t_list **a, t_list **b, int first_idx);
+// void		ft_push_second(t_list **a, t_list **b, int second_idx);
+// void		ft_push_third(t_list **a, t_list **b, int third_idx);
 
 /* COST */
 int			*ft_init_indexes_array(t_list **b, int *indexes);
-// int			*ft_sort_indexes(t_list **b, int *indexes);
-int			*ft_sort_indexes(int *indexes, int cost_1st_big, int cost_2nd_big,
-					int cost_3rd_big);
 int			ft_calculate_cost(t_list **stack, int node_idx);
 int			ft_costs_are_different(int a, int b, int c);
 int			ft_costs_are_same(int a, int b);
 int			ft_cost_first_big(t_list **b);
 int			ft_cost_second_big(t_list **b);
 int			ft_cost_third_big(t_list **b);
-void		ft_compare_costs_and_sort_indexes(t_list **b);
-void		ft_reorder_costs(int *indexex, int cost_1st_big, int cost_2nd_big,
+int			*ft_sort_indexes(int *indexes, int cost_1st_big, int cost_2nd_big,
 					int cost_3rd_big);
+int			*ft_re_sort_indexes(int cost_1st_big, int cost_2nd_big,
+					int cost_3rd_big, int *indexes);
+int			*ft_compare_costs_and_sort_indexes(t_list **b, int *indexes);
 
 /* OPERATIONS */
 void		ft_pa(t_list **b, t_list **a);
