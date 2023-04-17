@@ -43,8 +43,8 @@ int	*ft_init_indexes_array(t_list **b, int *indexes)
 }
 
 int	*ft_sort_indexes(int *indexes, int cost_1st_big,
-					int cost_2nd_big, int cost_3rd_big)
- {
+		int cost_2nd_big, int cost_3rd_big)
+{
 	if (cost_1st_big > cost_3rd_big)
 		ft_swap_values(&indexes[0], &indexes[2]);
 	else if (cost_1st_big > cost_2nd_big)
@@ -59,41 +59,22 @@ int	*ft_sort_indexes(int *indexes, int cost_1st_big,
  * in 'b' that nees to be pushed to 'a' in the order in which they need to
  * be pushed.
 */
-void	ft_compare_costs_and_sort_indexes(t_list **b)
+int	*ft_compare_costs_and_sort_indexes(t_list **b, int *indexes)
 {
 	int	cost_1st_big;
 	int	cost_2nd_big;
 	int	cost_3rd_big;
-	int	*indexes;
 
-	printf("[%d] : %d\n", ft_find_biggest_node_idx(b), ft_find_biggest_node_data(b));
-	printf("[%d] : %d\n", ft_find_second_biggest_node_idx(b), ft_find_second_biggest_node_data(b));
-	printf("[%d] : %d\n", ft_find_third_biggest_node_idx(b), ft_find_third_biggest_node_data(b));
-	indexes = (int *)malloc(sizeof(int) * 3);
-	if (!indexes)
-		return ;
 	indexes = ft_init_indexes_array(b, indexes);
-	// cost_1st_big = ft_cost_first_big(b);
-	// cost_2nd_big = ft_cost_second_big(b);
-	// cost_3rd_big = ft_cost_third_big(b);
-	cost_1st_big = 3;
-	cost_2nd_big = 3;
-	cost_3rd_big = 1;
-	indexes = ft_sort_indexes(indexes, cost_1st_big,
-						cost_2nd_big, cost_3rd_big);
-	for (int i = 0; i < 3; ++i) {
-		printf("indexes[%d]: [%d]\n", i, indexes[i]);
-	}
-	// if (ft_costs_are_different(cost_1st_big, cost_2nd_big, cost_3rd_big) == 1)
-	// {
-	// 	// indexes = ft_sort_indexes(b, indexes);
-	// 	indexes = ft_sort_indexes(indexes, cost_1st_big,
-	// 						cost_2nd_big, cost_3rd_big);
-	// 	for (int i = 0; i < 3; ++i) {
-	// 		printf("indexes[%d]: [%d]\n", i, indexes[i]);
-	// 	}
-	// }
-	// else if (ft_costs_are_different(cost_1st_big,
-	// 							cost_2nd_big, cost_3rd_big) == 0)
-	// 	ft_reorder_indexes(indexes, cost_1st_big, cost_2nd_big, cost_3rd_big);
+	cost_1st_big = ft_cost_first_big(b);
+	cost_2nd_big = ft_cost_second_big(b);
+	cost_3rd_big = ft_cost_third_big(b);
+	if (ft_costs_are_different(cost_1st_big, cost_2nd_big, cost_3rd_big) == 1)
+		indexes = ft_sort_indexes(indexes, cost_1st_big,
+				cost_2nd_big, cost_3rd_big);
+	else if (ft_costs_are_different(cost_1st_big,
+			cost_2nd_big, cost_3rd_big) == 0)
+		indexes = ft_re_sort_indexes(cost_1st_big, cost_2nd_big, cost_3rd_big,
+				indexes);
+	return (indexes);
 }
