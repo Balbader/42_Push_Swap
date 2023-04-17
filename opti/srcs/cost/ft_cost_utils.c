@@ -22,7 +22,7 @@ int	ft_costs_are_same(int a, int b)
 	return (a == b);
 }
 
-int	ft_first_cost(t_list **b)
+int	ft_cost_first_big(t_list **b)
 {
 	int	first_idx;
 	int	cost;
@@ -32,7 +32,7 @@ int	ft_first_cost(t_list **b)
 	return (cost);
 }
 
-int	ft_second_cost(t_list **b)
+int	ft_cost_second_big(t_list **b)
 {
 	int	second_idx;
 	int	cost;
@@ -42,7 +42,7 @@ int	ft_second_cost(t_list **b)
 	return (cost);
 }
 
-int	ft_third_cost(t_list **b)
+int	ft_cost_third_big(t_list **b)
 {
 	int	third_idx;
 	int	cost;
