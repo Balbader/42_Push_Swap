@@ -48,6 +48,6 @@ void	ft_push_node_to_a(t_list **a, t_list **b, int node_idx)
 	cost = ft_calculate_cost(b, node_idx);
 	printf("node_idx: [%d] - cost: %d\n", node_idx, cost);
 	ft_check_cost_and_rotate(cost, a, b);
-	// ft_re_init_index(*a);
-	// ft_re_init_index(*b);
+	ft_re_init_index(*a);
+	ft_re_init_index(*b);
 }
