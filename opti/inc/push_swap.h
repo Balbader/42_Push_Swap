@@ -41,7 +41,7 @@ void		ft_swap(t_list **stack);
 /* B_TO_A */
 void		ft_check_cost_and_rotate(int cost, t_list **a, t_list **b);
 void		ft_push_from_b_to_a(t_list **a, t_list **b);
-// void		ft_push_first(t_list **a, t_list **b, int first_idx);
+void		ft_push_node_to_a(t_list **a, t_list **b, int node_idx);
 // void		ft_push_second(t_list **a, t_list **b, int second_idx);
 // void		ft_push_third(t_list **a, t_list **b, int third_idx);
 
