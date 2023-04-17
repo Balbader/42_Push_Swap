@@ -12,7 +12,8 @@
 
 #include "push_swap.h"
 
-static int	ft_which_2_costs_are_the_same(int cost_1st, int cost_2nd, int cost_3rd)
+static int	ft_which_2_costs_are_the_same(int cost_1st, int cost_2nd,
+										int cost_3rd)
 {
 	if (ft_costs_are_same(cost_1st, cost_2nd) == 1)
 		return (1);
@@ -24,8 +25,10 @@ static int	ft_which_2_costs_are_the_same(int cost_1st, int cost_2nd, int cost_3r
 		return (0);
 }
 
-static int	ft_find_biggest_value_idx(int same_idx_1, int same_idx_2)
+static int	ft_find_biggest_value_idx(int same_cost_a, int same_cost_b,
+									int *indexes)
 {
+
 }
 
  /*
@@ -35,10 +38,18 @@ static int	ft_find_biggest_value_idx(int same_idx_1, int same_idx_2)
  * when it comes to the 2 identical costs, we will always give the priority to
  * the biggest node value out of the 2 identical costs.
 */
-void	ft_reorder_costs(int cost_1st, int cost_2nd, int cost_3rd)
+void	ft_reorder_costs(int cost_1st_big, int cost_2nd_big,
+					int cost_3rd_big, int indexes)
 {
 	int	the_same_are;
 
-	the_same_are = ft_which_2_costs_are_the_same(cost_1st, cost_2nd, cost_3rd);
-	printf("the_same_are: %d\n", the_same_are);
+	the_same_are = ft_which_2_costs_are_the_same(cost_1st_big,
+											cost_2nd_big, cost_3rd_big);
+	// printf("the_same_are: %d\n", the_same_are);
+	if (the_same_are == 1)
+		ft_find_biggest_value_idx(cost_1st_big, cost_2nd_big, indexes);
+	else if (the_same_are == 2)
+		ft_find_biggest_value_idx(cost_1st_big, cost_3rd_big, indexes);
+	else if (the_same_are == 3)
+		ft_find_biggest_value_idx(cost_2nd_big, cost_3rd_big, indexes);
 }
