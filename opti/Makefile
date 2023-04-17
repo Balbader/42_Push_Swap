@@ -67,6 +67,7 @@ STACK_FILES			:=	\
 						ft_find_biggest_node_idx.c \
 						ft_find_second_biggest_node_data.c \
 						ft_find_second_biggest_node_idx.c \
+						ft_find_third_biggest_node_data.c \
 						ft_find_third_biggest_node_idx.c \
 						ft_find_smallest_node_data.c \
 						ft_find_smallest_node_idx.c
