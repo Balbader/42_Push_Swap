@@ -30,6 +30,8 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	b_size = ft_get_stack_size(b);
 	i = 0;
 	while (i < (b_size / 3))
-	{ sorted_indexes = ft_compare_costs_and_sort_indexes(b, sorted_indexes); ++i;
+	{
+		sorted_indexes = ft_compare_costs_and_sort_indexes(b, sorted_indexes);
+		++i;
 	}
-
+}
