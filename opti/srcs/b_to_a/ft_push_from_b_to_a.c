@@ -38,71 +38,64 @@ static int *ft_get_sorted_idx_values(t_list **b,
 	return (sorted_values);
 }
 
+static int	ft_return_new_idx_to_push(t_list **b, int node_value)
+{
+	t_list	*tmp;
+	int		new_idx;
+
+	new_idx = 0;
+	ft_re_init_index(*b);
+	tmp = (*b);
+	while (tmp)
+	{
+		if (tmp->data == node_value)
+			new_idx = tmp->index;
+		tmp = tmp->next;
+	}
+	return (new_idx);
+}
+
 void	ft_push_nodes_to_a(t_list **a, t_list **b, int *sorted_indexes)
 {
-	// int	i;
 	int	*sorted_values;
+	int	new_idx;
+	int	i;
 
+	new_idx = 0;
 	sorted_values = (int *)malloc(sizeof(int) * 3);
 	if (!sorted_values)
 		return ;
-
-	// ft_print_stack(b, "b");
-	for (int j = 0; j < 3; ++j) {
-		printf("sorted_indexes: [%d]\n", sorted_indexes[j]);
-	}
-	printf("\n");
 	sorted_values = ft_get_sorted_idx_values(b, sorted_indexes, sorted_values);
-	// for (int j = 0; j < 3; ++j) {
-	// 	printf("sorted_values: [%d]\n", sorted_values[j]);
-	// }
-	// printf("\n");
-	// i = 0;
-	// while (i < 3)
-	// {
-		ft_print_stack(b, "b");
-		printf("\n");
-		printf("sorted_indexes[0]: %d\n", sorted_indexes[0]);
-		ft_push_node_to_a(a, b, sorted_indexes[0]);
+	i = 0;
+	while (i < 3)
+	{
+		new_idx = ft_return_new_idx_to_push(b, sorted_values[i]);
+		printf("new_idx: %d\n", new_idx);
+		ft_push_node_to_a(a, b, new_idx);
 		ft_print_stack(a, "a");
 		printf("\n");
-		ft_print_stack(b, "b");
-		printf("\n");
-		printf("sorted_indexes[0]: %d\n", sorted_indexes[1]);
-		ft_push_node_to_a(a, b, sorted_indexes[1]);
-		ft_print_stack(a, "a");
-		printf("\n");
-		ft_print_stack(b, "b");
-		printf("\n");
-		printf("sorted_indexes[0]: %d\n", sorted_indexes[2]);
-		ft_push_node_to_a(a, b, sorted_indexes[2]);
-		ft_print_stack(a, "a");
-		printf("\n");
-		ft_print_stack(b, "b");
-		printf("\n");
-		// ++i;
-	// }
+		++i;
+	}
 }
 
 void	ft_push_from_b_to_a(t_list **a, t_list **b)
 {
 	int	*sorted_indexes;
-	// int	b_size;
-	// int	i;
+	int	b_size;
+	int	i;
 
 	sorted_indexes = (int *)malloc(sizeof(int) * 3);
 	if (!sorted_indexes)
 		return ;
-	// b_size = ft_get_stack_size(b);
-	// i = 0;
+	b_size = ft_get_stack_size(b);
+	i = 0;
 	// while (i < (b_size / 3))
-	// {
-	// 	sorted_indexes = ft_compare_costs_and_sort_indexes(b, sorted_indexes);
-	// 	ft_push_nodes_to_a(a, b, sorted_indexes);
-	// 	++i;
-	// }
-	// ft_re_init_index(*a);
-	// ft_re_init_index(*b);
-	sorted_indexes = ft_compare_costs_and_sort_indexes(b, sorted_indexes);
-	ft_push_nodes_to_a(a, b, sorted_indexes);
+	// while (i < 10)
+	// while (i < 3)
+	while (i < 1)
+	{
+		sorted_indexes = ft_compare_costs_and_sort_indexes(b, sorted_indexes);
+		ft_push_nodes_to_a(a, b, sorted_indexes);
+		++i;
+	}
 }
