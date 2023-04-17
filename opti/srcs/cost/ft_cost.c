@@ -44,18 +44,18 @@ int	*ft_init_indexes_array(t_list **b, int *indexes)
 
 int	*ft_sort_indexes(t_list **b, int *indexes)
  {
-	int	cost_1st;
-	int	cost_2nd;
-	int	cost_3rd;
+	int	cost_1st_big;
+	int	cost_2nd_big;
+	int	cost_3rd_big;
 
-	cost_1st = ft_first_cost(b);
-	cost_2nd = ft_second_cost(b);
-	cost_3rd = ft_third_cost(b);
-	if (cost_1st > cost_3rd)
+	cost_1st_big = ft_cost_first_big(b);
+	cost_2nd_big = ft_cost_second_big(b);
+	cost_3rd_big = ft_cost_third_big(b);
+	if (cost_1st_big > cost_3rd_big)
 		ft_swap_values(&indexes[0], &indexes[2]);
-	else if (cost_1st > cost_2nd)
+	else if (cost_1st_big > cost_2nd_big)
 		ft_swap_values(&indexes[0], &indexes[1]);
-	else if (cost_2nd > cost_3rd)
+	else if (cost_2nd_big > cost_3rd_big)
 		ft_swap_values(&indexes[1], &indexes[2]);
 	return (indexes);
 }
@@ -67,28 +67,28 @@ int	*ft_sort_indexes(t_list **b, int *indexes)
 */
 void	ft_compare_costs_and_sort_indexes(t_list **b)
 {
-	int	cost_1st;
-	int	cost_2nd;
-	int	cost_3rd;
+	int	cost_1st_big;
+	int	cost_2nd_big;
+	int	cost_3rd_big;
 	int	*indexes;
 
 	indexes = (int *)malloc(sizeof(int) * 3);
 	if (!indexes)
 		return ;
 	indexes = ft_init_indexes_array(b, indexes);
-	// cost_1st = ft_first_cost(b);
-	// cost_2nd = ft_second_cost(b);
-	// cost_3rd = ft_third_cost(b);
-	cost_1st = 33;
-	cost_2nd = 8;
-	cost_3rd = 8;
-	if (ft_costs_are_different(cost_1st, cost_2nd, cost_3rd) == 1)
+	// cost_1st_big = ft_cost_first_big(b);
+	// cost_2nd_big = ft_cost_second_big(b);
+	// cost_3rd_big = ft_cost_third_big(b);
+	cost_1st_big = 33;
+	cost_2nd_big = 8;
+	cost_3rd_big = 8;
+	if (ft_costs_are_different(cost_1st_big, cost_2nd_big, cost_3rd_big) == 1)
 	{
 		indexes = ft_sort_indexes(b, indexes);
 		for (int i = 0; i < 3; ++i) {
 			printf("indexes[%d]: [%d]\n", i, indexes[i]);
 		}
 	}
-	else if (ft_costs_are_different(cost_1st, cost_2nd, cost_3rd) == 0)
-		ft_reorder_costs(cost_1st, cost_2nd, cost_3rd);
+	else if (ft_costs_are_different(cost_1st_big, cost_2nd_big, cost_3rd_big) == 0)
+		ft_reorder_costs(cost_1st_big, cost_2nd_big, cost_3rd_big, indexes);
 }
