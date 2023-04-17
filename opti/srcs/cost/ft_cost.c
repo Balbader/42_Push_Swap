@@ -24,7 +24,7 @@ int	ft_calculate_cost(t_list **stack, int node_idx)
 	mid = size / 2;
 	cost = 0;
 	if (node_idx == 1)
-		cost = 1;
+		cost = 0;
 	if (node_idx == size)
 		cost = 1;
 	if (node_idx <= mid)
