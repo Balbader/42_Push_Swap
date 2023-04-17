@@ -38,27 +38,23 @@ static int *ft_get_sorted_idx_values(t_list **b,
 	return (sorted_values);
 }
 
-static int	ft_return_new_idx_to_push(t_list **b, int node_value)
+void	ft_check_incoming_and_swap_a(int *sorted_values)
 {
-	t_list	*tmp;
-	int		new_idx;
+	int	a;
+	int	b;
+	int	c;
 
-	new_idx = 0;
-	ft_re_init_index(*b);
-	tmp = (*b);
-	while (tmp)
-	{
-		if (tmp->data == node_value)
-			new_idx = tmp->index;
-		tmp = tmp->next;
-	}
-	return (new_idx);
+	a = sorted_values[0];
+	b = sorted_values[1];
+	c = sorted_values[2];
+	if (a < b &&)
 }
 
 void	ft_push_nodes_to_a(t_list **a, t_list **b, int *sorted_indexes)
 {
 	int	*sorted_values;
 	int	new_idx;
+	int	incoming;
 	int	i;
 
 	new_idx = 0;
@@ -66,14 +62,15 @@ void	ft_push_nodes_to_a(t_list **a, t_list **b, int *sorted_indexes)
 	if (!sorted_values)
 		return ;
 	sorted_values = ft_get_sorted_idx_values(b, sorted_indexes, sorted_values);
+	new_idx = ft_return_new_idx_to_push(b, sorted_values[0]);
+	ft_push_node_to_a(a, b, new_idx);
 	i = 0;
-	while (i < 3)
+	while (i < 2)
 	{
-		new_idx = ft_return_new_idx_to_push(b, sorted_values[i]);
-		printf("new_idx: %d\n", new_idx);
+		if (i < 2)
+			incoming = sorted_values[i + 1];
+		new_idx = ft_return_new_idx_to_push(b, sorted_values[i + 1]);
 		ft_push_node_to_a(a, b, new_idx);
-		ft_print_stack(a, "a");
-		printf("\n");
 		++i;
 	}
 }
