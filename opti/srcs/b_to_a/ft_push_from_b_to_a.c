@@ -38,18 +38,6 @@ static int *ft_get_sorted_idx_values(t_list **b,
 	return (sorted_values);
 }
 
-void	ft_check_incoming_and_swap_a(int *sorted_values)
-{
-	int	a;
-	int	b;
-	int	c;
-
-	a = sorted_values[0];
-	b = sorted_values[1];
-	c = sorted_values[2];
-	if (a < b &&)
-}
-
 void	ft_push_nodes_to_a(t_list **a, t_list **b, int *sorted_indexes)
 {
 	int	*sorted_values;
@@ -95,4 +83,5 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 		ft_push_nodes_to_a(a, b, sorted_indexes);
 		++i;
 	}
+	ft_print_stack(a, "a");
 }
