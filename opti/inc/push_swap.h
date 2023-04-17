@@ -51,10 +51,9 @@ int			*ft_sort_indexes(t_list **b, int *indexes);
 int			ft_calculate_cost(t_list **stack, int node_idx);
 int			ft_costs_are_different(int a, int b, int c);
 int			ft_costs_are_same(int a, int b);
-int			ft_costs_are_same(int a, int b);
-int			ft_first_cost(t_list **b);
-int			ft_second_cost(t_list **b);
-int			ft_third_cost(t_list **b);
+int			ft_cost_first_big(t_list **b);
+int			ft_cost_second_big(t_list **b);
+int			ft_cost_third_big(t_list **b);
 void		ft_compare_costs_and_sort_indexes(t_list **b);
 void		ft_reorder_costs(int cost_1st, int cost_2nd, int cost_3rd);
 
