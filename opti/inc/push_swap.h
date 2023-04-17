@@ -47,7 +47,9 @@ void		ft_push_third(t_list **a, t_list **b, int third_idx);
 
 /* COST */
 int			*ft_init_indexes_array(t_list **b, int *indexes);
-int			*ft_sort_indexes(t_list **b, int *indexes);
+// int			*ft_sort_indexes(t_list **b, int *indexes);
+int			*ft_sort_indexes(int *indexes, int cost_1st_big, int cost_2nd_big,
+					int cost_3rd_big);
 int			ft_calculate_cost(t_list **stack, int node_idx);
 int			ft_costs_are_different(int a, int b, int c);
 int			ft_costs_are_same(int a, int b);
@@ -55,7 +57,8 @@ int			ft_cost_first_big(t_list **b);
 int			ft_cost_second_big(t_list **b);
 int			ft_cost_third_big(t_list **b);
 void		ft_compare_costs_and_sort_indexes(t_list **b);
-void		ft_reorder_costs(int cost_1st, int cost_2nd, int cost_3rd);
+void		ft_reorder_costs(int *indexex, int cost_1st_big, int cost_2nd_big,
+					int cost_3rd_big);
 
 /* OPERATIONS */
 void		ft_pa(t_list **b, t_list **a);
@@ -88,8 +91,9 @@ void		ft_push_smallest_node_4(t_list **a,
 int			*ft_copy_stack_to_arr(t_list **stack, int stack_size, int *arr);
 int			ft_find_biggest_node_data(t_list **stack);
 int			ft_find_biggest_node_idx(t_list **stack);
-int			ft_find_second_biggest_node_idx(t_list **stack);
 int			ft_find_second_biggest_node_data(t_list **stack);
+int			ft_find_second_biggest_node_idx(t_list **stack);
+int			ft_find_third_biggest_node_data(t_list **stack);
 int			ft_find_third_biggest_node_idx(t_list **stack);
 int			ft_find_smallest_node_data(t_list **stack);
 int			ft_find_smallest_node_idx(t_list **stack);
