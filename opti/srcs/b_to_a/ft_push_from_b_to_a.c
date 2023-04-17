@@ -47,20 +47,39 @@ void	ft_push_nodes_to_a(t_list **a, t_list **b, int *sorted_indexes)
 	if (!sorted_values)
 		return ;
 
-	ft_print_stack(b, "b");
-	// for (int j = 0; j < 3; ++j) {
-	// 	printf("sorted_indexes: [%d]\n", sorted_indexes[j]);
-	// }
+	// ft_print_stack(b, "b");
+	for (int j = 0; j < 3; ++j) {
+		printf("sorted_indexes: [%d]\n", sorted_indexes[j]);
+	}
+	printf("\n");
 	sorted_values = ft_get_sorted_idx_values(b, sorted_indexes, sorted_values);
 	// for (int j = 0; j < 3; ++j) {
 	// 	printf("sorted_values: [%d]\n", sorted_values[j]);
 	// }
+	// printf("\n");
 	// i = 0;
 	// while (i < 3)
 	// {
+		ft_print_stack(b, "b");
+		printf("\n");
+		printf("sorted_indexes[0]: %d\n", sorted_indexes[0]);
 		ft_push_node_to_a(a, b, sorted_indexes[0]);
+		ft_print_stack(a, "a");
+		printf("\n");
+		ft_print_stack(b, "b");
+		printf("\n");
+		printf("sorted_indexes[0]: %d\n", sorted_indexes[1]);
 		ft_push_node_to_a(a, b, sorted_indexes[1]);
+		ft_print_stack(a, "a");
+		printf("\n");
+		ft_print_stack(b, "b");
+		printf("\n");
+		printf("sorted_indexes[0]: %d\n", sorted_indexes[2]);
 		ft_push_node_to_a(a, b, sorted_indexes[2]);
+		ft_print_stack(a, "a");
+		printf("\n");
+		ft_print_stack(b, "b");
+		printf("\n");
 		// ++i;
 	// }
 }
