@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static int *ft_get_sorted_idx_values(t_list **b,
+static int	*ft_get_sorted_idx_values(t_list **b,
 		int *sorted_indexes, int *sorted_values)
 {
 	t_list	*tmp;
@@ -38,50 +38,58 @@ static int *ft_get_sorted_idx_values(t_list **b,
 	return (sorted_values);
 }
 
-void	ft_push_nodes_to_a(t_list **a, t_list **b, int *sorted_indexes)
+void	ft_push_nodes_to_a(t_list **a, t_list **b, int *sorted_values)
 {
-	int	*sorted_values;
-	int	new_idx;
-	int	incoming;
-	int	i;
+	int	first;
+	int	second;
+	int	third;
 
-	new_idx = 0;
-	sorted_values = (int *)malloc(sizeof(int) * 3);
-	if (!sorted_values)
-		return ;
-	sorted_values = ft_get_sorted_idx_values(b, sorted_indexes, sorted_values);
-	new_idx = ft_return_new_idx_to_push(b, sorted_values[0]);
-	ft_push_node_to_a(a, b, new_idx);
-	i = 0;
-	while (i < 2)
-	{
-		if (i < 2)
-			incoming = sorted_values[i + 1];
-		new_idx = ft_return_new_idx_to_push(b, sorted_values[i + 1]);
-		ft_push_node_to_a(a, b, new_idx);
-		++i;
-	}
+	first = sorted_values[0];
+	second = sorted_values[1];
+	third = sorted_values[2];
+	printf("first: %d\n", first);
+	printf("second: %d\n", second);
+	printf("third: %d\n", third);
+	if (first < second && first < third)
+		ft_if_smallest_is_first(a, b);
+	else if (first > second && first < third)
+		ft_if_middle_is_first(a, b);
+	else if (first > second && first > third)
+		ft_if_biggest_is_first(a, b, sorted_values);
 }
 
 void	ft_push_from_b_to_a(t_list **a, t_list **b)
 {
 	int	*sorted_indexes;
-	int	b_size;
+	int	*sorted_values;
 	int	i;
 
+	sorted_values = (int *)malloc(sizeof(int) * 3);
+	if (!sorted_values)
+		return ;
 	sorted_indexes = (int *)malloc(sizeof(int) * 3);
 	if (!sorted_indexes)
 		return ;
-	b_size = ft_get_stack_size(b);
 	i = 0;
-	// while (i < (b_size / 3))
-	// while (i < 10)
-	// while (i < 3)
-	while (i < 1)
+	while (i < 5)
+	// while((*b)->next != NULL)
 	{
+		printf("--------------------------------------------> %d\n", i);
+		ft_print_stack(b, "b");
+		printf("\n");
 		sorted_indexes = ft_compare_costs_and_sort_indexes(b, sorted_indexes);
-		ft_push_nodes_to_a(a, b, sorted_indexes);
+		sorted_values = ft_get_sorted_idx_values(b,
+								sorted_indexes, sorted_values);
+		for (int j = 0; j < 3; ++j) {
+			printf("sorted_indexes: [%d]\n", sorted_indexes[j]);
+			printf("sorted_values: [%d]\n", sorted_values[j]);
+			printf("\n");
+		}
+		ft_push_node_to_a(a, b, sorted_indexes[0]);
+		printf("\n");
+		ft_push_nodes_to_a(a, b, sorted_values);
 		++i;
 	}
 	ft_print_stack(a, "a");
+	printf("\n");
 }

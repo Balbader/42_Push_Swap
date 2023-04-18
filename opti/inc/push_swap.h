@@ -40,13 +40,13 @@ void		ft_swap(t_list **stack);
 
 /* B_TO_A */
 int			ft_return_new_idx_to_push(t_list **b, int node_value);
-int			*ft_init_a_arr(t_list **a, int *a_arr);
-void		ft_check_a(t_list **a);
 void		ft_check_cost_and_rotate(int cost, t_list **a, t_list **b);
 void		ft_push_from_b_to_a(t_list **a, t_list **b);
 void		ft_push_node_to_a(t_list **a, t_list **b, int node_idx);
-// void		ft_push_second(t_list **a, t_list **b, int second_idx);
-// void		ft_push_third(t_list **a, t_list **b, int third_idx);
+void		ft_push_nodes_to_a(t_list **a, t_list **b, int *sorted_values);
+void		ft_if_smallest_is_first(t_list **a, t_list **b);
+void		ft_if_middle_is_first(t_list **a, t_list **b);
+void		ft_if_biggest_is_first(t_list **a, t_list **b, int *sorted_values);
 
 /* COST */
 int			*ft_init_indexes_array(t_list **b, int *indexes);

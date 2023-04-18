@@ -12,24 +12,54 @@
 
 #include "push_swap.h"
 
-/*
-void	ft_push_big_node_next(t_list **a, t_list **b)
-{
-	int	big_idx;
-	int	cost;
-
-	big_idx = ft_find_biggest_node_idx(b);
-	cost = ft_calculate_cost(b, big_idx);
-	ft_check_cost_and_rotate(cost, a, b);
-}
-
-void	ft_push_next_node_next(t_list **a, t_list **b)
+void	ft_if_smallest_is_first(t_list **a, t_list **b)
 {
 	int	next_idx;
-	int	cost;
 
+	ft_re_init_index(*b);
 	next_idx = ft_find_biggest_node_idx(b);
-	cost = ft_calculate_cost(b, next_idx);
-	ft_check_cost_and_rotate(cost, a, b);
+	ft_push_node_to_a(a, b, next_idx);
+	ft_sa(a);
+	ft_re_init_index(*b);
+	next_idx = ft_find_biggest_node_idx(b);
+	ft_push_node_to_a(a, b, next_idx);
+	ft_sa(a);
 }
-*/
+
+void	ft_if_middle_is_first(t_list **a, t_list **b)
+{
+	int	next_idx;
+
+	ft_re_init_index(*b);
+	next_idx = ft_find_biggest_node_idx(b);
+	ft_push_node_to_a(a, b, next_idx);
+	ft_sa(a);
+	ft_re_init_index(*b);
+	next_idx = ft_find_biggest_node_idx(b);
+	ft_push_node_to_a(a, b, next_idx);
+}
+
+void	ft_if_biggest_is_first(t_list **a, t_list **b, int *sorted_values)
+{
+	int	next_idx;
+
+	if (sorted_values[1] < sorted_values[2])
+	{
+		ft_re_init_index(*b);
+		next_idx = ft_find_second_biggest_node_idx(b);
+		ft_push_node_to_a(a, b, next_idx);
+		ft_re_init_index(*b);
+		next_idx = ft_find_biggest_node_idx(b);
+		ft_push_node_to_a(a, b, next_idx);
+		ft_sa(a);
+	}
+	else
+	{
+		ft_re_init_index(*b);
+		next_idx = ft_find_biggest_node_idx(b);
+		ft_push_node_to_a(a, b, next_idx);
+		ft_re_init_index(*b);
+		next_idx = ft_find_biggest_node_idx(b);
+		ft_push_node_to_a(a, b, next_idx);
+	}
+}
