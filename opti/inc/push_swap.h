@@ -46,7 +46,7 @@ void		ft_push_node_to_a(t_list **a, t_list **b, int node_idx);
 void		ft_push_nodes_to_a(t_list **a, t_list **b, int *sorted_values);
 void		ft_if_smallest_is_first(t_list **a, t_list **b);
 void		ft_if_middle_is_first(t_list **a, t_list **b);
-void		ft_if_biggest_is_first(t_list **a, t_list **b, int *sorted_values);
+void		ft_if_biggest_is_first(t_list **a, t_list **b);
 
 /* COST */
 int			*ft_init_indexes_array(t_list **b, int *indexes);
