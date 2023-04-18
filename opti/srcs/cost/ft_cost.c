@@ -65,14 +65,15 @@ int	*ft_compare_costs_and_sort_indexes(t_list **b, int *indexes)
 	int	cost_2nd_big;
 	int	cost_3rd_big;
 
+	ft_re_init_index(*b);
 	indexes = ft_init_indexes_array(b, indexes);
 	cost_1st_big = ft_cost_first_big(b);
 	cost_2nd_big = ft_cost_second_big(b);
 	cost_3rd_big = ft_cost_third_big(b);
-	printf("cost_1st_big: %d\n", cost_1st_big);
-	printf("cost_2nd_big: %d\n", cost_2nd_big);
-	printf("cost_3rd_big: %d\n", cost_3rd_big);
-	printf("\n");
+	// printf("cost_1st_big: %d\n", cost_1st_big);
+	// printf("cost_2nd_big: %d\n", cost_2nd_big);
+	// printf("cost_3rd_big: %d\n", cost_3rd_big);
+	// printf("\n");
 	if (ft_costs_are_different(cost_1st_big, cost_2nd_big, cost_3rd_big) == 1)
 		indexes = ft_sort_indexes(indexes, cost_1st_big,
 				cost_2nd_big, cost_3rd_big);
