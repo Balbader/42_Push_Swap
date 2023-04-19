@@ -12,12 +12,8 @@
 
 #include "push_swap.h"
 
-int	*ft_costs(int *cost_arr, t_list **b)
+int	*ft_costs(t_list **b, int *cost_arr)
 {
-	int	cost_1st_big;
-	int	cost_2nd_big;
-	int	cost_3rd_big;
-
 	cost_arr[0]= ft_cost_first_big(b);
 	cost_arr[1]= ft_cost_second_big(b);
 	cost_arr[2]= ft_cost_third_big(b);
@@ -28,16 +24,24 @@ void	ft_final_sort(t_list **a, t_list **b)
 {
 	int	*cost_arr;
 
-
+	(void)a;
 	cost_arr = (int *)malloc(sizeof(int) * 3);
 	if (!cost_arr)
 		return ;
 	cost_arr = ft_costs(b, cost_arr);
+	for (int i = 0; i < 3; ++i) {
+		printf("cost_arr: %d\n", cost_arr[i]);
+	}
+	// while ((*b))
+	// 	{
+	// 		if (cost_arr[0] < cost_arr[1] && cost_arr[0] < cost_arr[2])
+	// 			ft_
 
-	while ((*b))
-		{
-			if (cost_arr[0] < cost_arr[1] && cost_arr[0] < cost_arr[2])
-				ft_
+	// 	}
+}
 
-		}
+void	ft_push_from_b_to_a(t_list **a, t_list **b)
+{
+	// (void)a;
+	ft_final_sort(a, b);
 }

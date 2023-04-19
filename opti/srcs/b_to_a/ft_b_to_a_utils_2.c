@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 void	ft_smallest_is_first(t_list **a, t_list **b)
 {
 	int	next_idx;
@@ -55,5 +56,12 @@ void	ft_middle_is_first(t_list **a, t_list **b)
 
 void	ft_biggest_is_first(t_list **a, t_list **b)
 {
-	ft_pushe_nodes()
+	int	next_idx;
+
+	ft_re_init_index(*b);
+	next_idx = ft_find_biggest_node_idx(b);
+	ft_push_node_to_a(a, b, next_idx);
+	ft_re_init_index(*b);
+	next_idx = ft_find_biggest_node_idx(b);
+	ft_push_node_to_a(a, b, next_idx);
 }
