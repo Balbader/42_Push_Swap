@@ -40,3 +40,29 @@ void	ft_check_cost_and_rotate(int cost, t_list **a, t_list **b)
 		ft_pa(a, b);
 	}
 }
+
+void	ft_re_order_data_and_costs(t_list **b, int *data, int *costs)
+{
+	int	a_cost;
+	int	b_cost;
+	int	c_cost;
+
+	a_cost = ft_cost_first_big(b);
+	b_cost = ft_cost_second_big(b);
+	c_cost = ft_cost_third_big(b);
+	if (a_cost > c_cost)
+	{
+		ft_swap_values(&data[0], &data[2]);
+		ft_swap_values(&costs[0], &costs[2]);
+	}
+	if (a_cost > b_cost)
+	{
+		ft_swap_values(&data[0], &data[1]);
+		ft_swap_values(&costs[0], &costs[1]);
+	}
+	if (b_cost > c_cost)
+	{
+		ft_swap_values(&data[1], &data[2]);
+		ft_swap_values(&costs[1], &costs[2]);
+	}
+}
