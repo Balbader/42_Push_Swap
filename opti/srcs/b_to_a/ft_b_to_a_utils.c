@@ -10,4 +10,33 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 
+void	ft_check_cost_and_rotate(int cost, t_list **a, t_list **b)
+{
+	int	i;
+
+	if (cost == 0)
+		ft_pa(a, b);
+	if (cost > 0)
+	{
+		i = 0;
+		while (i < cost)
+		{
+			ft_rb(b);
+			++i;
+		}
+		ft_pa(a, b);
+	}
+	else if (cost < 0)
+	{
+		i = 0;
+		cost *= -1;
+		while (i < cost)
+		{
+			ft_rrb(b);
+			++i;
+		}
+		ft_pa(a, b);
+	}
+}
