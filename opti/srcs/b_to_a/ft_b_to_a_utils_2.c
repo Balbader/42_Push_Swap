@@ -14,7 +14,4 @@
 
 void	ft_push_first(t_list **b, int)
 {
-	int	a_cost;
-	int	b_cost;
-	int	c_cost;
 }
