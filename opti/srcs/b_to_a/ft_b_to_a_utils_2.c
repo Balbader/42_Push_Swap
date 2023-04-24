@@ -12,5 +12,5 @@
 
 #include "push_swap.h"
 
-void	ft_push_first(t_list **b, int )
-{}
+// void	ft_push_first(t_list **b, int)
+// {}
