@@ -58,35 +58,16 @@ void	ft_final_sort(t_list **a, t_list **b)
 		return ;
 	costs = ft_costs(b, costs);
 	data = ft_data(b, data);
-	// printf("\n");
-	// for (int i = 0; i < 3; ++i) {
-	// 	printf("data: %d\n", data[i]);
-	// }
-	// printf("\n");
 	ft_re_order_data_and_costs(b, data, costs);
-	// for (int i = 0; i < 3; ++i) {
-	// 	printf("data: %d\n", data[i]);
-	// 	printf("cost: %d\n", costs[i]);
-	// }
-	// printf("\n");
 	ft_push_node_to_a(a, b, data);
-	// ft_re_init_index(*a);
-	// ft_print_stack(a, "a");
 }
 
 void	ft_push_from_b_to_a(t_list **a, t_list **b)
 {
-	// int	i;
-
-	// i = 0;
-	// while (i < 10)
-	// while (i < 5)
 	while ((*b))
 	{
-		// printf("-------------------------->%d\n", i + 1);
 		ft_re_init_index(*a);
 		ft_re_init_index(*b);
 		ft_final_sort(a, b);
-		// ++i;
 	}
 }
