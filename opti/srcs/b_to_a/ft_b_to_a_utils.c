@@ -18,7 +18,7 @@ void	ft_check_cost_and_rotate(int cost, t_list **a, t_list **b)
 
 	if (cost == 0)
 		ft_pa(a, b);
-	if (cost > 0)
+	else if (cost > 0)
 	{
 		i = 0;
 		while (i < cost)
