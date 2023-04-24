@@ -73,7 +73,6 @@ void	ft_final_sort(t_list **a, t_list **b)
 	int	*costs;
 	int	*data;
 
-	// (void)a;
 	data = (int *)malloc(sizeof(int) * 3);
 	costs = (int *)malloc(sizeof(int) * 3);
 	if (!costs || !data)
