@@ -27,6 +27,8 @@ int	ft_cost_first_big(t_list **b)
 	int	first_idx;
 	int	cost;
 
+	first_idx = 0;
+	cost = 0;
 	first_idx = ft_find_biggest_node_idx(b);
 	cost = ft_calculate_cost(b, first_idx);
 	return (cost);
@@ -37,6 +39,8 @@ int	ft_cost_second_big(t_list **b)
 	int	second_idx;
 	int	cost;
 
+	second_idx = 0;
+	cost = 0;
 	second_idx = ft_find_second_biggest_node_idx(b);
 	cost = ft_calculate_cost(b, second_idx);
 	return (cost);
@@ -47,6 +51,8 @@ int	ft_cost_third_big(t_list **b)
 	int	third_idx;
 	int	cost;
 
+	third_idx = 0;
+	cost = 0;
 	third_idx = ft_find_third_biggest_node_idx(b);
 	cost = ft_calculate_cost(b, third_idx);
 	return (cost);
