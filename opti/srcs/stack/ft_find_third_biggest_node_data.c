@@ -29,5 +29,5 @@ int	ft_find_third_biggest_node_data(t_list **stack)
 			third_data = tmp->data;
 		tmp = tmp->next;
 	}
-	return (third_data);
+	return (free(tmp), third_data);
 }

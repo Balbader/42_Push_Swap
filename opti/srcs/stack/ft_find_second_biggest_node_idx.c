@@ -37,5 +37,5 @@ int	ft_find_second_biggest_node_idx(t_list **stack)
 		++i;
 		tmp = tmp->next;
 	}
-	return (second_idx);
+	return (free(tmp), second_idx);
 }

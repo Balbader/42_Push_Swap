@@ -37,5 +37,5 @@ int	ft_find_third_biggest_node_idx(t_list **stack)
 		++i;
 		tmp = tmp->next;
 	}
-	return (third_idx);
+	return (free(tmp), third_idx);
 }
