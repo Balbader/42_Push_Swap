@@ -17,7 +17,7 @@ int	ft_define_pivots_counts(int stack_size, int pivots_count)
 	if (stack_size == 100 || stack_size == 500)
 		pivots_count = 10;
 	else if (stack_size > 10 && stack_size != 100 && stack_size != 500)
-		pivots_count =  stack_size / 5;
+		pivots_count =  stack_size / 8;
 	else if (stack_size > 5 && stack_size <= 10)
 		pivots_count = 5;
 	return (pivots_count);
