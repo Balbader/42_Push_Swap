@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	ft_check_entry(char *av)
+int	ft_check_entry(char *av, int *arr)
 {
 	int	i;
 
@@ -24,12 +24,14 @@ int	ft_check_entry(char *av)
 		else if (av[i] == '-' && (!ft_isdigit(av[i + 1])))
 		{
 			ft_putstr_fd("Error\n", 2);
-			return (-1);
+			free(arr);
+			exit(1);
 		}
 		else if (!ft_isdigit(av[i]))
 		{
 			ft_putstr_fd("Error\n", 2);
-			return (-1);
+			free(arr);
+			exit(1);
 		}
 		++i;
 	}

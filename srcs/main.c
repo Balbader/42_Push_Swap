@@ -21,16 +21,21 @@ static int	*ft_init_entries_arr(int ac, char **av, int *arr)
 	i = 0;
 	while (i < ac - 1)
 	{
-		if (ft_get_entry(av[j]) == -1)
-			return (-1);
-		else
-		{
-			arr[i] = ft_get_entry(av[j]);
-			++i;
-			++j;
-		}
+		arr[i] = ft_get_entry(av[j], arr);
+		++i;
+		++j;
 	}
 	return (arr);
+}
+
+static void	ft_check_entries(int *arr, int arr_size)
+{
+	if (ft_arr_is_sorted(arr, arr_size) == 0)
+	{
+		free(arr);
+		exit(1);
+	}
+	ft_find_doubles(arr, arr_size);
 }
 
 int	main(int ac, char **av)
@@ -40,23 +45,32 @@ int	main(int ac, char **av)
 	int		*entries_arr;
 
 	if (ac < 3)
-	{
-		ft_putstr_fd("Error\n", 2);
 		return (-1);
-	}
 	a = NULL;
 	b = NULL;
 	entries_arr = NULL;
 	entries_arr = (int *)malloc(sizeof(int) * (ac - 1));
 	if (!entries_arr)
 		return (0);
-	if (ft_init_entries_arr(ac, av, entries_arr) == -1)
-		free(entries_arr);
 	entries_arr = ft_init_entries_arr(ac, av, entries_arr);
+	for (int x = 0; x < ac - 1; ++x) {
+		printf("entries_arr[%d]: %d\n", x, entries_arr[x]);
+	}
+
+	ft_check_entries(entries_arr, (ac - 1));
+
+	for (int x = 0; x < ac - 1; ++x) {
+		printf("entries_arr[%d]: %d\n", x, entries_arr[x]);
+	}
 	a = ft_init_stack(a, entries_arr, ac - 1);
+	ft_print_stack(&a, "a");
 	free(entries_arr);
 	if ((ac - 1) <= 5)
+	{
+		printf("%d\n", ac - 1);
 		ft_small_sort(&a, &b, ac - 1);
+		ft_print_stack(&a, "a");
+	}
 	else
 	{
 		ft_pb_chunks(&a, &b);

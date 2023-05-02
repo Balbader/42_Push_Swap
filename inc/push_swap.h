@@ -66,8 +66,8 @@ void		ft_sb(t_list **b);
 void		ft_ss(t_list **a, t_list **b);
 
 /* ENTRY */
-int			ft_check_entry(char *av);
-int			ft_get_entry(char *av);
+int			ft_check_entry(char *av, int *arr);
+int			ft_get_entry(char *av, int *arr);
 void		ft_find_doubles(int *arr, int arr_size);
 long int	ft_convert_entry(const char *av);
 
@@ -99,6 +99,7 @@ t_list		*ft_get_last_node(t_list *stack);
 /* UTILS */
 int			ft_isdigit(char c);
 int			ft_strlen(const char *str);
+int			ft_arr_is_sorted(int *arr, int arr_size);
 void		ft_putstr_fd(char *str, int fd);
 void		ft_print_err(t_list **stack_a, t_list **stack_b);
 

@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_is_sorted.c                               :+:      :+:    :+:   */
+/*   ft_arr_is_sorted.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baalbade <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/11 12:32:00 by baalbade          #+#    #+#             */
-/*   Updated: 2023/04/11 12:32:11 by baalbade         ###   ########.fr       */
+/*   Created: 2023/05/02 10:27:00 by baalbade          #+#    #+#             */
+/*   Updated: 2023/05/02 10:27:03 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_stack_is_sorted(t_list *stack)
+int	ft_arr_is_sorted(int *arr, int arr_size)
 {
-	int	data;
+	int	i;
 
-	data = stack->data;
-	while (stack)
+	i = 0;
+	while (i < arr_size)
 	{
-		if (data > stack->data)
+		if (arr[i] > arr[i + 1])
 			return (1);
-		data = stack->data;
-		stack = stack->next;
+		++i;
 	}
 	return (0);
 }

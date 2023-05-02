@@ -12,19 +12,18 @@
 
 #include "push_swap.h"
 
-int	ft_get_entry(char *av)
+int	ft_get_entry(char *av, int *arr)
 {
 	long int	elem;
 
 	if (!av)
 		return (0);
-	ft_check_entry(av);
-	if (ft_check_entry(av) == -1)
-		return (-1);
+	ft_check_entry(av, arr);
 	elem = ft_convert_entry(av);
 	if (elem > INT_MAX || elem < INT_MIN)
 	{
-		ft_putstr_fd("error\n", 2);
+		ft_putstr_fd("Error\n", 2);
+		free(arr);
 		exit(1);
 	}
 	return (elem);

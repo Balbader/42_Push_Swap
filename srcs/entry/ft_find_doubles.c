@@ -28,6 +28,7 @@ void	ft_find_doubles(int *arr, int arr_size)
 			if (arr[i] == arr[j])
 			{
 				ft_putstr_fd("Error\n", 2);
+				free(arr);
 				exit(1);
 			}
 			++j;
