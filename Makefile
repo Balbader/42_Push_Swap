@@ -81,6 +81,7 @@ STACK				:=	$(addprefix $(STACK_DIR), $(STACK_FILES))
 
 UTILS_DIR			:=	utils/
 UTILS_FILES			:=	\
+						ft_arr_is_sorted.c \
 						ft_isdigit.c \
 						ft_print_err.c \
 						ft_print_stack.c \

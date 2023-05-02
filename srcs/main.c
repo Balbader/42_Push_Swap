@@ -53,21 +53,21 @@ int	main(int ac, char **av)
 	if (!entries_arr)
 		return (0);
 	entries_arr = ft_init_entries_arr(ac, av, entries_arr);
-	for (int x = 0; x < ac - 1; ++x) {
-		printf("entries_arr[%d]: %d\n", x, entries_arr[x]);
-	}
+	// for (int x = 0; x < ac - 1; ++x) {
+	// 	printf("entries_arr[%d]: %d\n", x, entries_arr[x]);
+	// }
 
 	ft_check_entries(entries_arr, (ac - 1));
 
-	for (int x = 0; x < ac - 1; ++x) {
-		printf("entries_arr[%d]: %d\n", x, entries_arr[x]);
-	}
+	// for (int x = 0; x < ac - 1; ++x) {
+	// 	printf("entries_arr[%d]: %d\n", x, entries_arr[x]);
+	// }
 	a = ft_init_stack(a, entries_arr, ac - 1);
-	ft_print_stack(&a, "a");
+	// ft_print_stack(&a, "a");
 	free(entries_arr);
 	if ((ac - 1) <= 5)
 	{
-		printf("%d\n", ac - 1);
+		// printf("%d\n", ac - 1);
 		ft_small_sort(&a, &b, ac - 1);
 		ft_print_stack(&a, "a");
 	}
