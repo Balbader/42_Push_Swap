@@ -10,4 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 
+void	ft_rotate(t_list **stack)
+{
+	t_list	*tmp;
+
+	if (!(*stack))
+		return ;
+	tmp = NULL;
+	tmp = *stack;
+	tmp = tmp->next;
+	(*stack)->next = NULL;
+	ft_add_new_tail(&tmp, *stack);
+	(*stack) = tmp;
+}
