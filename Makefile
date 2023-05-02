@@ -83,13 +83,12 @@ UTILS_DIR			:=	utils/
 UTILS_FILES			:=	\
 						ft_isdigit.c \
 						ft_print_err.c \
-						ft_print_stack.c \
 						ft_putstr_fd.c \
 						ft_strlen.c
 UTILS				:=	$(addprefix $(UTILS_DIR), $(UTILS_FILES))
 
 DELETE_DIR			:=	delete/
-DELETE_FILES		:=	ft_find_next_biggest_node_data.c
+DELETE_FILES		:=	ft_print_stack.c
 DELETE				:=	$(addprefix $(DELETE_DIR), $(DELETE_FILES))
 
 ###################
