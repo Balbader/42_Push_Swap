@@ -15,5 +15,5 @@
 void	ft_pb(t_list **a, t_list **b)
 {
 	ft_push_node(a, b);
-	// ft_putstr_fd("pb\n", 1);
+	ft_putstr_fd("pb\n", 1);
 }

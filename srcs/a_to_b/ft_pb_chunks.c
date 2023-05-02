@@ -15,11 +15,15 @@
 static void	ft_push_chunks_to_b(t_list **a, t_list **b,
 							int *pivots_arr, int pivots_count)
 {
-	int	stack_size;
+	int	a_size;
 	int	count;
 	int	j;
 
-	stack_size = ft_get_stack_size(a);
+	a_size = ft_get_stack_size(a);
+	// printf("a_size / pivots_count: %d\n", a_size / pivots_count);
+	// for (int x = 0; x < pivots_count; ++x) {
+	// 	printf("pivots_arr[%d]: %d\n", x, pivots_arr[x]);
+	// }
 	count = 0;
 	j = 0;
 	while (*a)
@@ -31,7 +35,7 @@ static void	ft_push_chunks_to_b(t_list **a, t_list **b,
 		}
 		else
 			ft_ra(a);
-		if (count == stack_size / pivots_count)
+		if (count == pivots_count)
 		{
 			++j;
 			count = 0;
@@ -51,7 +55,8 @@ void	ft_pb_chunks(t_list **a, t_list **b)
 	a_size = ft_get_stack_size(a);
 	pivots_arr = ft_get_pivots(a);
 	pivots_count = ft_define_pivots_counts(a_size, pivots_count);
-	printf("pivots_count: %d\n\n", pivots_count);
+	// printf("pivots_count: %d\n", pivots_count);
+	// printf("a_size: %d\n\n", a_size);
 	ft_push_chunks_to_b(a, b, pivots_arr, pivots_count);
 	free(pivots_arr);
 }
