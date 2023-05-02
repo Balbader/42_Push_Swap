@@ -49,7 +49,8 @@ int	main(int ac, char **av)
 	{
 		ft_pb_chunks(&a, &b);
 		ft_re_init_index(b);
-		ft_push_from_b_to_a(&a, &b);
+		ft_print_stack(&b, "b");
+		// ft_push_from_b_to_a(&a, &b);
 	}
 	free(entries_arr);
 	ft_free_stack(&a);
