@@ -15,5 +15,5 @@
 void	ft_pa(t_list **a, t_list **b)
 {
 	ft_push_node(b, a);
-	ft_putstr_fd("pa\n", 1);
+	// ft_putstr_fd("pa\n", 1);
 }
