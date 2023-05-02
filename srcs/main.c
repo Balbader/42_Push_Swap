@@ -17,10 +17,6 @@ static int	*ft_init_entries_arr(int ac, char **av, int *arr)
 	int	i;
 	int	j;
 
-	arr = NULL;
-	arr = (int *)malloc(sizeof(int) * (ac - 1));
-	if (!arr)
-		return (0);
 	j = 1;
 	i = 0;
 	while (i < ac - 1)
@@ -41,8 +37,12 @@ int	main(int ac, char **av)
 	a = NULL;
 	b = NULL;
 	entries_arr = NULL;
+	entries_arr = (int *)malloc(sizeof(int) * (ac - 1));
+	if (!entries_arr)
+		return (0);
 	entries_arr = ft_init_entries_arr(ac, av, entries_arr);
 	a = ft_init_stack(a, entries_arr, ac - 1);
+	free(entries_arr);
 	if ((ac - 1) <= 5)
 		ft_small_sort(&a, &b, ac - 1);
 	else
@@ -51,7 +51,6 @@ int	main(int ac, char **av)
 		ft_re_init_index(b);
 		ft_push_from_b_to_a(&a, &b);
 	}
-	free(entries_arr);
 	ft_free_stack(&a);
 	ft_free_stack(&b);
 	return (0);
