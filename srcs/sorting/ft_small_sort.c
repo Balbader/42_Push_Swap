@@ -16,7 +16,7 @@ static void	ft_run_sort_2(t_list **a)
 {
 	if (ft_stack_is_sorted(*a))
 	{
-		free(a);
+		ft_free_stack(a);
 		exit(1);
 	}
 	else
@@ -27,13 +27,13 @@ static void	ft_run_sort_3(t_list **stack)
 {
 	if (ft_stack_is_sorted(*stack))
 	{
-		free(stack);
+		ft_free_stack(stack);
 		exit(1);
 	}
 	else
 	{
 		ft_sort_3(stack);
-		free(stack);
+		ft_free_stack(stack);
 		exit(1);
 	}
 }
@@ -42,15 +42,15 @@ static void	ft_run_sort_4(t_list **a, t_list **b)
 {
 	if (ft_stack_is_sorted(*a))
 	{
-		free(a);
-		free(b);
+		ft_free_stack(a);
+		ft_free_stack(b);
 		exit(1);
 	}
 	else
 	{
 		ft_sort_4(a, b);
-		free(a);
-		free(b);
+		ft_free_stack(a);
+		ft_free_stack(b);
 		exit(1);
 	}
 }
@@ -59,8 +59,8 @@ static void	ft_run_sort_5(t_list **a, t_list **b)
 {
 	if (ft_stack_is_sorted(*a))
 	{
-		free(a);
-		free(b);
+		ft_free_stack(a);
+		ft_free_stack(b);
 		exit(1);
 	}
 	else
