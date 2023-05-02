@@ -21,9 +21,14 @@ static int	*ft_init_entries_arr(int ac, char **av, int *arr)
 	i = 0;
 	while (i < ac - 1)
 	{
-		arr[i] = ft_get_entry(av[j]);
-		++i;
-		++j;
+		if (ft_get_entry(av[j]) == -1)
+			return (-1);
+		else
+		{
+			arr[i] = ft_get_entry(av[j]);
+			++i;
+			++j;
+		}
 	}
 	return (arr);
 }
@@ -34,12 +39,19 @@ int	main(int ac, char **av)
 	t_list	*b;
 	int		*entries_arr;
 
+	if (ac < 3)
+	{
+		ft_putstr_fd("Error\n", 2);
+		return (-1);
+	}
 	a = NULL;
 	b = NULL;
 	entries_arr = NULL;
 	entries_arr = (int *)malloc(sizeof(int) * (ac - 1));
 	if (!entries_arr)
 		return (0);
+	if (ft_init_entries_arr(ac, av, entries_arr) == -1)
+		free(entries_arr);
 	entries_arr = ft_init_entries_arr(ac, av, entries_arr);
 	a = ft_init_stack(a, entries_arr, ac - 1);
 	free(entries_arr);

@@ -19,6 +19,8 @@ int	ft_get_entry(char *av)
 	if (!av)
 		return (0);
 	ft_check_entry(av);
+	if (ft_check_entry(av) == -1)
+		return (-1);
 	elem = ft_convert_entry(av);
 	if (elem > INT_MAX || elem < INT_MIN)
 	{
