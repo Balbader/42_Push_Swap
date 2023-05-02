@@ -27,9 +27,11 @@ static void	ft_swap_nodes(t_list *a, t_list *b)
 	b->index = tmp->index;
 }
 
-// define partition: wich will produce the pivot index
-// and moves the items lower than pivot before the pivot
-// and moves the items greater than pivot after the pivot
+/*
+	define partition: wich will produce the pivot index
+	and moves the items lower than pivot before the pivot
+	and moves the items greater than pivot after the pivot
+*/
 static t_list	*ft_partition(t_list *head, t_list *tail)
 {
 	t_list	*pivot;
@@ -51,9 +53,11 @@ static t_list	*ft_partition(t_list *head, t_list *tail)
 	return (pivot);
 }
 
-// qsort:
-// 1. calls partition and get pivot from it
-// 2. then recalls itself recursively in order to sort the stack
+/*
+	qsort:
+	1. calls partition and get pivot from it
+	2. then recalls itself recursively in order to sort the stack
+*/
 static void	ft_qsort_stack(t_list *head, t_list *tail)
 {
 	t_list	*pivot;
