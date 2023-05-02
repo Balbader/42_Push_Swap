@@ -78,8 +78,11 @@ int	*ft_get_pivots(t_list **a)
 	int	*pivots_idx;
 	int	pivots_count;
 	int	*pivots_arr;
+	int	a_size;
 
-	pivots_count = 10;
+	a_size = ft_get_stack_size(a);
+	pivots_count = 0;
+	pivots_count = ft_define_pivots_counts(a_size, pivots_count);
 	pivots_idx = NULL;
 	pivots_idx = ft_find_pivots_idx(a, pivots_idx);
 	pivots_arr = NULL;
