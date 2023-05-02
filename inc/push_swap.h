@@ -104,7 +104,6 @@ void		ft_putstr_fd(char *str, int fd);
 void		ft_print_err(t_list **stack_a, t_list **stack_b);
 
 /* DELETE */
-int			ft_find_next_biggest_node_data(t_list **stack);
 void		ft_print_stack(t_list **stack, char *name);
 
 #endif
