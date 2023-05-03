@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Issues.md",
+                "file": "Steps.md",
                 "mode": "source",
                 "source": false
               }
@@ -64,6 +64,14 @@
               "type": "starred",
               "state": {}
             }
+          },
+          {
+            "id": "59a902ef3ae4cdf2",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
           }
         ]
       }
@@ -86,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Issues.md",
+                "file": "Steps.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Issues.md",
+                "file": "Steps.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Issues.md"
+                "file": "Steps.md"
               }
             }
           }
@@ -149,6 +157,6 @@
   },
   "active": "3579da53e523c2bc",
   "lastOpenFiles": [
-    "Issues.md"
+    "Steps.md"
   ]
 }
