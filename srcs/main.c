@@ -61,9 +61,7 @@ int	main(int ac, char **av)
 	if ((ac - 1) <= 5)
 		ft_small_sort(&a, &b, ac - 1);
 	else
-	{
-		ft_assign_pos(&a);
-	}
+		ft_push_from_a_to_b(&a, &b);
 	ft_print_stack(&a, "a");
 	ft_free_stack(&a);
 	ft_free_stack(&b);
