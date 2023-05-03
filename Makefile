@@ -10,7 +10,8 @@ NAME				:=	push_swap
 A_TO_B_DIR			:=	a_to_b/
 A_TO_B_FILES		:=	\
 						ft_assign_pos.c \
-						ft_pre_sort_stack.c
+						ft_pre_sort_stack.c \
+						ft_push_from_a_to_b.c
 A_TO_B				:=	$(addprefix $(A_TO_B_DIR), $(A_TO_B_FILES))
 
 ACTIONS_DIR			:=	actions/
