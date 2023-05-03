@@ -22,7 +22,7 @@ void	ft_print_stack(t_list **stack, char *name)
 	temp = *stack;
 	while (temp)
 	{
-		printf("[%d] : %d\n", temp->index, temp->data);
+		printf("[%d] : %d : (%d)\n", temp->index, temp->data, temp->final_pos);
 		temp = temp->next;
 	}
 }

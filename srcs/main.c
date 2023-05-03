@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static int	*ft_init_entries_arr(int ac, char **av, int *arr)
+int	*ft_init_entries_arr(int ac, char **av, int *arr)
 {
 	int	i;
 	int	j;
@@ -28,7 +28,7 @@ static int	*ft_init_entries_arr(int ac, char **av, int *arr)
 	return (arr);
 }
 
-static void	ft_check_entries(int *arr, int arr_size)
+void	ft_check_entries(int *arr, int arr_size)
 {
 	if (ft_arr_is_sorted(arr, arr_size) == 0)
 	{
@@ -54,19 +54,18 @@ int	main(int ac, char **av)
 		return (0);
 	entries_arr = ft_init_entries_arr(ac, av, entries_arr);
 	ft_check_entries(entries_arr, (ac - 1));
+	ft_find_doubles(entries_arr, (ac - 1));
 	a = ft_init_stack(a, entries_arr, ac - 1);
 	free(entries_arr);
+	ft_print_stack(&a, "a");
 	if ((ac - 1) <= 5)
-	{
 		ft_small_sort(&a, &b, ac - 1);
+	else
+	{
+		ft_pre_sort_stack(a);
+		ft_re_init_index(a);
 		ft_print_stack(&a, "a");
 	}
-	// else
-	// {
-	// 	ft_pb_chunks(&a, &b);
-	// 	ft_re_init_index(b);
-	// 	ft_push_from_b_to_a(&a, &b);
-	// }
 	ft_free_stack(&a);
 	ft_free_stack(&b);
 	return (0);
