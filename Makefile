@@ -1,14 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: baalbade <marvin@42.fr>                    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/05/02 16:07:30 by baalbade          #+#    #+#              #
-#    Updated: 2023/05/02 16:07:32 by baalbade         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
 
 ############
 #   NAME   #
@@ -27,18 +16,6 @@ ACTIONS_FILES		:=	\
 						ft_swap.c
 ACTIONS				:=	$(addprefix $(ACTIONS_DIR), $(ACTIONS_FILES))
 
-A_TO_B_DIR			:=	a_to_b/
-A_TO_B_FILES		:=
-A_TO_B				:=	$(addprefix $(A_TO_B_DIR), $(A_TO_B_FILES))
-
-B_TO_A_DIR			:=	b_to_a/
-B_TO_A_FILES		:=
-B_TO_A				:=	$(addprefix $(B_TO_A_DIR), $(B_TO_A_FILES))
-
-COST_DIR			:=	cost/
-COST_FILES			:=
-COST				:=	$(addprefix $(COST_DIR), $(COST_FILES))
-
 ENTRY_DIR			:=	entry/
 ENTRY_FILES			:=	\
 						ft_check_entry.c \
@@ -55,28 +32,28 @@ OPER_FILES			:=	\
 						ft_sa.c ft_sb.c ft_ss.c
 OPER				:=	$(addprefix $(OPER_DIR), $(OPER_FILES))
 
-SMALL_SORT_DIR			:=	small_sort/
-SMALL_SORT_FILES		:=	\
+SMALL_SORT_DIR		:=	small_sort/
+SMALL_SORT_FILES	:=	\
 						ft_small_sort.c \
 						ft_sort_3.c \
 						ft_sort_4.c \
 						ft_sort_5.c
-SMALL_SORT				:=	$(addprefix $(SMALL_SORT_DIR), $(SMALL_SORT_FILES))
+SMALL_SORT			:=	$(addprefix $(SMALL_SORT_DIR), $(SMALL_SORT_FILES))
 
 STACK_DIR			:=	stack/
 STACK_FILES			:=	\
 						ft_find_first_big_data.c \
-						ft_find_first_idx.c \
+						ft_find_first_big_idx.c \
 						ft_find_second_big_data.c \
-						ft_find_second_idx.c \
-						ft_find_smallest_node_data.c \
-						ft_find_smallest_node_idx.c \
+						ft_find_second_big_idx.c \
 						ft_find_third_big_data.c \
-						ft_find_third_idx.c \
+						ft_find_third_big_idx.c \
+						ft_find_smallest_node_data.c \
+						ft_find_smallest_node_idx.c
 STACK				:=	$(addprefix $(STACK_DIR), $(STACK_FILES))
 
-STACK_UTILS_DIR			:=	stack/
-STACK_UTILS_FILES		:=	\
+STACK_UTILS_DIR		:=	stack/
+STACK_UTILS_FILES	:=	\
 						ft_add_new_tail.c \
 						ft_copy_stack_to_arr.c \
 						ft_create_node.c \
@@ -87,14 +64,12 @@ STACK_UTILS_FILES		:=	\
 						ft_init_stack.c \
 						ft_re_init_index.c \
 						ft_stack_is_sorted.c
-STACK_UTILS				:=	$(addprefix $(STACK_DIR), $(STACK_FILES))
+STACK_UTILS			:=	$(addprefix $(STACK_DIR), $(STACK_FILES))
 
 UTILS_DIR			:=	utils/
 UTILS_FILES			:=	\
-						ft_arr_is_sorted.c \
 						ft_isdigit.c \
 						ft_print_err.c \
-						ft_print_stack.c \
 						ft_putstr_fd.c \
 						ft_strlen.c
 UTILS				:=	$(addprefix $(UTILS_DIR), $(UTILS_FILES))
@@ -107,9 +82,6 @@ INCS				:=	./inc/
 SRCS_DIR			:=	./srcs/
 SRCS				:=	\
 						$(ACTIONS) \
-						$(A_TO_B) \
-						$(B_TO_A) \
-						$(COST) \
 						$(ENTRY) \
 						$(OPER) \
 						$(SMALL_SORT) \
