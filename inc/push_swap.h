@@ -90,7 +90,7 @@ void		ft_add_new_tail(t_list **lst, t_list *node);
 void		ft_free_stack(t_list **stack);
 void		ft_print_stack(t_list **stack, char *name);
 void		ft_re_init_index(t_list *stack);
-t_list		*ft_create_node(int data, int index, int pos);
+t_list		*ft_create_node(int data, int index);
 t_list		*ft_init_stack(t_list *stack_a, int *entries, int ac);
 t_list		*ft_get_before_last_node(t_list *stack);
 t_list		*ft_get_last_node(t_list *stack);
@@ -101,5 +101,6 @@ int			ft_strlen(const char *str);
 int			ft_arr_is_sorted(int *arr, int arr_size);
 void		ft_putstr_fd(char *str, int fd);
 void		ft_print_err(t_list **stack_a, t_list **stack_b);
+void		ft_sort_arr(int *arr, int arr_size);
 
 #endif
