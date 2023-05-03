@@ -62,7 +62,11 @@ int	main(int ac, char **av)
 		ft_small_sort(&a, &b, ac - 1);
 	else
 		ft_push_from_a_to_b(&a, &b);
+	ft_re_init_index(a);
 	ft_print_stack(&a, "a");
+	printf("\n");
+	ft_re_init_index(b);
+	ft_print_stack(&b, "b");
 	ft_free_stack(&a);
 	ft_free_stack(&b);
 	return (0);
