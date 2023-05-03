@@ -20,7 +20,7 @@ int	ft_arr_is_sorted(int *arr, int arr_size)
 	while (i < arr_size)
 	{
 		if (arr[i] > arr[i + 1])
-			return (1)
+			return (1);
 		++i;
 	}
 	return (0);
