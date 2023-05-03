@@ -55,31 +55,24 @@ OPER_FILES			:=	\
 						ft_sa.c ft_sb.c ft_ss.c
 OPER				:=	$(addprefix $(OPER_DIR), $(OPER_FILES))
 
-SORTING_DIR			:=	sorting/
-SORTING_FILES		:=	\
+SMALL_SORT_DIR			:=	small_sort/
+SMALL_SORT_FILES		:=	\
 						ft_small_sort.c \
 						ft_sort_3.c \
 						ft_sort_4.c \
 						ft_sort_5.c
-SORTING				:=	$(addprefix $(SORTING_DIR), $(SORTING_FILES))
+SMALL_SORT				:=	$(addprefix $(SMALL_SORT_DIR), $(SMALL_SORT_FILES))
 
 STACK_DIR			:=	stack/
 STACK_FILES			:=	\
-						ft_add_new_tail.c \
-						ft_copy_stack_to_arr.c \
-						ft_create_node.c \
-						ft_find_biggest_node_data.c \
-						ft_find_biggest_node_idx.c \
-						ft_find_next_biggest_node_idx.c \
+						ft_find_first_big_data.c \
+						ft_find_first_idx.c \
+						ft_find_second_big_data.c \
+						ft_find_second_idx.c \
 						ft_find_smallest_node_data.c \
 						ft_find_smallest_node_idx.c \
-						ft_free_stack.c \
-						ft_get_before_last_node.c \
-						ft_get_last_node.c \
-						ft_get_stack_size.c \
-						ft_init_stack.c \
-						ft_re_init_index.c \
-						ft_stack_is_sorted.c
+						ft_find_third_big_data.c \
+						ft_find_third_idx.c \
 STACK				:=	$(addprefix $(STACK_DIR), $(STACK_FILES))
 
 STACK_UTILS_DIR			:=	stack/
@@ -87,11 +80,6 @@ STACK_UTILS_FILES		:=	\
 						ft_add_new_tail.c \
 						ft_copy_stack_to_arr.c \
 						ft_create_node.c \
-						ft_find_biggest_node_data.c \
-						ft_find_biggest_node_idx.c \
-						ft_find_next_biggest_node_idx.c \
-						ft_find_smallest_node_data.c \
-						ft_find_smallest_node_idx.c \
 						ft_free_stack.c \
 						ft_get_before_last_node.c \
 						ft_get_last_node.c \
@@ -111,10 +99,6 @@ UTILS_FILES			:=	\
 						ft_strlen.c
 UTILS				:=	$(addprefix $(UTILS_DIR), $(UTILS_FILES))
 
-DELETE_DIR			:=	delete/
-DELETE_FILES		:=	ft_find_next_biggest_node_data.c
-DELETE				:=	$(addprefix $(DELETE_DIR), $(DELETE_FILES))
-
 ###################
 #   INGREDIENTS	  #
 ###################
@@ -122,16 +106,16 @@ INCS				:=	./inc/
 
 SRCS_DIR			:=	./srcs/
 SRCS				:=	\
-						$(A_TO_B) \
 						$(ACTIONS) \
+						$(A_TO_B) \
 						$(B_TO_A) \
 						$(COST) \
 						$(ENTRY) \
 						$(OPER) \
-						$(SORTING) \
+						$(SMALL_SORT) \
 						$(STACK) \
+						$(STACK_UTILS) \
 						$(UTILS) \
-						$(DELETE) \
 						main.c
 SRCS        		:=	$(SRCS:%=$(SRCS_DIR)/%)
 
