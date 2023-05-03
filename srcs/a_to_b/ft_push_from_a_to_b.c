@@ -12,23 +12,28 @@
 
 #include "push_swap.h"
 
-void	ft_push_from_a_to_b(t_list **a, t_list **b)
+static void	ft_push_small_half(t_list **a, t_list **b, int a_size)
 {
-	int		a_size;
-	int		mid;
-	int		i;
+	int	mid;
+	int	i;
 
-	ft_assign_pos(a);
-	a_size = ft_get_stack_size(a);
 	mid = a_size / 2;
-	printf("mid: %d\n", mid);
 	i = 0;
-	while (i < mid)
+	while (i < a_size)
 	{
-		if ((*a)->pos < mid)
+		if ((*a)->pos <= mid)
 			ft_pb(a, b);
 		else
 			ft_ra(a);
 		++i;
 	}
+}
+
+void	ft_push_from_a_to_b(t_list **a, t_list **b)
+{
+	int		a_size;
+
+	ft_assign_pos(a);
+	a_size = ft_get_stack_size(a);
+	ft_push_small_half(a, b, a_size);
 }
