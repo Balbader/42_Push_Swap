@@ -53,7 +53,7 @@ int	main(int ac, char **av)
 	if (!entries_arr)
 		return (0);
 	entries_arr = ft_init_entries_arr(ac, av, entries_arr);
-	ft_check_entries(entries_arr);
+	ft_check_entries(entries_arr, (ac - 1));
 	a = ft_init_stack(a, entries_arr, ac - 1);
 	free(entries_arr);
 	if ((ac - 1) <= 5)
