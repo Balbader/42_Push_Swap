@@ -23,8 +23,13 @@ typedef struct s_list
 {
 	int				data;
 	int				index;
+	int				final_pos;
 	struct s_list	*next;
 }				t_list;
+
+/* MAIN */
+int			*ft_init_entries_arr(int ac, char **av, int *arr);
+void		ft_check_entries(int *arr, int arr_size);
 
 /* ACTIONS */
 void		ft_push_node(t_list **src, t_list **dest);
@@ -33,6 +38,8 @@ void		ft_rotate(t_list **stack);
 void		ft_swap(t_list **stack);
 
 /* A_TO_B */
+t_list		*ft_pre_sort_stack(t_list *rand_stack);
+
 /* B_TO_A */
 /* COST */
 
