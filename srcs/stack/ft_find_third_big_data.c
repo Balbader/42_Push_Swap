@@ -33,5 +33,5 @@ int	ft_find_third_big_data(t_list **stack)
 		++i;
 		tmp = tmp->next;
 	}
-	return (data_data);
+	return (third_data);
 }
