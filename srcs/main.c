@@ -62,9 +62,7 @@ int	main(int ac, char **av)
 		ft_small_sort(&a, &b, ac - 1);
 	else
 	{
-		ft_pre_sort_stack(a);
-		ft_re_init_index(a);
-		ft_print_stack(&a, "a");
+		ft_assign_pos(&a);
 	}
 	ft_free_stack(&a);
 	ft_free_stack(&b);
