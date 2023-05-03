@@ -78,6 +78,7 @@ UTILS_FILES			:=	\
 						ft_isdigit.c \
 						ft_print_err.c \
 						ft_putstr_fd.c \
+						ft_sort_arr.c \
 						ft_strlen.c
 UTILS				:=	$(addprefix $(UTILS_DIR), $(UTILS_FILES))
 
