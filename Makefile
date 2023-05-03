@@ -62,12 +62,14 @@ STACK_UTILS_FILES	:=	\
 						ft_get_last_node.c \
 						ft_get_stack_size.c \
 						ft_init_stack.c \
+						ft_print_stack.c \
 						ft_re_init_index.c \
 						ft_stack_is_sorted.c
 STACK_UTILS			:=	$(addprefix $(STACK_DIR), $(STACK_FILES))
 
 UTILS_DIR			:=	utils/
 UTILS_FILES			:=	\
+						ft_arr_is_sorted.c \
 						ft_isdigit.c \
 						ft_print_err.c \
 						ft_putstr_fd.c \
