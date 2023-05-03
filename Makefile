@@ -8,7 +8,9 @@ NAME				:=	push_swap
 #   SRCS FILES	 #
 ##################
 A_TO_B_DIR			:=	a_to_b/
-A_TO_B_FILES		:=	ft_pre_sort_stack.c
+A_TO_B_FILES		:=	\
+						ft_assign_pos.c \
+						ft_pre_sort_stack.c
 A_TO_B				:=	$(addprefix $(A_TO_B_DIR), $(A_TO_B_FILES))
 
 ACTIONS_DIR			:=	actions/
