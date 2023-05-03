@@ -18,8 +18,10 @@ void	ft_push_from_a_to_b(t_list **a, t_list **b)
 	int		mid;
 	int		i;
 
+	ft_assign_pos(a);
 	a_size = ft_get_stack_size(a);
 	mid = a_size / 2;
+	printf("mid: %d\n", mid);
 	i = 0;
 	while (i < mid)
 	{
