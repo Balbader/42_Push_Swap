@@ -17,16 +17,19 @@ static t_list	*ft_create_list(t_list *stack_a, int *entries, int ac)
 	t_list	*head;
 	int		i;
 	int		j;
+	int		pos;
 
+	pos = 1;
 	i = 1;
 	j = 0;
-	stack_a = ft_create_node(entries[j], i);
+	stack_a = ft_create_node(entries[j], i, pos);
 	head = stack_a;
 	while (i < ac)
 	{
 		++i;
 		++j;
-		stack_a->next = ft_create_node(entries[j], i);
+		++pos;
+		stack_a->next = ft_create_node(entries[j], i, pos);
 		stack_a = stack_a->next;
 	}
 	return (head);

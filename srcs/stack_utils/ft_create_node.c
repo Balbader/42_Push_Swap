@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-t_list	*ft_create_node(int data, int index)
+t_list	*ft_create_node(int data, int index, int pos)
 {
 	t_list	*new_node;
 
@@ -21,6 +21,7 @@ t_list	*ft_create_node(int data, int index)
 		return (NULL);
 	new_node->data = data;
 	new_node->index = index;
+	new_node->pos = pos;
 	new_node->next = NULL;
 	return (new_node);
 }
