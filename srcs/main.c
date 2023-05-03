@@ -64,6 +64,7 @@ int	main(int ac, char **av)
 	{
 		ft_assign_pos(&a);
 	}
+	ft_print_stack(&a, "a");
 	ft_free_stack(&a);
 	ft_free_stack(&b);
 	return (0);
