@@ -38,6 +38,8 @@ void		ft_rotate(t_list **stack);
 void		ft_swap(t_list **stack);
 
 /* A_TO_B */
+void		ft_push_from_a_to_b(t_list **a, t_list **b);
+void		ft_assign_pos(t_list **a);
 t_list		*ft_pre_sort_stack(t_list *rand_stack);
 
 /* B_TO_A */
