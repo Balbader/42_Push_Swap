@@ -18,6 +18,11 @@
 
 #include "push_swap.h"
 
+
+/*
+ * Initiate the array containing the "pos" value of the a_node that needs
+ * to be at the top of a_stack based on each b_node
+*/
 static int *ft_init_a_node_pos_arr(t_list **a, t_list **b, int *a_node_pos)
 {
 	int	*a_pos;
@@ -33,45 +38,68 @@ static int *ft_init_a_node_pos_arr(t_list **a, t_list **b, int *a_node_pos)
 }
 
 /*
- * Retrurns an array with the cost of the a_node to be selected
- * to receive the incoming b_node;
+ * Retrurns an array containing the cost for each a_node that needs
+ * to be at the top of a_stack based on each b_node
 */
-static int	*ft_get_a_big_close_cost(t_list **a, t_list **b, int *a_node_cost)
+static int	*ft_get_a_big_close_cost(t_list **a, t_list **b, int *a_node_cost, int *a_cost)
 {
-	int	*a_cost;
 	int	*a_pos;
 	int	*a_node_pos;
 	int	b_size;
+	int	a_size;
 	int	i;
+	int	j;
+	int	k;
 
-	a_cost = ft_get_a_cost_arr(a);
-	a_pos = ft_get_b_pos_arr(a);
+	a_pos = ft_get_a_pos_arr(a);
+	a_size = ft_get_stack_size(a);
 	b_size = ft_get_stack_size(b);
 	a_node_pos = NULL;
 	a_node_pos = ft_init_a_node_pos_arr(a, b, a_node_pos);
+	k = 0;
 	i = 0;
 	while (i < b_size)
+	{
+		j = 0;
+		while (j < a_size)
 		{
-
+			if (a_node_pos[i] == a_pos[j])
+			{
+				a_node_cost[k] = a_cost[j];
+				++k;
+			}
+			++j;
 		}
-	return (free(a_node_pos), a_node_cost);
+		++i;
+	}
+	return (free(a_pos), free(a_node_pos), a_node_cost);
 }
 
 /*
  * Retrurns an array with the total cost of each b_node
 */
-void	ft_get_total_cost_arr(t_list **a, t_list **b)
+void	ft_get_total_cost_arr(t_list **a, t_list **b, int *tot_cost)
 {
 	int	*a_node_cost;
 	int	b_size;
+	int	*a_cost;
+	int	*b_cost;
+	int	i;
 
+	a_cost = ft_get_a_cost_arr(a);
+	b_cost = ft_get_b_cost_arr(b);
 	b_size = ft_get_stack_size(b);
 	a_node_cost = (int *)malloc(sizeof(int) * b_size);
 	if (!a_node_cost)
 		return ;
-	a_node_cost = ft_get_a_big_close_cost(a, b, a_node_cost);
-	// for (int i = 0; i < b_size; ++i) {
-	// 	printf("a_node_cost[%d]: %d\n", i, a_node_cost[i]);
-	// }
+	a_node_cost = ft_get_a_big_close_cost(a, b, a_node_cost, a_cost);
+	i = 0;
+	while (i < b_size)
+		{
+			tot_cost[i] = a_node_cost[i] + b_cost[i];
+			printf("tot_cost")
+			++i;
+		}
+	free(a_cost);
 	free(a_node_cost);
 }
