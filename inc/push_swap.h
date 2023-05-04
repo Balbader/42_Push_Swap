@@ -48,6 +48,8 @@ t_list		*ft_pre_sort_stack(t_list *rand_stack);
 int			ft_calculate_node_cost(t_list **stack, int node_idx, int stk_size);
 int			*ft_get_a_cost_arr(t_list **a);
 int			*ft_get_b_cost_arr(t_list **b);
+int			*ft_get_a_pos_arr(t_list **a);
+int			*ft_get_b_pos_arr(t_list **b);
 
 /* OPERATIONS */
 void		ft_pa(t_list **b, t_list **a);
