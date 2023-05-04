@@ -99,6 +99,7 @@ void	ft_get_total_cost_arr(t_list **a, t_list **b)
 	while (i < b_size)
 	{
 		tot_cost[i] = (a_node_cost[i] + b_cost[i]);
+		printf("tot_cost: %d\n", tot_cost[i]);
 		++i;
 	}
 	free(a_cost);
