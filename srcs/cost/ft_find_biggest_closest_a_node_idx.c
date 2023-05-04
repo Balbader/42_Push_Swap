@@ -10,6 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+	NEED:
+	1. Fct to find the biggest & closest a_node for each b_node
+*/
+
 #include "push_swap.h"
 
 /*
