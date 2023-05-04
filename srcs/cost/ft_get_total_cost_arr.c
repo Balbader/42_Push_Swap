@@ -39,12 +39,13 @@ static int *ft_init_a_node_pos_arr(t_list **a, t_list **b, int *a_node_pos)
 static int	*ft_get_a_big_close_cost(t_list **a, t_list **b, int *a_node_cost)
 {
 	int	*a_cost;
+	int	*a_pos;
 	int	*a_node_pos;
 	int	b_size;
 	int	i;
 
 	a_cost = ft_get_a_cost_arr(a);
-	b_pos = ft_get_b_pos_arr(b);
+	a_pos = ft_get_b_pos_arr(a);
 	b_size = ft_get_stack_size(b);
 	a_node_pos = NULL;
 	a_node_pos = ft_init_a_node_pos_arr(a, b, a_node_pos);
