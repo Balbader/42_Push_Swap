@@ -60,4 +60,5 @@ void	ft_push_from_a_to_b(t_list **a, t_list **b)
 	a_size = ft_get_stack_size(a);
 	ft_push_small_half(a, b, a_size);
 	ft_push_big_half(a, b, a_size);
+	ft_sort_3(a);
 }

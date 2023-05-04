@@ -37,16 +37,6 @@ static void	ft_assign_pos_to_node(int *arr, t_list **a, int a_size)
 	}
 }
 
-static int	*ft_create_sorted_arr(t_list **a, int a_size, int *sorted_arr)
-{
-	sorted_arr = (int *)malloc(sizeof(int) * a_size);
-	if (!sorted_arr)
-		return (0);
-	sorted_arr = ft_copy_stack_to_arr(a, a_size, sorted_arr);
-	ft_sort_arr(sorted_arr, a_size);
-	return (sorted_arr);
-}
-
 void	ft_assign_pos(t_list **a)
 {
 	int	i;
@@ -55,11 +45,16 @@ void	ft_assign_pos(t_list **a)
 
 	a_size = ft_get_stack_size(a);
 	sorted_arr = NULL;
-	sorted_arr = ft_create_sorted_arr(a, a_size, sorted_arr);
+	sorted_arr = (int *)malloc(sizeof(int) * a_size);
+	if (!sorted_arr)
+		return ;
+	sorted_arr = ft_copy_stack_to_arr(a, a_size, sorted_arr);
+	ft_sort_arr(sorted_arr, a_size);
 	i = 0;
 	while (i < a_size)
 	{
 		ft_assign_pos_to_node(sorted_arr, a, a_size);
 		++i;
 	}
+	free(sorted_arr);
 }
