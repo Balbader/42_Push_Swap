@@ -28,6 +28,8 @@ COST_FILES			:=	\
 						ft_cost_a.c \
 						ft_cost_b.c \
 						ft_cost_utils.c \
+						ft_find_biggest_closest_a_node_idx.c \
+						ft_get_total_cost_arr.c \
 						ft_pos_a.c \
 						ft_pos_b.c
 COST				:=	$(addprefix $(COST_DIR), $(COST_FILES))
