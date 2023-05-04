@@ -18,7 +18,6 @@
 
 #include "push_swap.h"
 
-
 /*
  * Initiate the array containing the "pos" value of the a_node that needs
  * to be at the top of a_stack based on each b_node
@@ -78,8 +77,10 @@ static int	*ft_get_a_big_close_cost(t_list **a, t_list **b, int *a_node_cost, in
 /*
  * Retrurns an array with the total cost of each b_node
 */
-void	ft_get_total_cost_arr(t_list **a, t_list **b, int *tot_cost)
+// void	ft_get_total_cost_arr(t_list **a, t_list **b, int *tot_cost)
+void	ft_get_total_cost_arr(t_list **a, t_list **b)
 {
+	int	*tot_cost;
 	int	*a_node_cost;
 	int	b_size;
 	int	*a_cost;
@@ -89,17 +90,17 @@ void	ft_get_total_cost_arr(t_list **a, t_list **b, int *tot_cost)
 	a_cost = ft_get_a_cost_arr(a);
 	b_cost = ft_get_b_cost_arr(b);
 	b_size = ft_get_stack_size(b);
+	tot_cost = (int *)malloc(sizeof(int) * b_size);
 	a_node_cost = (int *)malloc(sizeof(int) * b_size);
-	if (!a_node_cost)
+	if (!a_node_cost || !tot_cost)
 		return ;
 	a_node_cost = ft_get_a_big_close_cost(a, b, a_node_cost, a_cost);
 	i = 0;
 	while (i < b_size)
-		{
-			tot_cost[i] = a_node_cost[i] + b_cost[i];
-			printf("tot_cost")
-			++i;
-		}
+	{
+		tot_cost[i] = (a_node_cost[i] + b_cost[i]);
+		++i;
+	}
 	free(a_cost);
 	free(a_node_cost);
 }
