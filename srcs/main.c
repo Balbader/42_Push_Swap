@@ -65,6 +65,8 @@ int	main(int ac, char **av)
 		ft_push_from_a_to_b(&a, &b);
 		ft_get_a_cost_arr(&a);
 		ft_get_b_cost_arr(&b);
+		ft_get_a_pos_arr(&a);
+		ft_get_b_pos_arr(&b);
 	}
 	ft_re_init_index(a);
 	ft_print_stack(&a, "a");
