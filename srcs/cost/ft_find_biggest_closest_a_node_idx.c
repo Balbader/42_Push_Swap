@@ -17,6 +17,6 @@
  * incoming b_node_pos;
 */
 
-int	ft_find_biggest_closest_a_node_idx(t_list **a, int b_node_pos)
-{
-}
+// int	ft_find_biggest_closest_a_node_idx(t_list **a, int b_node_pos)
+// {
+// }
