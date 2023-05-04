@@ -46,6 +46,9 @@ t_list		*ft_pre_sort_stack(t_list *rand_stack);
 
 /* COST */
 int			ft_calculate_node_cost(t_list **stack, int node_idx, int stk_size);
+int			*ft_find_biggest_closest_a_node_idx(t_list **a, t_list **b,
+										int *a_pos, int *b_pos);
+void		ft_get_total_cost_arr(t_list **a, t_list **b);
 int			*ft_get_a_cost_arr(t_list **a);
 int			*ft_get_b_cost_arr(t_list **b);
 int			*ft_get_a_pos_arr(t_list **a);
