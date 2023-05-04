@@ -17,7 +17,7 @@
  * in a sorted b_stack
 */
 
-int	*ft_pos_b(t_list **b)
+int	*ft_get_b_pos_arr(t_list **b)
 {
 	t_list	*tmp;
 	int		*pos_b;
