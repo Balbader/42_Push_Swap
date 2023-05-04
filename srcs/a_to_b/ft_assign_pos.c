@@ -45,9 +45,6 @@ void	ft_assign_pos(t_list **a)
 
 	a_size = ft_get_stack_size(a);
 	sorted_arr = NULL;
-	sorted_arr = (int *)malloc(sizeof(int) * a_size);
-	if (!sorted_arr)
-		return ;
 	sorted_arr = ft_copy_stack_to_arr(a, a_size, sorted_arr);
 	ft_sort_arr(sorted_arr, a_size);
 	i = 0;
