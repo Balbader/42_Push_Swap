@@ -30,7 +30,6 @@ int	*ft_get_a_cost_arr(t_list **a)
 	int		a_size;
 
 	ft_re_init_index(*a);
-	ft_print_stack(a, "a");
 	tmp = (*a);
 	a_size = ft_get_stack_size(a);
 	a_cost = (int *)malloc(sizeof(int) * a_size);
@@ -42,9 +41,6 @@ int	*ft_get_a_cost_arr(t_list **a)
 		a_cost[i] = ft_calculate_node_cost(&tmp, i + 1, a_size);
 		tmp = tmp->next;
 		++i;
-	}
-	for (int j = 0; j < a_size; ++j) {
-		printf("a_cost[%d]: %d\n", j, a_cost[j]);
 	}
 	return (a_cost);
 }
