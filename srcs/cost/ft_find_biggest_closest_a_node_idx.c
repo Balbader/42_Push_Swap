@@ -16,7 +16,6 @@
  * Returns the index for the biggest a_node that is the closest ot the
  * incoming b_node_pos;
 */
-
 static int	ft_get_pos_to_find(int *a_pos, int a_size, int b_node_pos)
 {
 	int	pos_to_find;
@@ -35,21 +34,28 @@ static int	ft_get_pos_to_find(int *a_pos, int a_size, int b_node_pos)
 	return (pos_to_find);
 }
 
-int	ft_find_biggest_closest_a_node_idx(t_list **a, t_list **b,
+/*
+ * Returns an array containing the "pos" value of the a_node that needs
+ * to be at the top of a_stack based on each b_node
+*/
+int	*ft_find_biggest_closest_a_node_idx(t_list **a, t_list **b,
 									int *a_pos, int *b_pos)
 {
 	int	a_size;
 	int	b_size;
-	int	pos_to_find;
+	int	*a_nodes_pos;
 	int	i;
 
 	a_size = ft_get_stack_size(a);
 	b_size = ft_get_stack_size(b);
+	a_nodes_pos = (int *)malloc(sizeof(int) * b_size);
+	if (!a_nodes_pos)
+		return (0);
 	i = 0;
-	while (i < b)
-		{
-			
-		}
-	pos_to_find = ft_get_pos_to_find(a_pos, a_size, b_node_pos);
-	printf("pos_to_find: %d\n", pos_to_find);
+	while (i < b_size)
+	{
+		a_nodes_pos[i] = ft_get_pos_to_find(a_pos, a_size, b_pos[i]);
+		++i;
+	}
+	return (a_nodes_pos);
 }
