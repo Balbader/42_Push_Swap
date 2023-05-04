@@ -24,7 +24,9 @@ ACTIONS				:=	$(addprefix $(ACTIONS_DIR), $(ACTIONS_FILES))
 
 COST_DIR			:=	cost/
 COST_FILES			:=	\
-						ft_cost.c \
+						ft_calculate_node_cost.c \
+						ft_cost_a.c \
+						ft_cost_b.c \
 						ft_cost_utils.c
 COST				:=	$(addprefix $(COST_DIR), $(COST_FILES))
 
