@@ -55,6 +55,8 @@ int			*ft_get_b_cost_arr(t_list **b);
 int			*ft_get_a_pos_arr(t_list **a);
 int			*ft_get_b_pos_arr(t_list **b);
 int			ft_find_cheapest_b_node_idx(t_list **a, t_list **b, int node_to_mv);
+int			ft_get_incoming_pos(t_list **b, int	incoming_idx, int incoming_pos);
+void		ft_re_order_a(t_list **a, int incoming_pos);
 
 /* OPERATIONS */
 void		ft_pa(t_list **b, t_list **a);
