@@ -53,7 +53,6 @@ int			*ft_get_a_cost_arr(t_list **a);
 int			*ft_get_b_cost_arr(t_list **b);
 int			*ft_get_a_pos_arr(t_list **a);
 int			*ft_get_b_pos_arr(t_list **b);
-void		ft_init_tot_cost_arr(t_list **a, t_list **b);
 
 /* OPERATIONS */
 void		ft_pa(t_list **b, t_list **a);
