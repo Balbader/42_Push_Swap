@@ -34,7 +34,8 @@ typedef struct s_data
  * Retrurns an array containing the cost for each a_node that needs
  * to be at the top of a_stack based on each b_node
 */
-static int	*ft_get_a_big_close_cost(t_list **a, t_list **b, int *a_node_cost, int *a_cost)
+static int	*ft_get_a_big_close_cost(t_list **a, t_list **b,
+								int *a_node_cost, int *a_cost)
 {
 	t_data	data;
 
@@ -42,8 +43,8 @@ static int	*ft_get_a_big_close_cost(t_list **a, t_list **b, int *a_node_cost, in
 	data.b_pos = ft_get_b_pos_arr(a);
 	data.a_size = ft_get_stack_size(a);
 	data.b_size = ft_get_stack_size(b);
-	data.a_node_pos = NULL;
-	data.a_node_pos = ft_find_biggest_closest_a_node_idx(a, b, data.a_pos, data.b_pos);
+	data.a_node_pos
+		= ft_find_biggest_closest_a_node_idx(a, b, data.a_pos, data.b_pos);
 	data.k = 0;
 	data.i = 0;
 	while (data.i < data.b_size)
@@ -60,7 +61,8 @@ static int	*ft_get_a_big_close_cost(t_list **a, t_list **b, int *a_node_cost, in
 		}
 		++data.i;
 	}
-	return (free(data.a_pos), free(data.a_node_pos), a_node_cost);
+	return (free(data.a_pos), free(data.b_pos),
+		free(data.a_node_pos), a_node_cost);
 }
 
 /*

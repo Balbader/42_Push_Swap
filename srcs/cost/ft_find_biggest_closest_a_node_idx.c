@@ -29,7 +29,7 @@ static int	ft_get_pos_to_find(int *a_pos, int a_size, int b_node_pos)
 
 	pos_to_find = a_pos[0];
 	closest_pos = a_pos[0] - b_node_pos;
-	i = 1;
+	i = 0;
 	while (i < a_size)
 	{
 		if (a_pos[i] - b_node_pos < closest_pos)
