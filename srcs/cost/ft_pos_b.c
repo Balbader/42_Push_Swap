@@ -24,6 +24,7 @@ int	*ft_get_b_pos_arr(t_list **b)
 	int		i;
 	int		b_size;
 
+	ft_re_init_index(*b);
 	tmp = (*b);
 	b_size = ft_get_stack_size(b);
 	pos_b = (int *)malloc(sizeof(int) * b_size);
