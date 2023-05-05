@@ -42,5 +42,6 @@ int	*ft_get_a_cost_arr(t_list **a)
 		tmp = tmp->next;
 		++i;
 	}
+	ft_free_stack(&tmp);
 	return (a_cost);
 }

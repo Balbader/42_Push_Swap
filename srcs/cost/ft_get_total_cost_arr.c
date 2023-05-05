@@ -18,21 +18,17 @@
 
 #include "push_swap.h"
 
-/*
- * Initiate the array containing the "pos" value of the a_node that needs
- * to be at the top of a_stack based on each b_node
-*/
-static int *ft_init_a_node_pos_arr(t_list **a, t_list **b, int *a_node_pos)
+typedef struct s_data
 {
 	int	*a_pos;
 	int	*b_pos;
-
-	a_pos = ft_get_a_pos_arr(a);
-	b_pos = ft_get_b_pos_arr(b);
-	a_node_pos = NULL;
-	a_node_pos = ft_find_biggest_closest_a_node_idx(a, b, a_pos, b_pos);
-	return (free(a_pos), free(b_pos),a_node_pos);
-}
+	int	*a_node_pos;
+	int	b_size;
+	int	a_size;
+	int	i;
+	int	j;
+	int	k;
+}				t_data;
 
 /*
  * Retrurns an array containing the cost for each a_node that needs
@@ -40,36 +36,31 @@ static int *ft_init_a_node_pos_arr(t_list **a, t_list **b, int *a_node_pos)
 */
 static int	*ft_get_a_big_close_cost(t_list **a, t_list **b, int *a_node_cost, int *a_cost)
 {
-	int	*a_pos;
-	int	*a_node_pos;
-	int	b_size;
-	int	a_size;
-	int	i;
-	int	j;
-	int	k;
+	t_data	data;
 
-	a_pos = ft_get_a_pos_arr(a);
-	a_size = ft_get_stack_size(a);
-	b_size = ft_get_stack_size(b);
-	a_node_pos = NULL;
-	a_node_pos = ft_init_a_node_pos_arr(a, b, a_node_pos);
-	k = 0;
-	i = 0;
-	while (i < b_size)
+	data.a_pos = ft_get_a_pos_arr(a);
+	data.b_pos = ft_get_b_pos_arr(a);
+	data.a_size = ft_get_stack_size(a);
+	data.b_size = ft_get_stack_size(b);
+	data.a_node_pos = NULL;
+	data.a_node_pos = ft_find_biggest_closest_a_node_idx(a, b, data.a_pos, data.b_pos);
+	data.k = 0;
+	data.i = 0;
+	while (data.i < data.b_size)
 	{
-		j = 0;
-		while (j < a_size)
+		data.j = 0;
+		while (data.j < data.a_size)
 		{
-			if (a_node_pos[i] == a_pos[j])
+			if (data.a_node_pos[data.i] == data.a_pos[data.j])
 			{
-				a_node_cost[k] = a_cost[j];
-				++k;
+				a_node_cost[data.k] = a_cost[data.j];
+				++data.k;
 			}
-			++j;
+			++data.j;
 		}
-		++i;
+		++data.i;
 	}
-	return (free(a_pos), free(a_node_pos), a_node_cost);
+	return (free(data.a_pos), free(data.a_node_pos), a_node_cost);
 }
 
 /*

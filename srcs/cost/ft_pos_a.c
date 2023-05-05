@@ -36,5 +36,6 @@ int	*ft_get_a_pos_arr(t_list **a)
 		++i;
 		tmp = tmp->next;
 	}
+	ft_free_stack(&tmp);
 	return (pos_a);
 }

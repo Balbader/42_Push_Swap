@@ -12,18 +12,24 @@
 
 #include "push_swap.h"
 
-void	ft_init_tot_cost_arr(t_list **a, t_list **b)
+int	ft_find_cheapest_b_node_to_move_idx(t_list **a, t_list **b, int node_to_mv)
 {
 	int	*tot_cost;
 	int	b_size;
+	int	i;
 
 	b_size = ft_get_stack_size(b);
+	node_to_mv = INT_MAX;
 	tot_cost = (int *)malloc(sizeof(int) * b_size);
 	if (!tot_cost)
-		return ;
+		return (0);
 	tot_cost = ft_get_total_cost_arr(a, b, tot_cost);
-	for (int i = 0; i < b_size; ++i) {
-		printf("tot_cost[%d]: %d\n", i, tot_cost[i]);
+	i = 0;
+	while (i < b_size)
+	{
+		if (tot_cost[i] < node_to_mv)
+			node_to_mv = tot_cost[i];
+		++i;
 	}
-	free(tot_cost);
+	return (free(tot_cost), node_to_mv);
 }

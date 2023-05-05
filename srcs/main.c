@@ -63,7 +63,6 @@ int	main(int ac, char **av)
 	else
 	{
 		ft_push_from_a_to_b(&a, &b);
-		ft_init_tot_cost_arr(&a, &b);
 
 	}
 	// ft_re_init_index(a);
