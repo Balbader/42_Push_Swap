@@ -37,5 +37,6 @@ int	*ft_get_b_cost_arr(t_list **b)
 		tmp = tmp->next;
 		++i;
 	}
+	ft_free_stack(&tmp);
 	return (b_cost);
 }
