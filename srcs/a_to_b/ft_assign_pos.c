@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "push_swap.h"
 
 static void	ft_assign_pos_to_node(int *arr, t_list **a, int a_size)
 {
 	t_list	*head;
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 
 	head = (*a);
 	j = 1;
