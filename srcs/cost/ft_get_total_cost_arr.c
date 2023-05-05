@@ -31,9 +31,7 @@ static int *ft_init_a_node_pos_arr(t_list **a, t_list **b, int *a_node_pos)
 	b_pos = ft_get_b_pos_arr(b);
 	a_node_pos = NULL;
 	a_node_pos = ft_find_biggest_closest_a_node_idx(a, b, a_pos, b_pos);
-	free(a_pos);
-	free(b_pos);
-	return (a_node_pos);
+	return (free(a_pos), free(b_pos),a_node_pos);
 }
 
 /*
@@ -77,10 +75,8 @@ static int	*ft_get_a_big_close_cost(t_list **a, t_list **b, int *a_node_cost, in
 /*
  * Retrurns an array with the total cost of each b_node
 */
-// void	ft_get_total_cost_arr(t_list **a, t_list **b, int *tot_cost)
-void	ft_get_total_cost_arr(t_list **a, t_list **b)
+int	*ft_get_total_cost_arr(t_list **a, t_list **b, int *tot_cost)
 {
-	int	*tot_cost;
 	int	*a_node_cost;
 	int	b_size;
 	int	*a_cost;
@@ -90,18 +86,15 @@ void	ft_get_total_cost_arr(t_list **a, t_list **b)
 	a_cost = ft_get_a_cost_arr(a);
 	b_cost = ft_get_b_cost_arr(b);
 	b_size = ft_get_stack_size(b);
-	tot_cost = (int *)malloc(sizeof(int) * b_size);
 	a_node_cost = (int *)malloc(sizeof(int) * b_size);
-	if (!a_node_cost || !tot_cost)
-		return ;
+	if (!a_node_cost)
+		return (0);
 	a_node_cost = ft_get_a_big_close_cost(a, b, a_node_cost, a_cost);
 	i = 0;
 	while (i < b_size)
 	{
 		tot_cost[i] = (a_node_cost[i] + b_cost[i]);
-		printf("tot_cost: %d\n", tot_cost[i]);
 		++i;
 	}
-	free(a_cost);
-	free(a_node_cost);
+	return (free(a_cost), free(b_cost), free(a_node_cost), tot_cost);
 }
