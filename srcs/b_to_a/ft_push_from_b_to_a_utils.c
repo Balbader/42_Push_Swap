@@ -12,10 +12,3 @@
 
 #include "push_swap.h"
 
-// void	ft_re_order_a(t_list **a, int incoming_pos)
-// {
-// }
-
-// int	ft_get_incoming_pos(t_list **b, int	incoming_idx, int incoming_pos)
-// {
-// }
