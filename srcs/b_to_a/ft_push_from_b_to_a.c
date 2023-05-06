@@ -19,8 +19,8 @@
 void	ft_push_from_b_to_a(t_list **a, t_list **b)
 {
 	int	*a_pos_arr;
-	int	b_pos_arr[5] = {23, 44, 12, 13, 32};
-	// int	*b_pos_arr;
+	// int	b_pos_arr[5] = {23, 44, 12, 13, 32};
+	int	*b_pos_arr;
 	int	*a_cost_arr;
 	int	*b_cost_arr;
 	int	b_size;
@@ -33,7 +33,7 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	a_cost_arr = ft_get_cost_arr(a);
 
 	b_size = ft_get_stack_size(b);
-	// b_pos_arr = ft_get_pos_arr(b);
+	b_pos_arr = ft_get_pos_arr(b);
 	b_cost_arr = NULL;
 	b_cost_arr = ft_get_cost_arr(b);
 
@@ -60,12 +60,13 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	int	*final_cost;
 	final_cost = NULL;
 	final_cost = ft_get_tot_cost(a_final_cost, b_cost_arr, b_size);
-	for (int i = 0; i < b_size; ++i) {
+	for (int i = 0; i < b_size - 1; ++i) {
 		printf("final_cost[%d]: %d\n", i, final_cost[i]);
 	}
 
+	free(final_cost);
 	free(a_pos_arr);
-	// free(b_pos_arr);
+	free(b_pos_arr);
 	free(a_cost_arr);
 	free(b_cost_arr);
 	free(a_node_pos_to_ra);
