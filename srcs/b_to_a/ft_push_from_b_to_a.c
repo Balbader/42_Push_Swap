@@ -48,11 +48,11 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 		return ;
 	a_final_cost = ft_get_a_final_cost_arr(a, b, a_node_pos_to_ra, a_final_cost);
 
-	for (int i = 0; i < b_size; ++i) {
+	for (int i = 0; i < b_size - 1; ++i) {
 		printf("a_final_cost[%d]: %d\n", i, a_final_cost[i]);
 	}
 	printf("\n");
-	for (int i = 0; i < b_size; ++i) {
+	for (int i = 0; i < b_size - 1; ++i) {
 		printf("b_cost_arr_cost[%d]: %d\n", i, b_cost_arr[i]);
 	}
 	printf("\n");
