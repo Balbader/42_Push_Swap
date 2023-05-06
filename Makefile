@@ -34,7 +34,7 @@ COST_FILES			:=	\
 						ft_cost_utils.c \
 						ft_find_biggest_closest_a_node_idx.c \
 						ft_find_cheapest_b_node_idx.c \
-						ft_get_total_cost_arr.c \
+						ft_get_total_cost_arr.c
 COST				:=	$(addprefix $(COST_DIR), $(COST_FILES))
 
 ENTRY_DIR			:=	entry/
