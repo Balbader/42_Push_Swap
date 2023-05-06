@@ -39,7 +39,7 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 
 	int *a_node_pos_to_ra;
 
-	a_node_pos_to_ra = ft_find_biggest_closest_a_node_idx(a, b, a_pos_arr, b_pos_arr);
+	a_node_pos_to_ra = ft_find_big_close_a_node_idx(a, b, a_pos_arr, b_pos_arr);
 
 	int	*a_final_cost;
 	a_final_cost = NULL;
