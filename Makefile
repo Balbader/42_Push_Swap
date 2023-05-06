@@ -31,13 +31,10 @@ B_TO_A				:=	$(addprefix $(B_TO_A_DIR), $(B_TO_A_FILES))
 COST_DIR			:=	cost/
 COST_FILES			:=	\
 						ft_calculate_node_cost.c \
-						ft_cost_a.c \
-						ft_cost_b.c \
+						ft_cost_utils.c \
 						ft_find_biggest_closest_a_node_idx.c \
 						ft_find_cheapest_b_node_idx.c \
 						ft_get_total_cost_arr.c \
-						ft_pos_a.c \
-						ft_pos_b.c
 COST				:=	$(addprefix $(COST_DIR), $(COST_FILES))
 
 ENTRY_DIR			:=	entry/
