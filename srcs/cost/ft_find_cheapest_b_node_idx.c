@@ -12,6 +12,20 @@
 
 #include "push_swap.h"
 
+/*
+ * Logic:
+ * if incoming_pos is < a_node->pos && a_node->pos is the smallest
+ * 		ft_pa(incoming);
+ * if incoming_pos is < a_node->pos && a_node->pos is the not smallest
+ * 		find a_node->pos that is the smallest && greater && closest to incoming_pos
+ * 		ft_ra(a) until a_node is on top of "a"
+ * 		ft_pa(incoming);
+ * if incoming_pos is > a_node->pos
+ * 		find a_node->pos that is the smallest && greater && closest to incoming_pos
+ * 		ft_ra(a) until a_node is on top of "a"
+ * 		ft_pa(incoming);
+*/
+
 static int	ft_smallest_arr_elem(int *arr, int arr_size, int cheapest)
 {
 	int	i;
