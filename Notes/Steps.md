@@ -5,4 +5,3 @@
 4. Push all remaining element to (b) except for the 3 biggest nodes:Done
 5. Check if the index of the node to push to (a) is the right one. Assuming that we are looking for the cheapest being 0 else the smallest: DONE
 6. Write function to rotate and position (a) in the right spot to receive incoming b_node.
-+ 

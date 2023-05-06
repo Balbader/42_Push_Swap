@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "ffc15adf12ce9931",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Logic.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Steps.md",
+                "file": "Logic.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Steps.md",
+                "file": "Logic.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Steps.md"
+                "file": "Logic.md"
               }
             }
           }
@@ -155,8 +168,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3579da53e523c2bc",
+  "active": "ffc15adf12ce9931",
   "lastOpenFiles": [
-    "Steps.md"
+    "Steps.md",
+    "Logic.md"
   ]
 }
