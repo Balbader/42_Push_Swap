@@ -22,7 +22,7 @@ typedef struct s_data
 {
 	int	*a_pos;
 	int	*b_pos;
-	int	*a_node_pos;
+	int	*a_node;
 	int	b_size;
 	int	a_size;
 	int	i;
@@ -43,8 +43,7 @@ static int	*ft_get_a_big_close_cost(t_list **a, t_list **b,
 	data.b_pos = ft_get_pos_arr(b);
 	data.a_size = ft_get_stack_size(a);
 	data.b_size = ft_get_stack_size(b);
-	data.a_node_pos
-		= ft_find_biggest_closest_a_node_idx(a, b, data.a_pos, data.b_pos);
+	data.a_node = ft_find_big_close_a_node_idx(a, b, data.a_pos, data.b_pos);
 	data.k = 0;
 	data.i = 0;
 	while (data.i < data.b_size)
@@ -52,7 +51,7 @@ static int	*ft_get_a_big_close_cost(t_list **a, t_list **b,
 		data.j = 0;
 		while (data.j < data.a_size)
 		{
-			if (data.a_node_pos[data.i] == data.a_pos[data.j])
+			if (data.a_node[data.i] == data.a_pos[data.j])
 			{
 				a_node_cost[data.k] = a_cost[data.j];
 				++data.k;
@@ -62,7 +61,7 @@ static int	*ft_get_a_big_close_cost(t_list **a, t_list **b,
 		++data.i;
 	}
 	return (free(data.a_pos), free(data.b_pos),
-		free(data.a_node_pos), a_node_cost);
+		free(data.a_node), a_node_cost);
 }
 
 /*
