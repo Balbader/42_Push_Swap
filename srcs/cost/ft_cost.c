@@ -48,3 +48,24 @@ int	*ft_get_a_final_cost_arr(t_list **a, t_list **b,
 	}
 	return (a_final_cost);
 }
+
+int	*ft_get_tot_cost(int *a_cost, int *b_cost, int b_size)
+{
+	int	*tot_cost;
+	int	i;
+
+	tot_cost = (int *)malloc(sizeof(int) * b_size);
+	if (!tot_cost)
+		return (0);
+	i = 0;
+	while (i < b_size)
+	{
+		if (a_cost[i] < 0)
+			a_cost[i] *= -1;
+		if (b_cost[i] < 0)
+			b_cost[i] *= -1;
+		tot_cost[i] = a_cost[i] + b_cost[i];
+		++i;
+	}
+	return (tot_cost);
+}
