@@ -56,6 +56,8 @@ int	main(int ac, char **av)
 	ft_check_entries(entries_arr, (ac - 1));
 	ft_find_doubles(entries_arr, (ac - 1));
 	a = ft_init_stack(a, entries_arr, ac - 1);
+	ft_print_stack(&a, "a");
+	printf("\n");
 	free(entries_arr);
 	if ((ac - 1) <= 5)
 		ft_small_sort(&a, &b, ac - 1);
@@ -64,11 +66,12 @@ int	main(int ac, char **av)
 		ft_push_from_a_to_b(&a, &b);
 		ft_push_from_b_to_a(&a, &b);
 	}
-	// ft_re_init_index(a);
-	// ft_print_stack(&a, "a");
-	// printf("\n");
-	// ft_re_init_index(b);
-	// ft_print_stack(&b, "b");
+	printf("\n");
+	ft_re_init_index(a);
+	ft_print_stack(&a, "a");
+	printf("\n");
+	ft_re_init_index(b);
+	ft_print_stack(&b, "b");
 	ft_free_stack(&a);
 	ft_free_stack(&b);
 	return (0);
