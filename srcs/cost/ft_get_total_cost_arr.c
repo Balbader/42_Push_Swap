@@ -39,8 +39,8 @@ static int	*ft_get_a_big_close_cost(t_list **a, t_list **b,
 {
 	t_data	data;
 
-	data.a_pos = ft_get_a_pos_arr(a);
-	data.b_pos = ft_get_b_pos_arr(b);
+	data.a_pos = ft_get_pos_arr(a);
+	data.b_pos = ft_get_pos_arr(b);
 	data.a_size = ft_get_stack_size(a);
 	data.b_size = ft_get_stack_size(b);
 	data.a_node_pos
@@ -76,8 +76,8 @@ int	*ft_get_total_cost_arr(t_list **a, t_list **b, int *tot_cost)
 	int	*b_cost;
 	int	i;
 
-	a_cost = ft_get_a_cost_arr(a);
-	b_cost = ft_get_b_cost_arr(b);
+	a_cost = ft_get_cost_arr(a);
+	b_cost = ft_get_cost_arr(b);
 	b_size = ft_get_stack_size(b);
 	a_node_cost = (int *)malloc(sizeof(int) * b_size);
 	if (!a_node_cost)
