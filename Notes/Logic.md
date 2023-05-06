@@ -13,5 +13,13 @@
 	3. Calculate the total cost of pushing each b_node to stack_a:
 		a_cost + b_cost:
 		***DONE***
-  
-	4. 
+
++ Push the cheapest b_node to a
+	1. Get the cheapest element of final_cost
+	   + the idx of cheapest 
+	   + = the (idx + 1) of the b_node to be pushed to a
+	   + = the (idx + 1) of the a_node to be brought to top of a
+
+	2. Re_order a_stack if necessary
+	3. Rotate b to bring cheapest to top
+	4. push to b_node to a_stack
