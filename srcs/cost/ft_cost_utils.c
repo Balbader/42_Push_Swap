@@ -58,7 +58,7 @@ int	*ft_get_pos_arr(t_list **stack)
 	if (!pos_arr)
 		return (0);
 	i = 0;
-	while (i < a_size)
+	while (i < stack_size)
 	{
 		pos_arr[i] = tmp->pos;
 		++i;
