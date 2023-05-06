@@ -12,6 +12,10 @@
 
 #include "push_swap.h"
 
+/*
+ * Returns an array contining the cost of moving each node
+ * to the top of the stack
+*/
 int	*ft_get_cost_arr(t_list **stack)
 {
 	t_list	*tmp;
@@ -36,6 +40,10 @@ int	*ft_get_cost_arr(t_list **stack)
 	return (cost_arr);
 }
 
+/*
+ * Retruns an array containing the final position of each node
+ * in a sorted stack
+*/
 int	*ft_get_pos_arr(t_list **stack)
 {
 	t_list	*tmp;
