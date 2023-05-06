@@ -58,7 +58,7 @@ int	*ft_get_tot_cost(int *a_cost, int *b_cost, int b_size)
 	if (!tot_cost)
 		return (0);
 	i = 0;
-	while (i < b_size)
+	while (i < b_size - 1)
 	{
 		if (a_cost[i] < 0)
 			a_cost[i] *= -1;
