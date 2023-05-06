@@ -50,10 +50,8 @@ int			ft_calculate_node_cost(t_list **stack, int node_idx, int stk_size);
 int			*ft_find_biggest_closest_a_node_idx(t_list **a, t_list **b,
 										int *a_pos, int *b_pos);
 int			*ft_get_total_cost_arr(t_list **a, t_list **b, int *tot_cost);
-int			*ft_get_a_cost_arr(t_list **a);
-int			*ft_get_b_cost_arr(t_list **b);
-int			*ft_get_a_pos_arr(t_list **a);
-int			*ft_get_b_pos_arr(t_list **b);
+int			*ft_get_cost_arr(t_list **stack);
+int			*ft_get_pos_arr(t_list **stack);
 int			ft_find_cheapest_b_node_idx(t_list **a, t_list **b, int node_to_mv);
 int			ft_get_incoming_pos(t_list **b, int	incoming_idx, int incoming_pos);
 void		ft_re_order_a(t_list **a, int incoming_pos);
