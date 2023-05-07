@@ -24,9 +24,9 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	int	*a_cost_arr;
 	int	*b_cost_arr;
 	int	b_size;
-	int	a_size;
+	// int	a_size;
 
-	a_size = ft_get_stack_size(a);
+	// a_size = ft_get_stack_size(a);
 	a_pos_arr = NULL;
 	a_pos_arr = ft_get_pos_arr(a);
 	a_cost_arr = NULL;
