@@ -12,3 +12,13 @@
 
 #include "push_swap.h"
 
+// int	ft_get_cheapest_idx(int *final_cost)
+// {
+// 	int	final_idx;
+// 	int	i;
+
+// 	final_idx = INT_MIN;
+// 	i = 0;
+// 	while (i < )
+// 	return (final_idx);
+// }

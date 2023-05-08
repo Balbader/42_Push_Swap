@@ -33,6 +33,7 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	a_cost_arr = ft_get_cost_arr(a);
 
 	b_size = ft_get_stack_size(b);
+	b_pos_arr = NULL;
 	b_pos_arr = ft_get_pos_arr(b);
 	b_cost_arr = NULL;
 	b_cost_arr = ft_get_cost_arr(b);
@@ -48,11 +49,11 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 		return ;
 	a_final_cost = ft_get_a_final_cost_arr(a, b, a_node_pos_to_ra, a_final_cost);
 
-	for (int i = 0; i < b_size - 1; ++i) {
+	for (int i = 0; i < b_size; ++i) {
 		printf("a_final_cost[%d]: %d\n", i, a_final_cost[i]);
 	}
 	printf("\n");
-	for (int i = 0; i < b_size - 1; ++i) {
+	for (int i = 0; i < b_size; ++i) {
 		printf("b_cost_arr_cost[%d]: %d\n", i, b_cost_arr[i]);
 	}
 	printf("\n");
@@ -60,7 +61,7 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	int	*final_cost;
 	final_cost = NULL;
 	final_cost = ft_get_tot_cost(a_final_cost, b_cost_arr, b_size);
-	for (int i = 0; i < b_size - 1; ++i) {
+	for (int i = 0; i < b_size; ++i) {
 		printf("final_cost[%d]: %d\n", i, final_cost[i]);
 	}
 
