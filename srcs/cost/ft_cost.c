@@ -35,7 +35,7 @@ int	*ft_get_a_final_cost_arr(t_list **a, t_list **b,
 	{
 		while (*a)
 		{
-			if ((*a)->pos && (*a)->pos == a_node_pos_to_ra[data.i])
+			if ((*a) && (*a)->pos == a_node_pos_to_ra[data.i])
 			{
 				a_final_cost[data.j]
 						= ft_calculate_node_cost(a, (*a)->index, data.a_size);
