@@ -59,7 +59,7 @@ int	ft_get_hit(int *cost_arr, int cost_arr_size, int cheapest_idx)
 	return (hit);
 }
 
-void	ft_reorder_stack(t_list **stack, int hit)
+void	ft_reorder_a(t_list **a, int hit)
 {
 	int	i;
 
@@ -70,7 +70,7 @@ void	ft_reorder_stack(t_list **stack, int hit)
 		i = hit;
 		while (i < 0)
 		{
-			ft_reverse_rotate(stack);
+			ft_rra(a);
 			++i;
 		}
 	}
@@ -79,7 +79,33 @@ void	ft_reorder_stack(t_list **stack, int hit)
 		i = 0;
 		while (i < hit)
 		{
-			ft_rotate(stack);
+			ft_ra(a);
+			++i;
+		}
+	}
+}
+
+void	ft_reorder_b(t_list **b, int hit)
+{
+	int	i;
+
+	if (hit == 0)
+		return ;
+	if (hit < 0)
+	{
+		i = hit;
+		while (i < 0)
+		{
+			ft_rrb(b);
+			++i;
+		}
+	}
+	if (hit > 0)
+	{
+		i = 0;
+		while (i < hit)
+		{
+			ft_rb(b);
 			++i;
 		}
 	}
