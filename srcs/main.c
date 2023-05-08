@@ -56,8 +56,8 @@ int	main(int ac, char **av)
 	ft_check_entries(entries_arr, (ac - 1));
 	ft_find_doubles(entries_arr, (ac - 1));
 	a = ft_init_stack(a, entries_arr, ac - 1);
-	ft_print_stack(&a, "a");
-	printf("\n");
+	// ft_print_stack(&a, "a");
+	// printf("\n");
 	free(entries_arr);
 	if ((ac - 1) <= 5)
 		ft_small_sort(&a, &b, ac - 1);
