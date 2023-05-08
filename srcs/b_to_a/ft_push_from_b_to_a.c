@@ -16,8 +16,8 @@
 int	*ft_get_a_node_to_ra(t_list **a, t_list **b, int *a_node_pos_to_ra)
 {
 	int	*a_pos_arr;
-	int	b_pos_arr[5] = {22, 32, 14, 16, -321};
-	// int	*b_pos_arr;
+	// int	b_pos_arr[5] = {22, 32, 14, 16, -321};
+	int	*b_pos_arr;
 	int	*a_cost_arr;
 	int	*b_cost_arr;
 
@@ -26,13 +26,13 @@ int	*ft_get_a_node_to_ra(t_list **a, t_list **b, int *a_node_pos_to_ra)
 	a_cost_arr = NULL;
 	a_cost_arr = ft_get_cost_arr(a);
 
-	// b_pos_arr = NULL;
-	// b_pos_arr = ft_get_pos_arr(b);
+	b_pos_arr = NULL;
+	b_pos_arr = ft_get_pos_arr(b);
 	b_cost_arr = NULL;
 	b_cost_arr = ft_get_cost_arr(b);
 
 	a_node_pos_to_ra = ft_find_big_close_a_node_idx(a, b, a_pos_arr, b_pos_arr);
-	return (free(a_pos_arr), /* free(b_pos_arr), */ free (a_cost_arr),
+	return (free(a_pos_arr), free(b_pos_arr), free (a_cost_arr),
 		free(b_cost_arr), a_node_pos_to_ra);
 }
 
@@ -77,18 +77,13 @@ int	*ft_get_final_cost_arr(t_list **a, t_list **b, int b_size,
 
 void	ft_push_from_b_to_a(t_list **a, t_list **b)
 {
-	int	b_size;
 	int	*a_final_cost_cpy;
 	int	*final_cost_arr;
 	int	cheapest_idx;
-	// int	hit_a;
-	// int	hit_b;
-	// int	a_size;
+	int	b_size;
+	int	i;
 
-	// a_size = ft_get_stack_size(a);
 	b_size = ft_get_stack_size(b);
-
-
 	a_final_cost_cpy = NULL;
 	a_final_cost_cpy = ft_get_a_final_cost_cpy(a, b, b_size, a_final_cost_cpy);
 	for (int i = 0; i < b_size; ++i) {
@@ -106,12 +101,14 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	cheapest_idx = ft_get_cheapest_idx(final_cost_arr, b_size);
 	printf("\n");
 	printf("cheapest_idx: %d\n", cheapest_idx);
-
-	// hit_a = ft_get_hit(a_final_cost_cpy, b_size, cheapest_idx);
-
-	// hit_b = ft_get_hit(b_cost_arr, b_size, cheapest_idx);
-
-	// ft_pa(a, b);
-
+	ft_pa(a, b);
+	i = 0;
+	while (i < b_size)
+	{
+		ft_set_up_a(a, a_final_cost_cpy, b_size, cheapest_idx);
+		ft_set_up_b(b, b_size, cheapest_idx);
+		ft_pa(a, b);
+		++i;
+	}
 	free(final_cost_arr);
 }
