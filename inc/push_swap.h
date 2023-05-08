@@ -53,6 +53,9 @@ int			ft_get_hit(int *cost_arr, int cost_arr_size, int cheapest_idx);
 void		ft_push_from_b_to_a(t_list **a, t_list **b);
 void		ft_reorder_a(t_list **a, int hit);
 void		ft_reorder_b(t_list **b, int hit);
+void		ft_set_up_a(t_list **a, int *a_final_cost_cpy, int b_size,
+				int cheapest_idx);
+void		ft_set_up_b(t_list **b, int b_size, int cheapest_idx);
 
 /* COST */
 int			ft_calculate_node_cost(t_list **stack, int node_idx, int stk_size);
