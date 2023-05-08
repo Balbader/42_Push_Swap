@@ -27,7 +27,7 @@ int	*ft_get_a_final_cost_arr(t_list **a, t_list **b,
 	t_data	data;
 
 	data.a_size = ft_get_stack_size(a);
-	data.b_size = ft_get_stack_size(b) - 1;
+	data.b_size = ft_get_stack_size(b);
 	data.head = (*a);
 	data.j = 0;
 	data.i = 0;
@@ -58,7 +58,7 @@ int	*ft_get_tot_cost(int *a_cost, int *b_cost, int b_size)
 	if (!tot_cost)
 		return (0);
 	i = 0;
-	while (i < b_size - 1)
+	while (i < b_size)
 	{
 		if (a_cost[i] < 0)
 			a_cost[i] *= -1;
