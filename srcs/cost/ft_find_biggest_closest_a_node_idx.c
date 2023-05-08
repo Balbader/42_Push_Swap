@@ -29,6 +29,7 @@ int	ft_get_pos_to_find(int *a_pos, int a_size, int b_node_pos)
 
 	i = 0;
 	pos_to_find = a_pos[i];
+	closest_pos = a_pos[i] - b_node_pos;
 	while (i < a_size)
 	{
 		closest_pos = a_pos[i] - b_node_pos;
@@ -38,6 +39,8 @@ int	ft_get_pos_to_find(int *a_pos, int a_size, int b_node_pos)
 			pos_to_find = a_pos[i];
 		++i;
 	}
+	// printf("closest_pos: %d\n", closest_pos);
+	// printf("pos_to_find: %d\n", pos_to_find);
 	return (pos_to_find);
 }
 
