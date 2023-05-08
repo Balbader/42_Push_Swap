@@ -32,7 +32,7 @@ int	*ft_get_a_node_to_ra(t_list **a, t_list **b, int *a_node_pos_to_ra)
 	b_cost_arr = ft_get_cost_arr(b);
 
 	a_node_pos_to_ra = ft_find_big_close_a_node_idx(a, b, a_pos_arr, b_pos_arr);
-	return (free(a_pos_arr), free(b_pos_arr), free (a_cost_arr),
+	return (free(a_pos_arr), /* free(b_pos_arr), */ free (a_cost_arr),
 		free(b_cost_arr), a_node_pos_to_ra);
 }
 
@@ -85,30 +85,35 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 
 	b_size = ft_get_stack_size(b);
 	a_final_cost_cpy = NULL;
-	a_final_cost_cpy = ft_get_a_final_cost_cpy(a, b, b_size, a_final_cost_cpy);
-	for (int i = 0; i < b_size; ++i) {
-		printf("a_final_cost_cpy[%d]: %d\n", i, a_final_cost_cpy[i]);
-	}
-
-	printf("\n");
-
 	final_cost_arr = NULL;
-	final_cost_arr = ft_get_final_cost_arr(a, b, b_size, final_cost_arr);
-	for (int i = 0; i < b_size; ++i) {
-		printf("final_cost_arr[%d]: %d\n", i, final_cost_arr[i]);
-	}
-
-	cheapest_idx = ft_get_cheapest_idx(final_cost_arr, b_size);
-	printf("\n");
-	printf("cheapest_idx: %d\n", cheapest_idx);
-	ft_pa(a, b);
 	i = 0;
-	while (i < b_size)
+	while (i < 9)
 	{
+		ft_re_init_index(*b);
+		ft_print_stack(b, "b");
+		ft_re_init_index(*a);
+		ft_print_stack(a, "a");
+		b_size = ft_get_stack_size(b);
+		a_final_cost_cpy = ft_get_a_final_cost_cpy(a, b, b_size, a_final_cost_cpy);
+		final_cost_arr = ft_get_final_cost_arr(a, b, b_size, final_cost_arr);
+		cheapest_idx = ft_get_cheapest_idx(final_cost_arr, b_size);
+		// for (int i = 0; i < b_size; ++i) {
+		// 	printf("a_final_cost_cpy[%d]: %d\n", i, a_final_cost_cpy[i]);
+		// }
+		printf("\n");
+		for (int i = 0; i < b_size; ++i) {
+			printf("final_cost_arr[%d]: %d\n", i, final_cost_arr[i]);
+		}
+		printf("cheapest_idx: %d\n", cheapest_idx);
+		printf("\n");
+		printf("-----------------------------------------------> %d\n", i + 1);
 		ft_set_up_a(a, a_final_cost_cpy, b_size, cheapest_idx);
 		ft_set_up_b(b, b_size, cheapest_idx);
 		ft_pa(a, b);
+		// if ((*a)->pos > (*a)->next->pos)
+		// 	ft_sa(a);
 		++i;
+		printf("\n");
 	}
 	free(final_cost_arr);
 }
