@@ -69,12 +69,14 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	// }
 
 	int	incoming;
-	int	big_bro;
+	int	big_bro_idx;
 
-	incoming = 1264;
-	big_bro = ft_find_big_bro(a, incoming);
+	incoming = 264;
 	printf("incoming: %d\n", incoming);
-	printf("big_bro: %d\n", big_bro);
+
+	big_bro_idx = 0;
+	big_bro_idx = ft_find_big_bro_idx(a, incoming);
+	printf("big_bro_idx: %d\n", big_bro_idx);
 
 
 	free(a_pos);
