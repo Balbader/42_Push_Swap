@@ -39,14 +39,14 @@ static int	*ft_get_a_big_close_cost(t_list **a, t_list **b,
 {
 	t_data	data;
 
-	printf("hello from ft_get_a_big_close_cost.c!\n");
-	data.a_pos = ft_get_pos_arr(a);
-	for (int j = 0; j < data.a_size; ++j) {
-		printf("a_pos[%d]: %d\n", j, data.a_pos[j]);
-	}
 	data.b_pos = ft_get_pos_arr(b);
 	data.a_size = ft_get_stack_size(a);
 	data.b_size = ft_get_stack_size(b);
+	printf("hello from ft_get_a_big_close_cost.c!\n");
+	data.a_pos = ft_get_pos_arr(a);
+	// for (int j = 0; j < data.a_size; ++j) {
+	// 	printf("a_pos[%d]: %d\n", j, data.a_pos[j]);
+	// }
 	data.a_node = ft_find_big_close_a_node_idx(a, b, data.a_pos, data.b_pos);
 	data.k = 0;
 	data.i = 0;
