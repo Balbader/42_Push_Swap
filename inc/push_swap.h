@@ -57,7 +57,6 @@ int			*ft_get_cost_arr(t_list **stack);
 int			*ft_get_pos_arr(t_list **stack);
 int			ft_get_incoming_pos(t_list **b, int	incoming_idx, int incoming_pos);
 int			ft_get_pos_to_find(int *a_pos, int a_size, int b_node_pos);
-int			*ft_get_tot_cost(int *a_cost, int *b_cost, int b_size);
 void		ft_re_order_a(t_list **a, int incoming_pos);
 
 /* OPERATIONS */
