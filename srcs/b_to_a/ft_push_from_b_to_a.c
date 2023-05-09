@@ -20,7 +20,7 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	int	*a_pos;
 	int	*b_pos;
 	// int	*a_cost;
-	// int	*b_cost;
+	int	*b_cost;
 
 	// int	a_size;
 	int	b_size;
@@ -36,12 +36,12 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	a_pos = NULL;
 	b_pos = NULL;
 	// a_cost = NULL;
-	// b_cost = NULL;
+	b_cost = NULL;
 
 	a_pos = ft_get_pos_arr(a);
 	b_pos = ft_get_pos_arr(b);
 	// a_cost = ft_get_cost_arr(a);
-	// b_cost = ft_get_cost_arr(b);
+	b_cost = ft_get_cost_arr(b);
 
 	// a_size = ft_get_stack_size(a);
 	b_size = ft_get_stack_size(b);
@@ -59,24 +59,19 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 
 	printf("\n");
 
-	// for (int i = 0; i < b_size; ++i) {
-	// 	printf("a_cost[%d]: %d\n", i, a_cost[i]);
-	// 	printf("b_cost[%d]: %d\n", i, b_cost[i]);
-	// 	printf("tot_cost_arr[%d]: %d\n", i, tot_cost_arr[i]);
-	// 	printf("a_node_to_ra[%d]: %d\n", i, a_node_to_ra[i]);
-	// 	printf("a_final_cost_arr[%d]: %d\n", i, a_final_cost_arr[i]);
-	// 	printf("\n");
-	// }
-
-	int	incoming;
 	int	big_bro_idx;
-
-	incoming = 264;
-	printf("incoming: %d\n", incoming);
-
 	big_bro_idx = 0;
-	big_bro_idx = ft_find_big_bro_idx(a, incoming);
-	printf("big_bro_idx: %d\n", big_bro_idx);
+
+	for (int i = 0; i < b_size; ++i) {
+		// printf("a_cost[%d]: %d\n", i, a_cost[i]);
+		printf("b_cost[%d]: %d\n", i, b_cost[i]);
+		// printf("tot_cost_arr[%d]: %d\n", i, tot_cost_arr[i]);
+		printf("a_node_to_ra[%d]: %d\n", i, a_node_to_ra[i]);
+		big_bro_idx = ft_find_big_bro_idx(a, a_node_to_ra[i]);
+		printf("big_bro_idx: %d\n", big_bro_idx);
+		printf("a_final_cost_arr[%d]: %d\n", i, a_final_cost_arr[i]);
+		printf("\n");
+	}
 
 
 	free(a_pos);
