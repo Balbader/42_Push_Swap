@@ -50,6 +50,7 @@ int			*ft_get_a_final_cost_cpy(t_list **a, t_list **b, int b_size,
 int			*ft_get_a_node_to_ra(t_list **a, t_list **b, int *a_node_pos_to_ra);
 int			ft_get_cheapest_idx(int *final_cost, int b_size);
 int			ft_get_hit(int *cost_arr, int cost_arr_size, int cheapest_idx);
+int			*ft_get_total_cost_arr(t_list **a, t_list **b, int *tot_cost);
 void		ft_push_from_b_to_a(t_list **a, t_list **b);
 void		ft_reorder_a(t_list **a, int hit);
 void		ft_reorder_b(t_list **b, int hit);
