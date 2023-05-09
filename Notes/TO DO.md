@@ -1,0 +1,1 @@
+1. Check all cost functions
