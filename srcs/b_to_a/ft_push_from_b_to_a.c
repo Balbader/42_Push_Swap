@@ -62,9 +62,9 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	for (int i = 0; i < b_size; ++i) {
 		// printf("a_cost[%d]: %d\n", i, a_cost[i]);
 		// printf("b_cost[%d]: %d\n", i, b_cost[i]);
-		// printf("tot_cost_arr[%d]: %d\n", i, tot_cost_arr[i]);
-		printf("a_node_to_ra[%d]: %d\n", i, a_node_to_ra[i]);
-		printf("a_final_cost_arr[%d]: %d\n", i, a_final_cost_arr[i]);
-		printf("\n");
+		printf("tot_cost_arr[%d]: %d\n", i, tot_cost_arr[i]);
+		// printf("a_node_to_ra[%d]: %d\n", i, a_node_to_ra[i]);
+		// printf("a_final_cost_arr[%d]: %d\n", i, a_final_cost_arr[i]);
+		// printf("\n");
 	}
 }
