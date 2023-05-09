@@ -33,7 +33,7 @@ COST_DIR			:=	cost/
 COST_FILES			:=	\
 						ft_calculate_node_cost.c \
 						ft_cost.c \
-						ft_cost_utils.c \
+						ft_get_a_final_cost_arr.c \
 						ft_get_total_cost_arr.c
 COST				:=	$(addprefix $(COST_DIR), $(COST_FILES))
 
