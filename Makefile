@@ -25,6 +25,7 @@ ACTIONS				:=	$(addprefix $(ACTIONS_DIR), $(ACTIONS_FILES))
 B_TO_A_DIR			:=	b_to_a/
 B_TO_A_FILES		:=	\
 						ft_b_to_a_utils.c \
+						ft_find_big_bro.c \
 						ft_push_from_b_to_a.c \
 						ft_find_biggest_closest_a_node_idx.c
 B_TO_A				:=	$(addprefix $(B_TO_A_DIR), $(B_TO_A_FILES))
