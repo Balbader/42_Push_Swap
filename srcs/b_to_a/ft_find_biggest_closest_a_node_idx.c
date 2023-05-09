@@ -29,20 +29,13 @@ int	ft_get_pos_to_find(int *a_pos, int a_size, int b_node_pos)
 
 	i = 0;
 	pos_to_find = a_pos[i];
-	closest_pos = a_pos[i] - b_node_pos;
 	while (i < a_size)
 	{
 		closest_pos = a_pos[i] - b_node_pos;
 		if (closest_pos < 0)
 			closest_pos *= -1;
 		if (a_pos[i] - b_node_pos < closest_pos)
-		{
 			pos_to_find = a_pos[i];
-			// printf("a_pos[%d]: %d\n", i, a_pos[i]);
-			// printf("closest_pos: %d\n", closest_pos);
-			// printf("pos_to_find: %d\n", pos_to_find);
-			// printf("\n");
-		}
 		++i;
 	}
 	return (pos_to_find);
@@ -62,9 +55,6 @@ int	*ft_find_big_close_a_node_idx(t_list **a, t_list **b,
 
 	a_size = ft_get_stack_size(a);
 	b_size = ft_get_stack_size(b);
-	// for (int i = 0; i < a_size; ++i) {
-	// 	printf("a_pos[%d]: %d\n", i, a_pos[i]);
-	// }
 	a_nodes_pos = (int *)malloc(sizeof(int) * b_size);
 	if (!a_nodes_pos)
 		return (0);
