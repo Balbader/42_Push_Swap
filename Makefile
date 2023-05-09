@@ -25,8 +25,8 @@ ACTIONS				:=	$(addprefix $(ACTIONS_DIR), $(ACTIONS_FILES))
 B_TO_A_DIR			:=	b_to_a/
 B_TO_A_FILES		:=	\
 						ft_push_from_b_to_a.c \
-						ft_push_from_b_to_a_utils.c \
-						ft_push_from_b_to_a_utils_2.c
+						ft_find_biggest_closest_a_node_idx.c \
+						ft_find_cheapest_b_node_idx.c
 B_TO_A				:=	$(addprefix $(B_TO_A_DIR), $(B_TO_A_FILES))
 
 COST_DIR			:=	cost/
@@ -34,8 +34,6 @@ COST_FILES			:=	\
 						ft_calculate_node_cost.c \
 						ft_cost.c \
 						ft_cost_utils.c \
-						ft_find_biggest_closest_a_node_idx.c \
-						ft_find_cheapest_b_node_idx.c \
 						ft_get_total_cost_arr.c
 COST				:=	$(addprefix $(COST_DIR), $(COST_FILES))
 
