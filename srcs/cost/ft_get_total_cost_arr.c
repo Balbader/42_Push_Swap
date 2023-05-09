@@ -39,14 +39,10 @@ static int	*ft_get_a_big_close_cost(t_list **a, t_list **b,
 {
 	t_data	data;
 
+	data.a_pos = ft_get_pos_arr(a);
 	data.b_pos = ft_get_pos_arr(b);
 	data.a_size = ft_get_stack_size(a);
 	data.b_size = ft_get_stack_size(b);
-	printf("hello from ft_get_a_big_close_cost.c!\n");
-	data.a_pos = ft_get_pos_arr(a);
-	// for (int j = 0; j < data.a_size; ++j) {
-	// 	printf("a_pos[%d]: %d\n", j, data.a_pos[j]);
-	// }
 	data.a_node = ft_find_big_close_a_node_idx(a, b, data.a_pos, data.b_pos);
 	data.k = 0;
 	data.i = 0;
@@ -69,7 +65,8 @@ static int	*ft_get_a_big_close_cost(t_list **a, t_list **b,
 }
 
 /*
- * Retrurns an array with the total cost of each b_node
+ * Retrurns an array with the total cost of moving each b_node to a_stack
+ * tot_cost[i] = a_cost[i] + b_cost[i];
 */
 int	*ft_get_total_cost_arr(t_list **a, t_list **b, int *tot_cost)
 {
@@ -86,9 +83,6 @@ int	*ft_get_total_cost_arr(t_list **a, t_list **b, int *tot_cost)
 	if (!a_node_cost)
 		return (0);
 	a_node_cost = ft_get_a_big_close_cost(a, b, a_node_cost, a_cost);
-	for (int j = 0; j < b_size; ++j) {
-		printf("a_node_cost[%d]: %d\n", j, a_node_cost[j]);
-	}
 	i = 0;
 	while (i < b_size)
 	{
