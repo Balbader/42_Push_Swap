@@ -4,6 +4,9 @@
 		+ ft_get_a_big_close_cost(): *ok*
 		+ ft_get_total_cost_arr(): *ok*
 	+ ft_get_a_final_cost_arr.c: ***OK***
+	+ ft_cost.c:
+		+ ft_get_cost_arr(): *ok*
+		+ ft_get_pos_arr(): *ok*
 
 2. Check all b_to_a functions:
 	+ ft_find_biggest_closes_a_node_idx.c:
