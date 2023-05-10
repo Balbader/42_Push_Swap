@@ -51,7 +51,7 @@ int	ft_get_pos_to_find(int *a_pos, int a_size, int b_node_pos)
  * Returns an array containing the "pos" value of the a_node that needs
  * to be at the top of a_stack based on each b_node
 */
-int	*ft_find_big_close_a_node_idx(t_list **a, t_list **b,
+int	*ft_find_big_close_a_node_pos(t_list **a, t_list **b,
 								int *a_pos, int *b_pos)
 {
 	int	a_size;
