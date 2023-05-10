@@ -45,7 +45,7 @@ t_list		*ft_pre_sort_stack(t_list *rand_stack);
 /* B_TO_A */
 int			ft_get_pos_to_find(int *a_pos, int a_size, int b_node_pos);
 int			ft_find_big_bro_idx(t_list **a, int incoming);
-int			*ft_find_big_close_a_node_idx(t_list **a, t_list **b,
+int			*ft_find_big_close_a_node_pos(t_list **a, t_list **b,
 									int *a_pos, int *b_pos);
 int			ft_find_cheapest_b_node_idx(t_list **a, t_list **b, int node_to_mv);
 void		ft_push_from_b_to_a(t_list **a, t_list **b);
