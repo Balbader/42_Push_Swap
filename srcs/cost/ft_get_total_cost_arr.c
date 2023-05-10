@@ -43,7 +43,7 @@ static int	*ft_get_a_big_close_cost(t_list **a, t_list **b,
 	data.b_pos = ft_get_pos_arr(b);
 	data.a_size = ft_get_stack_size(a);
 	data.b_size = ft_get_stack_size(b);
-	data.a_node = ft_find_big_close_a_node_idx(a, b, data.a_pos, data.b_pos);
+	data.a_node = ft_find_big_close_a_node_pos(a, b, data.a_pos, data.b_pos);
 	data.k = 0;
 	data.i = 0;
 	while (data.i < data.b_size)
