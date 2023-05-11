@@ -33,8 +33,31 @@ int	*ft_get_cost_arr(t_list **stack, int *cost_arr)
 		if (i <= mid)
 			cost_arr[i] = i;
 		else
-			cost_arr[i] = ((i - stack_size) + 1);
+			cost_arr[i] = ((i - stack_size));
 		++i;
 	}
 	return (cost_arr);
+}
+
+/*
+ * Returns an array containing the final position of each node in given stack
+*/
+
+int	*ft_get_pos_arr(t_list **stack, int *pos_arr)
+{
+	int	stack_size;
+	int	i;
+
+	stack_size = ft_get_stack_size(stack);
+	pos_arr = (int *)malloc(sizeof(int) * stack_size);
+	if (!pos_arr)
+		return (0);
+	i = 0;
+	while (i < stack_size)
+	{
+		pos_arr[i] = (*stack)->pos;
+		(*stack) = (*stack)->next;
+		++i;
+	}
+	return (pos_arr);
 }
