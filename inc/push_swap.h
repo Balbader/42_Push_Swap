@@ -43,26 +43,8 @@ void		ft_assign_pos(t_list **a);
 t_list		*ft_pre_sort_stack(t_list *rand_stack);
 
 /* B_TO_A */
-int			ft_get_pos_to_find(int *a_pos, int a_size, int b_node_pos);
-int			ft_find_big_bro_idx(t_list **a, int incoming_pos);
-int			*ft_find_big_close_a_node_pos(t_list **a, t_list **b,
-									int *a_pos, int *b_pos);
-int			ft_find_cheapest_b_node_idx(t_list **a, t_list **b, int node_to_mv);
-int			ft_fetch_cheapest(int *tot_cost_arr, t_list **b);
-void		ft_reorder_a(t_list **a, int big_bro_idx);
-void		ft_reorder_b(t_list **b, int small_bro_idx);
-void		ft_push_from_b_to_a(t_list **a, t_list **b);
 
 /* COST */
-int			ft_calculate_node_cost(t_list **stack, int node_idx, int stk_size);
-int			*ft_get_a_final_cost_arr(t_list **a, t_list **b,
-							int *a_node_pos_to_ra, int *a_final_cost);
-int			*ft_get_total_cost_arr(t_list **a, t_list **b, int *tot_cost);
-int			*ft_get_cost_arr(t_list **stack);
-int			*ft_get_pos_arr(t_list **stack);
-int			ft_get_incoming_pos(t_list **b, int	incoming_idx, int incoming_pos);
-void		ft_re_order_a(t_list **a, int incoming_pos);
-void		ft_reorder_b(t_list **b, int small_bro_idx);
 
 /* OPERATIONS */
 void		ft_pa(t_list **b, t_list **a);
