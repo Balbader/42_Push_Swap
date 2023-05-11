@@ -19,6 +19,7 @@ typedef struct s_data
 	int	*tot_cost_arr;
 	int	*a_pos_to_ra;
 	int	b_size;
+	int	big_bro_idx;
 }				t_data;
 
 static void	ft_free_data(int *d1, int *d2, int *d3, int *d4)
@@ -51,5 +52,6 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	data.a_pos_to_ra
 		= ft_find_big_close_a_node_pos(a, b, data.a_pos, data.b_pos);
 	cheap = ft_fetch_cheapest(data.tot_cost_arr, b);
+	data.big_bro_idx = data.a_pos_to_ra[cheap];
 	ft_free_data(data.a_pos, data.b_pos, data.tot_cost_arr, data.a_pos_to_ra);
 }
