@@ -16,7 +16,7 @@
  * Returns the value of the a_node that is the smallest of a_stack yet greater
  * than incoming b_node value
 */
-int	ft_find_big_bro_idx(t_list **a, int incoming)
+int	ft_find_big_bro_idx(t_list **a, int incoming_pos)
 {
 	int	big_bro;
 	int	big_bro_idx;
@@ -30,8 +30,8 @@ int	ft_find_big_bro_idx(t_list **a, int incoming)
 	i = 0;
 	while (i < a_size)
 	{
-		if (((*a)->data > incoming && (*a)->data < big_bro)
-			|| ((*a)->data < incoming && (*a)->data < incoming))
+		if (((*a)->pos > incoming_pos && (*a)->data < big_bro)
+			|| ((*a)->pos < incoming_pos && (*a)->data < big_bro))
 		{
 			big_bro = (*a)->data;
 			big_bro_idx = (*a)->index;
