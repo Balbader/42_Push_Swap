@@ -49,6 +49,7 @@ int			*ft_find_big_close_a_node_pos(t_list **a, t_list **b,
 									int *a_pos, int *b_pos);
 int			ft_find_cheapest_b_node_idx(t_list **a, t_list **b, int node_to_mv);
 void		ft_push_from_b_to_a(t_list **a, t_list **b);
+void		ft_reorder_a(t_list **a, int pos_to_find);
 
 /* COST */
 int			ft_calculate_node_cost(t_list **stack, int node_idx, int stk_size);
