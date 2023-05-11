@@ -14,19 +14,17 @@
 
 void	ft_push_from_b_to_a(t_list **a, t_list **b)
 {
-	// (void)a;
-	// (void)b;
 	int	*cost_a;
 	int	*cost_b;
 	int	*pos_a;
 	int	*pos_b;
 	int	big_bro_idx;
 
-	// ft_re_init_index(*a);
-	// ft_re_init_index(*b);
-	// ft_print_stack(a, "a");
-	// ft_print_stack(b, "b");
-	// printf("\n");
+	ft_re_init_index(*a);
+	ft_re_init_index(*b);
+	ft_print_stack(a, "a");
+	ft_print_stack(b, "b");
+	printf("\n");
 	cost_a = NULL;
 	cost_b = NULL;
 	cost_a = ft_get_cost_arr(a, cost_a);
