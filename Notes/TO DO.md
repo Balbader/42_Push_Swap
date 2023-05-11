@@ -12,3 +12,4 @@
 	1. ft_find_biggest_closes_a_node_pos.c:
 		+ ft_get_pos_to_find(): *ok*
 		+ ft_find_big_close_a_node_pos(): *ok*
+  

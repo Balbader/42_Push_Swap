@@ -16,9 +16,9 @@
 
 + Push the cheapest b_node to a
 	1. Get the cheapest element of final_cost
-	   + the idx of cheapest 
-	   + = the (idx + 1) of the b_node to be pushed to a
-	   + = the (idx + 1) of the a_node to be brought to top of a
+	   + the cheapest element of tot_cost_arr will be used to reoder stack_a and stack_b by using the final position as the mark.
+	   + = the (pos + 1) of the b_node to be pushed to a
+	   + = the (pos + 1) of the a_node to be brought to top of a
 
 	2. Re_order a_stack if necessary
 	3. Rotate b to bring cheapest to top
