@@ -23,11 +23,11 @@ ACTIONS_FILES		:=	\
 ACTIONS				:=	$(addprefix $(ACTIONS_DIR), $(ACTIONS_FILES))
 
 B_TO_A_DIR			:=	b_to_a/
-B_TO_A_FILES		:=
+B_TO_A_FILES		:=	ft_push_from_b_to_a.c
 B_TO_A				:=	$(addprefix $(B_TO_A_DIR), $(B_TO_A_FILES))
 
 COST_DIR			:=	cost/
-COST_FILES			:=
+COST_FILES			:=	ft_cost.c
 COST				:=	$(addprefix $(COST_DIR), $(COST_FILES))
 
 ENTRY_DIR			:=	entry/
