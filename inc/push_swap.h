@@ -61,6 +61,7 @@ int			*ft_get_cost_arr(t_list **stack);
 int			*ft_get_pos_arr(t_list **stack);
 int			ft_get_incoming_pos(t_list **b, int	incoming_idx, int incoming_pos);
 void		ft_re_order_a(t_list **a, int incoming_pos);
+void		ft_reorder_b(t_list **b, int small_bro_idx);
 
 /* OPERATIONS */
 void		ft_pa(t_list **b, t_list **a);
