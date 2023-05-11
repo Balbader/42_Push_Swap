@@ -27,7 +27,9 @@ B_TO_A_FILES		:=	ft_push_from_b_to_a.c
 B_TO_A				:=	$(addprefix $(B_TO_A_DIR), $(B_TO_A_FILES))
 
 COST_DIR			:=	cost/
-COST_FILES			:=	ft_cost.c
+COST_FILES			:=	\
+						ft_cost.c \
+						ft_cost_utils_1.c
 COST				:=	$(addprefix $(COST_DIR), $(COST_FILES))
 
 ENTRY_DIR			:=	entry/
