@@ -18,10 +18,12 @@
 
 int	*ft_get_cost_arr(t_list **stack, int *cost_arr)
 {
-	int	stack_size;
-	int	mid;
-	int	i;
+	// t_list	*tmp;
+	int		stack_size;
+	int		mid;
+	int		i;
 
+	// tmp = (*stack);
 	stack_size = ft_get_stack_size(stack);
 	cost_arr = (int *)malloc(sizeof(int) * stack_size);
 	if (!cost_arr)
@@ -45,9 +47,11 @@ int	*ft_get_cost_arr(t_list **stack, int *cost_arr)
 
 int	*ft_get_pos_arr(t_list **stack, int *pos_arr)
 {
-	int	stack_size;
-	int	i;
+	t_list	*tmp;
+	int		stack_size;
+	int		i;
 
+	tmp = (*stack);
 	stack_size = ft_get_stack_size(stack);
 	pos_arr = (int *)malloc(sizeof(int) * stack_size);
 	if (!pos_arr)
@@ -55,9 +59,10 @@ int	*ft_get_pos_arr(t_list **stack, int *pos_arr)
 	i = 0;
 	while (i < stack_size)
 	{
-		pos_arr[i] = (*stack)->pos;
-		(*stack) = (*stack)->next;
+		pos_arr[i] = tmp->pos;
+		tmp = tmp->next;
 		++i;
 	}
+	ft_free_stack(&tmp);
 	return (pos_arr);
 }
