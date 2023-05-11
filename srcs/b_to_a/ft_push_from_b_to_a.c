@@ -18,6 +18,7 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	int	*cost_b;
 	int	*pos_a;
 	int	*pos_b;
+	int	big_bro_idx;
 
 	ft_re_init_index(*a);
 	ft_re_init_index(*b);
@@ -48,6 +49,11 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	for (int i = 0; i < 7; ++i) {
 		printf("pos_b[%d]: %d\n", i, pos_b[i]);
 	}
+	printf("\n");
+	big_bro_idx = ft_get_big_bro_idx(a, pos_a, pos_b[5]);
+	printf("big_bro_idx: %d\n", big_bro_idx);
+	ft_free_stack(a);
+	ft_free_stack(b);
 	free(cost_a);
 	free(cost_b);
 	free(pos_a);
