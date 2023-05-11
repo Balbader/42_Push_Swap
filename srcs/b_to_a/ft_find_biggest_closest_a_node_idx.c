@@ -18,7 +18,7 @@
 #include "push_swap.h"
 
 /*
- * Returns the index for the smallest a_node that is the closest && greater
+ * Returns the positiion for the smallest a_node that is the closest && greater
  * than the incoming b_node_pos;
 */
 int	ft_get_pos_to_find(int *a_pos, int a_size, int b_node_pos)
@@ -43,7 +43,7 @@ int	ft_get_pos_to_find(int *a_pos, int a_size, int b_node_pos)
 
 /*
  * ---------------->>>>>>   NOTE: ft_find_big_close_a_node_idx()
- *  Need to change the return value from returning the position fo the a_node
+ *  Need to change the return value from returning the position of the a_node
  *  that needs to be at the top of a_stack to returning its index
 */
 
