@@ -18,12 +18,10 @@
 
 int	*ft_get_cost_arr(t_list **stack, int *cost_arr)
 {
-	// t_list	*tmp;
 	int		stack_size;
 	int		mid;
 	int		i;
 
-	// tmp = (*stack);
 	stack_size = ft_get_stack_size(stack);
 	cost_arr = (int *)malloc(sizeof(int) * stack_size);
 	if (!cost_arr)
