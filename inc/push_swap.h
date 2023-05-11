@@ -47,6 +47,7 @@ void		ft_push_from_b_to_a(t_list **a, t_list **b);
 
 /* COST */
 int			*ft_get_cost_arr(t_list **stack, int *cost_arr);
+int			*ft_get_pos_arr(t_list **stack, int *pos_arr);
 
 /* OPERATIONS */
 void		ft_pa(t_list **b, t_list **a);
