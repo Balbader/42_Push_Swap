@@ -12,20 +12,23 @@
 
 #include "push_swap.h"
 
-int	*ft_init_entries_arr(int ac, char **av, int *arr)
+int	*ft_init_entries_arr(int ac, char **av, int *entries_arr)
 {
 	int	i;
 	int	j;
 
+	entries_arr = (int *)malloc(sizeof(int) * (ac - 1));
+	if (!entries_arr)
+		return (0);
 	j = 1;
 	i = 0;
 	while (i < ac - 1)
 	{
-		arr[i] = ft_get_entry(av[j]);
+		entries_arr[i] = ft_get_entry(av[j]);
 		++i;
 		++j;
 	}
-	return (arr);
+	return (entries_arr);
 }
 
 void	ft_check_entries(int *arr, int arr_size)
@@ -49,15 +52,10 @@ int	main(int ac, char **av)
 	a = NULL;
 	b = NULL;
 	entries_arr = NULL;
-	entries_arr = (int *)malloc(sizeof(int) * (ac - 1));
-	if (!entries_arr)
-		return (0);
 	entries_arr = ft_init_entries_arr(ac, av, entries_arr);
 	ft_check_entries(entries_arr, (ac - 1));
 	ft_find_doubles(entries_arr, (ac - 1));
 	a = ft_init_stack(a, entries_arr, ac - 1);
-	// ft_print_stack(&a, "a");
-	// printf("\n");
 	free(entries_arr);
 	if ((ac - 1) <= 5)
 		ft_small_sort(&a, &b, ac - 1);
