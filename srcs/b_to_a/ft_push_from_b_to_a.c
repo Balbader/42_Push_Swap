@@ -56,25 +56,28 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 
 	printf("\n");
 
-	int	big_bro_idx;
-	big_bro_idx = 0;
-
+	// int	big_bro_idx;
+	// big_bro_idx = 0;
+	// big_bro_idx = ft_find_big_bro_idx(a, a_pos_to_ra[i]);
+	// printf("big_bro_idx: %d\n", big_bro_idx);
 
 	for (int i = 0; i < b_size; ++i) {
-		// printf("a_cost[%d]: %d\n", i, a_cost[i]);
-		// printf("b_cost[%d]: %d\n", i, b_cost[i]);
-		// printf("tot_cost_arr[%d]: %d\n", i, tot_cost_arr[i]);
-		// printf("a_pos_to_ra[%d]: %d\n", i, a_pos_to_ra[i]);
-		big_bro_idx = ft_find_big_bro_idx(a, a_pos_to_ra[i]);
-		printf("big_bro_idx: %d\n", big_bro_idx);
+		printf("tot_cost_arr[%d]: %d\n", i, tot_cost_arr[i]);
+		printf("a_pos_to_ra[%d]: %d\n", i, a_pos_to_ra[i]);
 		printf("\n");
 	}
 
+	int	cheap;
+	cheap = 0;
+	cheap = ft_fetch_cheapest(tot_cost_arr, b);
+	printf("cheap: %d\n", cheap);
+
+	printf("a_pos_to_ra[%d]: %d\n", cheap, a_pos_to_ra[cheap]);
 	free(a_pos);
 	free(b_pos);
 	// free(a_cost);
 	// free(b_cost);
 	free(tot_cost_arr);
 	free(a_pos_to_ra);
-	free(a_final_cost_arr);
+	// free(a_final_cost_arr);
 }
