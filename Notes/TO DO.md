@@ -9,6 +9,6 @@
 		+ ft_get_pos_arr(): *ok*
 
 + Check all b_to_a functions:
-	1. ft_find_biggest_closes_a_node_idx.c:
+	1. ft_find_biggest_closes_a_node_pos.c:
 		+ ft_get_pos_to_find(): *ok*
-		+ ft_find_big_close_a_node_idx(): *ok*
+		+ ft_find_big_close_a_node_pos(): *ok*
