@@ -29,6 +29,10 @@ static void	ft_free_data(int *d1, int *d2, int *d3, int *d4)
 	free(d4);
 }
 
+// static void	ft_push_to_a(t_list **a, t_list **b)
+// {
+// }
+
 void	ft_push_from_b_to_a(t_list **a, t_list **b)
 {
 	t_data	data;
@@ -36,6 +40,9 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 
 	ft_re_init_index(*a);
 	ft_re_init_index(*b);
+	ft_print_stack(a, "a");
+	ft_print_stack(b, "b");
+	printf("\n");
 	data.b_size = ft_get_stack_size(b);
 	data.a_pos = ft_get_pos_arr(a);
 	data.b_pos = ft_get_pos_arr(b);
@@ -46,7 +53,13 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	data.tot_cost_arr = ft_get_total_cost_arr(a, b, data.tot_cost_arr);
 	data.a_pos_to_ra
 		= ft_find_big_close_a_node_pos(a, b, data.a_pos, data.b_pos);
+	printf("tot_cost_arr[%d]: %d\n", 4, data.tot_cost_arr[4]);
+	printf("a_pos_to_ra[%d]: %d\n", 4, data.a_pos_to_ra[4]);
+	printf("b_pos[%d]: %d\n", 4, data.b_pos[4]);
 	cheap = ft_fetch_cheapest(data.tot_cost_arr, b);
 	printf("cheap: %d\n", cheap);
+	// printf("tot_cost_arr[%d]: %d\n", cheap, data.tot_cost_arr[cheap]);
+	// printf("a_pos_to_ra[%d]: %d\n", cheap, data.a_pos_to_ra[cheap]);
+	// printf("b_pos[%d]: %d\n", cheap, data.b_pos[cheap]);
 	ft_free_data(data.a_pos, data.b_pos, data.tot_cost_arr, data.a_pos_to_ra);
 }
