@@ -24,6 +24,26 @@ static int	ft_check_a_pos(t_list **a, int big_bro_idx)
 	return (0);
 }
 
+int	ft_fetch_cheapest(int *tot_cost_arr, t_list **b)
+{
+	int	cheapest;
+	int	b_size;
+	int	i;
+
+	b_size = ft_get_stack_size(b);
+	cheapest = INT_MAX;
+	i = 0;
+	while (i < b_size)
+	{
+		if (tot_cost_arr[i] < 0)
+			tot_cost_arr[i] *= -1;
+		if (tot_cost_arr[i] < cheapest)
+			cheapest = i;
+		++i;
+	}
+	return (cheapest);
+}
+
 void	ft_reorder_a(t_list **a, int big_bro_idx)
 {
 	int	i;
