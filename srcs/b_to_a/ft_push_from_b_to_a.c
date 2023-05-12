@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static int	ft_get_incoming_idx(t_list **a, int	big_bro_pos, int idx)
+static int	ft_get_incoming_idx(t_list **a, int big_bro_pos, int idx)
 {
 	t_list	*tmp;
 	int		a_size;
@@ -63,25 +63,29 @@ static void	ft_rotate_a(t_list **a, int big_bro_pos)
 	}
 }
 
+static void	ft_free_pos(int *pos_a, int *pos_b)
+{
+	free(pos_a);
+	free(pos_b);
+}
+
 static void	ft_re_init_stacks_index(t_list **a, t_list **b)
 {
 	ft_re_init_index(*a);
 	ft_re_init_index(*b);
 }
 
-void	ft_push_from_b_to_a(t_list **a, t_list **b)
+void	ft_push_from_b_to_a(t_list **a, t_list **b, int ac)
 {
 	int	*pos_a;
 	int	*pos_b;
 	int	big_bro_pos;
 	int	i;
-	int b_size;
 
 	pos_a = NULL;
 	pos_b = NULL;
-	b_size = ft_get_stack_size(b);
 	i = 0;
-	while (i < b_size)
+	while (i < ac - 1)
 	{
 		ft_re_init_stacks_index(a, b);
 		pos_a = ft_get_pos_arr(a, pos_a);
@@ -89,18 +93,7 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 		big_bro_pos = ft_get_big_bro_pos(a, pos_a, pos_b[0]);
 		ft_rotate_a(a, big_bro_pos);
 		ft_pa(a, b);
+		ft_free_pos(pos_a, pos_b);
 		++i;
 	}
-	ft_re_init_stacks_index(a, b);
-	pos_a = ft_get_pos_arr(a, pos_a);
-	pos_b = ft_get_pos_arr(b, pos_b);
-	big_bro_pos = ft_get_big_bro_pos(a, pos_a, pos_b[0]);
-	ft_rotate_a(a, big_bro_pos);
-	ft_pa(a, b);
-
-	ft_re_init_index(*a);
-	ft_print_stack(a, "a");
-
-	free(pos_a);
-	free(pos_b);
 }
