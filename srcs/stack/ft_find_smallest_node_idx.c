@@ -20,17 +20,17 @@ int	ft_find_smallest_node_idx(t_list **stack)
 
 	if (!stack)
 		return (0);
+	ft_re_init_index(*stack);
+	tmp = NULL;
 	tmp = (*stack);
-	data = tmp->data;
-	index = tmp->index;
+	data = ft_find_smallest_node_data(stack);
+	index = INT_MAX;
 	while (tmp)
 	{
-		if (tmp->data < data)
-		{
-			data = tmp->data;
+		if (tmp->data == data)
 			index = tmp->index;
-		}
 		tmp = tmp->next;
 	}
+	ft_free_stack(&tmp);
 	return (index);
 }

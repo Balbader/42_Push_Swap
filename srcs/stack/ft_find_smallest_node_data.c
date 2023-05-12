@@ -19,6 +19,7 @@ int	ft_find_smallest_node_data(t_list **stack)
 
 	if (!stack)
 		return (0);
+	tmp = NULL;
 	tmp = (*stack);
 	data = tmp->data;
 	while (tmp)
@@ -27,5 +28,6 @@ int	ft_find_smallest_node_data(t_list **stack)
 			data = tmp->data;
 		tmp = tmp->next;
 	}
+	ft_free_stack(&tmp);
 	return (data);
 }

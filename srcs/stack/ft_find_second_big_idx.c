@@ -37,5 +37,6 @@ int	ft_find_second_big_idx(t_list **stack)
 		++i;
 		tmp = tmp->next;
 	}
+	ft_free_stack(&tmp);
 	return (second_idx);
 }

@@ -19,6 +19,7 @@ int	ft_find_first_big_data(t_list **stack)
 
 	if (!stack)
 		return (0);
+	tmp = NULL;
 	tmp = (*stack);
 	big_data = INT_MIN;
 	while (tmp)
@@ -27,5 +28,6 @@ int	ft_find_first_big_data(t_list **stack)
 			big_data = tmp->data;
 		tmp = tmp->next;
 	}
+	ft_free_stack(&tmp);
 	return (big_data);
 }

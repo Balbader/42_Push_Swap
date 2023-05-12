@@ -20,6 +20,7 @@ int	ft_find_first_big_idx(t_list **stack)
 
 	if (!stack)
 		return (0);
+	tmp = NULL;
 	tmp = (*stack);
 	data = tmp->data;
 	index = tmp->index;
@@ -32,5 +33,6 @@ int	ft_find_first_big_idx(t_list **stack)
 		}
 		tmp = tmp->next;
 	}
+	ft_free_stack(&tmp);
 	return (index);
 }

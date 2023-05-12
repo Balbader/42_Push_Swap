@@ -30,5 +30,6 @@ int	ft_find_second_big_data(t_list **stack)
 			second_data = tmp->data;
 		tmp = tmp->next;
 	}
+	ft_free_stack(&tmp);
 	return (second_data);
 }
