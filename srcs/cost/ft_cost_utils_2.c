@@ -71,7 +71,8 @@ int	*ft_get_final_b_cost_arr(t_list **a, t_list **b, int *final_b_cost_arr)
 	return (final_b_cost_arr);
 }
 
-int	ft_get_final_cheapest_idx(int *final_b_cost_arr, int cheapest_idx, int b_size)
+int	ft_get_final_cheapest_idx(int *final_b_cost_arr, int cheapest_idx,
+							int b_size)
 {
 	int	i;
 
@@ -83,6 +84,8 @@ int	ft_get_final_cheapest_idx(int *final_b_cost_arr, int cheapest_idx, int b_siz
 			final_b_cost_arr[i] *= -1;
 		if (final_b_cost_arr[i] < cheapest_idx)
 			cheapest_idx = i;
+		++i;
 	}
+	free(final_b_cost_arr);
 	return (cheapest_idx);
 }
