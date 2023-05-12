@@ -33,6 +33,8 @@ void	ft_get_final_b_cost_arr(t_list **a, t_list **b)
 	ft_re_init_index(*a);
 	data.a_pos = NULL;
 	data.a_pos = ft_get_pos_arr(a, data.a_pos);
+	data.a_cost = NULL;
+	data.a_cost = ft_get_cost_arr(a, data.a_pos);
 	data.lil_bro_pos = 0;
 	data.big_bro_pos = 0;
 	data.big_bro_idx = 0;
@@ -40,7 +42,4 @@ void	ft_get_final_b_cost_arr(t_list **a, t_list **b)
 	data.big_bro_pos = ft_get_big_bro_pos(a, data.a_pos, data.lil_bro_pos);
 	data.big_bro_idx = ft_get_incoming_idx(a, data.big_bro_pos,
 									data.big_bro_idx);
-	printf("data.big_bro_pos: [%d]\n", data.big_bro_pos);
-	printf("data.big_bro_idx: [%d]\n", data.big_bro_idx);
-
 }
