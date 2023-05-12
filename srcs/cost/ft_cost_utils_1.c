@@ -97,7 +97,6 @@ int	ft_get_cheapest_lil_bro_idx(t_list **b, int lil_bro_idx)
 	return (free(b_cost_arr), lil_bro_idx);
 }
 
-
 /*
  * Returns the pos of the cheapest b_node to bring to top of b_stack
 */
