@@ -87,7 +87,7 @@ int	ft_get_cheapest_lil_bro_idx(t_list **b, int lil_bro_idx)
 	{
 		if (b_cost_arr[i] < 0)
 			b_cost_arr[i] *= -1;
-		if (b_cost_arr[i] < cheapest )
+		if (b_cost_arr[i] < cheapest)
 		{
 			cheapest = b_cost_arr[i];
 			lil_bro_idx = i;
