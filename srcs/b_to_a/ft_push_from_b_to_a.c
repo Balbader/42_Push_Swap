@@ -32,7 +32,7 @@ static int	ft_get_incoming_idx(t_list **a, int	big_bro_pos, int idx)
 	return (idx);
 }
 
-static void	ft_reorder_a(t_list **a, int big_bro_pos)
+static void	ft_rotate_a(t_list **a, int big_bro_pos)
 {
 	int	a_size;
 	int	mid;
@@ -41,7 +41,6 @@ static void	ft_reorder_a(t_list **a, int big_bro_pos)
 
 	idx = 0;
 	idx = ft_get_incoming_idx(a, big_bro_pos, idx);
-	printf("incomin_idx: %d\n", idx);
 	a_size = ft_get_stack_size(a);
 	mid = a_size / 2;
 	if (idx <= mid)
@@ -64,6 +63,12 @@ static void	ft_reorder_a(t_list **a, int big_bro_pos)
 	}
 }
 
+static void	ft_re_init_stacks_index(t_list **a, t_list **b)
+{
+	ft_re_init_index(*a);
+	ft_re_init_index(*b);
+}
+
 void	ft_push_from_b_to_a(t_list **a, t_list **b)
 {
 	int	*pos_a;
@@ -72,33 +77,30 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	int	i;
 	int b_size;
 
-	ft_re_init_index(*a);
-	ft_re_init_index(*b);
-	// ft_print_stack(b, "b");
-	// ft_print_stack(a, "a");
-	// printf("\n");
 	pos_a = NULL;
 	pos_b = NULL;
-	// printf("big_bro_idx: %d\n", big_bro_idx);
 	b_size = ft_get_stack_size(b);
 	i = 0;
-	while (i < 2)
+	while (i < b_size)
 	{
-		printf("---------------------> %d\n", i + 1);
-		ft_re_init_index(*a);
-		ft_re_init_index(*b);
-		b_size = ft_get_stack_size(b);
+		ft_re_init_stacks_index(a, b);
 		pos_a = ft_get_pos_arr(a, pos_a);
 		pos_b = ft_get_pos_arr(b, pos_b);
-		big_bro_pos = ft_get_big_bro_pos(a, pos_a, pos_b[i]);
-		ft_print_stack(b, "b");
-		ft_print_stack(a, "a");
-		printf("pos_b[%d]: %d\n", i, pos_b[i]);
-		printf("big_bro_pos: %d\n", big_bro_pos);
-		ft_reorder_a(a, big_bro_pos);
+		big_bro_pos = ft_get_big_bro_pos(a, pos_a, pos_b[0]);
+		ft_rotate_a(a, big_bro_pos);
 		ft_pa(a, b);
 		++i;
 	}
+	ft_re_init_stacks_index(a, b);
+	pos_a = ft_get_pos_arr(a, pos_a);
+	pos_b = ft_get_pos_arr(b, pos_b);
+	big_bro_pos = ft_get_big_bro_pos(a, pos_a, pos_b[0]);
+	ft_rotate_a(a, big_bro_pos);
+	ft_pa(a, b);
+
+	ft_re_init_index(*a);
+	ft_print_stack(a, "a");
+
 	free(pos_a);
 	free(pos_b);
 }
