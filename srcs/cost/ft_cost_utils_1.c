@@ -27,7 +27,7 @@ int	ft_get_big_bro_idx(t_list **a, int *a_pos, int incoming_pos)
 
 	tmp = (*a);
 	a_size = ft_get_stack_size(a);
-	big_bro_idx = 0;
+	big_bro_idx = tmp->index;
 	i = 0;
 	while (i < a_size)
 	{
@@ -62,20 +62,27 @@ int	ft_get_big_bro_pos(t_list **a, int *a_pos, int incoming_pos)
 
 	tmp = (*a);
 	a_size = ft_get_stack_size(a);
-	big_bro_pos = 0;
+	printf("incoming_pos: %d\n", incoming_pos);
+	big_bro_pos = INT_MAX;
 	i = 0;
 	while (i < a_size)
 	{
 		closest = a_pos[i] - incoming_pos;
-		if (closest < 0)
-			closest *= -1;
+		// if (closest < 0)
+		// 	closest *= -1;
 		if (a_pos[i] - incoming_pos < closest)
 		{
-			printf("a_pos[%d]: %d\n", i, a_pos[i]);
+			++i;
+			tmp = tmp->next;
+		}
+		else
+		{
 			closest = a_pos[i];
 			big_bro_pos = tmp->pos;
+			tmp = tmp->next;
+			// printf("a_pos[%d]: %d\n", i, a_pos[i]);
+			// printf("closest: %d\n", closest);
 		}
-		tmp = tmp->next;
 		++i;
 	}
 	ft_free_stack(&tmp);
