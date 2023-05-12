@@ -71,12 +71,16 @@ static void	ft_free_pos(int *pos_a, int *pos_b)
 void	ft_push_from_b_to_a(t_list **a, t_list **b)
 {
 	int	*final_b_cost_arr;
+	int	cheapest_idx;
+	int	b_size;
 
+	b_size = ft_get_stack_size(b);
+	cheapest_idx = 0;
 	final_b_cost_arr = NULL;
 	final_b_cost_arr = ft_get_final_b_cost_arr(a, b, final_b_cost_arr);
-	for (int i = 0; i < 7; ++i) {
-		printf("final_b_cost_arr[%d]: %d\n", i, final_b_cost_arr[i]);
-	}
+	cheapest_idx = ft_get_final_cheapest_idx(final_b_cost_arr, cheapest_idx,
+			b_size);
+	printf("cheapest_idx: %d\n", cheapest_idx);
 }
 
 /*
