@@ -71,6 +71,7 @@ int	ft_get_big_bro_pos(t_list **a, int *a_pos, int incoming_pos)
 			closest *= -1;
 		if (a_pos[i] - incoming_pos < closest)
 		{
+			printf("a_pos[%d]: %d\n", i, a_pos[i]);
 			closest = a_pos[i];
 			big_bro_pos = tmp->pos;
 		}
