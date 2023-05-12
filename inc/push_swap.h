@@ -44,6 +44,7 @@ t_list		*ft_pre_sort_stack(t_list *rand_stack);
 
 /* B_TO_A */
 int			ft_get_incoming_idx(t_list **a, int big_bro_pos, int idx);
+// void		ft_push_from_b_to_a(t_list **a, t_list **b, int ac);
 void		ft_push_from_b_to_a(t_list **a, t_list **b);
 void		ft_re_init_stacks_index(t_list **a, t_list **b);
 void		ft_do_ra(t_list **a, int idx);
