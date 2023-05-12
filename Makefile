@@ -23,7 +23,9 @@ ACTIONS_FILES		:=	\
 ACTIONS				:=	$(addprefix $(ACTIONS_DIR), $(ACTIONS_FILES))
 
 B_TO_A_DIR			:=	b_to_a/
-B_TO_A_FILES		:=	ft_push_from_b_to_a.c
+B_TO_A_FILES		:=	\
+						ft_push_from_b_to_a.c \
+						ft_push_from_b_to_a_utils.c
 B_TO_A				:=	$(addprefix $(B_TO_A_DIR), $(B_TO_A_FILES))
 
 COST_DIR			:=	cost/
