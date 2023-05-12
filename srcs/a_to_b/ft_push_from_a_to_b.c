@@ -58,5 +58,6 @@ void	ft_push_from_a_to_b(t_list **a, t_list **b)
 	ft_assign_pos(a);
 	ft_push_small_half(a, b, a_size);
 	ft_push_big_half(a, b, a_size);
+	ft_print_stack(a, "a");
 	ft_sort_3(a);
 }
