@@ -20,10 +20,10 @@
 int	ft_get_big_bro_idx(t_list **a, int *a_pos, int incoming_pos)
 {
 	t_list	*tmp;
-	int	big_bro_idx;
-	int	closest;
-	int	a_size;
-	int	i;
+	int		big_bro_idx;
+	int		closest;
+	int		a_size;
+	int		i;
 
 	tmp = (*a);
 	a_size = ft_get_stack_size(a);
@@ -43,7 +43,6 @@ int	ft_get_big_bro_idx(t_list **a, int *a_pos, int incoming_pos)
 	ft_free_stack(&tmp);
 	return (big_bro_idx);
 }
-
 
 /*
  * Returns the pos of the a_node to bring to top of a_stack based on incoming
