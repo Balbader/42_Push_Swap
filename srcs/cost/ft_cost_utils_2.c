@@ -26,7 +26,7 @@ typedef struct s_data
 	int	b_size;
 }				t_data;
 
-void	ft_get_final_b_cost_arr(t_list **a, t_list **b)
+static int	ft_get_cheapest_big_bro_idx(t_list **a, t_list **b)
 {
 	t_data	data;
 
@@ -42,4 +42,14 @@ void	ft_get_final_b_cost_arr(t_list **a, t_list **b)
 	data.big_bro_pos = ft_get_big_bro_pos(a, data.a_pos, data.lil_bro_pos);
 	data.big_bro_idx = ft_get_incoming_idx(a, data.big_bro_pos,
 									data.big_bro_idx);
+	return (data.big_bro_idx);
+}
+
+void	ft_get_final_b_cost_arr(t_list **a, t_list **b)
+{
+	t_data	data;
+
+	data.big_bro_idx = 0;
+	data.big_bro_idx = ft_get_cheapest_big_bro_idx(a, b);
+	printf("data.big_bro_idx: %d\n", data.big_bro_idx);
 }
