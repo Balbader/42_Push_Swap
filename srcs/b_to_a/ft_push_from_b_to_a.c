@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+/*
 void	ft_do_ra(t_list **a, int idx)
 {
 	int	i;
@@ -57,7 +58,23 @@ static void	ft_free_pos(int *pos_a, int *pos_b)
 	free(pos_a);
 	free(pos_b);
 }
+*/
 
+/*
+	* find cheapest (b_cost + a_cost)
+	* Get big_bro_pos based on cheapest
+	* ft_rotate_a(a, big_bro_pos);
+	* Get lil_bro_pos based on cheapest
+	* ft_rotate_b(b, lil_bro_pos);
+	* ft_pa
+*/
+void	ft_push_from_b_to_a(t_list **a, t_list **b)
+{
+	(void)a;
+	(void)b;
+}
+
+/*
 void	ft_push_from_b_to_a(t_list **a, t_list **b)
 {
 	int	*pos_a;
@@ -83,3 +100,4 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	}
 	ft_reorder_a(a);
 }
+*/

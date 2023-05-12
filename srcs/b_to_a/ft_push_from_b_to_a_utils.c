@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+/*
 int	ft_get_incoming_idx(t_list **a, int big_bro_pos, int idx)
 {
 	t_list	*tmp;
@@ -52,3 +53,4 @@ void	ft_reorder_a(t_list **a)
 	else if (smallest_idx > mid)
 		ft_do_rra(a, smallest_idx, a_size);
 }
+*/
