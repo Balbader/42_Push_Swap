@@ -15,7 +15,6 @@
 /*
  * Retruns an array with the cost of bringing each node to top of the stack
 */
-
 int	*ft_get_cost_arr(t_list **stack, int *cost_arr)
 {
 	int		stack_size;
@@ -42,7 +41,6 @@ int	*ft_get_cost_arr(t_list **stack, int *cost_arr)
 /*
  * Returns an array containing the final position of each node in given stack
 */
-
 int	*ft_get_pos_arr(t_list **stack, int *pos_arr)
 {
 	t_list	*tmp;
