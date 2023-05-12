@@ -32,7 +32,6 @@ int	ft_get_incoming_idx(t_list **a, int big_bro_pos, int idx)
 	return (idx);
 }
 
-/*
 void	ft_re_init_stacks_index(t_list **a, t_list **b)
 {
 	ft_re_init_index(*a);
@@ -53,4 +52,3 @@ void	ft_reorder_a(t_list **a)
 	else if (smallest_idx > mid)
 		ft_do_rra(a, smallest_idx, a_size);
 }
-*/
