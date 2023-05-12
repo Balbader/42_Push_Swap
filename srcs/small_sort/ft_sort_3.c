@@ -51,20 +51,31 @@ void	ft_sort_3(t_list **stack)
 		return ;
 	arr = ft_init_arr_3(*stack, arr);
 	if (ft_find_case_3(arr) == 1)
+	{
+		printf("case: %d\n", 1);
 		ft_sa(stack);
+	}
 	if (ft_find_case_3(arr) == 2)
 	{
+		printf("case: %d\n", 2);
 		ft_sa(stack);
 		ft_rra(stack);
 	}
 	if (ft_find_case_3(arr) == 3)
+	{
+		printf("case: %d\n", 3);
 		ft_ra(stack);
+	}
 	if (ft_find_case_3(arr) == 4)
 	{
+		printf("case: %d\n", 4);
 		ft_sa(stack);
 		ft_ra(stack);
 	}
 	if (ft_find_case_3(arr) == 5)
+	{
+		printf("case: %d\n", 5);
 		ft_rra(stack);
+	}
 	free(arr);
 }
