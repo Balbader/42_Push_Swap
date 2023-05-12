@@ -34,13 +34,11 @@ static void	ft_push_big_half(t_list **a, t_list **b, int a_size)
 	int	first;
 	int	second;
 	int	third;
-	// int	mid;
 	int	i;
 
 	first = ft_find_first_big_data(a);
 	second = ft_find_second_big_data(a);
 	third = ft_find_third_big_data(a);
-	// mid = a_size / 2;
 	i = 0;
 	while (i < a_size)
 	{
