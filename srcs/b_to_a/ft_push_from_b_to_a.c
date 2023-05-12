@@ -70,7 +70,13 @@ static void	ft_free_pos(int *pos_a, int *pos_b)
 */
 void	ft_push_from_b_to_a(t_list **a, t_list **b)
 {
-	ft_get_final_b_cost_arr(a, b);
+	int	*final_b_cost_arr;
+
+	final_b_cost_arr = NULL;
+	final_b_cost_arr = ft_get_final_b_cost_arr(a, b, final_b_cost_arr);
+	for (int i = 0; i < 7; ++i) {
+		printf("final_b_cost_arr[%d]: %d\n", i, final_b_cost_arr[i]);
+	}
 }
 
 /*
