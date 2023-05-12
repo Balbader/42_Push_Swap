@@ -26,9 +26,7 @@ typedef struct s_data
 	int	b_size;
 }				t_data;
 
-/*
- * Returns an arr with the total cost of moving each b_node to a_stack
-*/
+
 int	*ft_get_final_b_cost_arr(t_list **a, t_list **b)
 {
 	t_data	data;
