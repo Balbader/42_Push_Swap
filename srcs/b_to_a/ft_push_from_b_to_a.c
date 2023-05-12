@@ -17,15 +17,15 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	int	*cost_a;
 	int	*cost_b;
 	int	*pos_a;
-	int	pos_b[3] = {22, 44, 5};
+	int	pos_b[3] = {16, 14, 15};
 	// int	*pos_b;
 	int	big_bro_idx;
 	int	big_bro_pos;
 
 	ft_re_init_index(*a);
 	ft_re_init_index(*b);
-	ft_print_stack(a, "a");
 	ft_print_stack(b, "b");
+	ft_print_stack(a, "a");
 	printf("\n");
 	cost_a = NULL;
 	cost_b = NULL;
