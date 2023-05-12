@@ -17,7 +17,3 @@
  * Get the cheapest a_node_idx (big_bro_idx) && b_node_idx (lil_bro_idx)
 */
 
-/*
- * Returns an arr with the total cost of moving each b_node to a_stack
-*/
-
