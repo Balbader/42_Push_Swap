@@ -74,7 +74,6 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	int	*pos_a;
 	int	*pos_b;
 	int	big_bro_pos;
-	int	i;
 	int	b_size;
 
 	cheapest_idx = 0;
@@ -82,10 +81,10 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	pos_a = NULL;
 	pos_b = NULL;
 	b_size = ft_get_stack_size(b);
-	i = 0;
-	while (i < b_size)
+	while (*b)
 	{
 		ft_re_init_stacks_index(a, b);
+		b_size = ft_get_stack_size(b);
 		final_b_cost_arr = ft_get_final_b_cost_arr(a, b, final_b_cost_arr);
 		cheapest_idx = ft_get_final_cheapest_idx(final_b_cost_arr, cheapest_idx,
 				b_size);
@@ -95,7 +94,6 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 		ft_rotate_a(a, big_bro_pos);
 		ft_pa(a, b);
 		ft_free_pos(pos_a, pos_b);
-		++i;
 	}
 	ft_reorder_a(a);
 }
