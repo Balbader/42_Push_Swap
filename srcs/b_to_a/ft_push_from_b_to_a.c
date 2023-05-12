@@ -75,21 +75,24 @@ static void	ft_re_init_stacks_index(t_list **a, t_list **b)
 	ft_re_init_index(*b);
 }
 
-void	ft_push_from_b_to_a(t_list **a, t_list **b, int ac)
+void	ft_push_from_b_to_a(t_list **a, t_list **b)
 {
 	int	*pos_a;
 	int	*pos_b;
 	int	big_bro_pos;
 	int	i;
+	int	b_size;
 
 	pos_a = NULL;
 	pos_b = NULL;
+	b_size = ft_get_stack_size(b);
 	i = 0;
-	while (i < ac - 1)
+	while (i < b_size)
 	{
 		ft_re_init_stacks_index(a, b);
 		pos_a = ft_get_pos_arr(a, pos_a);
 		pos_b = ft_get_pos_arr(b, pos_b);
+		printf("pos_b[0]: %d\n", pos_b[0]);
 		big_bro_pos = ft_get_big_bro_pos(a, pos_a, pos_b[0]);
 		ft_rotate_a(a, big_bro_pos);
 		ft_pa(a, b);
