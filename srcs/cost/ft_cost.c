@@ -64,3 +64,7 @@ int	*ft_get_pos_arr(t_list **stack, int *pos_arr)
 	ft_free_stack(&tmp);
 	return (pos_arr);
 }
+
+/*
+ *
+*/
