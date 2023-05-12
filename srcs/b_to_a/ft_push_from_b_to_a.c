@@ -17,7 +17,8 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	int	*cost_a;
 	int	*cost_b;
 	int	*pos_a;
-	int	*pos_b;
+	int	pos_b[3] = {22, 44, 5};
+	// int	*pos_b;
 	int	big_bro_idx;
 	int	big_bro_pos;
 
@@ -39,14 +40,14 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	// }
 	// printf("\n");
 	pos_a = NULL;
-	pos_b = NULL;
+	// pos_b = NULL;
 	pos_a = ft_get_pos_arr(a, pos_a);
-	pos_b = ft_get_pos_arr(b, pos_b);
+	// pos_b = ft_get_pos_arr(b, pos_b);
 	// for (int i = 0; i < 3; ++i) {
 	// 	printf("pos_a[%d]: %d\n", i, pos_a[i]);
 	// }
 	printf("\n");
-	for (int i = 0; i < 7; ++i) {
+	for (int i = 0; i < 3; ++i) {
 		big_bro_idx = ft_get_big_bro_idx(a, pos_a, pos_b[i]);
 		big_bro_pos = ft_get_big_bro_pos(a, pos_a, pos_b[i]);
 		printf("big_bro_idx: %d\n", big_bro_idx);
@@ -57,5 +58,5 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	free(cost_a);
 	free(cost_b);
 	free(pos_a);
-	free(pos_b);
+	// free(pos_b);
 }
