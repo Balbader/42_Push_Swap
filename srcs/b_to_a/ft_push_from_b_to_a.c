@@ -71,10 +71,16 @@ static void	ft_free_pos(int *pos_a, int *pos_b)
 void	ft_push_from_b_to_a(t_list **a, t_list **b)
 {
 	int	cheapest_lil_bro_idx;
+	int	cheapest_lil_bro_pos;
 	(void)a;
+
 	cheapest_lil_bro_idx = 0;
+	cheapest_lil_bro_pos = 0;
+
 	cheapest_lil_bro_idx = ft_get_cheapest_lil_bro_idx(b, cheapest_lil_bro_idx);
+	cheapest_lil_bro_pos = ft_get_cheapest_lil_bro_pos(b, cheapest_lil_bro_pos);
 	printf("cheapest_lil_bro_idx: [%d]\n", cheapest_lil_bro_idx);
+	printf("cheapest_lil_bro_pos: (%d)\n", cheapest_lil_bro_pos);
 }
 
 /*
