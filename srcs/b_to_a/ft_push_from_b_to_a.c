@@ -72,7 +72,6 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 {
 	int	cheapest_lil_bro_idx;
 	int	cheapest_lil_bro_pos;
-	(void)a;
 
 	cheapest_lil_bro_idx = 0;
 	cheapest_lil_bro_pos = 0;
@@ -81,6 +80,12 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	cheapest_lil_bro_pos = ft_get_cheapest_lil_bro_pos(b, cheapest_lil_bro_pos);
 	printf("cheapest_lil_bro_idx: [%d]\n", cheapest_lil_bro_idx);
 	printf("cheapest_lil_bro_pos: (%d)\n", cheapest_lil_bro_pos);
+	printf("\n");
+
+	int	*tot_b_cost_arr;
+
+	tot_b_cost_arr = NULL;
+	tot_b_cost_arr = ft_get_final_b_cost_arr(a, b, tot_b_cost_arr);
 }
 
 /*
