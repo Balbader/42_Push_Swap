@@ -53,12 +53,11 @@ void		ft_reorder_a(t_list **a);
 /* COST */
 int			*ft_get_cost_arr(t_list **stack, int *cost_arr);
 int			*ft_get_pos_arr(t_list **stack, int *pos_arr);
-int			*ft_get_final_b_cost_arr(t_list **a, t_list **b,
-							int *tot_b_cost, int lil_bro_idx);
 int			ft_get_big_bro_idx(t_list **a, int *a_pos, int incoming_pos);
 int			ft_get_big_bro_pos(t_list **a, int *a_pos, int incoming_pos);
 int			ft_get_cheapest_lil_bro_idx(t_list **b, int lil_bro_idx);
 int			ft_get_cheapest_lil_bro_pos(t_list **b, int lil_bro_pos);
+void		ft_get_final_b_cost_arr(t_list **a, t_list **b);
 
 /* OPERATIONS */
 void		ft_pa(t_list **b, t_list **a);
