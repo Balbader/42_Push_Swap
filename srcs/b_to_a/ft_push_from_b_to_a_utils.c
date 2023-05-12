@@ -12,7 +12,6 @@
 
 #include "push_swap.h"
 
-/*
 int	ft_get_incoming_idx(t_list **a, int big_bro_pos, int idx)
 {
 	t_list	*tmp;
@@ -33,6 +32,7 @@ int	ft_get_incoming_idx(t_list **a, int big_bro_pos, int idx)
 	return (idx);
 }
 
+/*
 void	ft_re_init_stacks_index(t_list **a, t_list **b)
 {
 	ft_re_init_index(*a);
