@@ -14,5 +14,5 @@
 		+ ft_find_big_close_a_node_pos(): *ok*
   
 + white functions:
-	+ *ft_get_lil_bro_idx.c*
-	+ *ft_get_lil_bro_pos.c*
+	+ *ft_get_lil_bro_idx.c*: ***OK***
+	+ *ft_get_lil_bro_pos.c*: ***OK***
