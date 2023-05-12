@@ -43,7 +43,7 @@ void		ft_assign_pos(t_list **a);
 t_list		*ft_pre_sort_stack(t_list *rand_stack);
 
 /* B_TO_A */
-void		ft_push_from_b_to_a(t_list **a, t_list **b, int ac);
+void		ft_push_from_b_to_a(t_list **a, t_list **b);
 
 /* COST */
 int			*ft_get_cost_arr(t_list **stack, int *cost_arr);
