@@ -61,7 +61,7 @@ static void	ft_push_chunks_to_b(t_list **a, t_list **b, int a_size)
 	{
 		if ((*a)->data == data.first
 			|| (*a)->data == data.second || (*a)->data == data.third)
-				ft_ra(a);
+			ft_ra(a);
 		else
 		{
 			if (data.count == data.new_pivot)
