@@ -91,12 +91,12 @@ void		ft_push_smallest_node_4(t_list **a,
 				t_list **b, int smallest_node_index);
 
 /* STACK */
-int			ft_find_first_big_data(t_list **stack);
-int			ft_find_first_big_idx(t_list **stack);
-int			ft_find_second_big_data(t_list **stack);
-int			ft_find_second_big_idx(t_list **stack);
-int			ft_find_third_big_data(t_list **stack);
-int			ft_find_third_big_idx(t_list **stack);
+int			ft_find_first_big_data(t_list *stack);
+int			ft_find_first_big_idx(t_list *stack);
+int			ft_find_second_big_data(t_list *stack);
+int			ft_find_second_big_idx(t_list *stack);
+int			ft_find_third_big_data(t_list *stack);
+int			ft_find_third_big_idx(t_list *stack);
 int			ft_find_smallest_node_data(t_list **stack);
 int			ft_find_smallest_node_idx(t_list **stack);
 
