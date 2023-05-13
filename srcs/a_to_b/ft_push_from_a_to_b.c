@@ -23,11 +23,24 @@ static int	ft_define_pivot(t_list **a, int pivot)
 	a_size = ft_get_stack_size(a);
 	if (a_size == 100 || a_size == 500)
 		pivot = 10;
-	else
+	else if (a_size > 5 && a_size < 100)
+		pivot = a_size / 5;
+	else if (a_size > 100)
 		pivot = a_size / 10;
 	return (pivot);
 }
 
+static void	ft_push_chunks_to_b(t_list **a, t_list **b)
+{
+	int	pivot;
+
+	(void)b;
+	pivot = 0;
+	pivot = ft_define_pivot(a, pivot);
+	printf("pivot: %d\n", pivot);
+}
+
+/*
 static void	ft_push_small_half(t_list **a, t_list **b, int a_size)
 {
 	int	mid;
@@ -65,6 +78,7 @@ static void	ft_push_big_half(t_list **a, t_list **b, int a_size)
 		++i;
 	}
 }
+*/
 
 void	ft_push_from_a_to_b(t_list **a, t_list **b)
 {
@@ -72,7 +86,8 @@ void	ft_push_from_a_to_b(t_list **a, t_list **b)
 
 	a_size = ft_get_stack_size(a);
 	ft_assign_pos(a);
-	ft_push_small_half(a, b, a_size);
-	ft_push_big_half(a, b, a_size);
-	ft_sort_3(a);
+	ft_push_chunks_to_b(a, b);
+	// ft_push_small_half(a, b, a_size);
+	// ft_push_big_half(a, b, a_size);
+	// ft_sort_3(a);
 }
