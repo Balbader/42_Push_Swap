@@ -12,6 +12,22 @@
 
 #include "push_swap.h"
 
+/*
+ * Returns the reference nbr that will serve to define the chunks size
+ * to create in b
+*/
+static int	ft_define_pivot(t_list **a, int pivot)
+{
+	int	a_size;
+
+	a_size = ft_get_stack_size(a);
+	if (a_size == 100 || a_size == 500)
+		pivot = 10;
+	else
+		pivot = a_size / 10;
+	return (pivot);
+}
+
 static void	ft_push_small_half(t_list **a, t_list **b, int a_size)
 {
 	int	mid;
