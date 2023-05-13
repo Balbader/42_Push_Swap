@@ -16,6 +16,7 @@ typedef struct s_data
 {
 	int	a_size;
 	int	pivot;
+	int	new_pivot;
 	int	count;
 	int	first;
 	int	second;
@@ -49,30 +50,27 @@ static void	ft_push_chunks_to_b(t_list **a, t_list **b)
 	data.first = ft_find_first_big_data(a);
 	data.second = ft_find_second_big_data(a);
 	data.third = ft_find_third_big_data(a);
+	printf("first: %d\n", data.first);
+	printf("second: %d\n", data.second);
+	printf("third: %d\n", data.third);
 	data.pivot = 0;
+	data.new_pivot = data.pivot;
 	data.pivot = ft_define_pivot(a, data.pivot);
-	printf("pivot: %d\n", data.pivot);
 	data.count = 0;
-	data.i = 0;
-	while (data.i < data.a_size)
+	while ((*a) && data.a_size > 3)
 	{
-		if (data.count == data.pivot)
-		{
-			data.pivot += data.pivot;
-			printf("count: %d\n", data.count);
-			printf("pivot: %d\n", data.pivot);
-		}
-		if ((*a)->data == data.first ||
-				(*a)->data == data.second || (*a)->data == data.third)
-			ft_ra(a);
-		if ((*a)->pos <= data.pivot)
+		if (data.count == data.new_pivot)
+			data.new_pivot += data.pivot;
+		if ((*a)->data == data.first
+			|| (*a)->data == data.second || (*a)->data == data.third)
+				ft_ra(a);
+		if ((*a)->pos <= data.new_pivot)
 		{
 			ft_pb(a, b);
+			--data.a_size;
 			++data.count;
 		}
 		ft_ra(a);
-		--data.a_size;
-		// ++data.i;
 	}
 }
 
