@@ -44,7 +44,7 @@ void	ft_reorder_a(t_list **a)
 	int	a_size;
 	int	mid;
 
-	smallest_idx = ft_find_smallest_node_idx(a);
+	smallest_idx = ft_find_smallest_node_idx(*a);
 	a_size = ft_get_stack_size(a);
 	mid = a_size / 2;
 	if (smallest_idx <= mid)
