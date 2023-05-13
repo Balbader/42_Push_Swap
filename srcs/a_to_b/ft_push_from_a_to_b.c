@@ -42,77 +42,40 @@ static int	ft_define_pivot(t_list **a, int pivot)
 	return (pivot);
 }
 
-static void	ft_push_chunks_to_b(t_list **a, t_list **b)
+static void	ft_get_big_trio(t_list *a, t_data *data)
+{
+	data->first = ft_find_first_big_data(a);
+	data->second = ft_find_second_big_data(a);
+	data->third = ft_find_third_big_data(a);
+}
+
+static void	ft_push_chunks_to_b(t_list **a, t_list **b, int a_size)
 {
 	t_data	data;
 
-	data.a_size = ft_get_stack_size(a);
-	data.first = ft_find_first_big_data(a);
-	data.second = ft_find_second_big_data(a);
-	data.third = ft_find_third_big_data(a);
-	printf("first: %d\n", data.first);
-	printf("second: %d\n", data.second);
-	printf("third: %d\n", data.third);
-	data.pivot = 0;
-	data.new_pivot = data.pivot;
+	ft_get_big_trio(*a, &data);
 	data.pivot = ft_define_pivot(a, data.pivot);
+	data.new_pivot = data.pivot;
 	data.count = 0;
-	while ((*a) && data.a_size > 3)
+	while ((*a) && a_size > 3)
 	{
-		if (data.count == data.new_pivot)
-			data.new_pivot += data.pivot;
 		if ((*a)->data == data.first
 			|| (*a)->data == data.second || (*a)->data == data.third)
 				ft_ra(a);
-		if ((*a)->pos <= data.new_pivot)
+		else
 		{
-			ft_pb(a, b);
-			--data.a_size;
-			++data.count;
+			if (data.count == data.new_pivot)
+				data.new_pivot += data.pivot;
+			if ((*a)->pos <= data.new_pivot)
+			{
+				ft_pb(a, b);
+				--a_size;
+				++data.count;
+			}
+			ft_ra(a);
 		}
-		ft_ra(a);
 	}
 }
-
-/*
-static void	ft_push_small_half(t_list **a, t_list **b, int a_size)
-{
-	int	mid;
-	int	i;
-
-	mid = a_size / 2;
-	i = 0;
-	while (i < a_size)
-	{
-		if ((*a)->pos <= mid)
-			ft_pb(a, b);
-		else
-			ft_ra(a);
-		++i;
-	}
-}
-
-static void	ft_push_big_half(t_list **a, t_list **b, int a_size)
-{
-	int	first;
-	int	second;
-	int	third;
-	int	i;
-
-	first = ft_find_first_big_data(a);
-	second = ft_find_second_big_data(a);
-	third = ft_find_third_big_data(a);
-	i = 0;
-	while (i < a_size)
-	{
-		if ((*a)->data == first || (*a)->data == second || (*a)->data == third)
-			ft_ra(a);
-		else
-			ft_pb(a, b);
-		++i;
-	}
-}
-*/
 
 void	ft_push_from_a_to_b(t_list **a, t_list **b)
 {
@@ -120,8 +83,6 @@ void	ft_push_from_a_to_b(t_list **a, t_list **b)
 
 	a_size = ft_get_stack_size(a);
 	ft_assign_pos(a);
-	ft_push_chunks_to_b(a, b);
-	// ft_push_small_half(a, b, a_size);
-	// ft_push_big_half(a, b, a_size);
-	// ft_sort_3(a);
+	ft_push_chunks_to_b(a, b, a_size);
+	ft_sort_3(a);
 }
