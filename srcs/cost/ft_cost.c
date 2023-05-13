@@ -12,53 +12,31 @@
 
 #include "push_swap.h"
 
-/*
- * Retruns an array with the cost of bringing each node to top of the stack
-*/
-int	*ft_get_cost_arr(t_list **stack, int *cost_arr)
+int	ft_get_node_cost(t_list **stack, int idx)
 {
-	int		stack_size;
-	int		mid;
-	int		i;
+	int	stack_size;
+	int	mid;
+	int	cost;
 
 	stack_size = ft_get_stack_size(stack);
-	cost_arr = (int *)malloc(sizeof(int) * stack_size);
-	if (!cost_arr)
-		return (0);
 	mid = stack_size / 2;
-	i = 0;
-	while (i < stack_size)
-	{
-		if (i <= mid)
-			cost_arr[i] = i;
-		else
-			cost_arr[i] = ((i - stack_size));
-		++i;
-	}
-	return (cost_arr);
+	cost = 0;
+	if (idx <= mid)
+		cost = idx;
+	if (idx > mid)
+		cost = (stack_size - idx) * -1;
+	return (cost);
 }
 
 /*
- * Returns an array containing the final position of each node in given stack
+ * Returns the index of the cheapest b_node to push to "a"
 */
-int	*ft_get_pos_arr(t_list **stack, int *pos_arr)
+int	ft_get_cheapest_b_node(t_list **a, t_list **b)
 {
-	t_list	*tmp;
-	int		stack_size;
-	int		i;
+	int	cheapest_idx;
+	int	big_bro_idx;
+	int	cost_b;
 
-	tmp = (*stack);
-	stack_size = ft_get_stack_size(stack);
-	pos_arr = (int *)malloc(sizeof(int) * stack_size);
-	if (!pos_arr)
-		return (0);
-	i = 0;
-	while (i < stack_size)
-	{
-		pos_arr[i] = tmp->pos;
-		tmp = tmp->next;
-		++i;
-	}
-	ft_free_stack(&tmp);
-	return (pos_arr);
+	cost
+	return (cheapest_idx);
 }

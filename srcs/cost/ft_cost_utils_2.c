@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+/*
 typedef struct s_data
 {
 	int	cheapest_big_bro_cost;
@@ -89,3 +90,4 @@ int	ft_get_final_cheapest_idx(int *final_b_cost_arr, int cheapest_idx,
 	free(final_b_cost_arr);
 	return (cheapest_idx);
 }
+*/

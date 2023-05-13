@@ -16,6 +16,7 @@
  * Returns the idx of the a_node to bring to top of a_stack based on incoming
  * b_node_pos that is greater and closest to incoming b_node_pos
 */
+/*
 int	ft_get_big_bro_idx(t_list **a, int *a_pos, int incoming_pos)
 {
 	t_list	*tmp;
@@ -35,7 +36,6 @@ int	ft_get_big_bro_idx(t_list **a, int *a_pos, int incoming_pos)
 		{
 			closest = a_pos[i];
 			big_bro_idx = tmp->index;
-			printf("big_bro_idx: %d\n", big_bro_idx);
 		}
 		tmp = tmp->next;
 		++i;
@@ -43,12 +43,13 @@ int	ft_get_big_bro_idx(t_list **a, int *a_pos, int incoming_pos)
 	ft_free_stack(&tmp);
 	return (big_bro_idx);
 }
+*/
 
 /*
  * Returns the pos of the a_node to bring to top of a_stack based on incoming
  * b_node_pos that is greater and closest to incoming b_node_pos
 */
-
+/*
 int	ft_get_big_bro_pos(t_list **a, int *a_pos, int incoming_pos)
 {
 	int	big_bro_pos;
@@ -66,10 +67,11 @@ int	ft_get_big_bro_pos(t_list **a, int *a_pos, int incoming_pos)
 	}
 	return (big_bro_pos);
 }
-
+*/
 /*
  * Returns the idx of the cheapest b_node to bring to top of b_stack
 */
+/*
 int	ft_get_cheapest_lil_bro_idx(t_list **b, int lil_bro_idx)
 {
 	int	*b_cost_arr;
@@ -96,10 +98,11 @@ int	ft_get_cheapest_lil_bro_idx(t_list **b, int lil_bro_idx)
 	}
 	return (free(b_cost_arr), lil_bro_idx);
 }
-
+*/
 /*
  * Returns the pos of the cheapest b_node to bring to top of b_stack
 */
+/*
 int	ft_get_cheapest_lil_bro_pos(t_list **b, int lil_bro_pos)
 {
 	int	*b_pos_arr;
@@ -122,3 +125,4 @@ int	ft_get_cheapest_lil_bro_pos(t_list **b, int lil_bro_pos)
 	}
 	return (free(b_pos_arr), lil_bro_pos);
 }
+*/
