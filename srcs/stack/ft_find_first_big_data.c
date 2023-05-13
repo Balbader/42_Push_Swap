@@ -12,22 +12,18 @@
 
 #include "push_swap.h"
 
-int	ft_find_first_big_data(t_list **stack)
+int	ft_find_first_big_data(t_list *stack)
 {
-	t_list	*tmp;
 	int		big_data;
 
 	if (!stack)
 		return (0);
-	tmp = NULL;
-	tmp = (*stack);
 	big_data = INT_MIN;
-	while (tmp)
+	while (stack)
 	{
-		if (tmp->data > big_data)
-			big_data = tmp->data;
-		tmp = tmp->next;
+		if (stack->data > big_data)
+			big_data = stack->data;
+		stack = stack->next;
 	}
-	ft_free_stack(&tmp);
 	return (big_data);
 }
