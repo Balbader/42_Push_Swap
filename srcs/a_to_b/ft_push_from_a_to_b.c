@@ -12,6 +12,17 @@
 
 #include "push_swap.h"
 
+typedef struct s_data
+{
+	int	a_size;
+	int	pivot;
+	int	count;
+	int	first;
+	int	second;
+	int	third;
+	int	i;
+}				t_data;
+
 /*
  * Returns the reference nbr that will serve to define the chunks size
  * to create in b
@@ -32,12 +43,37 @@ static int	ft_define_pivot(t_list **a, int pivot)
 
 static void	ft_push_chunks_to_b(t_list **a, t_list **b)
 {
-	int	pivot;
+	t_data	data;
 
-	(void)b;
-	pivot = 0;
-	pivot = ft_define_pivot(a, pivot);
-	printf("pivot: %d\n", pivot);
+	data.a_size = ft_get_stack_size(a);
+	data.first = ft_find_first_big_data(a);
+	data.second = ft_find_second_big_data(a);
+	data.third = ft_find_third_big_data(a);
+	data.pivot = 0;
+	data.pivot = ft_define_pivot(a, data.pivot);
+	printf("pivot: %d\n", data.pivot);
+	data.count = 0;
+	data.i = 0;
+	while (data.i < data.a_size)
+	{
+		if (data.count == data.pivot)
+		{
+			data.pivot += data.pivot;
+			printf("count: %d\n", data.count);
+			printf("pivot: %d\n", data.pivot);
+		}
+		if ((*a)->data == data.first ||
+				(*a)->data == data.second || (*a)->data == data.third)
+			ft_ra(a);
+		if ((*a)->pos <= data.pivot)
+		{
+			ft_pb(a, b);
+			++data.count;
+		}
+		ft_ra(a);
+		--data.a_size;
+		// ++data.i;
+	}
 }
 
 /*
