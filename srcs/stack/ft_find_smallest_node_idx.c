@@ -12,25 +12,21 @@
 
 #include "push_swap.h"
 
-int	ft_find_smallest_node_idx(t_list **stack)
+int	ft_find_smallest_node_idx(t_list *stack)
 {
-	t_list	*tmp;
 	int		data;
 	int		index;
 
 	if (!stack)
 		return (0);
-	ft_re_init_index(*stack);
-	tmp = NULL;
-	tmp = (*stack);
+	ft_re_init_index(stack);
 	data = ft_find_smallest_node_data(stack);
 	index = INT_MAX;
-	while (tmp)
+	while (stack)
 	{
-		if (tmp->data == data)
-			index = tmp->index;
-		tmp = tmp->next;
+		if (stack->data == data)
+			index = stack->index;
+		stack = stack->next;
 	}
-	ft_free_stack(&tmp);
 	return (index);
 }
