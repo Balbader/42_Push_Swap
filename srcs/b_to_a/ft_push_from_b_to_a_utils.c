@@ -12,6 +12,20 @@
 
 #include "push_swap.h"
 
+void	ft_free_arr(char **arr)
+{
+	int	arr_size;
+	int	i;
+
+	arr_size = sizeof(**arr) / sizeof(*arr[0]);
+	printf("arr_size: %d\n", arr_size);
+	i = 0;
+	while (i < arr_size)
+	{
+		free(arr[i]);
+		++i;
+	}
+}
 char	**ft_initial_op_arr(char **op_arr)
 {
 	op_arr = (char **)malloc(sizeof(char *) * 10000);
@@ -20,29 +34,22 @@ char	**ft_initial_op_arr(char **op_arr)
 	return (op_arr);
 }
 
-void	ft_init_op_arr(char **op_arr)
+void	ft_init_op_arr(char **op_arr, char *str, int i)
 {
-	char	*str[5] = {"hello", "world", "I", "am", "basil"};
-	int		i;
 	int		j;
 
 	op_arr = ft_initial_op_arr(op_arr);
-	i = 0;
-	while (i < 5)
+	op_arr[i] = (char *)malloc(sizeof(char) * ft_strlen(&str[i]));
+	printf("\nstr[i] len: %d\n", ft_strlen(&str[i]));
+	if (!op_arr)
+		return ;
+	j = 0;
+	while (j < ft_strlen(&str[i]))
 	{
-		op_arr[i] = (char *)malloc(sizeof(char) * ft_strlen(str[i]));
-		if (!op_arr)
-			return ;
-		j = 0;
-		while (j < ft_strlen(str[i]))
-		{
-			op_arr[i] = str[i];
-			++j;
-		}
-		++i;
+		op_arr[j] = &str[j];
+		++j;
 	}
-	op_arr[i] = "\0";
-	for (int i = 0; i < 5; ++i) {
-		printf("%s ", op_arr[i]);
-	}
+	op_arr[j] = "\0";
+	printf("%s ", op_arr[i]);
+	printf("\n");
 }
