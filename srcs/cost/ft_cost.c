@@ -51,6 +51,6 @@ void	ft_get_cheapest_b_node(t_list **a, t_list **b)
 	printf("big_bro_pos: %d\n", big_bro_pos);
 	printf("big_bro_cost: %d\n", big_bro_cost);
 	lil_bro_pos = 0;
-	lil_bro_pos = ft_get_cheapest_lil_bro_pos(b, lil_bro_pos);
+	lil_bro_pos = ft_get_lil_bro_pos(b, lil_bro_pos);
 	printf("lil_bro_pos: %d\n", lil_bro_pos);
 }
