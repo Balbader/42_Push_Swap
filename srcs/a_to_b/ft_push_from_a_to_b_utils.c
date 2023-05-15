@@ -22,9 +22,9 @@ int	ft_define_pivot(t_list **a, int pivot)
 
 	a_size = ft_get_stack_size(a);
 	if (a_size == 100 || a_size == 500)
-		pivot = 10;
+		pivot = 32;
 	else if (a_size > 5 && a_size < 100)
-		pivot = a_size / 5;
+		pivot = a_size / 3;
 	else if (a_size > 100)
 		pivot = a_size / 10;
 	return (pivot);
