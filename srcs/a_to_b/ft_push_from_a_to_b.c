@@ -62,17 +62,18 @@ static void	ft_push_chunks_to_b(t_list **a, t_list **b, int a_size)
 	ft_init_data(*a, &data, a_size);
 	while ((*a) && a_size > 3)
 	{
-		if ((*a)->data == data.first
-			|| (*a)->data == data.second || (*a)->data == data.third)
-			ft_ra(a);
 		ft_check_condition(&data);
-		if ((*a)->pos <= data.top_pivot && (*a)->pos >= data.mid)
+		if (((*a)->pos <= data.top_pivot && (*a)->pos >= data.mid)
+			&& (!((*a)->data == data.first || (*a)->data == data.second
+			|| (*a)->data == data.third)))
 		{
 			ft_push_b_and_check_pos(data.mid, a, b);
 			--a_size;
 			++data.top_count;
 		}
-		if ((*a)->pos >= data.btm_pivot && (*a)->pos < data.mid)
+		else if (((*a)->pos >= data.btm_pivot && (*a)->pos < data.mid)
+			&& (!((*a)->data == data.first || (*a)->data == data.second
+			|| (*a)->data == data.third)))
 		{
 			ft_push_b_and_check_pos(data.mid, a, b);
 			--a_size;
