@@ -36,7 +36,7 @@ void	ft_do_rra(t_list **a, int idx, int a_size)
 	}
 }
 
-static void	ft_rotate_a(t_list **a, int	big_bro_idx)
+static void	ft_rotate_a(t_list **a, int big_bro_idx)
 {
 	int	a_size;
 	int	mid;
@@ -73,11 +73,11 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	lil_bro_pos = 0;
 	big_bro_idx = 0;
 	while (*b)
-		{
-			lil_bro_pos = ft_get_lil_bro_pos(a, b, lil_bro_pos);
-			big_bro_idx = ft_get_big_bro_idx(a, lil_bro_pos);
-			ft_rotate_a(a, big_bro_idx);
-			ft_pa(a, b);
-		}
+	{
+		lil_bro_pos = ft_get_lil_bro_pos(a, b, lil_bro_pos);
+		big_bro_idx = ft_get_big_bro_idx(a, lil_bro_pos);
+		ft_rotate_a(a, big_bro_idx);
+		ft_pa(a, b);
+	}
 	ft_reorder_a(a);
 }
