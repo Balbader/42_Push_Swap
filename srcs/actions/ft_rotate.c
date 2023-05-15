@@ -21,6 +21,8 @@ void	ft_rotate(t_list **stack)
 	tmp = NULL;
 	tmp = *stack;
 	tmp = tmp->next;
+	if (tmp == NULL)
+		return ;
 	(*stack)->next = NULL;
 	ft_add_new_tail(&tmp, *stack);
 	(*stack) = tmp;

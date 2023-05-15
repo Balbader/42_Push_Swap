@@ -22,5 +22,5 @@ void	ft_push_node(t_list **src, t_list **dest)
 	tmp = (*src)->next;
 	(*src)->next = (*dest);
 	(*dest) = (*src);
-	(*src) = tmp;
+	*src = tmp;
 }
