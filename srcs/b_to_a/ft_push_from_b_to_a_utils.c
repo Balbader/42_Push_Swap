@@ -12,6 +12,14 @@
 
 #include "push_swap.h"
 
+char	**ft_initial_op_arr(char **op_arr)
+{
+	**op_arr = (char **)malloc(sizeof(char *) * 10000);
+	if (!op_arr)
+		return (NULL);
+	return (op_arr);
+}
+
 void	ft_init_operations_arr(char **op_arr, char *str)
 {
 	int	i;
