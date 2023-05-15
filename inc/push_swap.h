@@ -60,7 +60,7 @@ int			*ft_get_final_b_cost_arr(t_list **a, t_list **b,
 							int *final_b_cost_arr);
 int			ft_get_final_cheapest_idx(int *final_b_cost_arr, int cheapest_idx,
 							int b_size);
-void		ft_get_cheapest_b_node(t_list **a, t_list **b);
+int			ft_get_cheapest_b_node_idx(t_list **a, t_list **b);
 
 /* OPERATIONS */
 void		ft_pa(t_list **b, t_list **a);
