@@ -66,8 +66,8 @@ int	main(int ac, char **av)
 	}
 	ft_re_init_index(b);
 	ft_re_init_index(a);
-	ft_print_stack(&a, "a");
 	ft_print_stack(&b, "b");
+	ft_print_stack(&a, "a");
 	ft_free_stack(&a);
 	ft_free_stack(&b);
 	return (0);
