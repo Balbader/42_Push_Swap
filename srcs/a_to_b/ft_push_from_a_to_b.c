@@ -86,14 +86,13 @@ static void	ft_push_chunks_to_b(t_list **a, t_list **b, int a_size)
 void	ft_push_from_a_to_b(t_list **a, t_list **b)
 {
 	int		a_size;
-	char	**op_arr;
+	t_cmds	*op_lst;
 
-	op_arr = NULL;
-	ft_init_op_arr(op_arr, "hello world", 0);
-	ft_init_op_arr(op_arr, "my name is basil", 0);
+	op_lst = NULL;
+	ft_init_op_lst(op_lst, "hello world");
+	ft_free_op_lst(&op_lst);
 	a_size = ft_get_stack_size(a);
 	ft_assign_pos(a);
 	ft_push_chunks_to_b(a, b, a_size);
 	ft_sort_3(a);
-	ft_free_arr(op_arr);
 }
