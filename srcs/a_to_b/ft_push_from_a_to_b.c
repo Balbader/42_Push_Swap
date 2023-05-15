@@ -65,7 +65,7 @@ static void	ft_push_chunks_to_b(t_list **a, t_list **b, int a_size)
 		ft_check_condition(&data);
 		if (((*a)->pos <= data.top_pivot && (*a)->pos >= data.mid)
 			&& (!((*a)->data == data.first || (*a)->data == data.second
-			|| (*a)->data == data.third)))
+					|| (*a)->data == data.third)))
 		{
 			ft_push_b_and_check_pos(data.mid, a, b);
 			--a_size;
@@ -73,7 +73,7 @@ static void	ft_push_chunks_to_b(t_list **a, t_list **b, int a_size)
 		}
 		else if (((*a)->pos >= data.btm_pivot && (*a)->pos < data.mid)
 			&& (!((*a)->data == data.first || (*a)->data == data.second
-			|| (*a)->data == data.third)))
+					|| (*a)->data == data.third)))
 		{
 			ft_push_b_and_check_pos(data.mid, a, b);
 			--a_size;
