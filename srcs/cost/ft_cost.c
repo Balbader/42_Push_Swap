@@ -12,6 +12,18 @@
 
 #include "push_swap.h"
 
+typedef struct s_data
+{
+	int	lil_bro_idx;
+	int	big_bro_idx;
+	int	lil_bro_pos;
+	int	big_bro_pos;
+	int	lil_bro_cost;
+	int	big_bro_cost;
+	int	cheapest_idx;
+	int	cheapest_cost;
+}				t_data;
+
 /* Returns the cost of moving a node to the top of a stack based on its idx */
 int	ft_get_node_cost(t_list **stack, int idx)
 {
@@ -26,7 +38,6 @@ int	ft_get_node_cost(t_list **stack, int idx)
 		cost = idx;
 	if (idx > mid)
 		cost = (stack_size - idx);
-		// cost = (stack_size - idx) * -1;
 	return (cost);
 }
 
@@ -34,30 +45,29 @@ int	ft_get_node_cost(t_list **stack, int idx)
  * Returns the index of the cheapest b_node to push to "a"
  * The cost is calculated like so: cost of b_node_idx + cost of big_bro_idx
 */
-// int	ft_get_cheapest_b_node(t_list **a, t_list **b)
-void	ft_get_cheapest_b_node(t_list **a, t_list **b)
+int	ft_get_cheapest_b_node_idx(t_list **a, t_list **b)
 {
-	// int	cheapest_idx;
-	int	lil_bro_idx;
-	int	big_bro_idx;
-	int	lil_bro_pos;
-	int	big_bro_pos;
-	int	lil_bro_cost;
-	int	big_bro_cost;
+	t_data	data;
+	int		b_size;
+	int		i;
 
-	big_bro_idx = ft_get_big_bro_idx(a, 12);
-	big_bro_pos = ft_get_big_bro_pos(a, big_bro_idx);
-	big_bro_cost = ft_get_node_cost(a, big_bro_idx);
-	printf("big_bro_idx: %d\n", big_bro_idx);
-	printf("big_bro_pos: %d\n", big_bro_pos);
-	printf("big_bro_cost: %d\n", big_bro_cost);
-	lil_bro_idx = 0;
-	lil_bro_pos = 0;
-	lil_bro_idx = ft_get_lil_bro_idx(b, lil_bro_idx);
-	lil_bro_pos = ft_get_lil_bro_pos(b, lil_bro_pos);
-	lil_bro_cost = ft_get_node_cost(b, lil_bro_idx);
-	printf("\n");
-	printf("lil_bro_idx: %d\n", lil_bro_idx);
-	printf("lil_bro_pos: %d\n", lil_bro_pos);
-	printf("lil_bro_cost: %d\n", lil_bro_cost);
+	data.cheapest_cost = INT_MAX;
+	data.cheapest_idx = 0;
+	data.lil_bro_idx = 0;
+	data.lil_bro_idx = ft_get_lil_bro_idx(b, data.lil_bro_idx);
+	data.lil_bro_cost = ft_get_node_cost(b, data.lil_bro_idx);
+	data.big_bro_idx = ft_get_big_bro_idx(a, data.lil_bro_pos);
+	data.big_bro_cost = ft_get_node_cost(a, data.big_bro_idx);
+	b_size = ft_get_stack_size(b);
+	i = 0;
+	while (i < b_size)
+	{
+		if (data.big_bro_cost + data.lil_bro_cost < data.cheapest_cost)
+		{
+			data.cheapest_cost = data.big_bro_cost + data.lil_bro_cost;
+			data.cheapest_idx = data.lil_bro_idx;
+		}
+		++i;
+	}
+	return (data.cheapest_idx);
 }
