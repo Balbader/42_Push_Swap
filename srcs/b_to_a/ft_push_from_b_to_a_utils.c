@@ -20,21 +20,29 @@ char	**ft_initial_op_arr(char **op_arr)
 	return (op_arr);
 }
 
-void	ft_init_operations_arr(char **op_arr, char *str)
+void	ft_init_op_arr(char **op_arr)
 {
+	char	*str[5] = {"hello", "world", "I", "am", "basil"};
 	int		i;
-	char	*str = "Hello World";
+	int		j;
 
 	op_arr = ft_initial_op_arr(op_arr);
-	++(*op_arr) = (char *)malloc(sizeof(char) * ft_strlen(str));
-	if (!op_arr)
-		return ;
 	i = 0;
-	while (i < ft_strlen(str))
+	while (i < 5)
 	{
-		*op_arr[i] = str[i];
+		op_arr[i] = (char *)malloc(sizeof(char) * ft_strlen(str[i]));
+		if (!op_arr)
+			return ;
+		j = 0;
+		while (j < ft_strlen(str[i]))
+		{
+			op_arr[i] = str[i];
+			++j;
+		}
 		++i;
 	}
-	op_arr[i]++ = "\0";
-	printf("%s\n", op_arr[i]);
+	op_arr[i] = "\0";
+	for (int i = 0; i < 5; ++i) {
+		printf("%s ", op_arr[i]);
+	}
 }
