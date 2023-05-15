@@ -48,14 +48,13 @@ void		ft_push_from_b_to_a(t_list **a, t_list **b);
 void		ft_re_init_stacks_index(t_list **a, t_list **b);
 void		ft_do_ra(t_list **a, int idx);
 void		ft_do_rra(t_list **a, int idx, int a_size);
-void		ft_reorder_a(t_list **a);
 
 /* COST */
 int			ft_get_node_cost(t_list **stack, int idx);
 int			ft_get_big_bro_idx(t_list **a, int incoming_pos);
 int			ft_get_big_bro_pos(t_list **a, int incoming_pos);
 int			ft_get_lil_bro_idx(t_list **b, int lil_bro_idx);
-int			ft_get_lil_bro_pos(t_list **b, int lil_bro_pos);
+int			ft_get_lil_bro_pos(t_list **a, t_list **b, int lil_bro_pos);
 int			ft_get_cheapest_b_node_idx(t_list **a, t_list **b);
 
 /* OPERATIONS */
