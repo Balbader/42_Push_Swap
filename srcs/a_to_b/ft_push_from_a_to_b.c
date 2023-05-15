@@ -26,42 +26,29 @@ typedef struct s_data
 	int	pivot;
 }				t_data;
 
-/*
- * Returns the reference nbr that will serve to define the chunks size
- * to create in b
-*/
-static int	ft_define_pivot(t_list **a, int pivot)
-{
-	int	a_size;
-
-	a_size = ft_get_stack_size(a);
-	if (a_size == 100 || a_size == 500)
-		pivot = 10;
-	else if (a_size > 5 && a_size < 100)
-		pivot = a_size / 5;
-	else if (a_size > 100)
-		pivot = a_size / 10;
-	return (pivot);
-}
-
-static void	ft_get_big_trio(t_list *a, t_data *data)
+static void	ft_init_data(t_list *a, t_data *data, int a_size)
 {
 	data->first = ft_find_first_big_data(a);
 	data->second = ft_find_second_big_data(a);
 	data->third = ft_find_third_big_data(a);
+	data->mid = a_size / 2;
+	data->pivot = ft_define_pivot(&a, data->pivot);
+	data->top_pivot = data->mid + data->pivot;
+	data->btm_pivot = data->mid - data->pivot;
+	data->top_count = data->mid;
+	data->btm_count = data->mid;
+}
+
+static void ft_check_incoming_a_pos(int	a_pos, t_list **b)
+{
+
 }
 
 static void	ft_push_chunks_to_b(t_list **a, t_list **b, int a_size)
 {
 	t_data	data;
 
-	ft_get_big_trio(*a, &data);
-	data.mid = a_size / 2;
-	data.pivot = ft_define_pivot(a, data.pivot);
-	data.top_pivot = data.mid + data.pivot;
-	data.btm_pivot = data.mid - data.pivot;
-	data.top_count = 0;
-	data.btm_count = 0;
+	ft_init_data(*a, &data, a_size);
 	while ((*a) && a_size > 3)
 	{
 		if ((*a)->data == data.first
@@ -71,7 +58,7 @@ static void	ft_push_chunks_to_b(t_list **a, t_list **b, int a_size)
 		{
 			if (data.top_count == data.top_pivot)
 				data.top_pivot += data.pivot;
-			else if (data.btm_count == data.btm_pivot)
+			if (data.btm_count == data.btm_pivot)
 				data.btm_pivot -= data.pivot;
 			if ((*a)->pos <= data.top_pivot && (*a)->pos >= data.mid)
 			{
@@ -79,11 +66,11 @@ static void	ft_push_chunks_to_b(t_list **a, t_list **b, int a_size)
 				--a_size;
 				++data.top_count;
 			}
-			else if ((*a)->pos >= data.btm_pivot && (*a)->pos <= data.mid)
+			if ((*a)->pos >= data.btm_pivot && (*a)->pos < data.mid)
 			{
 				ft_pb(a, b);
 				--a_size;
-				++data.btm_count;
+				--data.btm_count;
 			}
 			ft_ra(a);
 		}
