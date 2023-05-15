@@ -73,6 +73,8 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	int	b_size;
 
 	lil_bro_pos = 0;
+	big_bro_pos = 0;
+	big_bro_idx = 0;
 	while (*b)
 		{
 			b_size = ft_get_stack_size(b);
