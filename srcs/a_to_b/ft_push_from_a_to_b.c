@@ -39,9 +39,10 @@ static void	ft_init_data(t_list *a, t_data *data, int a_size)
 	data->btm_count = data->mid;
 }
 
-static void ft_check_incoming_a_pos(int	a_pos, t_list **b)
+static void ft_check_b_pos(int mid, t_list **b)
 {
-
+	if ((*b)->pos < mid)
+		ft_rb(b);
 }
 
 static void	ft_push_chunks_to_b(t_list **a, t_list **b, int a_size)
@@ -63,12 +64,14 @@ static void	ft_push_chunks_to_b(t_list **a, t_list **b, int a_size)
 			if ((*a)->pos <= data.top_pivot && (*a)->pos >= data.mid)
 			{
 				ft_pb(a, b);
+				ft_check_b_pos(data.mid, b);
 				--a_size;
 				++data.top_count;
 			}
 			if ((*a)->pos >= data.btm_pivot && (*a)->pos < data.mid)
 			{
 				ft_pb(a, b);
+				ft_check_b_pos(data.mid, b);
 				--a_size;
 				--data.btm_count;
 			}
