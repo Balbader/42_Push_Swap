@@ -14,7 +14,7 @@
 
 char	**ft_initial_op_arr(char **op_arr)
 {
-	**op_arr = (char **)malloc(sizeof(char *) * 10000);
+	op_arr = (char **)malloc(sizeof(char *) * 10000);
 	if (!op_arr)
 		return (NULL);
 	return (op_arr);
@@ -24,8 +24,9 @@ void	ft_init_operations_arr(char **op_arr, char *str)
 {
 	int	i;
 
-	(*op_arr)++ = (char *)malloc(sizeof(char) * ft_strlen(str));
-	if (!(*op_arr))
+	op_arr = ft_initial_op_arr(op_arr);
+	++(*op_arr) = (char *)malloc(sizeof(char) * ft_strlen(str));
+	if (!op_arr)
 		return ;
 	i = 0;
 	while (i < ft_strlen(str))
