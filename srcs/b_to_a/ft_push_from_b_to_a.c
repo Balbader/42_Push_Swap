@@ -76,13 +76,13 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	big_bro_pos = 0;
 	big_bro_idx = 0;
 	while (*b)
-		{
-			b_size = ft_get_stack_size(b);
-			lil_bro_pos = ft_get_lil_bro_pos(a, b, lil_bro_pos);
-			big_bro_idx = ft_get_big_bro_idx(a, lil_bro_pos);
-			big_bro_pos = ft_get_big_bro_pos(a, big_bro_idx);
-			ft_rotate_a(a, big_bro_idx);
-			ft_pa(a, b);
-		}
+	{
+		b_size = ft_get_stack_size(b);
+		lil_bro_pos = ft_get_lil_bro_pos(a, b, lil_bro_pos);
+		big_bro_idx = ft_get_big_bro_idx(a, lil_bro_pos);
+		big_bro_pos = ft_get_big_bro_pos(a, big_bro_idx);
+		ft_rotate_a(a, big_bro_idx);
+		ft_pa(a, b);
+	}
 	ft_reorder_a(a);
 }
