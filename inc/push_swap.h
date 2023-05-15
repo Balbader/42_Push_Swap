@@ -29,8 +29,8 @@ typedef struct s_list
 
 typedef struct s_cmds
 {
-	char			*cmd;
-	struct s_list	*next;
+	char			*str;
+	struct s_cmds	*next;
 }				t_cmds;
 
 /* MAIN */
@@ -57,9 +57,8 @@ void		ft_do_ra(t_list **a, int idx);
 void		ft_do_rra(t_list **a, int idx, int a_size);
 
 /* B_TO_A: Array Stuff */
-void		ft_init_op_arr(char **op_arr, char *str, int i);
-void		ft_free_arr(char **arr);
-char		**ft_initial_op_arr(char **op_arr);
+void		ft_init_op_lst(t_cmds *op_lst, char *str);
+// t_cmds		*ft_initial_op_arr(t_cmds *op_lst);
 
 /* COST */
 int			ft_get_node_cost(t_list **stack, int idx);
@@ -111,10 +110,12 @@ int			*ft_copy_stack_to_arr(t_list **stack, int stack_size, int *arr);
 int			ft_get_stack_size(t_list **stack);
 int			ft_stack_is_sorted(t_list *stack);
 void		ft_add_new_tail(t_list **lst, t_list *node);
+void		ft_free_op_lst(t_cmds **op_lst);
 void		ft_free_stack(t_list **stack);
 void		ft_print_stack(t_list **stack, char *name);
 void		ft_re_init_index(t_list *stack);
 t_list		*ft_create_node(int data, int index);
+t_cmds		*ft_create_cmd_node(char *str);
 t_list		*ft_init_stack(t_list *stack_a, int *entries, int ac);
 t_list		*ft_get_before_last_node(t_list *stack);
 t_list		*ft_get_last_node(t_list *stack);
@@ -123,6 +124,7 @@ t_list		*ft_get_last_node(t_list *stack);
 int			ft_isdigit(char c);
 int			ft_strlen(const char *str);
 int			ft_arr_is_sorted(int *arr, int arr_size);
+char		*ft_strcpy(char *src, char *dest);
 void		ft_putstr_fd(char *str, int fd);
 void		ft_print_err(t_list **stack_a, t_list **stack_b);
 void		ft_sort_arr(int *arr, int arr_size);
