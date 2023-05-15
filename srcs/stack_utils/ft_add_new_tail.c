@@ -12,11 +12,13 @@
 
 #include "push_swap.h"
 
-void	ft_add_new_tail(t_list **lst, t_list *node)
+void	ft_add_new_tail(t_list **stack, t_list *node)
 {
 	t_list	*current;
 
-	current = *lst;
+	if (!(*stack))
+		return ;
+	current = (*stack);
 	while (current->next)
 		current = current->next;
 	current->next = node;
