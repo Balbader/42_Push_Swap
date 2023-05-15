@@ -27,6 +27,12 @@ typedef struct s_list
 	struct s_list	*next;
 }				t_list;
 
+typedef struct s_cmds
+{
+	char			*cmd;
+	struct s_list	*next;
+}				t_cmds;
+
 /* MAIN */
 int			*ft_init_entries_arr(int ac, char **av, int *arr);
 void		ft_check_entries(int *arr, int arr_size);
