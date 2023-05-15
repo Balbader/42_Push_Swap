@@ -22,7 +22,8 @@ char	**ft_initial_op_arr(char **op_arr)
 
 void	ft_init_operations_arr(char **op_arr, char *str)
 {
-	int	i;
+	int		i;
+	char	*str = "Hello World";
 
 	op_arr = ft_initial_op_arr(op_arr);
 	++(*op_arr) = (char *)malloc(sizeof(char) * ft_strlen(str));
@@ -34,4 +35,6 @@ void	ft_init_operations_arr(char **op_arr, char *str)
 		*op_arr[i] = str[i];
 		++i;
 	}
+	op_arr[i]++ = "\0";
+	printf("%s\n", op_arr[i]);
 }
