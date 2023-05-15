@@ -40,6 +40,7 @@ void		ft_swap(t_list **stack);
 /* A_TO_B */
 void		ft_push_from_a_to_b(t_list **a, t_list **b);
 void		ft_assign_pos(t_list **a);
+int			ft_define_pivot(t_list **a, int pivot);
 t_list		*ft_pre_sort_stack(t_list *rand_stack);
 
 /* B_TO_A */
