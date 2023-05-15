@@ -78,6 +78,8 @@ STACK_UTILS_FILES	:=	\
 						ft_add_new_tail.c \
 						ft_copy_stack_to_arr.c \
 						ft_create_node.c \
+						ft_create_cmd_node.c \
+						ft_free_op_lst.c \
 						ft_free_stack.c \
 						ft_get_before_last_node.c \
 						ft_get_last_node.c \
@@ -95,6 +97,7 @@ UTILS_FILES			:=	\
 						ft_print_err.c \
 						ft_putstr_fd.c \
 						ft_sort_arr.c \
+						ft_strcpy.c \
 						ft_strlen.c
 UTILS				:=	$(addprefix $(UTILS_DIR), $(UTILS_FILES))
 
