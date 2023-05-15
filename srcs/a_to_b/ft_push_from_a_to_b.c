@@ -14,17 +14,18 @@
 
 typedef struct s_data
 {
-	int	first;
-	int	second;
-	int	third;
-	int	a_size;
-	int	i;
-	int	mid;
-	int	top_pivot;
-	int	btm_pivot;
-	int	top_count;
-	int	btm_count;
-	int	pivot;
+	t_cmds	*op_lst;
+	int		first;
+	int		second;
+	int		third;
+	int		a_size;
+	int		i;
+	int		mid;
+	int		top_pivot;
+	int		btm_pivot;
+	int		top_count;
+	int		btm_count;
+	int		pivot;
 }				t_data;
 
 static void	ft_init_data(t_list *a, t_data *data, int a_size)
@@ -86,11 +87,7 @@ static void	ft_push_chunks_to_b(t_list **a, t_list **b, int a_size)
 void	ft_push_from_a_to_b(t_list **a, t_list **b)
 {
 	int		a_size;
-	t_cmds	*op_lst;
 
-	op_lst = NULL;
-	ft_init_op_lst(op_lst, "hello world");
-	ft_free_op_lst(&op_lst);
 	a_size = ft_get_stack_size(a);
 	ft_assign_pos(a);
 	ft_push_chunks_to_b(a, b, a_size);
