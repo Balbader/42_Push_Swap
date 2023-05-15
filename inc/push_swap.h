@@ -54,8 +54,8 @@ void		ft_reorder_a(t_list **a);
 int			ft_get_node_cost(t_list **stack, int idx);
 int			ft_get_big_bro_idx(t_list **a, int incoming_pos);
 int			ft_get_big_bro_pos(t_list **a, int incoming_pos);
-int			ft_get_cheapest_lil_bro_idx(t_list **b, int lil_bro_idx);
-int			ft_get_cheapest_lil_bro_pos(t_list **b, int lil_bro_pos);
+int			ft_get_lil_bro_idx(t_list **b, int lil_bro_idx);
+int			ft_get_lil_bro_pos(t_list **b, int lil_bro_pos);
 int			*ft_get_final_b_cost_arr(t_list **a, t_list **b,
 							int *final_b_cost_arr);
 int			ft_get_final_cheapest_idx(int *final_b_cost_arr, int cheapest_idx,
