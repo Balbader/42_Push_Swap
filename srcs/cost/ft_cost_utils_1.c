@@ -113,7 +113,6 @@ int	ft_get_lil_bro_pos(t_list **b, int lil_bro_pos)
 	b_size = ft_get_stack_size(b);
 	lil_bro_idx = 0;
 	lil_bro_idx = ft_get_lil_bro_idx(b, lil_bro_idx);
-	printf("lil_bro_idx: %d\n", lil_bro_idx);
 	i = 0;
 	while (i < b_size)
 	{
