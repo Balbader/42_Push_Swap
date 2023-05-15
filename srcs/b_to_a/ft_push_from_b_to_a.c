@@ -62,7 +62,9 @@ static void	ft_free_pos(int *pos_a, int *pos_b)
 
 void	ft_push_from_b_to_a(t_list **a, t_list **b)
 {
-	ft_get_cheapest_b_node(a, b);
+	int	cheapest_idx;
+	cheapest_idx = ft_get_cheapest_b_node_idx(a, b);
+	printf("cheapest_idx: %d\n", cheapest_idx);
 }
 
 /*
