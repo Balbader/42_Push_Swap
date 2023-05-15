@@ -54,6 +54,7 @@ int	ft_get_cheapest_b_node_idx(t_list **a, t_list **b)
 	data.cheapest_cost = INT_MAX;
 	data.cheapest_idx = 0;
 	data.lil_bro_idx = 0;
+	data.big_bro_idx = 0;
 	data.lil_bro_idx = ft_get_lil_bro_idx(b, data.lil_bro_idx);
 	data.lil_bro_cost = ft_get_node_cost(b, data.lil_bro_idx);
 	data.big_bro_idx = ft_get_big_bro_idx(a, data.lil_bro_pos);
