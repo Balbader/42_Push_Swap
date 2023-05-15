@@ -44,8 +44,8 @@ ENTRY_FILES			:=	\
 						ft_find_doubles.c
 ENTRY				:=	$(addprefix $(ENTRY_DIR), $(ENTRY_FILES))
 
-# OPER_DIR			:=	operations_test/
-OPER_DIR			:=	operations/
+OPER_DIR			:=	operations_test/
+# OPER_DIR			:=	operations/
 OPER_FILES			:=	\
 						ft_pa.c ft_pb.c \
 						ft_ra.c ft_rb.c ft_rr.c \
