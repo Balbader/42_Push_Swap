@@ -72,7 +72,7 @@ int	ft_get_big_bro_pos(t_list **a, int big_bro_idx)
 }
 
 /* Returns the idx of the cheapest b_node to bring to top of b_stack */
-int	ft_get_cheapest_lil_bro_idx(t_list **b, int lil_bro_idx)
+int	ft_get_lil_bro_idx(t_list **b, int lil_bro_idx)
 {
 	t_list	*tmp;
 	int		b_cost;
@@ -101,7 +101,7 @@ int	ft_get_cheapest_lil_bro_idx(t_list **b, int lil_bro_idx)
 }
 
 /* Returns the pos of the cheapest b_node to bring to top of b_stack */
-int	ft_get_cheapest_lil_bro_pos(t_list **b, int lil_bro_pos)
+int	ft_get_lil_bro_pos(t_list **b, int lil_bro_pos)
 {
 	t_list	*tmp;
 	int		lil_bro_idx;
@@ -112,7 +112,7 @@ int	ft_get_cheapest_lil_bro_pos(t_list **b, int lil_bro_pos)
 	tmp = (*b);
 	b_size = ft_get_stack_size(b);
 	lil_bro_idx = 0;
-	lil_bro_idx = ft_get_cheapest_lil_bro_idx(b, lil_bro_idx);
+	lil_bro_idx = ft_get_lil_bro_idx(b, lil_bro_idx);
 	printf("lil_bro_idx: %d\n", lil_bro_idx);
 	i = 0;
 	while (i < b_size)
