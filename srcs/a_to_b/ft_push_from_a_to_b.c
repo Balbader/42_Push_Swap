@@ -14,14 +14,16 @@
 
 typedef struct s_data
 {
-	int	a_size;
-	int	pivot;
-	int	new_pivot;
-	int	count;
 	int	first;
 	int	second;
 	int	third;
 	int	i;
+	int	mid;
+	int	top_pivot;
+	int	btm_pivot;
+	int	top_count;
+	int	btm_count;
+	int	pivot;
 }				t_data;
 
 /*
@@ -54,9 +56,12 @@ static void	ft_push_chunks_to_b(t_list **a, t_list **b, int a_size)
 	t_data	data;
 
 	ft_get_big_trio(*a, &data);
+	data.mid = a_size / 2;
 	data.pivot = ft_define_pivot(a, data.pivot);
-	data.new_pivot = data.pivot;
-	data.count = 0;
+	data.top_pivot = data.mid + data.pivot;
+	data.btm_pivot = data.mid - data.pivot;
+	data.top_count = 0;
+	data.btm_count = 0;
 	while ((*a) && a_size > 3)
 	{
 		if ((*a)->data == data.first
@@ -64,18 +69,54 @@ static void	ft_push_chunks_to_b(t_list **a, t_list **b, int a_size)
 			ft_ra(a);
 		else
 		{
-			if (data.count == data.new_pivot)
-				data.new_pivot += data.pivot;
-			if ((*a)->pos <= data.new_pivot)
+			if (data.top_count == data.top_pivot)
+				data.top_pivot += data.pivot;
+			else if (data.btm_count == data.btm_pivot)
+				data.btm_pivot -= data.pivot;
+			if ((*a)->pos <= data.top_pivot && (*a)->pos >= data.mid)
 			{
 				ft_pb(a, b);
 				--a_size;
-				++data.count;
+				++data.top_count;
+			}
+			else if ((*a)->pos >= data.btm_pivot && (*a)->pos <= data.mid)
+			{
+				ft_pb(a, b);
+				--a_size;
+				++data.btm_count;
 			}
 			ft_ra(a);
 		}
 	}
 }
+
+// static void	ft_push_chunks_to_b(t_list **a, t_list **b, int a_size)
+// {
+// 	t_data	data;
+
+// 	ft_get_big_trio(*a, &data);
+// 	data.pivot = ft_define_pivot(a, data.pivot);
+// 	data.new_pivot = data.pivot;
+// 	data.count = 0;
+// 	while ((*a) && a_size > 3)
+// 	{
+// 		if ((*a)->data == data.first
+// 			|| (*a)->data == data.second || (*a)->data == data.third)
+// 			ft_ra(a);
+// 		else
+// 		{
+// 			if (data.count == data.new_pivot)
+// 				data.new_pivot += data.pivot;
+// 			if ((*a)->pos <= data.new_pivot)
+// 			{
+// 				ft_pb(a, b);
+// 				--a_size;
+// 				++data.count;
+// 			}
+// 			ft_ra(a);
+// 		}
+// 	}
+// }
 
 void	ft_push_from_a_to_b(t_list **a, t_list **b)
 {
