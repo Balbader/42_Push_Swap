@@ -38,10 +38,11 @@ int	ft_get_node_cost(t_list **stack, int idx)
 void	ft_get_cheapest_b_node(t_list **a, t_list **b)
 {
 	// int	cheapest_idx;
+	int	lil_bro_idx;
 	int	big_bro_idx;
 	int	lil_bro_pos;
 	int	big_bro_pos;
-	// int	lil_bro_cost;
+	int	lil_bro_cost;
 	int	big_bro_cost;
 
 	big_bro_idx = ft_get_big_bro_idx(a, 12);
@@ -50,7 +51,13 @@ void	ft_get_cheapest_b_node(t_list **a, t_list **b)
 	printf("big_bro_idx: %d\n", big_bro_idx);
 	printf("big_bro_pos: %d\n", big_bro_pos);
 	printf("big_bro_cost: %d\n", big_bro_cost);
+	lil_bro_idx = 0;
 	lil_bro_pos = 0;
+	lil_bro_idx = ft_get_lil_bro_idx(b, lil_bro_idx);
 	lil_bro_pos = ft_get_lil_bro_pos(b, lil_bro_pos);
+	lil_bro_cost = ft_get_node_cost(b, lil_bro_idx);
+	printf("\n");
+	printf("lil_bro_idx: %d\n", lil_bro_idx);
 	printf("lil_bro_pos: %d\n", lil_bro_pos);
+	printf("lil_bro_cost: %d\n", lil_bro_cost);
 }
