@@ -18,7 +18,7 @@ void	ft_free_op_lst(t_cmds **op_lst)
 
 	if (!op_lst || !(*op_lst))
 		return ;
-	while(*op_lst)
+	while (*op_lst)
 	{
 		tmp = (*op_lst)->next;
 		free(*op_lst);
