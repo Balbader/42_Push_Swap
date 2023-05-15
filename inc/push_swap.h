@@ -49,6 +49,8 @@ void		ft_push_from_b_to_a(t_list **a, t_list **b);
 void		ft_re_init_stacks_index(t_list **a, t_list **b);
 void		ft_do_ra(t_list **a, int idx);
 void		ft_do_rra(t_list **a, int idx, int a_size);
+void		ft_init_op_arr(char **op_arr);
+char		**ft_initial_op_arr(char **op_arr);
 
 /* COST */
 int			ft_get_node_cost(t_list **stack, int idx);
