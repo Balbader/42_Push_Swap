@@ -30,7 +30,6 @@ int	*ft_get_big_3_idx(t_list **b)
 {
 	int	*big_3_idx;
 
-	ft_re_init_index(*b);
 	big_3_idx = (int *)malloc(sizeof(int) * 3);
 	if (!big_3_idx)
 		return (0);
@@ -48,7 +47,6 @@ int	*ft_get_big_3_pos(t_list **b, int *big_3_idx)
 {
 	int	*big_3_pos;
 
-	ft_re_init_index(*b);
 	big_3_pos = (int *)malloc(sizeof(int) * 3);
 	if (!big_3_pos)
 		return (0);
