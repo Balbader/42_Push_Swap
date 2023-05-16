@@ -44,8 +44,8 @@ ENTRY_FILES			:=	\
 						ft_find_doubles.c
 ENTRY				:=	$(addprefix $(ENTRY_DIR), $(ENTRY_FILES))
 
-# OPER_DIR			:=	operations_test/
-OPER_DIR			:=	operations/
+OPER_DIR			:=	operations_test/
+# OPER_DIR			:=	operations/
 OPER_FILES			:=	\
 						ft_pa.c ft_pb.c \
 						ft_ra.c ft_rb.c ft_rr.c \
@@ -65,10 +65,13 @@ STACK_DIR			:=	stack/
 STACK_FILES			:=	\
 						ft_find_first_big_data.c \
 						ft_find_first_big_idx.c \
+						ft_find_first_big_pos.c \
 						ft_find_second_big_data.c \
 						ft_find_second_big_idx.c \
+						ft_find_second_big_pos.c \
 						ft_find_third_big_data.c \
 						ft_find_third_big_idx.c \
+						ft_find_third_big_pos.c \
 						ft_find_smallest_node_data.c \
 						ft_find_smallest_node_idx.c
 STACK				:=	$(addprefix $(STACK_DIR), $(STACK_FILES))
