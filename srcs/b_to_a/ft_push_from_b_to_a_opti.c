@@ -55,3 +55,17 @@ int	*ft_get_big_3_pos(t_list **b, int *big_3_idx)
 	big_3_pos[2] = ft_find_node_pos(*b, big_3_idx[2]);
 	return (big_3_pos);
 }
+
+int	ft_find_lil_idx(t_list *b, int pos)
+{
+	int	idx;
+
+	idx = 0;
+	while (b)
+	{
+		if (b->pos == pos)
+			idx = b->index;
+		b = b->next;
+	}
+	return (idx);
+}

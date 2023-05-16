@@ -53,46 +53,33 @@ static void	ft_push_node_to_a_and_check_next(t_list **a, t_list **b)
 {
 	int	*big_3_idx;
 	int	*big_3_pos;
+	int	big_bro_idx;
+	int	i;
 
-	ft_re_init_index(*b);
-	ft_print_stack(b, "b");
-	printf("\n");
-	(void)a;
 	big_3_idx = ft_get_big_3_idx(b);
-	for (int i = 0; i < 3; ++i) {
-		printf("big_3_idx[%d]: %d\n", i , big_3_idx[i]);
-	}
-	printf("\n");
 	ft_sort_arr(big_3_idx, 3);
-	for (int i = 0; i < 3; ++i) {
-		printf("big_3_idx[%d]: %d\n", i , big_3_idx[i]);
-	}
 	big_3_pos = ft_get_big_3_pos(b, big_3_idx);
-	printf("\n");
-	for (int i = 0; i < 3; ++i) {
-		printf("big_3_pos[%d]: %d\n", i , big_3_pos[i]);
+	i = 0;
+	while (i < 3)
+	{
+		big_bro_idx = ft_get_big_bro_idx(a, big_3_pos[i]);
+		ft_rotate_a(a, big_bro_idx);
+		ft_rotate_b(b, big_3_pos[i]);
+		ft_pa(a, b);
+		ft_check_push(a);
+		++i;
 	}
+	free(big_3_idx);
+	free(big_3_pos);
 }
 
 void	ft_push_from_b_to_a(t_list **a, t_list **b)
 {
-	ft_push_node_to_a_and_check_next(a, b);
+	while (*b)
+	{
+		ft_re_init_index(*a);
+		ft_re_init_index(*b);
+		ft_push_node_to_a_and_check_next(a, b);
+	}
+	ft_reorder_a(a);
 }
-
-
-// void	ft_push_from_b_to_a(t_list **a, t_list **b)
-// {
-// 	int	lil_bro_pos;
-// 	int	big_bro_idx;
-
-// 	lil_bro_pos = 0;
-// 	big_bro_idx = 0;
-// 	while (*b)
-// 	{
-// 		lil_bro_pos = ft_get_lil_bro_pos(a, b, lil_bro_pos);
-// 		big_bro_idx = ft_get_big_bro_idx(a, lil_bro_pos);
-// 		ft_rotate_a(a, big_bro_idx);
-// 		ft_pa(a, b);
-// 	}
-// 	ft_reorder_a(a);
-// }

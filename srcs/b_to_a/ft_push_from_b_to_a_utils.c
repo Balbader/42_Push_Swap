@@ -37,25 +37,26 @@ void	ft_do_rrb(t_list **b, int idx, int b_size)
 }
 
 /* Rotate b until b_node pos on top */
-void	ft_rotate_b(t_list **b, int	lil_bro_idx, int lil_bro_pos)
+void	ft_rotate_b(t_list **b, int lil_bro_pos)
 {
+	int	lil_bro_idx;
 	int	b_size;
 	int	mid;
 
+	ft_re_init_index(*b);
+	lil_bro_idx = ft_find_lil_idx(*b, lil_bro_pos);
 	b_size = ft_get_stack_size(b);
 	mid = b_size / 2;
-	if (lil_bro_pos == (*b)->pos)
-		return ;
 	if (lil_bro_idx <= mid)
 		ft_do_rb(b, lil_bro_idx);
 	else if (lil_bro_idx > mid)
 		ft_do_rrb(b, lil_bro_idx, b_size);
 }
 
-void	ft_check_push(t_list **b)
+void	ft_check_push(t_list **a)
 {
-	if ((*b)->pos > (*b)->next->pos)
-		ft_sb(b);
+	if ((*a)->pos > (*a)->next->pos)
+		ft_sa(a);
 }
 
 void	ft_reorder_a(t_list **a)
