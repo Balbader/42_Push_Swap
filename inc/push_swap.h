@@ -58,9 +58,10 @@ void		ft_re_init_stacks_index(t_list **a, t_list **b);
 void		ft_do_ra(t_list **a, int idx);
 void		ft_do_rra(t_list **a, int idx, int a_size);
 void		ft_rotate_a(t_list **a, int big_bro_idx);
+void		ft_reorder_a(t_list **a);
 void		ft_do_rb(t_list **b, int idx);
 void		ft_do_rrb(t_list **b, int idx, int b_size);
-void		ft_rotate_b(t_list **b, int	pos_to_find);
+void		ft_rotate_b(t_list **b, int	lil_bro_idx, int lil_bro_pos);
 void		ft_check_push(t_list **b);
 
 /* B_TO_A: Array Stuff */
