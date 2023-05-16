@@ -50,6 +50,8 @@ int			ft_define_pivot(t_list **a, int pivot);
 t_list		*ft_pre_sort_stack(t_list *rand_stack);
 
 /* B_TO_A */
+int			*ft_get_big_3_idx(t_list **b);
+int			*ft_get_big_3_pos(t_list **b, int *big_3_idx);
 int			ft_get_incoming_idx(t_list **a, int big_bro_pos, int idx);
 void		ft_push_from_b_to_a(t_list **a, t_list **b);
 void		ft_re_init_stacks_index(t_list **a, t_list **b);
@@ -98,10 +100,13 @@ void		ft_push_smallest_node_4(t_list **a,
 /* STACK */
 int			ft_find_first_big_data(t_list *stack);
 int			ft_find_first_big_idx(t_list *stack);
+int			ft_find_first_big_pos(t_list *stack);
 int			ft_find_second_big_data(t_list *stack);
 int			ft_find_second_big_idx(t_list *stack);
+int			ft_find_second_big_pos(t_list *stack);
 int			ft_find_third_big_data(t_list *stack);
 int			ft_find_third_big_idx(t_list *stack);
+int			ft_find_third_big_pos(t_list *stack);
 int			ft_find_smallest_node_data(t_list *stack);
 int			ft_find_smallest_node_idx(t_list *stack);
 
