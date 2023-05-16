@@ -12,7 +12,49 @@
 
 #include "push_swap.h"
 
+static int	ft_find_node_pos(t_list *stack, int idx)
+{
+	int	pos;
+
+	pos = 0;
+	while (stack)
+	{
+		if (stack->index == idx)
+			pos = stack->pos;
+		stack = stack->next;
+	}
+	return (pos);
+}
+
+int	*ft_get_big_3_idx(t_list **b)
+{
+	int	*big_3_idx;
+
+	ft_re_init_index(*b);
+	big_3_idx = (int *)malloc(sizeof(int) * 3);
+	if (!big_3_idx)
+		return (0);
+	big_3_idx[0] = ft_find_first_big_idx(*b);
+	big_3_idx[1] = ft_find_second_big_idx(*b);
+	big_3_idx[2] = ft_find_third_big_idx(*b);
+	return (big_3_idx);
+}
+
 /*
- * What am I trying to do?
- * Get the cheapest a_node_idx (big_bro_idx) && b_node_idx (lil_bro_idx)
+ * Returns an array whith the pos of the 3 big nodes to be pushed to "b"
+ * in order, starting at the cheapest.
 */
+int	*ft_get_big_3_pos(t_list **b, int *big_3_idx)
+{
+	int	*big_3_pos;
+
+	ft_re_init_index(*b);
+	big_3_pos = (int *)malloc(sizeof(int) * 3);
+	if (!big_3_pos)
+		return (0);
+	ft_sort_arr(big_3_idx, 3);
+	big_3_pos[0] = ft_find_node_pos(*b, big_3_idx[0]);
+	big_3_pos[1] = ft_find_node_pos(*b, big_3_idx[1]);
+	big_3_pos[2] = ft_find_node_pos(*b, big_3_idx[2]);
+	return (big_3_pos);
+}
