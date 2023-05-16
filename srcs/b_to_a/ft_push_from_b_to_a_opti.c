@@ -52,7 +52,6 @@ int	*ft_get_big_3_pos(t_list **b, int *big_3_idx)
 	big_3_pos = (int *)malloc(sizeof(int) * 3);
 	if (!big_3_pos)
 		return (0);
-	ft_sort_arr(big_3_idx, 3);
 	big_3_pos[0] = ft_find_node_pos(*b, big_3_idx[0]);
 	big_3_pos[1] = ft_find_node_pos(*b, big_3_idx[1]);
 	big_3_pos[2] = ft_find_node_pos(*b, big_3_idx[2]);
