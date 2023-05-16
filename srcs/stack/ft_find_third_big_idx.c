@@ -22,6 +22,7 @@ int	ft_find_third_big_idx(t_list *stack)
 	if (!stack)
 		return (0);
 	third_data = INT_MIN;
+	third_idx = 0;
 	i = 0;
 	second_data = ft_find_second_big_data(stack);
 	while (stack)
