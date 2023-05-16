@@ -50,6 +50,7 @@ int			ft_define_pivot(t_list **a, int pivot);
 t_list		*ft_pre_sort_stack(t_list *rand_stack);
 
 /* B_TO_A */
+int			ft_find_lil_idx(t_list *b, int pos);
 int			*ft_get_big_3_idx(t_list **b);
 int			*ft_get_big_3_pos(t_list **b, int *big_3_idx);
 int			ft_get_incoming_idx(t_list **a, int big_bro_pos, int idx);
@@ -61,8 +62,8 @@ void		ft_rotate_a(t_list **a, int big_bro_idx);
 void		ft_reorder_a(t_list **a);
 void		ft_do_rb(t_list **b, int idx);
 void		ft_do_rrb(t_list **b, int idx, int b_size);
-void		ft_rotate_b(t_list **b, int	lil_bro_idx, int lil_bro_pos);
-void		ft_check_push(t_list **b);
+void		ft_rotate_b(t_list **b, int lil_bro_pos);
+void		ft_check_push(t_list **a);
 
 /* B_TO_A: Array Stuff */
 void		ft_init_op_lst(t_cmds *op_lst, char *str);
