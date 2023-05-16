@@ -49,31 +49,29 @@ void	ft_rotate_a(t_list **a, int big_bro_idx)
 		ft_do_rra(a, big_bro_idx, a_size);
 }
 
-/*
-static void	ft_push_node_to_a_and_check_next(t_list **a, t_list **b)
-{
-	int	*big_3_idx;
-	int	*big_3_pos;
-	int	big_bro_idx;
-	int	i;
+// static void	ft_push_node_to_a_and_check_next(t_list **a, t_list **b)
+// {
+// 	int	*big_3_idx;
+// 	int	*big_3_pos;
+// 	int	big_bro_idx;
+// 	int	i;
 
-	big_3_idx = ft_get_big_3_idx(b);
-	ft_sort_arr(big_3_idx, 3);
-	big_3_pos = ft_get_big_3_pos(b, big_3_idx);
-	i = 0;
-	while (i < 3)
-	{
-		big_bro_idx = ft_get_big_bro_idx(a, big_3_pos[i]);
-		ft_rotate_a(a, big_bro_idx);
-		ft_rotate_b(b, big_3_pos[i]);
-		ft_pa(a, b);
-		ft_check_push(a);
-		++i;
-	}
-	free(big_3_idx);
-	free(big_3_pos);
-}
-*/
+// 	big_3_idx = ft_get_big_3_idx(b);
+// 	ft_sort_arr(big_3_idx, 3);
+// 	big_3_pos = ft_get_big_3_pos(b, big_3_idx);
+// 	i = 0;
+// 	while (i < 3)
+// 	{
+// 		big_bro_idx = ft_get_big_bro_idx(a, big_3_pos[i]);
+// 		ft_rotate_a(a, big_bro_idx);
+// 		ft_rotate_b(b, big_3_pos[i]);
+// 		ft_pa(a, b);
+// 		ft_check_push(a);
+// 		++i;
+// 	}
+// 	free(big_3_idx);
+// 	free(big_3_pos);
+// }
 
 // void	ft_push_from_b_to_a(t_list **a, t_list **b)
 // {

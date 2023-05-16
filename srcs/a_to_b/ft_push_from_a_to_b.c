@@ -48,14 +48,6 @@ static void	ft_push_b_and_check_pos(int mid, t_list **a, t_list **b)
 		ft_rb(b);
 }
 
-static void	ft_check_condition(t_data *data)
-{
-	if (data->top_count == data->top_pivot)
-		data->top_pivot += data->pivot;
-	if (data->btm_count == data->btm_pivot)
-		data->btm_pivot -= data->pivot;
-}
-
 static void	ft_push_chunks_to_b(t_list **a, t_list **b, int a_size)
 {
 	t_data	data;
@@ -63,30 +55,23 @@ static void	ft_push_chunks_to_b(t_list **a, t_list **b, int a_size)
 	ft_init_data(*a, &data, a_size);
 	while ((*a) && a_size > 3)
 	{
-		ft_check_condition(&data);
 		if (((*a)->pos <= data.top_pivot && (*a)->pos >= data.mid)
 			&& (!((*a)->data == data.first || (*a)->data == data.second
 					|| (*a)->data == data.third)))
-		{
 			ft_push_b_and_check_pos(data.mid, a, b);
-			--a_size;
-			++data.top_count;
-		}
 		else if (((*a)->pos >= data.btm_pivot && (*a)->pos < data.mid)
 			&& (!((*a)->data == data.first || (*a)->data == data.second
 					|| (*a)->data == data.third)))
-		{
 			ft_push_b_and_check_pos(data.mid, a, b);
-			--a_size;
-			--data.btm_count;
-		}
-		/*
-			* This part should find the cheapest element that fits in
-			* the confinement of the chunk limits and then based on its
-			* location in stack a, ra || rra in order to bring the element
-			* to the top of stack a in order to push to stack b
-		*/
 		ft_ra(a);
+		--a_size;
+		if (a_size == 3)
+		{
+			a_size = ft_get_stack_size(a);
+			data.top_pivot += data.pivot;
+			data.btm_pivot -= data.pivot;
+
+		}
 	}
 }
 
