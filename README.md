@@ -54,7 +54,7 @@ The possible actions are:
 * ```rrr``` : ```rra``` and ```rrb``` at the same time.
 
 The grade depends on how efficient the program's sorting process is.
- 
+
 * Sorting 3 values: no more than 3 actions.
 * Sorting 5 values: no more than 12 actions.
 * Sorting 100 values: rating from 1 to 5 points depending on the number of actions:
