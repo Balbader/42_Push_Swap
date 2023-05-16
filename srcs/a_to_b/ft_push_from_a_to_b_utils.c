@@ -29,3 +29,9 @@ int	ft_define_pivot(t_list **a, int pivot)
 		pivot = a_size / 10;
 	return (pivot);
 }
+
+/*
+ * 1. Need to get the idx of all elements being pushed to b within the
+ * confinement of top_pivot && btm_pivot
+ * 2. Calculate the 
+*/

@@ -80,6 +80,12 @@ static void	ft_push_chunks_to_b(t_list **a, t_list **b, int a_size)
 			--a_size;
 			--data.btm_count;
 		}
+		/*
+			* This part should find the cheapest element that fits in
+			* the confinement of the chunk limits and then based on its
+			* location in stack a, ra || rra in order to bring the element
+			* to the top of stack a in order to push to stack b
+		*/
 		ft_ra(a);
 	}
 }
