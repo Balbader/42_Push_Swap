@@ -14,7 +14,6 @@
 
 typedef struct s_data
 {
-	t_cmds	*op_lst;
 	int		first;
 	int		second;
 	int		third;
@@ -23,8 +22,6 @@ typedef struct s_data
 	int		mid;
 	int		top_pivot;
 	int		btm_pivot;
-	int		top_count;
-	int		btm_count;
 	int		pivot;
 }				t_data;
 
@@ -37,8 +34,6 @@ static void	ft_init_data(t_list *a, t_data *data, int a_size)
 	data->pivot = ft_define_pivot(&a, data->pivot);
 	data->top_pivot = data->mid + data->pivot;
 	data->btm_pivot = data->mid - data->pivot;
-	data->top_count = data->mid;
-	data->btm_count = data->mid;
 }
 
 static void	ft_push_b_and_check_pos(int mid, t_list **a, t_list **b)

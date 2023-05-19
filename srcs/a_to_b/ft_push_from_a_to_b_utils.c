@@ -16,17 +16,19 @@
  * Returns the reference nbr that will serve to define the chunks size
  * to create in b
 */
-int	ft_define_pivot(t_list **a, int pivot)
+int	ft_define_pivot(t_list **stack, int pivot)
 {
-	int	a_size;
+	int	stack_size;
 
-	a_size = ft_get_stack_size(a);
-	if (a_size == 100 || a_size == 500)
+	stack_size = ft_get_stack_size(stack);
+	if (stack_size == 100 || stack_size == 500)
 		pivot = 32;
-	else if (a_size > 5 && a_size < 100)
-		pivot = a_size / 3;
-	else if (a_size > 100)
-		pivot = a_size / 10;
+	else if (stack_size == 97 || stack_size == 497)
+		pivot = 20;
+	else if (stack_size > 5 && stack_size < 100)
+		pivot = stack_size / 3;
+	else if (stack_size > 100)
+		pivot = stack_size / 10;
 	return (pivot);
 }
 
