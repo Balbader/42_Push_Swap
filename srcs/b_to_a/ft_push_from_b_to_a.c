@@ -69,3 +69,23 @@ void	ft_init_push_to_a(t_list **a, t_list **b)
 	ft_check_b_sender(b, cheapest_b_idx);
 	ft_pa(a, b);
 }
+
+void	ft_push_from_b_to_a(t_list **a, t_list **b)
+{
+	int	b_size;
+	int	pivot;
+	int	ref;
+
+	b_size = ft_get_stack_size(b);
+	pivot = 0;
+	pivot = ft_define_pivot(b, pivot);
+	ref = b_size - pivot;
+	while (*b)
+	{
+		while ((*b)->pos >= ref && (*b)->pos <= b_size)
+			ft_init_push_to_a(a, b);
+		if ((*b)->pos == ref)
+			ref -= pivot;
+	}
+	ft_reorder_a(a);
+}
