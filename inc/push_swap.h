@@ -66,13 +66,16 @@ void		ft_rotate_b(t_list **b, int lil_bro_pos);
 void		ft_check_push(t_list **a);
 
 /* B_TO_A: Array Stuff */
+int			ft_get_cheapest_node_idx(t_list **stack, int cheapest_node_idx);
+int			ft_get_cheapest_node_pos(t_list **stack,
+							int cheapest_node_idx, int cheapest_node_pos);
 void		ft_init_op_lst(t_cmds *op_lst, char *str);
 // t_cmds		*ft_initial_op_arr(t_cmds *op_lst);
 
 /* COST */
 int			ft_get_node_cost(t_list **stack, int idx);
 int			ft_get_big_bro_idx(t_list **a, int incoming_pos);
-int			ft_get_big_bro_pos(t_list **a, int incoming_pos);
+int			ft_get_big_bro_pos(t_list **a, int big_bro_idx);
 int			ft_get_lil_bro_idx(t_list **b, int lil_bro_idx);
 int			ft_get_lil_bro_pos(t_list **a, t_list **b, int lil_bro_pos);
 int			ft_get_cheapest_b_node_idx(t_list **a, t_list **b);
