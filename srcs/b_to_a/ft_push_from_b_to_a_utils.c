@@ -12,65 +12,51 @@
 
 #include "push_swap.h"
 
-// void	ft_do_rb(t_list **b, int idx)
-// {
-// 	int	i;
+/* Return the idx of the cheapest node in a given stack based on its cost */
 
-// 	i = 0;
-// 	while (i < idx)
-// 	{
-// 		ft_rb(b);
-// 		++i;
-// 	}
-// }
+int	ft_get_cheapest_node_idx(t_list **stack, int cheapest_node_idx)
+{
+	int	stack_size;
+	int	cost;
+	int	cheapest;
+	int	i;
 
-// void	ft_do_rrb(t_list **b, int idx, int b_size)
-// {
-// 	int	i;
+	stack_size = ft_get_stack_size(stack);
+	cheapest = INT_MAX;
+	cost = 0;
+	i = 0;
+	while (i < stack_size)
+	{
+		cost = ft_get_node_cost(stack, i);
+		if (cost < cheapest)
+		{
+			cheapest = cost;
+			cheapest_node_idx = i;
+		}
+		++i;
+	}
+	return (cheapest_node_idx);
+}
 
-// 	i = 0;
-// 	while (i < (b_size - idx))
-// 	{
-// 		ft_rrb(b);
-// 		++i;
-// 	}
-// }
+/* Returns the position of the cheapest node in a given stack based on
+ * the cheapest_idx found
+*/
+int	ft_get_cheapest_node_pos(t_list **stack, int cheapest_idx, int cheapest_pos)
+{
+	t_list	*tmp;
+	int		stack_size;
+	int		i;
 
-// /* Rotate b until b_node pos on top */
-// void	ft_rotate_b(t_list **b, int lil_bro_pos)
-// {
-// 	int	lil_bro_idx;
-// 	int	b_size;
-// 	int	mid;
-
-// 	ft_re_init_index(*b);
-// 	lil_bro_idx = ft_find_lil_idx(*b, lil_bro_pos);
-// 	b_size = ft_get_stack_size(b);
-// 	mid = b_size / 2;
-// 	if (lil_bro_idx <= mid)
-// 		ft_do_rb(b, lil_bro_idx);
-// 	else if (lil_bro_idx > mid)
-// 		ft_do_rrb(b, lil_bro_idx, b_size);
-// }
-
-// void	ft_check_push(t_list **a)
-// {
-// 	if ((*a)->pos > (*a)->next->pos)
-// 		ft_sa(a);
-// }
-
-// void	ft_reorder_a(t_list **a)
-// {
-// 	int	smallest_idx;
-// 	int	a_size;
-// 	int	mid;
-
-// 	ft_re_init_index(*a);
-// 	smallest_idx = ft_find_smallest_node_idx(*a);
-// 	a_size = ft_get_stack_size(a);
-// 	mid = a_size / 2;
-// 	if (smallest_idx <= mid)
-// 		ft_do_ra(a, smallest_idx);
-// 	else if (smallest_idx > mid)
-// 		ft_do_rra(a, smallest_idx, a_size);
-// }
+	stack_size = ft_get_stack_size(stack);
+	tmp = (*stack);
+	i = 0;
+	while (i < stack_size)
+	{
+		if (i == cheapest_idx)
+			cheapest_pos = tmp->pos;
+		tmp = tmp->next;
+		++i;
+	}
+	ft_free_stack(&tmp);
+	return (cheapest_pos);
+}
