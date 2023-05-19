@@ -12,60 +12,7 @@
 
 #include "push_swap.h"
 
-void	ft_do_ra(t_list **a, int big_bro_idx)
-{
-	int	i;
-
-	i = 0;
-	while (i < big_bro_idx)
-	{
-		ft_ra(a);
-		++i;
-	}
-}
-
-void	ft_do_rra(t_list **a, int big_bro_idx)
-{
-	int	i;
-
-	i = 0;
-	while (i < big_bro_idx)
-	{
-		ft_rra(a);
-		++i;
-	}
-}
-
-void	ft_rotate_a(t_list **a, int big_bro_idx)
-{
-	int	a_size;
-	int	mid;
-
-	a_size = ft_get_stack_size(a);
-	mid = a_size / 2;
-	if (big_bro_idx <= mid)
-		ft_do_ra(a, big_bro_idx);
-	else if (big_bro_idx > mid)
-		ft_do_rra(a, big_bro_idx);
-}
-
-void	ft_check_a_receiver(t_list **a, int big_bro_idx)
-{
-	if ((*a)->index == big_bro_idx)
-	{
-		printf("a_stack ready to receive!\n");
-		printf("a->pos: (%d)\n", (*a)->pos);
-		return ;
-	}
-	else
-	{
-		ft_rotate_a(a, big_bro_idx);
-		printf("a->pos: (%d)\n", (*a)->pos);
-		return ;
-	}
-}
-
-void	ft_push_from_b_to_a(t_list **a, t_list **b)
+void	ft_init_push_to_a(t_list **a, t_list **b)
 {
 	int	cheapest_b_idx;
 	int	cheapest_b_pos;
@@ -90,4 +37,9 @@ void	ft_push_from_b_to_a(t_list **a, t_list **b)
 	printf("big_bro_pos: (%d)\n", big_bro_pos);
 	printf("\n");
 	ft_check_a_receiver(a, big_bro_idx);
+}
+
+void	ft_push_from_b_to_a(t_list **a, t_list **b)
+{
+	ft_init_push_to_a(a, b);
 }
