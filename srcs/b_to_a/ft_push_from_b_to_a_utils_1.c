@@ -20,6 +20,7 @@ typedef struct s_data
 	int		big_bro_cost;
 	int		tot_b_cost;
 	int		b_size;
+	int		pivot;
 	int		i;
 }				t_data;
 
@@ -73,6 +74,43 @@ int	ft_get_cheapest_node_pos(t_list **stack, int cheapest_idx, int cheapest_pos)
 }
 
 /* Returns the tot cost of b_node (b_cost + a_cost) */
+// int	ft_get_cheapest_b_idx(t_list **a, t_list **b)
+// {
+// 	t_data	data;
+// 	int		cheapest_b_idx;
+
+// 	data.b_size = ft_get_stack_size(b);
+// 	data.pivot = 0;
+// 	data.pivot = ft_define_pivot(b, data.pivot);
+// 	data.tmp_b = (*b);
+// 	data.b_cost = 0;
+// 	data.big_bro_idx = 0;
+// 	data.big_bro_cost = 0;
+// 	data.tot_b_cost = 0;
+// 	cheapest_b_idx = INT_MAX;
+// 	data.i = 0;
+// 	while (data.i < data.pivot)
+// 	{
+// 		data.b_cost = ft_get_node_cost(b, data.i);
+// 		data.big_bro_idx = ft_get_big_bro_idx(a, data.tmp_b->pos);
+// 		data.big_bro_cost = ft_get_node_cost(a, data.big_bro_idx);
+// 		data.tot_b_cost = data.b_cost + data.big_bro_cost;
+// 		if (data.tot_b_cost < cheapest_b_idx)
+// 			{
+// 				cheapest_b_idx = data.i;
+
+// 			}
+// 		data.tmp_b = data.tmp_b->next;
+// 		++data.i;
+// 	}
+// 	printf("data.pivot: %d\n", data.pivot);
+// 	printf("b_cost: $%d\n", data.b_cost);
+// 	printf("tot_b_cost: $%d\n", data.tot_b_cost);
+// 	printf("chap_b_idx: [%d]\n", cheapest_b_idx);
+// 	ft_free_stack(&data.tmp_b);
+// 	return (cheapest_b_idx);
+// }
+
 int	ft_get_cheapest_b_idx(t_list **a, t_list **b)
 {
 	t_data	data;
@@ -97,6 +135,8 @@ int	ft_get_cheapest_b_idx(t_list **a, t_list **b)
 		data.tmp_b = data.tmp_b->next;
 		++data.i;
 	}
+	printf("tot_b_cost: $%d\n", data.tot_b_cost);
+	printf("chap_b_idx: [%d]\n", cheapest_b_idx);
 	ft_free_stack(&data.tmp_b);
 	return (cheapest_b_idx);
 }

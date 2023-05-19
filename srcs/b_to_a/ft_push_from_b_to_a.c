@@ -65,6 +65,11 @@ void	ft_init_push_to_a(t_list **a, t_list **b)
 										cheapest_b_idx, cheapest_b_pos);
 	big_bro_idx = ft_get_big_bro_idx(a, cheapest_b_pos);
 	big_bro_pos = ft_get_big_bro_pos(a, big_bro_idx);
+	printf("cheapest_b_idx: [%d]\n", cheapest_b_idx);
+	printf("cheapest_b_pos: (%d)\n", cheapest_b_pos);
+	printf("big_bro_idx: [%d]\n", big_bro_idx);
+	printf("big_bro_pos: (%d)\n", big_bro_pos);
+	printf("\n");
 	ft_check_a_receiver(a, big_bro_idx);
 	ft_check_b_sender(b, cheapest_b_idx);
 	ft_pa(a, b);
@@ -72,20 +77,30 @@ void	ft_init_push_to_a(t_list **a, t_list **b)
 
 void	ft_push_from_b_to_a(t_list **a, t_list **b)
 {
-	int	b_size;
-	int	pivot;
-	int	ref;
+	int		b_size;
+	int		pivot;
+	int		i;
 
+	ft_re_init_index(*b);
+	ft_print_stack(b, "b");
 	b_size = ft_get_stack_size(b);
 	pivot = 0;
 	pivot = ft_define_pivot(b, pivot);
-	ref = b_size - pivot;
-	while (*b)
+	i = 0;
+	while ((*b) && i < pivot)
 	{
-		while ((*b)->pos >= ref && (*b)->pos <= b_size)
+		if ((*b)->index <= pivot)
 			ft_init_push_to_a(a, b);
-		if ((*b)->pos == ref)
-			ref -= pivot;
+		++i;
+		if (i == pivot)
+		{
+			printf("--------------------\n");
+			ft_re_init_index(*a);
+			ft_re_init_index(*b);
+			ft_print_stack(a, "a");
+			ft_print_stack(b, "b");
+			i = 0;
+		}
 	}
 	ft_reorder_a(a);
 }
