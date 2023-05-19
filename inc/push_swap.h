@@ -57,6 +57,7 @@ int			ft_get_incoming_idx(t_list **a, int big_bro_pos, int idx);
 void		ft_push_from_b_to_a(t_list **a, t_list **b);
 void		ft_re_init_stacks_index(t_list **a, t_list **b);
 void		ft_check_a_receiver(t_list **a, int big_bro_idx);
+void		ft_check_b_sender( t_list **b, int lil_bro_idx);
 void		ft_do_ra(t_list **a, int big_bro_idx);
 void		ft_do_rra(t_list **a, int big_bro_idx);
 void		ft_rotate_a(t_list **a, int big_bro_idx);
@@ -70,6 +71,7 @@ int			ft_get_cheapest_node_idx(t_list **stack, int cheapest_node_idx);
 int			ft_get_cheapest_node_pos(t_list **stack,
 							int cheapest_node_idx, int cheapest_node_pos);
 void		ft_init_op_lst(t_cmds *op_lst, char *str);
+void		ft_init_push_to_a(t_list **a, t_list **b);
 
 /* COST */
 int			ft_get_node_cost(t_list **stack, int idx);
