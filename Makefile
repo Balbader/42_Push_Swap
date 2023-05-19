@@ -24,6 +24,7 @@ ACTIONS				:=	$(addprefix $(ACTIONS_DIR), $(ACTIONS_FILES))
 
 B_TO_A_DIR			:=	b_to_a/
 B_TO_A_FILES		:=	\
+						ft_optimize_b_to_a.c \
 						ft_push_from_b_to_a.c \
 						ft_push_from_b_to_a_utils_1.c \
 						ft_push_from_b_to_a_utils_2.c \
