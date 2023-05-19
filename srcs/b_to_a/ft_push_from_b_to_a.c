@@ -77,30 +77,37 @@ void	ft_init_push_to_a(t_list **a, t_list **b)
 
 void	ft_push_from_b_to_a(t_list **a, t_list **b)
 {
-	int		b_size;
-	int		pivot;
-	int		i;
-
-	ft_re_init_index(*b);
-	ft_print_stack(b, "b");
-	b_size = ft_get_stack_size(b);
-	pivot = 0;
-	pivot = ft_define_pivot(b, pivot);
-	i = 0;
-	while ((*b) && i < pivot)
-	{
-		if ((*b)->index <= pivot)
-			ft_init_push_to_a(a, b);
-		++i;
-		if (i == pivot)
-		{
-			printf("--------------------\n");
-			ft_re_init_index(*a);
-			ft_re_init_index(*b);
-			ft_print_stack(a, "a");
-			ft_print_stack(b, "b");
-			i = 0;
-		}
-	}
+	while (*b)
+		ft_init_push_to_a(a, b);
 	ft_reorder_a(a);
 }
+
+// void	ft_push_from_b_to_a(t_list **a, t_list **b)
+// {
+// 	int		b_size;
+// 	int		pivot;
+// 	int		i;
+
+// 	ft_re_init_index(*b);
+// 	// ft_print_stack(b, "b");
+// 	b_size = ft_get_stack_size(b);
+// 	pivot = 0;
+// 	pivot = ft_define_pivot(b, pivot);
+// 	i = 0;
+// 	while ((*b) && i < pivot)
+// 	{
+// 		if ((*b)->index <= pivot)
+// 			ft_init_push_to_a(a, b);
+// 		++i;
+// 		if (i == pivot)
+// 		{
+// 			// printf("--------------------\n");
+// 			ft_re_init_index(*a);
+// 			ft_re_init_index(*b);
+// 			// ft_print_stack(a, "a");
+// 			// ft_print_stack(b, "b");
+// 			i = 0;
+// 		}
+// 	}
+// 	ft_reorder_a(a);
+// }
