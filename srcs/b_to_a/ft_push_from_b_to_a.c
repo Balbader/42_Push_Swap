@@ -12,6 +12,39 @@
 
 #include "push_swap.h"
 
+int	ft_get_one_idx(t_list **a, int one_idx)
+{
+	t_list	*tmp;
+
+	ft_re_init_index(*a);
+	tmp = (*a);
+	one_idx = 0;
+	while (tmp)
+	{
+		if (tmp->pos == 1)
+			one_idx = tmp->index;
+		tmp = tmp->next;
+	}
+	ft_free_stack(&tmp);
+	return (one_idx);
+}
+
+void	ft_reorder_a(t_list **a)
+{
+	int	one_idx;
+	int	a_size;
+	int	mid;
+
+	a_size = ft_get_stack_size(a);
+	mid = a_size / 2;
+	one_idx = 0;
+	one_idx = ft_get_one_idx(a, one_idx);
+	if (one_idx <= mid)
+		ft_do_ra(a, one_idx);
+	else if (one_idx > mid)
+		ft_do_rra(a, one_idx, a_size);
+}
+
 void	ft_init_push_to_a(t_list **a, t_list **b)
 {
 	int	cheapest_b_idx;
@@ -32,31 +65,7 @@ void	ft_init_push_to_a(t_list **a, t_list **b)
 										cheapest_b_idx, cheapest_b_pos);
 	big_bro_idx = ft_get_big_bro_idx(a, cheapest_b_pos);
 	big_bro_pos = ft_get_big_bro_pos(a, big_bro_idx);
-	printf("b idx: [%d]\n", cheapest_b_idx);
-	printf("a idx: [%d]\n", big_bro_idx);
-	printf("b pos: (%d)\n", cheapest_b_pos);
-	printf("a pos: (%d)\n", big_bro_pos);
 	ft_check_a_receiver(a, big_bro_idx);
 	ft_check_b_sender(b, cheapest_b_idx);
-	printf("pa!\n");
 	ft_pa(a, b);
-}
-
-void	ft_push_from_b_to_a(t_list **a, t_list **b)
-{
-	int	i;
-
-	i = 0;
-	// while (*b)
-	while (i < 89)
-	{
-		printf("\n---------------------->%d\n", i + 1);
-		ft_re_init_index(*a);
-		ft_re_init_index(*b);
-		ft_print_stack(b, "b");
-		ft_print_stack(a, "a");
-		printf("\n");
-		ft_init_push_to_a(a, b);
-		++i;
-	}
 }

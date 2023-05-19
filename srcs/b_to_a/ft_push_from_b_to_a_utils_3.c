@@ -22,7 +22,6 @@ void	ft_do_rb(t_list **b, int lil_bro_idx)
 		ft_rb(b);
 		++i;
 	}
-	printf("rb *= %d\n", i);
 }
 
 void	ft_do_rrb(t_list **b, int lil_bro_idx, int b_size)
@@ -35,7 +34,6 @@ void	ft_do_rrb(t_list **b, int lil_bro_idx, int b_size)
 		ft_rrb(b);
 		++i;
 	}
-	printf("rrb *= %d\n", i);
 }
 
 void	ft_rotate_b(t_list **b, int lil_bro_idx)
@@ -44,9 +42,7 @@ void	ft_rotate_b(t_list **b, int lil_bro_idx)
 	int	mid;
 
 	b_size = ft_get_stack_size(b);
-	printf("b_size: %d\n", b_size);
 	mid = b_size / 2;
-	printf("mid_b: %d\n", mid);
 	if (lil_bro_idx <= mid)
 		ft_do_rb(b, lil_bro_idx);
 	else if (lil_bro_idx > mid)

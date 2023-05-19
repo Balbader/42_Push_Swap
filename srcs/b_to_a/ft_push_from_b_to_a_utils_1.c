@@ -93,7 +93,7 @@ int	ft_get_cheapest_b_idx(t_list **a, t_list **b)
 		data.big_bro_cost = ft_get_node_cost(a, data.big_bro_idx);
 		data.tot_b_cost = data.b_cost + data.big_bro_cost;
 		if (data.tot_b_cost < cheapest_b_idx)
-			cheapest_b_idx = data.tot_b_cost;
+			cheapest_b_idx = data.i;
 		data.tmp_b = data.tmp_b->next;
 		++data.i;
 	}
