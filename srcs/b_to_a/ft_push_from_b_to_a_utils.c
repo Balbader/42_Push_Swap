@@ -97,5 +97,6 @@ int	ft_get_cheapest_b_idx(t_list **a, t_list **b)
 		data.tmp_b = data.tmp_b->next;
 		++data.i;
 	}
+	ft_free_stack(&data.tmp_b);
 	return (cheapest_b_idx);
 }
