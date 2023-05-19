@@ -58,7 +58,7 @@ int	ft_get_big_bro_pos(t_list **a, int big_bro_idx)
 	ft_re_init_index(*a);
 	tmp = (*a);
 	a_size = ft_get_stack_size(a);
-	big_bro_pos = INT_MAX;
+	big_bro_pos = 0;
 	i = 0;
 	while (i < a_size)
 	{
