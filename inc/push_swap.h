@@ -50,6 +50,7 @@ int			ft_define_pivot(t_list **a, int pivot);
 t_list		*ft_pre_sort_stack(t_list *rand_stack);
 
 /* B_TO_A */
+int			ft_get_one_idx(t_list **a, int one_idx);
 int			ft_find_lil_idx(t_list *b, int pos);
 int			*ft_get_big_3_idx(t_list **b);
 int			*ft_get_big_3_pos(t_list **b, int *big_3_idx);
@@ -72,6 +73,7 @@ int			ft_get_cheapest_node_pos(t_list **stack,
 							int cheapest_node_idx, int cheapest_node_pos);
 void		ft_init_op_lst(t_cmds *op_lst, char *str);
 void		ft_init_push_to_a(t_list **a, t_list **b);
+void		ft_reorder_a(t_list **a);
 
 /* COST */
 int			ft_get_node_cost(t_list **stack, int idx);
