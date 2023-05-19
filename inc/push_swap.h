@@ -56,23 +56,20 @@ int			*ft_get_big_3_pos(t_list **b, int *big_3_idx);
 int			ft_get_incoming_idx(t_list **a, int big_bro_pos, int idx);
 void		ft_push_from_b_to_a(t_list **a, t_list **b);
 void		ft_re_init_stacks_index(t_list **a, t_list **b);
-void		ft_do_ra(t_list **a, int idx);
-void		ft_do_rra(t_list **a, int idx, int a_size);
+void		ft_check_a_receiver(t_list **a, int big_bro_idx);
+void		ft_do_ra(t_list **a, int big_bro_idx);
+void		ft_do_rra(t_list **a, int big_bro_idx);
 void		ft_rotate_a(t_list **a, int big_bro_idx);
-void		ft_reorder_a(t_list **a);
 void		ft_do_rb(t_list **b, int idx);
 void		ft_do_rrb(t_list **b, int idx, int b_size);
 void		ft_rotate_b(t_list **b, int lil_bro_pos);
 void		ft_check_push(t_list **a);
-
-/* B_TO_A: Array Stuff */
 int			ft_get_cheapest_b_idx(t_list **a, t_list **b);
 int			ft_get_big_bro_cost(t_list **a, int big_bro_idx, int big_bro_cost);
 int			ft_get_cheapest_node_idx(t_list **stack, int cheapest_node_idx);
 int			ft_get_cheapest_node_pos(t_list **stack,
 							int cheapest_node_idx, int cheapest_node_pos);
 void		ft_init_op_lst(t_cmds *op_lst, char *str);
-// t_cmds		*ft_initial_op_arr(t_cmds *op_lst);
 
 /* COST */
 int			ft_get_node_cost(t_list **stack, int idx);
