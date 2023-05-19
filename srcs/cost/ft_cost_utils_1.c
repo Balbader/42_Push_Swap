@@ -78,14 +78,12 @@ int	ft_get_lil_bro_idx(t_list **b, int lil_bro_idx)
 	int		b_cost;
 	int		b_size;
 	int		cheapest;
-	int		i;
 
 	ft_re_init_index(*b);
 	tmp = (*b);
 	b_size = ft_get_stack_size(b);
 	cheapest = INT_MAX;
-	i = 0;
-	while (i < b_size)
+	while (tmp)
 	{
 		b_cost = ft_get_node_cost(b, tmp->index);
 		if (b_cost < cheapest)
@@ -94,7 +92,6 @@ int	ft_get_lil_bro_idx(t_list **b, int lil_bro_idx)
 			lil_bro_idx = tmp->index;
 		}
 		tmp = tmp->next;
-		++i;
 	}
 	ft_free_stack(&tmp);
 	return (lil_bro_idx);
