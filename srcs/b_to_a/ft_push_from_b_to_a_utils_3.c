@@ -19,21 +19,23 @@ void	ft_do_rb(t_list **b, int lil_bro_idx)
 	i = 0;
 	while (i < lil_bro_idx)
 	{
-		ft_rb(a);
+		ft_rb(b);
 		++i;
 	}
+	printf("rb *= %d\n", i);
 }
 
-void	ft_do_rrb(t_list **b, int lil_bro_idx)
+void	ft_do_rrb(t_list **b, int lil_bro_idx, int b_size)
 {
 	int	i;
 
 	i = 0;
-	while (i < lil_bro_idx)
+	while (i < (b_size - lil_bro_idx))
 	{
 		ft_rrb(b);
 		++i;
 	}
+	printf("rrb *= %d\n", i);
 }
 
 void	ft_rotate_b(t_list **b, int lil_bro_idx)
@@ -42,25 +44,22 @@ void	ft_rotate_b(t_list **b, int lil_bro_idx)
 	int	mid;
 
 	b_size = ft_get_stack_size(b);
+	printf("b_size: %d\n", b_size);
 	mid = b_size / 2;
+	printf("mid_b: %d\n", mid);
 	if (lil_bro_idx <= mid)
 		ft_do_rb(b, lil_bro_idx);
 	else if (lil_bro_idx > mid)
-		ft_do_rrb(b, lil_bro_idx);
+		ft_do_rrb(b, lil_bro_idx, b_size);
 }
 
 void	ft_check_b_sender( t_list **b, int lil_bro_idx)
 {
 	if ((*b)->index == lil_bro_idx)
-	{
-		printf("b_stack ready to send!\n");
-		printf("b->pos: (%d)\n", (*b)->pos);
 		return ;
-	}
 	else
 	{
-		ft_rotate_b(b, big_bro_idx);
-		printf("b->pos: (%d)\n", (*b)->pos);
+		ft_rotate_b(b, lil_bro_idx);
 		return ;
 	}
 }

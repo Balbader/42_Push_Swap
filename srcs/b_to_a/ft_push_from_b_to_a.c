@@ -20,6 +20,8 @@ void	ft_init_push_to_a(t_list **a, t_list **b)
 	int	big_bro_pos;
 	int	b_size;
 
+	ft_re_init_index(*a);
+	ft_re_init_index(*b);
 	b_size = ft_get_stack_size(b);
 	cheapest_b_idx = 0;
 	cheapest_b_pos = 0;
@@ -30,16 +32,31 @@ void	ft_init_push_to_a(t_list **a, t_list **b)
 										cheapest_b_idx, cheapest_b_pos);
 	big_bro_idx = ft_get_big_bro_idx(a, cheapest_b_pos);
 	big_bro_pos = ft_get_big_bro_pos(a, big_bro_idx);
-	printf("cheapest_b_idx: [%d]\n", cheapest_b_idx);
-	printf("cheapest_b_pos: (%d)\n", cheapest_b_pos);
-	printf("\n");
-	printf("big_bro_idx: [%d]\n", big_bro_idx);
-	printf("big_bro_pos: (%d)\n", big_bro_pos);
-	printf("\n");
+	printf("b idx: [%d]\n", cheapest_b_idx);
+	printf("a idx: [%d]\n", big_bro_idx);
+	printf("b pos: (%d)\n", cheapest_b_pos);
+	printf("a pos: (%d)\n", big_bro_pos);
 	ft_check_a_receiver(a, big_bro_idx);
+	ft_check_b_sender(b, cheapest_b_idx);
+	printf("pa!\n");
+	ft_pa(a, b);
 }
 
 void	ft_push_from_b_to_a(t_list **a, t_list **b)
 {
-	ft_init_push_to_a(a, b);
+	int	i;
+
+	i = 0;
+	// while (*b)
+	while (i < 89)
+	{
+		printf("\n---------------------->%d\n", i + 1);
+		ft_re_init_index(*a);
+		ft_re_init_index(*b);
+		ft_print_stack(b, "b");
+		ft_print_stack(a, "a");
+		printf("\n");
+		ft_init_push_to_a(a, b);
+		++i;
+	}
 }
