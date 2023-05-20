@@ -65,35 +65,24 @@ SMALL_SORT			:=	$(addprefix $(SMALL_SORT_DIR), $(SMALL_SORT_FILES))
 
 STACK_DIR			:=	stack/
 STACK_FILES			:=	\
-						ft_find_first_big_data.c \
-						ft_find_first_big_idx.c \
-						ft_find_first_big_pos.c \
-						ft_find_second_big_data.c \
-						ft_find_second_big_idx.c \
-						ft_find_second_big_pos.c \
-						ft_find_third_big_data.c \
-						ft_find_third_big_idx.c \
-						ft_find_third_big_pos.c \
-						ft_find_smallest_node_data.c \
-						ft_find_smallest_node_idx.c
-STACK				:=	$(addprefix $(STACK_DIR), $(STACK_FILES))
-
-STACK_UTILS_DIR		:=	stack_utils/
-STACK_UTILS_FILES	:=	\
+						ft_add_new_heac.c \
 						ft_add_new_tail.c \
 						ft_copy_stack_to_arr.c \
 						ft_create_node.c \
-						ft_create_cmd_node.c \
-						ft_free_op_lst.c \
+						ft_find_biggest_data.c \
+						ft_find_biggest_idx.c \
+						ft_find_smallest_data.c \
+						ft_find_smallest_idx.c \
 						ft_free_stack.c \
-						ft_get_before_last_node.c \
+						ft_get_big_bro_idx.c \
 						ft_get_last_node.c \
+						ft_get_lil_bro_idx.c \
 						ft_get_stack_size.c \
 						ft_init_stack.c \
-						ft_print_stack.c \
 						ft_re_init_index.c \
+						ft_reorder_a.c \
 						ft_stack_is_sorted.c
-STACK_UTILS			:=	$(addprefix $(STACK_UTILS_DIR), $(STACK_UTILS_FILES))
+STACK				:=	$(addprefix $(STACK_DIR), $(STACK_FILES))
 
 UTILS_DIR			:=	utils/
 UTILS_FILES			:=	\
@@ -121,7 +110,6 @@ SRCS				:=	\
 						$(OPER) \
 						$(SMALL_SORT) \
 						$(STACK) \
-						$(STACK_UTILS) \
 						$(UTILS) \
 						main.c
 SRCS        		:=	$(SRCS:%=$(SRCS_DIR)/%)
