@@ -44,33 +44,6 @@ int	ft_get_big_bro_idx(t_list **a, int incoming_pos)
 	return (big_bro_idx);
 }
 
-/*
- * Returns the pos of the a_node to bring to top of a_stack based on incoming
- * b_node_pos that is greater and closest to incoming b_node_pos
-*/
-int	ft_get_big_bro_pos(t_list **a, int big_bro_idx)
-{
-	t_list	*tmp;
-	int		big_bro_pos;
-	int		a_size;
-	int		i;
-
-	ft_re_init_index(*a);
-	tmp = (*a);
-	a_size = ft_get_stack_size(a);
-	big_bro_pos = 0;
-	i = 0;
-	while (i < a_size)
-	{
-		if (tmp->index == big_bro_idx)
-			big_bro_pos = tmp->pos;
-		tmp = tmp->next;
-		++i;
-	}
-	ft_free_stack(&tmp);
-	return (big_bro_pos);
-}
-
 /* Returns the idx of the cheapest b_node to bring to top of b_stack */
 int	ft_get_lil_bro_idx(t_list **b, int lil_bro_idx)
 {
@@ -93,29 +66,4 @@ int	ft_get_lil_bro_idx(t_list **b, int lil_bro_idx)
 	}
 	ft_free_stack(&tmp);
 	return (lil_bro_idx);
-}
-
-/* Returns the pos of the cheapest b_node to bring to top of b_stack */
-int	ft_get_lil_bro_pos(t_list **a, t_list **b, int lil_bro_pos)
-{
-	t_list	*tmp;
-	int		lil_bro_idx;
-	int		b_size;
-	int		i;
-
-	ft_re_init_index(*b);
-	tmp = (*b);
-	b_size = ft_get_stack_size(b);
-	lil_bro_idx = 0;
-	lil_bro_idx = ft_get_cheapest_b_node_idx(a, b);
-	i = 0;
-	while (i < b_size)
-	{
-		if (i == lil_bro_idx)
-			lil_bro_pos = tmp->pos;
-		tmp = tmp->next;
-		++i;
-	}
-	ft_free_stack(&tmp);
-	return (lil_bro_pos);
 }
