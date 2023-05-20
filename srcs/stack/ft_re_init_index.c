@@ -1,13 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_from_b_to_a.c                              :+:      :+:    :+:   */
+/*   ft_re_init_index.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: baalbade <baalbade@student.42.fr>          +#+  +:+       +#+        */
+/*   By: baalbade <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/11 13:14:08 by baalbade          #+#    #+#             */
-/*   Updated: 2023/05/11 13:14:10 by baalbade         ###   ########.fr       */
+/*   Created: 2023/04/11 10:54:00 by baalbade          #+#    #+#             */
+/*   Updated: 2023/04/11 10:54:01 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_re_init_index(t_list *stack)
+{
+	int		i;
+
+	i = 0;
+	while (stack)
+	{
+		stack->index = i;
+		stack = stack->next;
+		++i;
+	}
+}

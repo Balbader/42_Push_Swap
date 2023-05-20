@@ -1,13 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_from_b_to_a.c                              :+:      :+:    :+:   */
+/*   ft_create_node.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: baalbade <baalbade@student.42.fr>          +#+  +:+       +#+        */
+/*   By: baalbade <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/11 13:14:08 by baalbade          #+#    #+#             */
-/*   Updated: 2023/05/11 13:14:10 by baalbade         ###   ########.fr       */
+/*   Created: 2023/04/11 10:47:40 by baalbade          #+#    #+#             */
+/*   Updated: 2023/04/11 10:47:42 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+t_list	*ft_create_node(int data, int index)
+{
+	t_list	*new_node;
+
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (!new_node)
+		return (NULL);
+	new_node->data = data;
+	new_node->index = index;
+	new_node->pos = 0;
+	new_node->next = NULL;
+	return (new_node);
+}
