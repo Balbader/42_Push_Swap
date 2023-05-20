@@ -76,12 +76,10 @@ int	ft_get_lil_bro_idx(t_list **b, int lil_bro_idx)
 {
 	t_list	*tmp;
 	int		b_cost;
-	int		b_size;
 	int		cheapest;
 
 	ft_re_init_index(*b);
 	tmp = (*b);
-	b_size = ft_get_stack_size(b);
 	cheapest = INT_MAX;
 	while (tmp)
 	{

@@ -51,11 +51,9 @@ void	ft_init_push_to_a(t_list **a, t_list **b)
 	int	cheapest_b_pos;
 	int	big_bro_idx;
 	int	big_bro_pos;
-	int	b_size;
 
 	ft_re_init_index(*a);
 	ft_re_init_index(*b);
-	b_size = ft_get_stack_size(b);
 	cheapest_b_idx = 0;
 	cheapest_b_pos = 0;
 	big_bro_idx = 0;
