@@ -20,9 +20,9 @@ void	ft_reorder_a(t_list **a)
 
 	if (!(*a))
 		return ;
-	smallest_idx = ft_find_smallest_node_idx(*a);
+	smallest_idx = ft_find_smallest_idx(*a);
 	a_size = ft_get_stack_size(a);
-	mid = stack_size / 2;
+	mid = a_size / 2;
 	if (smallest_idx <= mid)
 	{
 		while (smallest_idx > 0)
