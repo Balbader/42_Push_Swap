@@ -76,10 +76,12 @@ void		ft_do_rra_rrb(t_list **a, t_list **b, int a_idx, int b_idx);
 /* ENTRY */
 int			ft_check_entry(char *av);
 int			ft_get_entry(char *av);
-void		ft_find_doubles(int *arr, int arr_size);
+int			ft_find_doubles(t_list *stack, int data);
 long int	ft_convert_entry(const char *av);
 
 /* SORTING */
+void		ft_do_cheapest_move(t_list **a, t_list **b);
+void		ft_sort(a, b);
 
 /* STACK */
 int			ft_find_biggest_data(t_list *stack);
