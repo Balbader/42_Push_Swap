@@ -26,10 +26,10 @@ void	ft_do_cheapest_move(t_list **a, t_list **b)
 	lil_bro_idx = cheapest_node->index;
 	big_bro_idx = ft_get_big_bro_idx(a, cheapest_node->data);
 	cheapest_move = ft_find_cheapest_move(a, b, big_bro_idx, lil_bro_idx);
-	if (cheapest_move == RA_RB)
-		ft_do_ra_rb(a, b, big_bro_idx, lil_bro_idx);
-	else if (cheapest_move == RRA_RRB)
-		ft_do_rra_rrb(a, b, big_bro_idx, lil_bro_idx);
+	if (cheapest_move == RR)
+		ft_do_rr(a, b, big_bro_idx, lil_bro_idx);
+	else if (cheapest_move == RRR)
+		ft_do_rrr(a, b, big_bro_idx, lil_bro_idx);
 	else if (cheapest_move == RRA_RB)
 		ft_do_rra_rb(a, b, big_bro_idx, lil_bro_idx);
 	else
