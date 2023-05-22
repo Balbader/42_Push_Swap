@@ -43,10 +43,8 @@ void		ft_swap(t_list **stack);
 /* COST */
 int			ft_min(int x, int y);
 int			ft_max(int x, int y);
-int			ft_get_node_cost(t_list **stack, int idx);
-int			ft_get_big_bro_idx(t_list **a, int incoming_pos);
-int			ft_get_lil_bro_idx(t_list **b, int lil_bro_idx);
-int			ft_get_cheapest_b_node_idx(t_list **a, t_list **b);
+int			ft_find_cheapest_cost(t_list **a, t_list **b,
+						int big_bro_idx, int lil_bro_idx);
 
 /* OPERATIONS */
 void		ft_pa(t_list **stack_b, t_list **stack_a);
