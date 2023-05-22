@@ -31,6 +31,14 @@ B_TO_A_FILES		:=	\
 						ft_push_from_b_to_a_utils_3.c
 B_TO_A				:=	$(addprefix $(B_TO_A_DIR), $(B_TO_A_FILES))
 
+COMBOS_DIR			:=	cost/
+COMBOS_FILES		:=	\
+						ft_ra_rb.c \
+						ft_ra_rrb.c \
+						ft_rra_rb.c \
+						ft_rra_rrb.c
+COMOBOS				:=	$(addprefix $(COMBOS_DIR), $(COMOBOS_FILES))
+
 COST_DIR			:=	cost/
 COST_FILES			:=	\
 						ft_cost.c \
@@ -105,6 +113,7 @@ SRCS				:=	\
 						$(A_TO_B) \
 						$(ACTIONS) \
 						$(B_TO_A) \
+						$(COMBOS) \
 						$(COST) \
 						$(ENTRY) \
 						$(OPER) \
