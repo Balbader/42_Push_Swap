@@ -16,7 +16,6 @@ void	ft_swap(t_list **stack)
 {
 	int	tmp_data;
 	int	tmp_index;
-	int	tmp_pos;
 
 	if ((*stack) == NULL || (*stack)->next == NULL)
 		return ;
@@ -26,7 +25,4 @@ void	ft_swap(t_list **stack)
 	tmp_index = (*stack)->index;
 	(*stack)->index = (*stack)->next->index;
 	(*stack)->next->index = tmp_index;
-	tmp_pos = (*stack)->pos;
-	(*stack)->pos = (*stack)->next->pos;
-	(*stack)->next->pos = tmp_pos;
 }
