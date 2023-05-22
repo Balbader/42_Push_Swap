@@ -42,7 +42,9 @@ COMOBOS				:=	$(addprefix $(COMBOS_DIR), $(COMOBOS_FILES))
 COST_DIR			:=	cost/
 COST_FILES			:=	\
 						ft_cost.c \
-						ft_find_cheapest_cost.c
+						ft_find_cheapest_cost.c \
+						ft_find_cheapest_move.c \
+						ft_find_cheapest_node.c
 COST				:=	$(addprefix $(COST_DIR), $(COST_FILES))
 
 ENTRY_DIR			:=	entry/
@@ -72,7 +74,8 @@ SMALL_SORT			:=	$(addprefix $(SMALL_SORT_DIR), $(SMALL_SORT_FILES))
 
 SORT_DIR			:=	sorting/
 SORT_FILES			:=	\
-						ft_cost.c \
+						ft_do_cheapest_move.c \
+						ft_sort.c
 SORT				:=	$(addprefix $(SORT_DIR), $(SORT_FILES))
 
 STACK_DIR			:=	stack/
