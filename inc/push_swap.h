@@ -41,6 +41,8 @@ void		ft_swap(t_list **stack);
 /* B_TO_A */
 
 /* COST */
+int			ft_min(int x, int y);
+int			ft_max(int x, int y);
 int			ft_get_node_cost(t_list **stack, int idx);
 int			ft_get_big_bro_idx(t_list **a, int incoming_pos);
 int			ft_get_lil_bro_idx(t_list **b, int lil_bro_idx);
@@ -76,9 +78,11 @@ long int	ft_convert_entry(const char *av);
 /* STACK */
 int			ft_find_biggest_data(t_list *stack);
 int			ft_find_biggest_idx(t_list *stack);
+t_list		*ft_find_biggest_node(t_list **stack);
 int			*ft_copy_stack_to_arr(t_list **stack, int stack_size, int *arr);
 int			ft_find_smallest_data(t_list *stack);
 int			ft_find_smallest_idx(t_list *stack);
+t_list		*ft_find_smallest_node(t_list **stack);
 int			ft_stack_is_sorted(t_list *stack);
 int			ft_get_stack_size(t_list **stack);
 void		ft_add_new_tail(t_list **lst, t_list *node);
