@@ -19,6 +19,11 @@
 # include <unistd.h>
 # include <time.h>
 
+# define RARB 1
+# define RRARB 2
+# define RARRB 3
+# define RRARRB 4
+
 typedef struct s_list
 {
 	int				data;
