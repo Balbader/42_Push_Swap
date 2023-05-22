@@ -44,10 +44,10 @@ int	ft_find_cheapest_move(t_list **a, t_list **b,
 	data.rra_rb = lil_bro_idx + data.last_a->index - big_bro_idx + 1;
 	if (data.ra_rb <= data.rra_rb && data.ra_rb <= data.rra_rrb
 		&& data.ra_rb <= data.ra_rrb)
-		return (ft_free_data(&data), RA_RB);
+		return (ft_free_data(&data), RR);
 	if (data.rra_rb <= data.ra_rb && data.rra_rrb <= data.rra_rb
 		&& data.rra_rrb <= data.ra_rrb)
-		return (ft_free_data(&data), RRA_RRB);
+		return (ft_free_data(&data), RRR);
 	if (data.ra_rrb <= data.ra_rb && data.ra_rrb <= data.rra_rrb
 		&& data.ra_rrb <= data.rra_rb)
 		return (ft_free_data(&data), RA_RRB);
