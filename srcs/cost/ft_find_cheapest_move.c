@@ -22,11 +22,21 @@ typedef struct s_data
 	int		rra_rb;
 }				t_data;
 
+static void	ft_free_data(t_data *data)
+{
+	free(data->last_a);
+	free(data->last_b);
+}
+
 int	ft_find_cheapest_move(t_list **a, t_list **b,
 						int big_bro_idx, int lil_bro_idx)
 {
 	t_data	data;
 
+	ft_re_init_index(*a);
+	ft_re_init_index(*b);
+	data.last_a = NULL;
+	data.last_b = NULL;
 	data.last_a = ft_get_last_node(*a);
 	data.last_b = ft_get_last_node(*b);
 	data.ra_rb = ft_max(big_bro_idx, lil_bro_idx);
@@ -35,12 +45,12 @@ int	ft_find_cheapest_move(t_list **a, t_list **b,
 	data.rra_rb = lil_bro_idx + data.last_a->index - big_bro_idx + 1;
 	if (data.ra_rb <= data.rra_rb && data.ra_rb <= data.rra_rrb
 		&& data.ra_rb <= data.ra_rrb)
-		return (RA_RB);
+		return (ft_free_data(&data), RA_RB);
 	if (data.rra_rb <= data.ra_rb && data.rra_rrb <= data.rra_rb
 		&& data.rra_rrb <= data.ra_rrb)
-		return (RRA_RRB);
+		return (ft_free_data(&data), RRA_RRB);
 	if (data.ra_rrb <= data.ra_rb && data.ra_rrb <= data.rra_rrb
 		&& data.ra_rrb <= data.rra_rb)
-		return (RA_RRB);
-	return (RRA_RB);
+		return (ft_free_data(&data), RA_RRB);
+	return (ft_free_data(&data), RRA_RB);
 }
