@@ -6,13 +6,6 @@ NAME				:=	push_swap
 ##################
 #   SRCS FILES	 #
 ##################
-A_TO_B_DIR			:=	a_to_b/
-A_TO_B_FILES		:=	\
-						ft_assign_pos.c \
-						ft_pre_sort_stack.c \
-						ft_push_from_a_to_b.c \
-						ft_push_from_a_to_b_utils.c
-A_TO_B				:=	$(addprefix $(A_TO_B_DIR), $(A_TO_B_FILES))
 
 ACTIONS_DIR			:=	actions/
 ACTIONS_FILES		:=	\
@@ -21,15 +14,6 @@ ACTIONS_FILES		:=	\
 						ft_rotate.c \
 						ft_swap.c
 ACTIONS				:=	$(addprefix $(ACTIONS_DIR), $(ACTIONS_FILES))
-
-B_TO_A_DIR			:=	b_to_a/
-B_TO_A_FILES		:=	\
-						ft_optimize_b_to_a.c \
-						ft_push_from_b_to_a.c \
-						ft_push_from_b_to_a_utils_1.c \
-						ft_push_from_b_to_a_utils_2.c \
-						ft_push_from_b_to_a_utils_3.c
-B_TO_A				:=	$(addprefix $(B_TO_A_DIR), $(B_TO_A_FILES))
 
 COMBOS_DIR			:=	combos/
 COMBOS_FILES		:=	\
@@ -49,9 +33,7 @@ COST				:=	$(addprefix $(COST_DIR), $(COST_FILES))
 
 ENTRY_DIR			:=	entry/
 ENTRY_FILES			:=	\
-						ft_check_entry.c \
 						ft_convert_entry.c \
-						ft_get_entry.c \
 						ft_find_doubles.c
 ENTRY				:=	$(addprefix $(ENTRY_DIR), $(ENTRY_FILES))
 
@@ -64,14 +46,6 @@ OPER_FILES			:=	\
 						ft_sa.c ft_sb.c ft_ss.c
 OPER				:=	$(addprefix $(OPER_DIR), $(OPER_FILES))
 
-SMALL_SORT_DIR		:=	small_sort/
-SMALL_SORT_FILES	:=	\
-						ft_small_sort.c \
-						ft_sort_3.c \
-						ft_sort_4.c \
-						ft_sort_5.c
-SMALL_SORT			:=	$(addprefix $(SMALL_SORT_DIR), $(SMALL_SORT_FILES))
-
 SORT_DIR			:=	sorting/
 SORT_FILES			:=	\
 						ft_do_cheapest_move.c \
@@ -80,7 +54,7 @@ SORT				:=	$(addprefix $(SORT_DIR), $(SORT_FILES))
 
 STACK_DIR			:=	stack/
 STACK_FILES			:=	\
-						ft_add_new_heac.c \
+						ft_add_new_head.c \
 						ft_add_new_tail.c \
 						ft_copy_stack_to_arr.c \
 						ft_create_node.c \
@@ -92,8 +66,8 @@ STACK_FILES			:=	\
 						ft_find_smallest_node.c \
 						ft_free_stack.c \
 						ft_get_big_bro_idx.c \
+						ft_get_before_last_node.c \
 						ft_get_last_node.c \
-						ft_get_lil_bro_idx.c \
 						ft_get_stack_size.c \
 						ft_init_stack.c \
 						ft_re_init_index.c \
@@ -103,7 +77,6 @@ STACK				:=	$(addprefix $(STACK_DIR), $(STACK_FILES))
 
 UTILS_DIR			:=	utils/
 UTILS_FILES			:=	\
-						ft_arr_is_sorted.c \
 						ft_isdigit.c \
 						ft_print_err.c \
 						ft_putstr_fd.c \
@@ -119,14 +92,11 @@ INCS				:=	./inc/
 
 SRCS_DIR			:=	./srcs/
 SRCS				:=	\
-						$(A_TO_B) \
 						$(ACTIONS) \
-						$(B_TO_A) \
 						$(COMBOS) \
 						$(COST) \
 						$(ENTRY) \
 						$(OPER) \
-						$(SMALL_SORT) \
 						$(SORT) \
 						$(STACK) \
 						$(UTILS) \
