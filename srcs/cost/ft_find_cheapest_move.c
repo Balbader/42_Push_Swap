@@ -33,8 +33,6 @@ int	ft_find_cheapest_move(t_list **a, t_list **b,
 {
 	t_data	data;
 
-	ft_re_init_index(*a);
-	ft_re_init_index(*b);
 	data.last_a = NULL;
 	data.last_b = NULL;
 	data.last_a = ft_get_last_node(*a);
