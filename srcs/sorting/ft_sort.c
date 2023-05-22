@@ -15,28 +15,29 @@
 void	ft_sort(t_list **a, t_list **b)
 {
 	int	i;
+	int	a_size;
 
 	if (!(*a))
 		return ;
-	i = ft_get_stack_size(a);
-	if (!ft_stack_is_sorted(*a))
+	i = 0;
+	a_size = ft_get_stack_size(a);
+	while (i < a_size)
 	{
-		while (i > 2)
+		ft_pb(a, b);
+		++i;
+	}
+	ft_re_init_index(*b);
+	ft_print_stack(b, "b");
+	if (ft_stack_is_sorted(*a) == 1)
+		ft_sa(a);
+	if (*b)
+	{
+		i = ft_get_stack_size(b);
+		while (i >= 0)
 		{
-			ft_pb(a, b);
+			ft_do_cheapest_move(a, b);
 			--i;
 		}
-		if (!ft_stack_is_sorted(*a))
-			ft_sa(a);
-		if (*b)
-		{
-			i = ft_get_stack_size(b);
-			while (i >= 0)
-			{
-				ft_do_cheapest_move(a, b);
-				--i;
-			}
-		}
-		ft_reorder_a(a);
 	}
+	ft_reorder_a(a);
 }
