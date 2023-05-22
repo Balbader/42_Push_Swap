@@ -14,7 +14,7 @@
 
 /*
  * Returns the idx of the a_node to bring to top of a_stack based on incoming
- * b_node_pos that is greater and closest to incoming b_node_pos
+ * b_node_data that is greater and closest to incoming b_node_data
 */
 int	ft_get_big_bro_idx(t_list **a, int incoming_data)
 {
