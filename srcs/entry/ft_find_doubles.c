@@ -12,26 +12,13 @@
 
 #include "push_swap.h"
 
-void	ft_find_doubles(int *arr, int arr_size)
+int	ft_find_doubles(t_list *stack, int data)
 {
-	int	i;
-	int	j;
-
-	if (!arr)
-		return ;
-	i = 0;
-	while (i < arr_size)
+	while (stack)
 	{
-		j = i + 1;
-		while (j < arr_size)
-		{
-			if (arr[i] == arr[j])
-			{
-				ft_putstr_fd("Error\n", 2);
-				exit(1);
-			}
-			++j;
-		}
-		++i;
+		if (stack->data == data)
+			return (1);
+		stack = stack->next;
 	}
+	return (0);
 }
