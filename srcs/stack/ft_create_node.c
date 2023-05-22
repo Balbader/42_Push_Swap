@@ -21,7 +21,6 @@ t_list	*ft_create_node(int data, int index)
 		return (NULL);
 	new_node->data = data;
 	new_node->index = index;
-	new_node->pos = 0;
 	new_node->next = NULL;
 	return (new_node);
 }
