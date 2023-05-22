@@ -19,10 +19,10 @@
 # include <unistd.h>
 # include <time.h>
 
-# define RARB 1
-# define RRARB 2
-# define RARRB 3
-# define RRARRB 4
+# define RA_RB 1
+# define RRA_RB 2
+# define RA_RRB 3
+# define RRA_RRB 4
 
 typedef struct s_list
 {
