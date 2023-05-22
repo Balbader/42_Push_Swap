@@ -31,7 +31,7 @@ B_TO_A_FILES		:=	\
 						ft_push_from_b_to_a_utils_3.c
 B_TO_A				:=	$(addprefix $(B_TO_A_DIR), $(B_TO_A_FILES))
 
-COMBOS_DIR			:=	cost/
+COMBOS_DIR			:=	combos/
 COMBOS_FILES		:=	\
 						ft_ra_rb.c \
 						ft_ra_rrb.c \
@@ -42,8 +42,7 @@ COMOBOS				:=	$(addprefix $(COMBOS_DIR), $(COMOBOS_FILES))
 COST_DIR			:=	cost/
 COST_FILES			:=	\
 						ft_cost.c \
-						ft_cost_utils_1.c \
-						ft_cost_utils_2.c
+						ft_find_cheapest_cost.c
 COST				:=	$(addprefix $(COST_DIR), $(COST_FILES))
 
 ENTRY_DIR			:=	entry/
