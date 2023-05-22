@@ -70,8 +70,10 @@ void		ft_do_ra_rrb(t_list **a, t_list **b, int a_idx, int b_idx);
 void		ft_do_rra_rrb(t_list **a, t_list **b, int a_idx, int b_idx);
 
 /* ENTRY */
-int			ft_find_doubles(t_list *stack, int data);
-int			ft_convert_entry(int *res, char *av);
+int			ft_get_entry(char *av);
+int			ft_check_entry(char *av);
+void		ft_look_for_doubles(int *arr, int arr_size);
+long int	ft_convert_entry(const char *av);
 
 /* SORTING */
 void		ft_do_cheapest_move(t_list **a, t_list **b);
@@ -100,6 +102,7 @@ t_list		*ft_find_biggest_node(t_list **stack);
 t_list		*ft_find_smallest_node(t_list **stack);
 
 /* UTILS */
+int			ft_arr_is_sorted(int *arr, int arr_size);
 int			ft_isdigit(char c);
 int			ft_strlen(const char *str);
 int			ft_arr_is_sorted(int *arr, int arr_size);
