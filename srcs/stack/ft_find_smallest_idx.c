@@ -20,7 +20,7 @@ int	ft_find_smallest_idx(t_list *stack)
 	if (!stack)
 		return (0);
 	ft_re_init_index(stack);
-	data = ft_find_smallest_node_data(stack);
+	data = ft_find_smallest_data(stack);
 	index = INT_MAX;
 	while (stack)
 	{
