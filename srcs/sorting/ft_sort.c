@@ -19,25 +19,28 @@ void	ft_sort(t_list **a, t_list **b)
 
 	if (!(*a))
 		return ;
-	i = 0;
 	a_size = ft_get_stack_size(a);
-	while (i < a_size)
+	i = 0;
+	while (i < a_size - 2)
 	{
 		ft_pb(a, b);
 		++i;
 	}
-	ft_re_init_index(*b);
-	ft_print_stack(b, "b");
 	if (ft_stack_is_sorted(*a) == 1)
 		ft_sa(a);
 	if (*b)
 	{
-		i = ft_get_stack_size(b);
-		while (i >= 0)
+		// i = ft_get_stack_size(b);
+		// while (i >= 0)
+		while (*b)
 		{
 			ft_do_cheapest_move(a, b);
-			--i;
+			// --i;
 		}
 	}
 	ft_reorder_a(a);
+	ft_re_init_index(*b);
+	ft_print_stack(b, "b");
+	ft_re_init_index(*a);
+	ft_print_stack(a, "a");
 }
