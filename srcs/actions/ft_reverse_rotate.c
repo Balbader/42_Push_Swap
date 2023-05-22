@@ -18,6 +18,8 @@ void	ft_reverse_rotate(t_list **stack)
 	t_list	*last;
 	t_list	*before_last;
 
+	if (!(*stack))
+		return ;
 	tmp = NULL;
 	last = NULL;
 	before_last = NULL;

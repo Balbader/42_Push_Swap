@@ -21,18 +21,13 @@ int	ft_get_big_bro_idx(t_list **a, int incoming_data)
 	t_list	*tmp;
 	int		big_bro_idx;
 	int		closest;
-	int		a_size;
-	int		i;
 
-	if (!(*a))
-		return (0);
-	ft_re_init_index(*a);
 	tmp = (*a);
-	a_size = ft_get_stack_size(a);
+	// if (incoming_data > ft_find_biggest_node(&tmp)->data)
+	// 	return (ft_find_smallest_node(&tmp)->index);
 	closest = INT_MAX;
-	big_bro_idx = tmp->index;
-	i = 0;
-	while (i < a_size)
+	big_bro_idx = 0;
+	while (tmp)
 	{
 		if (tmp->data > incoming_data && tmp->data <= closest)
 		{
@@ -40,7 +35,6 @@ int	ft_get_big_bro_idx(t_list **a, int incoming_data)
 			big_bro_idx = tmp->index;
 		}
 		tmp = tmp->next;
-		++i;
 	}
 	ft_free_stack(&tmp);
 	return (big_bro_idx);

@@ -14,12 +14,14 @@
 
 typedef struct s_data
 {
-	int	rr;
-	int	rrr;
-	int	ra_rrb;
-	int	rra_rb;
-	int	a_size;
-	int	b_size;
+	t_list	*tmp_a;
+	t_list	*tmp_b;
+	int		rr;
+	int		rrr;
+	int		ra_rrb;
+	int		rra_rb;
+	int		a_size;
+	int		b_size;
 }				t_data;
 
 int	ft_find_cheapest_cost(t_list **a, t_list **b,
@@ -27,13 +29,10 @@ int	ft_find_cheapest_cost(t_list **a, t_list **b,
 {
 	t_data	data;
 
-	ft_re_init_index(*a);
-	ft_re_init_index(*b);
-	data.a_size = ft_get_stack_size(a);
-	data.b_size = ft_get_stack_size(b);
-	printf("data.a_size: %d\n", data.a_size);
-	printf("data.b_size: %d\n", data.b_size);
-	printf("\n");
+	data.tmp_a =(*a);
+	data.tmp_b =(*b);
+	data.a_size = ft_get_stack_size(&data.tmp_a);
+	data.b_size = ft_get_stack_size(&data.tmp_b);
 	data.rr = ft_max(big_bro_idx, lil_bro_idx);
 	data.rrr = ft_max(data.a_size - big_bro_idx, data.b_size - lil_bro_idx) + 1;
 	data.ra_rrb = big_bro_idx +  data.b_size - lil_bro_idx + 1;

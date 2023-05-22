@@ -14,36 +14,26 @@
 
 t_list	*ft_find_cheapest_node(t_list **a, t_list **b)
 {
+	t_list	*tmp_a;
+	t_list	*tmp_b;
 	t_list	*node;
 	int		cheapest_cost;
-	int		a_size;
-	int		b_size;
-	int		i;
 
-	ft_re_init_index(*a);
-	ft_re_init_index(*b);
-	a_size = ft_get_stack_size(a);
-	b_size = ft_get_stack_size(b);
-	printf("a_size: %d\n", a_size);
-	printf("b_size: %d\n", b_size);
-	printf("\n");
-	node = NULL;
-	node = (*b);
-	cheapest_cost = ft_find_cheapest_cost(a, b,
-			ft_get_big_bro_idx(a, node->data), node->index);
-	i = 0;
-	// while (*b)
-	while (i < b_size)
+	tmp_a = (*a);
+	tmp_b = (*b);
+	node = tmp_b;
+	cheapest_cost = ft_find_cheapest_cost(&tmp_a, &tmp_b,
+			ft_get_big_bro_idx(&tmp_a, node->data), node->index);
+	while (tmp_b)
 	{
-		if (cheapest_cost >= ft_find_cheapest_cost(a, b,
-				ft_get_big_bro_idx(a, (*b)->data), (*b)->index))
+		if (cheapest_cost >= ft_find_cheapest_cost(&tmp_a, &tmp_b,
+				ft_get_big_bro_idx(&tmp_a, tmp_b->data), tmp_b->index))
 		{
-			cheapest_cost = ft_find_cheapest_cost(a, b,
-					ft_get_big_bro_idx(a, (*b)->data), (*b)->index);
-			node = (*b);
+			cheapest_cost = ft_find_cheapest_cost(&tmp_a, &tmp_b,
+				ft_get_big_bro_idx(&tmp_a, tmp_b->data), tmp_b->index);
+			node = tmp_b;
 		}
-		*b = (*b)->next;
-		++i;
+		tmp_b = tmp_b->next;
 	}
 	return (node);
 }
