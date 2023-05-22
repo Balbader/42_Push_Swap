@@ -40,6 +40,7 @@ int	ft_find_cheapest_move(t_list **a, t_list **b,
 	data.last_a = ft_get_last_node(*a);
 	data.last_b = ft_get_last_node(*b);
 	data.ra_rb = ft_max(big_bro_idx, lil_bro_idx);
+	// printf("last_a>%p, last_b>%p\n", data.last_a, data.last_b);
 	data.rra_rrb = ft_max(data.last_a->index - big_bro_idx, data.last_b->index - lil_bro_idx) + 1;
 	data.ra_rrb = big_bro_idx + data.last_b->index - lil_bro_idx + 1;
 	data.rra_rb = lil_bro_idx + data.last_a->index - big_bro_idx + 1;
