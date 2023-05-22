@@ -12,65 +12,96 @@
 
 #include "push_swap.h"
 
-int	*ft_init_entries_arr(int ac, char **av, int *entries_arr)
-{
-	int	i;
-	int	j;
+// int	*ft_init_entries_arr(int ac, char **av, int *entries_arr)
+// {
+// 	int	i;
+// 	int	j;
 
-	entries_arr = (int *)malloc(sizeof(int) * (ac - 1));
-	if (!entries_arr)
-		return (0);
-	j = 1;
-	i = 0;
-	while (i < ac - 1)
-	{
-		entries_arr[i] = ft_get_entry(av[j]);
-		++i;
-		++j;
-	}
-	return (entries_arr);
-}
+// 	entries_arr = (int *)malloc(sizeof(int) * (ac - 1));
+// 	if (!entries_arr)
+// 		return (0);
+// 	j = 1;
+// 	i = 0;
+// 	while (i < ac - 1)
+// 	{
+// 		entries_arr[i] = ft_get_entry(av[j]);
+// 		++i;
+// 		++j;
+// 	}
+// 	return (entries_arr);
+// }
 
-void	ft_check_entries(int *arr, int arr_size)
-{
-	if (ft_arr_is_sorted(arr, arr_size) == 0)
-	{
-		free(arr);
-		exit(1);
-	}
-	ft_find_doubles(arr, arr_size);
-}
+// void	ft_check_entries(int *arr, int arr_size)
+// {
+// 	if (ft_arr_is_sorted(arr, arr_size) == 0)
+// 	{
+// 		free(arr);
+// 		exit(1);
+// 	}
+// 	ft_find_doubles(arr, arr_size);
+// }
+
+// int	main(int ac, char **av)
+// {
+// 	t_list	*a;
+// 	t_list	*b;
+// 	int		*entries_arr;
+
+// 	if (ac < 3)
+// 		return (-1);
+// 	a = NULL;
+// 	b = NULL;
+// 	entries_arr = NULL;
+// 	entries_arr = ft_init_entries_arr(ac, av, entries_arr);
+// 	ft_check_entries(entries_arr, (ac - 1));
+// 	ft_find_doubles(entries_arr, (ac - 1));
+// 	a = ft_init_stack(a, entries_arr, ac - 1);
+// 	free(entries_arr);
+// 	if ((ac - 1) <= 5)
+// 		ft_small_sort(&a, &b, ac - 1);
+// 	else
+// 	{
+// 		ft_push_from_a_to_b(&a, &b);
+// 		// ft_re_init_index(b);
+// 		// ft_print_stack(&b, "b");
+
+// 		ft_push_from_b_to_a(&a, &b);
+// 		// ft_re_init_index(a);
+// 		// ft_print_stack(&a, "a");
+
+// 		ft_free_stack(&a);
+// 		ft_free_stack(&b);
+// 	}
+// 	return (0);
+// }
 
 int	main(int ac, char **av)
 {
 	t_list	*a;
 	t_list	*b;
-	int		*entries_arr;
+	t_list	*new_node;
+	int		data;
+	int		i;
 
-	if (ac < 3)
-		return (-1);
+	i = 0;
+	data = 0;
 	a = NULL;
 	b = NULL;
-	entries_arr = NULL;
-	entries_arr = ft_init_entries_arr(ac, av, entries_arr);
-	ft_check_entries(entries_arr, (ac - 1));
-	ft_find_doubles(entries_arr, (ac - 1));
-	a = ft_init_stack(a, entries_arr, ac - 1);
-	free(entries_arr);
-	if ((ac - 1) <= 5)
-		ft_small_sort(&a, &b, ac - 1);
-	else
-	{
-		ft_push_from_a_to_b(&a, &b);
-		// ft_re_init_index(b);
-		// ft_print_stack(&b, "b");
-
-		ft_push_from_b_to_a(&a, &b);
-		// ft_re_init_index(a);
-		// ft_print_stack(&a, "a");
-
-		ft_free_stack(&a);
-		ft_free_stack(&b);
-	}
-	return (0);
+	while (av[i])
+		{
+			if (!ft_atoi(&data, av[i]))
+				return (ft_putstr_fd(2, "Error\n"), ft_free_stack(&a),
+					EXIT_FAILURE);
+			new_node = ft_create_node(data, i);
+			if (!new_node || ft_find_doubles(a, data) == 1)
+				return (ft_putstr_fd(2, "Error\n"), ft_free_stack(&a),
+					EXIT_FAILURE);
+			ft_add_new_tail(&a, new_node);
+			++i;
+		}
+	ft_re_init_index(a);
+	ft_sort(&a, &b);
+	ft_free_stack(&a);
+	ft_free_stack(&b);
+	return (EXIT_SUCCESS);
 }
