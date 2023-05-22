@@ -32,18 +32,14 @@ typedef struct s_list
 }				t_list;
 
 /* MAIN */
-int			*ft_init_entries_arr(int ac, char **av, int *arr);
-void		ft_check_entries(int *arr, int arr_size);
+// int			*ft_init_entries_arr(int ac, char **av, int *arr);
+// void		ft_check_entries(int *arr, int arr_size);
 
 /* ACTIONS */
 void		ft_push_node(t_list **src, t_list **dest);
 void		ft_reverse_rotate(t_list **stack);
 void		ft_rotate(t_list **stack);
 void		ft_swap(t_list **stack);
-
-/* A_TO_B */
-
-/* B_TO_A */
 
 /* COST */
 int			ft_min(int x, int y);
@@ -63,9 +59,9 @@ void		ft_rr(t_list **stack_a, t_list **stack_b);
 void		ft_rra(t_list **stack_a);
 void		ft_rrb(t_list **stack_b);
 void		ft_rrr(t_list **stack_a, t_list **stack_b);
-void		ft_sa(t_list *stack_a);
-void		ft_sb(t_list *stack_b);
-void		ft_ss(t_list *stack_a, t_list *stack_b);
+void		ft_sa(t_list **stack_a);
+void		ft_sb(t_list **stack_b);
+void		ft_ss(t_list **stack_a, t_list **stack_b);
 
 /* COMBOS */
 void		ft_do_ra_rb(t_list **a, t_list **b, int a_idx, int b_idx);
@@ -74,25 +70,22 @@ void		ft_do_ra_rrb(t_list **a, t_list **b, int a_idx, int b_idx);
 void		ft_do_rra_rrb(t_list **a, t_list **b, int a_idx, int b_idx);
 
 /* ENTRY */
-int			ft_check_entry(char *av);
-int			ft_get_entry(char *av);
 int			ft_find_doubles(t_list *stack, int data);
-long int	ft_convert_entry(const char *av);
+int			ft_convert_entry(int *res, char *av);
 
 /* SORTING */
 void		ft_do_cheapest_move(t_list **a, t_list **b);
-void		ft_sort(a, b);
+void		ft_sort(t_list **a, t_list **b);
 
 /* STACK */
 int			ft_find_biggest_data(t_list *stack);
 int			ft_find_biggest_idx(t_list *stack);
-t_list		*ft_find_biggest_node(t_list **stack);
 int			*ft_copy_stack_to_arr(t_list **stack, int stack_size, int *arr);
 int			ft_find_smallest_data(t_list *stack);
 int			ft_find_smallest_idx(t_list *stack);
-t_list		*ft_find_smallest_node(t_list **stack);
 int			ft_stack_is_sorted(t_list *stack);
 int			ft_get_stack_size(t_list **stack);
+int			ft_get_big_bro_idx(t_list **a, int incoming_data);
 void		ft_add_new_tail(t_list **lst, t_list *node);
 void		ft_add_new_head(t_list **lst, t_list *node);
 void		ft_re_init_index(t_list *stack);
@@ -101,7 +94,10 @@ void		ft_print_stack(t_list **stack, char *name);
 void		ft_reorder_a(t_list **a);
 t_list		*ft_create_node(int data, int index);
 t_list		*ft_get_last_node(t_list *stack);
+t_list		*ft_get_before_last_node(t_list *stack);
 t_list		*ft_init_stack(t_list *stack_a, int *entries, int ac);
+t_list		*ft_find_biggest_node(t_list **stack);
+t_list		*ft_find_smallest_node(t_list **stack);
 
 /* UTILS */
 int			ft_isdigit(char c);
