@@ -17,10 +17,10 @@ ACTIONS				:=	$(addprefix $(ACTIONS_DIR), $(ACTIONS_FILES))
 
 COMBOS_DIR			:=	combos/
 COMBOS_FILES		:=	\
-						ft_ra_rb.c \
-						ft_ra_rrb.c \
-						ft_rra_rb.c \
-						ft_rra_rrb.c
+						ft_do_rr.c \
+						ft_do_ra_rrb.c \
+						ft_do_rra_rb.c \
+						ft_do_rrr.c
 COMBOS				:=	$(addprefix $(COMBOS_DIR), $(COMBOS_FILES))
 
 COST_DIR			:=	cost/
