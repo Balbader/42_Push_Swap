@@ -21,7 +21,7 @@ COMBOS_FILES		:=	\
 						ft_ra_rrb.c \
 						ft_rra_rb.c \
 						ft_rra_rrb.c
-COMOBOS				:=	$(addprefix $(COMBOS_DIR), $(COMOBOS_FILES))
+COMBOS				:=	$(addprefix $(COMBOS_DIR), $(COMBOS_FILES))
 
 COST_DIR			:=	cost/
 COST_FILES			:=	\
@@ -33,12 +33,14 @@ COST				:=	$(addprefix $(COST_DIR), $(COST_FILES))
 
 ENTRY_DIR			:=	entry/
 ENTRY_FILES			:=	\
+						ft_check_entry.c \
 						ft_convert_entry.c \
-						ft_find_doubles.c
+						ft_look_for_doubles.c \
+						ft_get_entry.c
 ENTRY				:=	$(addprefix $(ENTRY_DIR), $(ENTRY_FILES))
 
-# OPER_DIR			:=	operations_test/
-OPER_DIR			:=	operations/
+OPER_DIR			:=	operations_test/
+# OPER_DIR			:=	operations/
 OPER_FILES			:=	\
 						ft_pa.c ft_pb.c \
 						ft_ra.c ft_rb.c ft_rr.c \
@@ -70,6 +72,7 @@ STACK_FILES			:=	\
 						ft_get_last_node.c \
 						ft_get_stack_size.c \
 						ft_init_stack.c \
+						ft_print_stack.c \
 						ft_re_init_index.c \
 						ft_reorder_a.c \
 						ft_stack_is_sorted.c
@@ -77,6 +80,7 @@ STACK				:=	$(addprefix $(STACK_DIR), $(STACK_FILES))
 
 UTILS_DIR			:=	utils/
 UTILS_FILES			:=	\
+						ft_arr_is_sorted.c \
 						ft_isdigit.c \
 						ft_print_err.c \
 						ft_putstr_fd.c \
