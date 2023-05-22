@@ -16,7 +16,7 @@
  * Returns the idx of the a_node to bring to top of a_stack based on incoming
  * b_node_pos that is greater and closest to incoming b_node_pos
 */
-int	ft_get_big_bro_idx(t_list **a, int incoming_pos)
+int	ft_get_big_bro_idx(t_list **a, int incoming_data)
 {
 	t_list	*tmp;
 	int		big_bro_idx;
@@ -32,9 +32,9 @@ int	ft_get_big_bro_idx(t_list **a, int incoming_pos)
 	i = 0;
 	while (i < a_size)
 	{
-		if (tmp->pos > incoming_pos && tmp->pos <= closest)
+		if (tmp->data > incoming_data && tmp->data <= closest)
 		{
-			closest = tmp->pos;
+			closest = tmp->data;
 			big_bro_idx = tmp->index;
 		}
 		tmp = tmp->next;
