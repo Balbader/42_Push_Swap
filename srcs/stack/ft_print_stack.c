@@ -19,11 +19,11 @@ void	ft_print_stack(t_list **stack, char *name)
 
 	stack_size = ft_get_stack_size(stack);
 	printf("\nStack from %s - size: %d\n", name, stack_size);
-	printf(" I :   D  :  P\n\n");
+	printf(" I :   D\n\n");
 	temp = *stack;
 	while (temp)
 	{
-		printf("[%d] : %d : (%d)\n", temp->index, temp->data, temp->pos);
+		printf("[%d] : %d\n", temp->index, temp->data);
 		temp = temp->next;
 	}
 }

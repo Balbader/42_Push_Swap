@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ra_rrb.c                                        :+:      :+:    :+:   */
+/*   ft_look_for_doubles.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baalbade <baalbade@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/22 06:48:01 by baalbade          #+#    #+#             */
-/*   Updated: 2023/05/22 06:48:03 by baalbade         ###   ########.fr       */
+/*   Created: 2023/02/17 09:36:22 by baalbade          #+#    #+#             */
+/*   Updated: 2023/02/17 09:36:23 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_do_ra_rrb(t_list **a, t_list **b, int a_idx, int b_idx)
+void	ft_look_for_doubles(int *arr, int arr_size)
 {
-	int	b_size;
+	int	i;
+	int	j;
 
-	b_size = ft_get_stack_size(b);
-	while (b_idx && b_idx <= b_size)
+	if (!arr)
+		return ;
+	i = 0;
+	while (i < arr_size)
 	{
-		ft_rrb(b);
-		++b_idx;
+		j = i + 1;
+		while (j < arr_size)
+		{
+			if (arr[i] == arr[j])
+			{
+				ft_putstr_fd("Error\n", 2);
+				exit(1);
+			}
+			++j;
+		}
+		++i;
 	}
-	while (a_idx > 0)
-	{
-		ft_ra(a);
-		--a_idx;
-	}
-	ft_pa(a, b);
 }

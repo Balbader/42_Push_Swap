@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ra_rrb.c                                        :+:      :+:    :+:   */
+/*   ft_get_entry.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baalbade <baalbade@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/22 06:48:01 by baalbade          #+#    #+#             */
-/*   Updated: 2023/05/22 06:48:03 by baalbade         ###   ########.fr       */
+/*   Created: 2023/02/17 09:36:10 by baalbade          #+#    #+#             */
+/*   Updated: 2023/02/17 09:36:11 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+*	checks every argument, convert it and returns the converted argument
+*/
+
 #include "push_swap.h"
 
-void	ft_do_ra_rrb(t_list **a, t_list **b, int a_idx, int b_idx)
+int	ft_get_entry(char *av)
 {
-	int	b_size;
+	long int	elem;
 
-	b_size = ft_get_stack_size(b);
-	while (b_idx && b_idx <= b_size)
+	if (!av)
+		return (0);
+	ft_check_entry(av);
+	elem = ft_convert_entry(av);
+	if (elem > INT_MAX || elem < INT_MIN)
 	{
-		ft_rrb(b);
-		++b_idx;
+		ft_putstr_fd("error\n", 2);
+		exit(1);
 	}
-	while (a_idx > 0)
-	{
-		ft_ra(a);
-		--a_idx;
-	}
-	ft_pa(a, b);
+	return (elem);
 }
