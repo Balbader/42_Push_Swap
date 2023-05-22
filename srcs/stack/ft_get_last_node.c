@@ -16,7 +16,16 @@ t_list	*ft_get_last_node(t_list *stack)
 {
 	if (!stack)
 		return (NULL);
-	while (stack->next)
+	while (stack)
 		stack = stack->next;
 	return (stack);
 }
+
+// t_list	*ft_get_last_node(t_list *stack)
+// {
+// 	if (!stack)
+// 		return (NULL);
+// 	while (stack->next)
+// 		stack = stack->next;
+// 	return (stack);
+// }

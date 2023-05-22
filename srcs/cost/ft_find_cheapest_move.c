@@ -14,42 +14,32 @@
 
 typedef struct s_data
 {
-	t_list	*last_a;
-	t_list	*last_b;
-	int		ra_rb;
-	int		rra_rrb;
-	int		ra_rrb;
-	int		rra_rb;
+	int	rr;
+	int	rrr;
+	int	ra_rrb;
+	int	rra_rb;
+	int	a_size;
+	int	b_size;
 }				t_data;
-
-static void	ft_free_data(t_data *data)
-{
-	free(data->last_a);
-	free(data->last_b);
-}
 
 int	ft_find_cheapest_move(t_list **a, t_list **b,
 						int big_bro_idx, int lil_bro_idx)
 {
 	t_data	data;
 
-	data.last_a = NULL;
-	data.last_b = NULL;
-	data.last_a = ft_get_last_node(*a);
-	data.last_b = ft_get_last_node(*b);
-	data.ra_rb = ft_max(big_bro_idx, lil_bro_idx);
-	// printf("last_a>%p, last_b>%p\n", data.last_a, data.last_b);
-	data.rra_rrb = ft_max(data.last_a->index - big_bro_idx, data.last_b->index - lil_bro_idx) + 1;
-	data.ra_rrb = big_bro_idx + data.last_b->index - lil_bro_idx + 1;
-	data.rra_rb = lil_bro_idx + data.last_a->index - big_bro_idx + 1;
-	if (data.ra_rb <= data.rra_rb && data.ra_rb <= data.rra_rrb
-		&& data.ra_rb <= data.ra_rrb)
-		return (ft_free_data(&data), RR);
-	if (data.rra_rb <= data.ra_rb && data.rra_rrb <= data.rra_rb
-		&& data.rra_rrb <= data.ra_rrb)
-		return (ft_free_data(&data), RRR);
-	if (data.ra_rrb <= data.ra_rb && data.ra_rrb <= data.rra_rrb
+	data.a_size = ft_get_stack_size(a);
+	data.b_size = ft_get_stack_size(b);
+	data.rr = ft_max(big_bro_idx, lil_bro_idx);
+	data.rrr = ft_max(data.a_size - big_bro_idx, data.b_size - lil_bro_idx) + 1;
+	data.ra_rrb = big_bro_idx + data.b_size - lil_bro_idx + 1;
+	data.rra_rb = lil_bro_idx + data.a_size - big_bro_idx + 1;
+	if (data.rr <= data.rra_rb && data.rr <= data.rrr && data.rr <= data.ra_rrb)
+		return (RR);
+	if (data.rrr <= data.rr && data.rrr <= data.rra_rb
+		&& data.rrr <= data.ra_rrb)
+		return (RRR);
+	if (data.ra_rrb <= data.rr && data.ra_rrb <= data.rrr
 		&& data.ra_rrb <= data.rra_rb)
-		return (ft_free_data(&data), RA_RRB);
-	return (ft_free_data(&data), RRA_RB);
+		return (RA_RRB);
+	return (RRA_RB);
 }

@@ -21,32 +21,6 @@ int	ft_get_big_bro_idx(t_list **a, int incoming_data)
 	t_list	*tmp;
 	int		big_bro_idx;
 	int		closest;
-
-	if (!(*a))
-		return (0);
-	ft_re_init_index(*a);
-	tmp = (*a);
-	closest = INT_MAX;
-	big_bro_idx = tmp->index;
-	while (tmp)
-	{
-		if (tmp->data > incoming_data && tmp->data <= closest)
-		{
-			closest = tmp->data;
-			big_bro_idx = tmp->index;
-		}
-		tmp = tmp->next;
-	}
-	ft_free_stack(&tmp);
-	return (big_bro_idx);
-}
-
-/*
-int	ft_get_big_bro_idx(t_list **a, int incoming_data)
-{
-	t_list	*tmp;
-	int		big_bro_idx;
-	int		closest;
 	int		a_size;
 	int		i;
 
@@ -71,4 +45,3 @@ int	ft_get_big_bro_idx(t_list **a, int incoming_data)
 	ft_free_stack(&tmp);
 	return (big_bro_idx);
 }
-*/

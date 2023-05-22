@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	ft_do_rra_rrb(t_list **a, t_list **b, int a_idx, int b_idx)
+void	ft_do_rrr(t_list **a, t_list **b, int a_idx, int b_idx)
 {
 	int	a_size;
 	int	b_size;

@@ -14,22 +14,36 @@
 
 t_list	*ft_find_cheapest_node(t_list **a, t_list **b)
 {
-	t_list	*cheapest_node;
+	t_list	*node;
 	int		cheapest_cost;
+	int		a_size;
+	int		b_size;
+	int		i;
 
-	cheapest_node = (*b);
+	ft_re_init_index(*a);
+	ft_re_init_index(*b);
+	a_size = ft_get_stack_size(a);
+	b_size = ft_get_stack_size(b);
+	printf("a_size: %d\n", a_size);
+	printf("b_size: %d\n", b_size);
+	printf("\n");
+	node = NULL;
+	node = (*b);
 	cheapest_cost = ft_find_cheapest_cost(a, b,
-			ft_get_big_bro_idx(a, cheapest_node->data), cheapest_node->index);
-	while (*b)
+			ft_get_big_bro_idx(a, node->data), node->index);
+	i = 0;
+	// while (*b)
+	while (i < b_size)
 	{
 		if (cheapest_cost >= ft_find_cheapest_cost(a, b,
 				ft_get_big_bro_idx(a, (*b)->data), (*b)->index))
 		{
 			cheapest_cost = ft_find_cheapest_cost(a, b,
 					ft_get_big_bro_idx(a, (*b)->data), (*b)->index);
-			cheapest_node = (*b);
+			node = (*b);
 		}
 		*b = (*b)->next;
+		++i;
 	}
-	return (cheapest_node);
+	return (node);
 }
