@@ -19,6 +19,8 @@ void	ft_do_cheapest_move(t_list **a, t_list **b)
 	int		big_bro_idx;
 	int		cheapest_move;
 
+	ft_re_init_index(*a);
+	ft_re_init_index(*b);
 	cheapest_node = NULL;
 	cheapest_node = ft_find_cheapest_node(a, b);
 	lil_bro_idx = cheapest_node->index;
