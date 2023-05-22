@@ -50,6 +50,9 @@ int			ft_min(int x, int y);
 int			ft_max(int x, int y);
 int			ft_find_cheapest_cost(t_list **a, t_list **b,
 						int big_bro_idx, int lil_bro_idx);
+int			ft_find_cheapest_move(t_list **a, t_list **b,
+						int big_bro_idx, int lil_bro_idx);
+t_list		*ft_find_cheapest_node(t_list **a, t_list **b);
 
 /* OPERATIONS */
 void		ft_pa(t_list **stack_b, t_list **stack_a);
