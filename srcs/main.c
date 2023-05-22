@@ -88,17 +88,17 @@ int	main(int ac, char **av)
 	a = NULL;
 	b = NULL;
 	while (av[i])
-		{
-			if (!ft_atoi(&data, av[i]))
-				return (ft_putstr_fd(2, "Error\n"), ft_free_stack(&a),
-					EXIT_FAILURE);
-			new_node = ft_create_node(data, i);
-			if (!new_node || ft_find_doubles(a, data) == 1)
-				return (ft_putstr_fd(2, "Error\n"), ft_free_stack(&a),
-					EXIT_FAILURE);
-			ft_add_new_tail(&a, new_node);
-			++i;
-		}
+	{
+		if (!ft_convert_entry(&data, av[i]))
+			return (ft_putstr_fd(2, "Error\n"), ft_free_stack(&a),
+				EXIT_FAILURE);
+		new_node = ft_create_node(data, i);
+		if (!new_node || ft_find_doubles(a, data) == 1)
+			return (ft_putstr_fd(2, "Error\n"), ft_free_stack(&a),
+				EXIT_FAILURE);
+		ft_add_new_tail(&a, new_node);
+		++i;
+	}
 	ft_re_init_index(a);
 	ft_sort(&a, &b);
 	ft_free_stack(&a);
