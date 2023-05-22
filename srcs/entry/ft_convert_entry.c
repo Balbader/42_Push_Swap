@@ -17,7 +17,7 @@ int	ft_convert_entry(int *res, char *av)
 	int	sign;
 
 	sign = 1;
-	while (*av > 8 && *av < 14 || *av == 32)
+	while ((*av > 8 && *av < 14) || *av == 32)
 		++*av;
 	if (*av == '-' || *av == '+')
 	{
