@@ -19,8 +19,8 @@
 # include <unistd.h>
 # include <time.h>
 
-# define RA_RB 1
-# define RRA_RB 2
+# define RR 1
+# define RRR 2
 # define RA_RRB 3
 # define RRA_RRB 4
 
