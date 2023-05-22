@@ -71,6 +71,11 @@ SMALL_SORT_FILES	:=	\
 						ft_sort_5.c
 SMALL_SORT			:=	$(addprefix $(SMALL_SORT_DIR), $(SMALL_SORT_FILES))
 
+SORT_DIR			:=	sorting/
+SORT_FILES			:=	\
+						ft_cost.c \
+SORT				:=	$(addprefix $(SORT_DIR), $(SORT_FILES))
+
 STACK_DIR			:=	stack/
 STACK_FILES			:=	\
 						ft_add_new_heac.c \
@@ -79,8 +84,10 @@ STACK_FILES			:=	\
 						ft_create_node.c \
 						ft_find_biggest_data.c \
 						ft_find_biggest_idx.c \
+						ft_find_biggest_node.c \
 						ft_find_smallest_data.c \
 						ft_find_smallest_idx.c \
+						ft_find_smallest_node.c \
 						ft_free_stack.c \
 						ft_get_big_bro_idx.c \
 						ft_get_last_node.c \
@@ -118,6 +125,7 @@ SRCS				:=	\
 						$(ENTRY) \
 						$(OPER) \
 						$(SMALL_SORT) \
+						$(SORT) \
 						$(STACK) \
 						$(UTILS) \
 						main.c
