@@ -60,10 +60,10 @@ void		ft_sb(t_list *stack_b);
 void		ft_ss(t_list *stack_a, t_list *stack_b);
 
 /* COMBOS */
-void		ft_do_rarb(t_list **a, t_list **b, int a_idx, int b_idx);
-void		ft_do_rrarb(t_list **a, t_list **b, int a_idx, int b_idx);
-void		ft_do_rarrb(t_list **a, t_list **b, int a_idx, int b_idx);
-void		ft_do_rrarrb(t_list **a, t_list **b, int a_idx, int b_idx);
+void		ft_do_ra_rb(t_list **a, t_list **b, int a_idx, int b_idx);
+void		ft_do_rra_rb(t_list **a, t_list **b, int a_idx, int b_idx);
+void		ft_do_ra_rrb(t_list **a, t_list **b, int a_idx, int b_idx);
+void		ft_do_rra_rrb(t_list **a, t_list **b, int a_idx, int b_idx);
 
 /* ENTRY */
 int			ft_check_entry(char *av);
