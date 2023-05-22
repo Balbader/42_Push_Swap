@@ -12,22 +12,28 @@
 
 #include "push_swap.h"
 
+typedef struct s_data
+{
+	t_list	*last_a;
+	t_list	*last_b;
+	int		ra_rb;
+	int		rra_rrb;
+	int		ra_rrb;
+	int		rra_rb;
+}				t_data;
+
 int	ft_find_cheapest_cost(t_list **a, t_list **b,
 						int big_bro_idx, int lil_bro_idx)
 {
-	int	ra_rb;
-	int	rra_rrb;
-	int	ra_rrb;
-	int	rra_rb;
-	int	last_a;
-	int	last_b;
+	t_data	data;
 
-	last_a = ft_get_last_node(*a);
-	last_b = ft_get_last_node(*b);
-	ra_rb = ft_max(big_bro_idx, lil_bro_idx);
-	rra_rrb = ft_max(last_a->index - big_bro_idx,
-			last_b->index - lil_bro_idx) + 1;
-	ra_rrb = big_bro_idx + last_b->index - lil_bro_idx + 1;
-	rra_rb = lil_bro_idx + last_a->index - big_bro_idx + 1;
-	return (ft_min(ft_min(ra_rb, rra_rb), ft_min(ra_rrb, rra_rb)));
+	data.last_a = ft_get_last_node(*a);
+	data.last_b = ft_get_last_node(*b);
+	data.ra_rb = ft_max(big_bro_idx, lil_bro_idx);
+	data.rra_rrb = ft_max(data.last_a->index - big_bro_idx,
+			data.last_b->index - lil_bro_idx) + 1;
+	data.ra_rrb = big_bro_idx + data.last_b->index - lil_bro_idx + 1;
+	data.rra_rb = lil_bro_idx + data.last_a->index - big_bro_idx + 1;
+	return (ft_min(ft_min(data.ra_rb, data.rra_rb),
+			ft_min(data.ra_rrb, data.rra_rb)));
 }
