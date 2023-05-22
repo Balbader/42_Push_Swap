@@ -12,29 +12,31 @@
 
 #include "push_swap.h"
 
-long int	ft_convert_entry(const char *av)
+int	ft_convert_entry(int *res, char *av)
 {
-	long int	sign;
-	long int	nb;
-	long int	i;
+	int	sign;
 
-	if (!av)
-		return (0);
 	sign = 1;
-	nb = 0;
-	i = 0;
-	if (av[i] == '+')
-		++i;
-	else if (av[i] == '-')
+	while (*av > 8 && *av < 14 || *av == 32)
+		++*av;
+	if (*av == '-' || *av == '+')
 	{
-		sign *= -1;
-		++i;
+		if (*av == '-')
+			sign *= -1;
+		++*av;
+		if (!*av)
+			return (0);
 	}
-	while (ft_isdigit(av[i]))
+	*res = 0;
+	while (*av >= '0' && *av <= '9')
 	{
-		nb *= 10;
-		nb += (av[i] - '0');
-		++i;
+		if (*res > *res * 10 - 48 + *av
+			&& (*res == INT_MAX / 10 && *av == '8' && !av[1] && sign < 0))
+			return (0);
+		*res = *res * 10 - 48 + *av;
+		++*av;
 	}
-	return (nb * sign);
+	if (*av)
+		return (0);
+	return (*res *= sign, 1);
 }
