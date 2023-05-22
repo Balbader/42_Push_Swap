@@ -56,6 +56,7 @@ int	main(int ac, char **av)
 	ft_check_entries(entries_arr, (ac - 1));
 	ft_look_for_doubles(entries_arr, (ac - 1));
 	a = ft_init_stack(a, entries_arr, ac - 1);
+	// ft_print_stack(&a, "a");
 	free(entries_arr);
 	ft_re_init_index(a);
 	ft_sort(&a, &b);
