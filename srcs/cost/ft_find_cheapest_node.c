@@ -19,14 +19,14 @@ t_list	*ft_find_cheapest_node(t_list **a, t_list **b)
 
 	cheapest_node = (*b);
 	cheapest_cost = ft_find_cheapest_cost(a, b,
-			ft_find_big_bro_idx(a, cheapest_node->data), cheapest_node->index);
+			ft_get_big_bro_idx(a, cheapest_node->data), cheapest_node->index);
 	while (*b)
 	{
 		if (cheapest_cost >= ft_find_cheapest_cost(a, b,
-				ft_find_big_bro_idx(a, (*b)->data), (*b)->index))
+				ft_get_big_bro_idx(a, (*b)->data), (*b)->index))
 		{
 			cheapest_cost = ft_find_cheapest_cost(a, b,
-					ft_find_big_bro_idx(a, (*b)->data), (*b)->index);
+					ft_get_big_bro_idx(a, (*b)->data), (*b)->index);
 			cheapest_node = (*b);
 		}
 		*b = (*b)->next;
