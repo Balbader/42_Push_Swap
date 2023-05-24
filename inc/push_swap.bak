@@ -98,8 +98,8 @@ t_list		*ft_create_node(int data, int index);
 t_list		*ft_get_last_node(t_list *stack);
 t_list		*ft_get_before_last_node(t_list *stack);
 t_list		*ft_init_stack(t_list *stack_a, int *entries, int ac);
-t_list		*ft_find_biggest_node(t_list *stack);
-t_list		*ft_find_smallest_node(t_list *stack);
+t_list		*ft_find_biggest_node(t_list **stack);
+t_list		*ft_find_smallest_node(t_list **stack);
 
 /* UTILS */
 int			ft_arr_is_sorted(int *arr, int arr_size);
