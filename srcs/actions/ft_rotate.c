@@ -16,14 +16,28 @@ void	ft_rotate(t_list **stack)
 {
 	t_list	*tmp;
 
-	if (!(*stack))
-		return ;
-	tmp = NULL;
-	tmp = *stack;
-	tmp = tmp->next;
-	if (tmp == NULL)
-		return ;
-	(*stack)->next = NULL;
-	ft_add_new_tail(&tmp, *stack);
-	(*stack) = tmp;
+	if ((*stack)->next)
+	{
+		tmp = (*stack)->next;
+		(*stack)->next = NULL;
+		ft_add_new_tail(&tmp, *stack);
+		*stack = tmp;
+		ft_re_init_index(*stack);
+	}
 }
+
+// void	ft_rotate(t_list **stack)
+// {
+// 	t_list	*tmp;
+
+// 	if (!(*stack))
+// 		return ;
+// 	tmp = NULL;
+// 	tmp = *stack;
+// 	tmp = tmp->next;
+// 	if (tmp == NULL)
+// 		return ;
+// 	(*stack)->next = NULL;
+// 	ft_add_new_tail(&tmp, *stack);
+// 	(*stack) = tmp;
+// }

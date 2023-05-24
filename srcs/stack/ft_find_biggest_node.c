@@ -12,16 +12,30 @@
 
 #include "push_swap.h"
 
-t_list	*ft_find_biggest_node(t_list **stack)
+t_list	*ft_find_biggest_node(t_list *stack)
 {
 	t_list	*biggest_node;
 
-	biggest_node = (*stack);
-	while (*stack)
+	biggest_node = stack;
+	while (stack)
 	{
-		if ((*stack)->data > biggest_node->data)
-			biggest_node = (*stack);
-		*stack = (*stack)->next;
+		if (stack->data > biggest_node->data)
+			biggest_node = stackd;
+		stack = stack->next;
 	}
 	return (biggest_node);
 }
+
+// t_list	*ft_find_biggest_node(t_list **stack)
+// {
+// 	t_list	*biggest_node;
+
+// 	biggest_node = (*stack);
+// 	while (*stack)
+// 	{
+// 		if ((*stack)->data > biggest_node->data)
+// 			biggest_node = (*stack);
+// 		*stack = (*stack)->next;
+// 	}
+// 	return (biggest_node);
+// }

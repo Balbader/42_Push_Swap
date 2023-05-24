@@ -12,16 +12,30 @@
 
 #include "push_swap.h"
 
-t_list	*ft_find_smallest_node(t_list **stack)
+t_list	*ft_find_smallest_node(t_list *stack)
 {
 	t_list	*smallest_node;
 
-	smallest_node = (*stack);
-	while (*stack)
+	smallest_node = stack;
+	while (stack)
 	{
-		if ((*stack)->data < smallest_node->data)
-			smallest_node = (*stack);
-		*stack = (*stack)->next;
+		if (stack->data < smallest_node->data)
+			smallest_node = stack;
+		stack = stack->next;
 	}
 	return (smallest_node);
 }
+
+// t_list	*ft_find_smallest_node(t_list **stack)
+// {
+// 	t_list	*smallest_node;
+
+// 	smallest_node = (*stack);
+// 	while (*stack)
+// 	{
+// 		if ((*stack)->data < smallest_node->data)
+// 			smallest_node = (*stack);
+// 		*stack = (*stack)->next;
+// 	}
+// 	return (smallest_node);
+// }

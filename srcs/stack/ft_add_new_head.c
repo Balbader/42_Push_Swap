@@ -14,8 +14,8 @@
 
 void	ft_add_new_head(t_list **stack, t_list *head)
 {
-	if (!(*stack))
+	if (!head)
 		return ;
-	head->next = (*stack);
+	head->next = *stack;
 	*stack = head;
 }

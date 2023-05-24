@@ -16,11 +16,24 @@ void	ft_push_node(t_list **src, t_list **dest)
 {
 	t_list	*tmp;
 
-	tmp = NULL;
-	if (!*src)
-		return ;
-	tmp = (*src)->next;
-	(*src)->next = (*dest);
-	(*dest) = (*src);
-	*src = tmp;
+	tmp = *src;
+	*src = (*src)->next;
+	ft_add_new_head(dest, tmp);
+	ft_re_init_index(*src);
+	ft_re_init_index(*dest);
 }
+
+// void	ft_push_node(t_list **src, t_list **dest)
+// {
+// 	t_list	*tmp;
+
+// 	if (!*src)
+// 		return ;
+// 	tmp = NULL;
+// 	tmp = (*src)->next;
+// 	(*src)->next = (*dest);
+// 	(*dest) = (*src);
+// 	*src = tmp;
+// 	ft_re_init_index(*src);
+// 	ft_re_init_index(*dest);
+// }

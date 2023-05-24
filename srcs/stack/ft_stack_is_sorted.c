@@ -23,8 +23,11 @@ int	ft_stack_is_sorted(t_list *stack)
 	{
 		if (data > stack->data)
 			return (1);
-		data = stack->data;
-		stack = stack->next;
+		else
+		{
+			data = stack->data;
+			stack = stack->next;
+		}
 	}
 	return (0);
 }

@@ -17,9 +17,7 @@ void	ft_add_new_tail(t_list **stack, t_list *node)
 	t_list	*current;
 
 	if (!(*stack))
-		return ;
-	current = (*stack);
-	while (current->next)
-		current = current->next;
-	current->next = node;
+		*stack = node;
+	else
+		ft_add_new_tail(*stack)->next = node;
 }
