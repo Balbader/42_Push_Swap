@@ -19,7 +19,7 @@ void	ft_do_rrr(t_list **a, t_list **b, int a_idx, int b_idx)
 
 	a_size = ft_get_stack_size(a);
 	b_size = ft_get_stack_size(b);
-	while ((a_idx && a_idx <= a_size) && (b_idx && b_idx <= b_size))
+	while (a_idx && a_idx <= a_size && b_idx && b_idx <= b_size)
 	{
 		ft_rrr(a, b);
 		++a_idx;
