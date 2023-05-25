@@ -31,21 +31,11 @@ int	ft_small_stack_is_sorted(t_list *stack)
 
 int	ft_stack_is_sorted(t_list *stack)
 {
-	int	biggest;
-	int	smallest;
-
 	if (!stack)
 		return (0);
-	biggest = ft_find_biggest_node(stack)->index;
-	smallest = ft_find_smallest_node(stack)->index;
 	while (stack->next)
 	{
-		if (stack->data == biggest)
-		{
-			if (stack->next->data != smallest)
-				return (1);
-		}
-		else if (stack->data > stack->next->data)
+		if (stack->data > stack->next->data)
 			return (1);
 		stack = stack->next;
 	}

@@ -33,8 +33,9 @@ int	*ft_init_entries_arr(int ac, char **av, int *entries_arr)
 
 void	ft_check_entries(int *arr, int arr_size)
 {
-	ft_look_for_doubles(arr, arr_size);
-	if (ft_arr_is_sorted(arr, arr_size) == 0)
+	if (ft_arr_is_sorted(arr, arr_size) == 1)
+		ft_look_for_doubles(arr, arr_size);
+	else if (ft_arr_is_sorted(arr, arr_size) == 0)
 	{
 		free(arr);
 		exit(1);
@@ -47,7 +48,7 @@ int	main(int ac, char **av)
 	t_list	*b;
 	int		*entries_arr;
 
-	if (ac < 3)
+	if (ac <= 2)
 		return (-1);
 	a = NULL;
 	b = NULL;
