@@ -33,12 +33,12 @@ int	*ft_init_entries_arr(int ac, char **av, int *entries_arr)
 
 void	ft_check_entries(int *arr, int arr_size)
 {
+	ft_look_for_doubles(arr, arr_size);
 	if (ft_arr_is_sorted(arr, arr_size) == 0)
 	{
 		free(arr);
 		exit(1);
 	}
-	ft_look_for_doubles(arr, arr_size);
 }
 
 int	main(int ac, char **av)
@@ -54,7 +54,6 @@ int	main(int ac, char **av)
 	entries_arr = NULL;
 	entries_arr = ft_init_entries_arr(ac, av, entries_arr);
 	ft_check_entries(entries_arr, (ac - 1));
-	ft_look_for_doubles(entries_arr, (ac - 1));
 	a = ft_init_stack(a, entries_arr, ac - 1);
 	free(entries_arr);
 	if (ac - 1 <= 5)

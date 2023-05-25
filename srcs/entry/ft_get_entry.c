@@ -22,11 +22,10 @@ int	ft_get_entry(char *av)
 
 	if (!av)
 		return (0);
-	ft_check_entry(av);
 	elem = ft_convert_entry(av);
 	if (elem > INT_MAX || elem < INT_MIN)
 	{
-		ft_putstr_fd("error\n", 2);
+		ft_putstr_fd("Error\n", 2);
 		exit(1);
 	}
 	return (elem);
